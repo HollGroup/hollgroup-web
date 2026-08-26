@@ -52,6 +52,7 @@ body{background:var(--cream2);color:var(--dark);font-family:'Inter',-apple-syste
 .field{display:flex;flex-direction:column;gap:.4rem}
 .field label{font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mid)}
 .field label .req{color:var(--navy)}
+.field label .opt{color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0}
 input[type=text],input[type=email],input[type=tel],input[type=url],input[type=number],select,textarea{
   width:100%;padding:.7rem .9rem;border:1px solid var(--bd);border-radius:6px;
   font-family:'Inter',sans-serif;font-size:.85rem;color:var(--dark);
@@ -122,6 +123,7 @@ footer{background:var(--dark);padding:2rem 6%;display:flex;justify-content:space
     <div class="bullet"><span class="bullet-dot"></span><span>Realistic projections based on real Birmingham market data</span></div>
     <div class="bullet"><span class="bullet-dot"></span><span>No obligation — just honest numbers and a clear next step</span></div>
     <div class="bullet"><span class="bullet-dot"></span><span>Response within 24 hours</span></div>
+    <div class="bullet"><span class="bullet-dot"></span><span>Just the essentials below — everything else is optional</span></div>
   </div>
 </div>
 
@@ -185,9 +187,9 @@ footer{background:var(--dark);padding:2rem 6%;display:flex;justify-content:space
       </div>
 
       <div class="field" style="margin-bottom:1.25rem">
-        <label>Furnished? <span class="req">*</span></label>
+        <label>Furnished? <span class="opt">(optional)</span></label>
         <div class="radio-group">
-          <div class="radio-opt"><input type="radio" name="furnished" id="f-yes" value="Yes" required><label for="f-yes">Yes</label></div>
+          <div class="radio-opt"><input type="radio" name="furnished" id="f-yes" value="Yes"><label for="f-yes">Yes</label></div>
           <div class="radio-opt"><input type="radio" name="furnished" id="f-no" value="No"><label for="f-no">No</label></div>
         </div>
       </div>
@@ -201,8 +203,8 @@ footer{background:var(--dark);padding:2rem 6%;display:flex;justify-content:space
           </select>
         </div>
         <div class="field">
-          <label>Bathrooms <span class="req">*</span></label>
-          <select name="bathrooms" required>
+          <label>Bathrooms <span class="opt">(optional)</span></label>
+          <select name="bathrooms">
             <option value="">Select</option>
             <option>1</option><option>1.5</option><option>2</option><option>2.5</option><option>3</option><option>3.5+</option>
           </select>
@@ -224,9 +226,9 @@ footer{background:var(--dark);padding:2rem 6%;display:flex;justify-content:space
       <div class="form-section-title">Your Situation</div>
 
       <div class="field" style="margin-bottom:1.25rem">
-        <label>Current Setup <span class="req">*</span></label>
+        <label>Current Setup <span class="opt">(optional)</span></label>
         <div class="radio-group">
-          <div class="radio-opt"><input type="radio" name="current_setup" id="cs-vacant" value="Vacant" required><label for="cs-vacant">Vacant</label></div>
+          <div class="radio-opt"><input type="radio" name="current_setup" id="cs-vacant" value="Vacant"><label for="cs-vacant">Vacant</label></div>
           <div class="radio-opt"><input type="radio" name="current_setup" id="cs-ast" value="Tenanted (AST)"><label for="cs-ast">Tenanted (AST)</label></div>
           <div class="radio-opt"><input type="radio" name="current_setup" id="cs-owner" value="Owner-Occupied"><label for="cs-owner">Owner-Occupied</label></div>
           <div class="radio-opt"><input type="radio" name="current_setup" id="cs-stl" value="Already short-let"><label for="cs-stl">Already short-let</label></div>
@@ -235,9 +237,9 @@ footer{background:var(--dark);padding:2rem 6%;display:flex;justify-content:space
       </div>
 
       <div class="field" style="margin-bottom:1.25rem">
-        <label>Interested In <span class="req">*</span></label>
+        <label>Interested In <span class="opt">(optional)</span></label>
         <div class="radio-group">
-          <div class="radio-opt"><input type="radio" name="service" id="sv-ssm" value="Short-Stay Management" required><label for="sv-ssm">Short-Stay Management</label></div>
+          <div class="radio-opt"><input type="radio" name="service" id="sv-ssm" value="Short-Stay Management"><label for="sv-ssm">Short-Stay Management</label></div>
           <div class="radio-opt"><input type="radio" name="service" id="sv-gr" value="Guaranteed Rent"><label for="sv-gr">Guaranteed Rent</label></div>
           <div class="radio-opt"><input type="radio" name="service" id="sv-ns" value="Not Sure"><label for="sv-ns">Not Sure</label></div>
         </div>
