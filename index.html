@@ -186,15 +186,13 @@ h2 em{font-style:italic}
 .pf-wrap{max-width:640px;margin:3rem auto 0;display:flex;flex-direction:column;gap:.65rem}
 .pf-step{background:var(--cream);border:1px solid var(--bd);border-radius:8px;padding:1.1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1.5rem}
 .pf-lbl{font-size:.83rem;font-weight:600;color:var(--dark)}
-.pf-note{font-size:.72rem;color:var(--muted);line-height:1.6;margin-top:.25rem;max-width:340px}
-.pf-amt{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--navy);white-space:nowrap;flex-shrink:0}
-.pf-amt.neg{color:var(--muted);font-family:'Inter',sans-serif;font-weight:600;font-size:.85rem}
-.pf-amt.neutral{color:var(--muted);font-family:'Inter',sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase}
+.pf-note{font-size:.72rem;color:var(--muted);line-height:1.6;margin-top:.25rem;max-width:360px}
+.pf-tag{font-size:.66rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);white-space:nowrap;flex-shrink:0;background:var(--cream2);border:1px solid var(--bd);border-radius:4px;padding:.35rem .75rem}
+.pf-tag.rate{color:var(--navy);background:var(--navy-l);border-color:transparent}
 .pf-ghost{opacity:.7;border-style:dashed}
-.pf-final{background:var(--navy);border-color:var(--navy)}
-.pf-final .pf-lbl{color:rgba(255,255,255,.6);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.pf-final .pf-amt{color:#fff;font-size:1.6rem}
 .pf-arrow{text-align:center;font-size:.85rem;color:var(--muted)}
+.pf-final{background:var(--navy);border-color:var(--navy);justify-content:center;padding:1.4rem 1.5rem}
+.pf-final .pf-lbl{color:#fff;font-size:1rem;font-family:'Playfair Display',serif;font-weight:600}
 .pf-foot{max-width:440px;margin:1.75rem auto 0;text-align:center;font-size:.83rem;color:var(--mid);line-height:1.85}
 
 /* GROWTH */
@@ -294,7 +292,7 @@ footer{background:var(--dark);padding:3rem 6%}
   .hero-left h1{font-size:2.4rem}
   .gr-stats{grid-template-columns:1fr}
   .pf-step{flex-direction:column;align-items:flex-start;gap:.4rem}
-  .pf-amt{align-self:flex-end}
+  .pf-tag{align-self:flex-end}
 }
 </style>
 <script type="application/ld+json">
@@ -586,19 +584,19 @@ footer{background:var(--dark);padding:3rem 6%}
 <section class="sec sec-cream2" id="transparency">
   <span class="sec-tag" data-en="Full Transparency" data-es="Transparencia total">Full Transparency</span>
   <h2 data-en="Exactly <em>where your money goes</em>." data-es="Exactamente <em>a dónde va tu dinero</em>.">Exactly <em>where your money goes</em>.</h2>
-  <p class="sec-sub" data-en="An illustrative example of how a monthly payout is calculated. Generic figures, not tied to any specific property." data-es="Un ejemplo ilustrativo de cómo se calcula un pago mensual. Cifras genéricas, no corresponden a ninguna propiedad concreta.">An illustrative example of how a monthly payout is calculated. Generic figures, not tied to any specific property.</p>
+  <p class="sec-sub" data-en="How your monthly payout is structured, step by step." data-es="Cómo se estructura tu pago mensual, paso a paso.">How your monthly payout is structured, step by step.</p>
   <div class="pf-wrap">
     <div class="pf-step">
       <div><span class="pf-lbl" data-en="Gross booking income" data-es="Ingresos brutos por reservas">Gross booking income</span></div>
-      <span class="pf-amt">£2,000</span>
+      <span class="pf-tag" data-en="Starting point" data-es="Punto de partida">Starting point</span>
     </div>
     <div class="pf-arrow">↓</div>
     <div class="pf-step">
       <div>
         <span class="pf-lbl" data-en="OTA commission (Airbnb / Booking.com)" data-es="Comisión de la OTA (Airbnb / Booking.com)">OTA commission (Airbnb / Booking.com)</span>
-        <div class="pf-note" data-en="Charged by the platform, varies by channel — typical range 3–15%." data-es="La cobra la plataforma, varía según el canal — rango habitual 3–15%.">Charged by the platform, varies by channel — typical range 3–15%.</div>
+        <div class="pf-note" data-en="Charged by the platform, varies by channel." data-es="La cobra la plataforma, varía según el canal.">Charged by the platform, varies by channel.</div>
       </div>
-      <span class="pf-amt neg">−£300</span>
+      <span class="pf-tag" data-en="Deducted first" data-es="Se descuenta primero">Deducted first</span>
     </div>
     <div class="pf-arrow">↓</div>
     <div class="pf-step pf-ghost">
@@ -606,20 +604,19 @@ footer{background:var(--dark);padding:3rem 6%}
         <span class="pf-lbl" data-en="Cleaning fee" data-es="Tarifa de limpieza">Cleaning fee</span>
         <div class="pf-note" data-en="Paid by the guest, passed through at cost — no effect on your payout or on our commission." data-es="La paga el huésped, se traslada al coste — no afecta a tu pago ni a nuestra comisión.">Paid by the guest, passed through at cost — no effect on your payout or on our commission.</div>
       </div>
-      <span class="pf-amt neutral" data-en="No impact" data-es="Sin impacto">No impact</span>
+      <span class="pf-tag" data-en="No impact" data-es="Sin impacto">No impact</span>
     </div>
     <div class="pf-arrow">↓</div>
     <div class="pf-step">
       <div>
-        <span class="pf-lbl" data-en="Holl Group management commission (20%)" data-es="Comisión de gestión de Holl Group (20%)">Holl Group management commission (20%)</span>
+        <span class="pf-lbl" data-en="Holl Group management commission" data-es="Comisión de gestión de Holl Group">Holl Group management commission</span>
         <div class="pf-note" data-en="Calculated on the net amount, after the OTA commission is deducted." data-es="Calculada sobre el importe neto, tras deducir la comisión de la OTA.">Calculated on the net amount, after the OTA commission is deducted.</div>
       </div>
-      <span class="pf-amt neg">−£340</span>
+      <span class="pf-tag rate" data-en="20% of net" data-es="20% sobre el neto">20% of net</span>
     </div>
     <div class="pf-arrow">↓</div>
     <div class="pf-step pf-final">
-      <div><span class="pf-lbl" data-en="Your payout" data-es="Tu pago">Your payout</span></div>
-      <span class="pf-amt">£1,360</span>
+      <span class="pf-lbl" data-en="What's left is yours" data-es="Lo que queda es tuyo">What's left is yours</span>
     </div>
   </div>
   <p class="pf-foot" data-en="We only earn when you earn. No hidden fees, no charges on gross income, no surprises on your statement." data-es="Solo ganamos cuando tú ganas. Sin comisiones ocultas, sin cargos sobre el ingreso bruto, sin sorpresas en tu extracto.">We only earn when you earn. No hidden fees, no charges on gross income, no surprises on your statement.</p>
