@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Stay — Holl Living</title>
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dyojhaiig/image/upload/v1781020925/logo_cropped_pezlyx.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--cream:#fff;--cream2:#F5F5F3;--cream3:#EAEAE6;--navy:#1A3461;--navy-h:#142849;--navy-l:#EEF2FA;--dark:#0F172A;--mid:#475569;--muted:#94A3B8;--bd:rgba(15,23,42,.09);--wa:#25D366;--gold:#C9A455}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--dark);font-family:'Inter',-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* WA */
+.wa{position:fixed;bottom:1.75rem;right:1.75rem;z-index:200;width:52px;height:52px;background:var(--wa);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;animation:wap 2.5s infinite;box-shadow:0 4px 18px rgba(37,211,102,.35)}
+.wa svg{width:26px;height:26px;fill:#fff}
+@keyframes wap{0%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}70%{box-shadow:0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.9rem 6%;background:rgba(255,255,255,.97);border-bottom:1px solid var(--bd);backdrop-filter:blur(12px)}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{color:var(--mid);text-decoration:none;font-size:.72rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--dark)}
+.nav-r{display:flex;align-items:center;gap:.9rem}
+.lang-toggle{display:flex;gap:2px;background:var(--cream3);border-radius:4px;padding:2px}
+.lang-btn{background:none;border:none;padding:.26rem .58rem;font-size:.66rem;font-weight:600;letter-spacing:.06em;cursor:pointer;border-radius:3px;color:var(--muted);transition:all .2s}
+.lang-btn.active{background:var(--cream);color:var(--dark);box-shadow:0 1px 3px rgba(20,18,20,.1)}
+.nav-cta{background:var(--navy);color:#fff;text-decoration:none;padding:.5rem 1.2rem;font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:4px;transition:background .2s}
+.nav-cta:hover{background:var(--navy-h)}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:.35rem;color:var(--dark)}
+.nav-hamburger svg{width:22px;height:22px;stroke:var(--dark);fill:none;stroke-width:2;stroke-linecap:round}
+
+/* HERO */
+.hero{position:relative;min-height:75vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-media{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-media img{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:100%;min-height:100%;width:auto;height:auto;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,16,30,.85) 0%,rgba(10,16,30,.3) 60%,rgba(10,16,30,.05) 100%);z-index:1}
+.hero-content{position:relative;z-index:2;padding:3rem 6% 4rem;width:100%}
+.hero-eyebrow{font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(210,190,150,.8);display:block;margin-bottom:1rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,4rem);line-height:1.06;color:#fff;margin-bottom:1rem;max-width:680px}
+.hero h1 em{font-style:italic;color:rgba(210,190,150,.9)}
+.hero-sub{font-size:.97rem;color:rgba(255,255,255,.6);max-width:520px;line-height:1.9}
+.hero-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.hero-tag{font-size:.68rem;font-weight:500;color:rgba(255,255,255,.7);background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);padding:.3rem .8rem;border-radius:3px}
+
+/* BOOKING WIDGET */
+.widget-sec{background:var(--cream2);border-bottom:1px solid var(--bd)}
+.widget-inner{max-width:900px;margin:0 auto;padding:3.5rem 6%}
+.widget-header{text-align:center;margin-bottom:2rem}
+.widget-header span{font-size:.61rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:.65rem}
+.widget-header h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.4rem);color:var(--dark);margin-bottom:.6rem}
+.widget-header h2 em{font-style:italic}
+.widget-header p{font-size:.88rem;color:var(--muted);max-width:440px;margin:0 auto;line-height:1.8}
+.widget-box{background:var(--cream);border:1px solid var(--bd);border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(15,23,42,.07)}
+
+/* PROPERTIES */
+.props-sec{padding:5rem 6%}
+.props-header{text-align:center;margin-bottom:3rem}
+.props-header span{font-size:.61rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:.65rem}
+.props-header h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.4rem);color:var(--dark)}
+.props-header h2 em{font-style:italic}
+.props-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.prop-card{border:1px solid var(--bd);border-radius:10px;overflow:hidden;background:var(--cream);transition:box-shadow .25s,transform .25s}
+.prop-card:hover{box-shadow:0 8px 32px rgba(15,23,42,.1);transform:translateY(-2px)}
+.prop-img{aspect-ratio:4/3;overflow:hidden;position:relative;background:var(--cream3)}
+.prop-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.prop-card:hover .prop-img img{transform:scale(1.04)}
+.prop-img-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;color:var(--muted)}
+.prop-img-ph svg{width:30px;height:30px;opacity:.3}
+.prop-img-ph span{font-size:.63rem;letter-spacing:.07em;text-transform:uppercase}
+.prop-loc{position:absolute;top:.85rem;left:.85rem;background:rgba(10,16,30,.72);backdrop-filter:blur(8px);color:#fff;font-size:.6rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .65rem;border-radius:3px}
+.prop-sleeps{position:absolute;bottom:.85rem;right:.85rem;background:var(--navy);color:#fff;font-size:.62rem;font-weight:700;padding:.25rem .7rem;border-radius:3px}
+.prop-body{padding:1.25rem}
+.prop-type{font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin-bottom:.3rem;display:block}
+.prop-body h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--dark);margin-bottom:.5rem;line-height:1.2}
+.prop-desc{font-size:.8rem;color:var(--mid);line-height:1.8;margin-bottom:.9rem}
+.prop-hl{display:flex;flex-wrap:wrap;gap:.3rem}
+.hl{font-size:.63rem;color:var(--mid);background:var(--cream2);border:1px solid var(--bd);padding:.18rem .55rem;border-radius:3px}
+.hl.g{background:var(--navy-l);color:var(--navy);border-color:rgba(26,52,97,.15)}
+
+/* GUEST INFO */
+.info-sec{background:var(--dark);padding:5rem 6%}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.info-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:2rem}
+.info-icon{width:36px;height:36px;color:rgba(210,190,150,.7);margin-bottom:1.1rem}
+.info-card h4{font-family:'Playfair Display',serif;font-size:1.05rem;color:#fff;margin-bottom:.6rem}
+.info-card p{font-size:.82rem;color:rgba(255,255,255,.43);line-height:1.85}
+
+/* CTA */
+.cta-sec{text-align:center;padding:5.5rem 5%;background:var(--cream2);border-top:1px solid var(--bd)}
+.cta-sec h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.4rem);color:var(--dark);margin:0 auto 1rem;max-width:500px}
+.cta-sec h2 em{font-style:italic}
+.cta-sec p{color:var(--mid);font-size:.9rem;margin:0 auto 2rem;max-width:380px;line-height:1.85}
+.btn-p{background:var(--navy);color:#fff;text-decoration:none;padding:.85rem 2rem;font-size:.77rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;display:inline-block;border-radius:4px;transition:background .2s;margin:.4rem}
+.btn-p:hover{background:var(--navy-h)}
+.btn-wa{background:var(--wa);color:#fff;text-decoration:none;padding:.85rem 2rem;font-size:.77rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;display:inline-block;border-radius:4px;transition:opacity .2s;margin:.4rem}
+.btn-wa:hover{opacity:.9}
+
+/* FOOTER */
+footer{background:var(--dark);padding:2.5rem 6%;border-top:1px solid rgba(255,255,255,.06)}
+.ft-top{display:grid;grid-template-columns:auto 1fr auto;gap:4rem;align-items:start;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.ft-brand{font-family:'Playfair Display',serif;font-size:1rem;color:#fff}
+.ft-brand span{color:rgba(255,255,255,.25);font-family:'Inter',sans-serif;font-size:.68rem;font-weight:400;display:block;margin-top:.2rem}
+.ft-mid{font-size:.7rem;color:rgba(255,255,255,.26);line-height:2}
+.ft-social{display:flex;gap:.7rem}
+.ft-social a{width:32px;height:32px;border:1px solid rgba(255,255,255,.09);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:border-color .2s}
+.ft-social a:hover{border-color:rgba(255,255,255,.3)}
+.ft-social svg{width:14px;height:14px;fill:rgba(255,255,255,.35)}
+.ft-bottom{display:flex;justify-content:space-between;font-size:.68rem;color:rgba(255,255,255,.2)}
+.ft-bottom a{color:rgba(255,255,255,.2);text-decoration:none}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .props-grid{grid-template-columns:repeat(2,1fr)}
+  .info-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .nav{padding:.8rem 5%;flex-wrap:wrap;gap:.5rem}
+  .nav-hamburger{display:block}
+  .nav-links{display:none;width:100%;flex-direction:column;gap:0;background:var(--cream);border-top:1px solid var(--bd);padding:.5rem 0;order:4}
+  .nav-links.open{display:flex}
+  .nav-links li{border-bottom:1px solid var(--bd)}
+  .nav-links a{display:block;padding:.85rem 1rem;font-size:.78rem}
+  .nav-r{gap:.6rem}
+  .nav-cta{padding:.45rem .9rem;font-size:.65rem}
+  .hero{min-height:60vh}
+  .hero-content{padding:2rem 5% 3rem}
+  .hero-tags{display:none}
+  .widget-inner{padding:2.5rem 5%}
+  .props-sec{padding:3rem 5%}
+  .props-grid{grid-template-columns:1fr}
+  .info-sec{padding:3rem 5%}
+  .info-grid{grid-template-columns:1fr}
+  .cta-sec{padding:4rem 5%}
+  .btn-p,.btn-wa{display:block;text-align:center;margin:.35rem auto;max-width:300px}
+  .ft-top{grid-template-columns:1fr;gap:1.5rem}
+  .ft-bottom{flex-direction:column;gap:.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<a class="wa" href="https://wa.me/447799777284?text=Hi%20Holl%20Living!%20I%27d%20like%20to%20enquire%20about%20a%20stay." target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="/"><img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1781020925/logo_cropped_pezlyx.png" alt="Holl Group" style="height:38px;width:auto;mix-blend-mode:multiply"></a>
+  <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <ul class="nav-links">
+    <li><a href="/" class="t" data-en="Home" data-es="Inicio">Home</a></li>
+    <li><a href="/about.html" class="t" data-en="About" data-es="Quiénes somos">About</a></li>
+    <li><a href="/properties.html" class="t" data-en="Properties" data-es="Propiedades">Properties</a></li>
+    <li><a href="/guests.html" class="active t" data-en="Guests" data-es="Huéspedes">Guests</a></li>
+  </ul>
+  <div class="nav-r">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+    </div>
+    <a href="/proposal.html" class="nav-cta t" data-en="Landlords" data-es="Propietarios">Landlords</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-media">
+    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,h=1280,fit=crop/KoQNMpD4XW82jhzi/ibondigbethc2clrm-ZzFbTjDnfHc2pK2E.jpg" alt="Holl Living Birmingham">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow t" data-en="Holl Living · Birmingham &amp; Nottingham" data-es="Holl Living · Birmingham y Nottingham">Holl Living · Birmingham &amp; Nottingham</span>
+    <h1 class="t" data-en="Your home away<br>from home in <em>Birmingham.</em>" data-es="Tu hogar lejos<br>de casa en <em>Birmingham.</em>">Your home away<br>from home in <em>Birmingham.</em></h1>
+    <p class="hero-sub t" data-en="Professionally managed serviced apartments and houses for every kind of stay — city breaks, work trips, contractor teams, and family visits." data-es="Apartamentos y casas gestionados profesionalmente para todo tipo de estancias: escapadas, viajes de trabajo, equipos de contratistas y visitas familiares.">Professionally managed serviced apartments and houses for every kind of stay — city breaks, work trips, contractor teams, and family visits.</p>
+    <div class="hero-tags">
+      <span class="hero-tag t" data-en="Free parking at select properties" data-es="Parking gratuito en propiedades seleccionadas">Free parking at select properties</span>
+      <span class="hero-tag t" data-en="Outside Clean Air Zone — no daily charge" data-es="Fuera de la zona CAZ — sin cargo diario">Outside Clean Air Zone — no daily charge</span>
+      <span class="hero-tag t" data-en="24/7 guest support" data-es="Soporte 24/7 para huéspedes">24/7 guest support</span>
+      <span class="hero-tag t" data-en="Weekly &amp; monthly discounts" data-es="Descuentos semanales y mensuales">Weekly &amp; monthly discounts</span>
+    </div>
+  </div>
+</div>
+
+<!-- BOOKING WIDGET -->
+<section class="widget-sec">
+  <div class="widget-inner">
+    <div class="widget-header">
+      <span class="t" data-en="Search &amp; Book" data-es="Buscar y reservar">Search &amp; Book</span>
+      <h2 class="t" data-en="Find your perfect <em>Birmingham stay.</em>" data-es="Encuentra tu estancia perfecta <em>en Birmingham.</em>">Find your perfect <em>Birmingham stay.</em></h2>
+      <p class="t" data-en="Select your dates and number of guests to see availability across all Holl Living properties." data-es="Selecciona tus fechas y número de huéspedes para ver disponibilidad en todas las propiedades Holl Living.">Select your dates and number of guests to see availability across all Holl Living properties.</p>
+    </div>
+    <div class="widget-box">
+      <div id="iframe-container" style="width:100%;height:310px;overflow:auto;position:relative">
+        <iframe src="https://booking.hollgroup.co.uk/embed/search?lang=en&website-id=eyJpdiI6IlpoRWxRWjQ1M0pUeWR4MS82N0JpQWc9PSIsInZhbHVlIjoiMU1nRzVldFFpU2E5TXJYa3dmWEp4UT09IiwibWFjIjoiYTJjMmEwNTliMGFhODEwOWZkNThlM2VhNmEzZmY4ZjA2ZDU1MzQyNDI1NWUxNmVhYzE1Y2QyOTY1OGEzMmFmNSIsInRhZyI6IiJ9" style="border:0" title="Rental Ninja" width="100%" height="310px"></iframe>
+      </div>
+    </div>
+    <p style="font-size:.72rem;color:var(--muted);text-align:center;margin-top:1rem" class="t" data-en="Prefer to book via Airbnb or Booking.com? Message us and we'll send you the right link." data-es="¿Prefieres reservar por Airbnb o Booking.com? Escríbenos y te enviamos el enlace.">Prefer to book via Airbnb or Booking.com? Message us and we'll send you the right link.</p>
+  </div>
+</section>
+<script src="https://rental-ninja.com/js/embed_search.js"></script>
+
+<!-- PROPERTIES -->
+<section class="props-sec">
+  <div class="props-header">
+    <span class="t" data-en="Our Properties" data-es="Nuestras propiedades">Our Properties</span>
+    <h2 class="t" data-en="Every stay, <em>thoughtfully prepared.</em>" data-es="Cada estancia, <em>cuidadosamente preparada.</em>">Every stay, <em>thoughtfully prepared.</em></h2>
+  </div>
+  <div class="props-grid">
+
+    <div class="prop-card">
+      <div class="prop-img">
+        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,h=1280,fit=crop/KoQNMpD4XW82jhzi/ibondigbethc2clrm-ZzFbTjDnfHc2pK2E.jpg" alt="Digbeth apartment" onerror="this.style.display='none'">
+        <span class="prop-loc">Digbeth · B12</span>
+        <span class="prop-sleeps t" data-en="Sleeps 8" data-es="Hasta 8">Sleeps 8</span>
+      </div>
+      <div class="prop-body">
+        <span class="prop-type t" data-en="City Apartment" data-es="Apartamento">City Apartment</span>
+        <h3 class="t" data-en="Creative Quarter Apartment" data-es="Apartamento del Barrio Creativo">Creative Quarter Apartment</h3>
+        <p class="prop-desc t" data-en="Steps from the Custard Factory and Digbeth's best bars. 5 proper beds, football table, 2 bathrooms and free secured parking." data-es="A pasos de la Custard Factory y los mejores bares de Digbeth. 5 camas reales, futbolín, 2 baños y parking seguro gratuito.">Steps from the Custard Factory and Digbeth's best bars. 5 proper beds, football table, 2 bathrooms and free secured parking.</p>
+        <div class="prop-hl">
+          <span class="hl g t" data-en="5 beds" data-es="5 camas">5 beds</span>
+          <span class="hl t" data-en="2 bathrooms" data-es="2 baños">2 bathrooms</span>
+          <span class="hl t" data-en="Free parking" data-es="Parking gratuito">Free parking</span>
+          <span class="hl t" data-en="Football table" data-es="Futbolín">Football table</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-card">
+      <div class="prop-img">
+        <div class="prop-img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg><span class="t" data-en="Photo coming soon" data-es="Foto próximamente">Photo coming soon</span></div>
+        <span class="prop-loc">B1 · B1 1JY</span>
+        <span class="prop-sleeps t" data-en="Sleeps 6" data-es="Hasta 6">Sleeps 6</span>
+      </div>
+      <div class="prop-body">
+        <span class="prop-type t" data-en="City Apartment" data-es="Apartamento">City Apartment</span>
+        <h3 class="t" data-en="Oasis in the City" data-es="Oasis en la Ciudad">Oasis in the City</h3>
+        <p class="prop-desc t" data-en="Directly opposite Peace Gardens, next to The Mailbox. Private balcony with city views, 2 full bathrooms, premium kitchen. 10-min walk to New Street Station." data-es="Enfrente de los Peace Gardens, junto a The Mailbox. Balcón privado con vistas, 2 baños completos y cocina premium. A 10 min de New Street Station.">Directly opposite Peace Gardens, next to The Mailbox. Private balcony with city views, 2 full bathrooms, premium kitchen. 10-min walk to New Street Station.</p>
+        <div class="prop-hl">
+          <span class="hl g t" data-en="Private balcony" data-es="Balcón privado">Private balcony</span>
+          <span class="hl t" data-en="2 bathrooms" data-es="2 baños">2 bathrooms</span>
+          <span class="hl t" data-en="City views" data-es="Vistas a la ciudad">City views</span>
+          <span class="hl t" data-en="Lift access" data-es="Ascensor">Lift access</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-card">
+      <div class="prop-img">
+        <div class="prop-img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg><span class="t" data-en="Photo coming soon" data-es="Foto próximamente">Photo coming soon</span></div>
+        <span class="prop-loc">B1 · B1 1LA</span>
+        <span class="prop-sleeps t" data-en="Sleeps 6" data-es="Hasta 6">Sleeps 6</span>
+      </div>
+      <div class="prop-body">
+        <span class="prop-type t" data-en="City Apartment" data-es="Apartamento">City Apartment</span>
+        <h3 class="t" data-en="Executive B1 Apartment" data-es="Apartamento Ejecutivo B1">Executive B1 Apartment</h3>
+        <p class="prop-desc t" data-en="Modern 2-bed apartment 2 min from The Mailbox. Free secure gated parking, private balcony, dedicated workspace with monitor, 2 full bathrooms." data-es="Moderno apartamento de 2 hab. a 2 min de The Mailbox. Parking seguro gratuito, balcón privado, espacio de trabajo con monitor y 2 baños completos.">Modern 2-bed apartment 2 min from The Mailbox. Free secure gated parking, private balcony, dedicated workspace with monitor, 2 full bathrooms.</p>
+        <div class="prop-hl">
+          <span class="hl g t" data-en="Free secure parking" data-es="Parking seguro gratuito">Free secure parking</span>
+          <span class="hl t" data-en="2 bathrooms" data-es="2 baños">2 bathrooms</span>
+          <span class="hl t" data-en="Workspace" data-es="Espacio trabajo">Workspace</span>
+          <span class="hl t" data-en="Balcony" data-es="Balcón">Balcony</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-card">
+      <div class="prop-img">
+        <div class="prop-img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg><span class="t" data-en="Photo coming soon" data-es="Foto próximamente">Photo coming soon</span></div>
+        <span class="prop-loc t" data-en="King Edward's Wharf · B1" data-es="King Edward's Wharf · B1">King Edward's Wharf · B1</span>
+        <span class="prop-sleeps t" data-en="Sleeps 4" data-es="Hasta 4">Sleeps 4</span>
+      </div>
+      <div class="prop-body">
+        <span class="prop-type t" data-en="City Apartment" data-es="Apartamento">City Apartment</span>
+        <h3 class="t" data-en="Canal-Side Apartment" data-es="Apartamento junto al Canal">Canal-Side Apartment</h3>
+        <p class="prop-desc t" data-en="Beautifully staged apartment overlooking Birmingham's canal network. Calm and scenic, steps from Brindleyplace restaurants and bars." data-es="Apartamento bellamente decorado con vistas a los canales de Birmingham. Tranquilo y con encanto, a pasos de los restaurantes de Brindleyplace.">Beautifully staged apartment overlooking Birmingham's canal network. Calm and scenic, steps from Brindleyplace restaurants and bars.</p>
+        <div class="prop-hl">
+          <span class="hl g t" data-en="Canal views" data-es="Vistas al canal">Canal views</span>
+          <span class="hl t" data-en="Brindleyplace · 2 min" data-es="Brindleyplace · 2 min">Brindleyplace · 2 min</span>
+          <span class="hl t" data-en="Couples &amp; leisure" data-es="Parejas y ocio">Couples &amp; leisure</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-card">
+      <div class="prop-img">
+        <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1781022688/IMG_4291_wjnabj.png" alt="Bearwood house">
+        <span class="prop-loc">Bearwood · B67</span>
+        <span class="prop-sleeps t" data-en="Sleeps 5" data-es="Hasta 5">Sleeps 5</span>
+      </div>
+      <div class="prop-body">
+        <span class="prop-type t" data-en="House" data-es="Casa">House</span>
+        <h3 class="t" data-en="Bearwood House" data-es="Bearwood House">Bearwood House</h3>
+        <p class="prop-desc t" data-en="Newly refurbished 3-bed house in quiet Bearwood. Outside the Clean Air Zone — no daily charge. Free parking, great for contractor teams and families." data-es="Casa de 3 habitaciones recién reformada en el tranquilo Bearwood. Fuera de la CAZ — sin cargo diario. Parking gratuito, ideal para equipos y familias.">Newly refurbished 3-bed house in quiet Bearwood. Outside the Clean Air Zone — no daily charge. Free parking, great for contractor teams and families.</p>
+        <div class="prop-hl">
+          <span class="hl g t" data-en="Outside CAZ" data-es="Fuera CAZ">Outside CAZ</span>
+          <span class="hl t" data-en="Free parking" data-es="Parking gratuito">Free parking</span>
+          <span class="hl t" data-en="3 bedrooms" data-es="3 habitaciones">3 bedrooms</span>
+          <span class="hl t" data-en="Contractors welcome" data-es="Contratistas bienvenidos">Contractors welcome</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-card">
+      <div class="prop-img">
+        <div class="prop-img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg><span class="t" data-en="Photo coming soon" data-es="Foto próximamente">Photo coming soon</span></div>
+        <span class="prop-loc">Edgbaston · B16</span>
+        <span class="prop-sleeps t" data-en="Sleeps 4" data-es="Hasta 4">Sleeps 4</span>
+      </div>
+      <div class="prop-body">
+        <span class="prop-type t" data-en="House" data-es="Casa">House</span>
+        <h3 class="t" data-en="Lakeside Nook" data-es="Lakeside Nook">Lakeside Nook</h3>
+        <p class="prop-desc t" data-en="Peaceful house near Edgbaston Reservoir. Smart lock entry, private garden, free driveway parking. 10-min walk to City Hospital. Outside the Clean Air Zone." data-es="Casa tranquila cerca del embalse de Edgbaston. Cerradura inteligente, jardín privado, entrada privada gratuita. A 10 min a pie del City Hospital. Fuera de la CAZ.">Peaceful house near Edgbaston Reservoir. Smart lock entry, private garden, free driveway parking. 10-min walk to City Hospital. Outside the Clean Air Zone.</p>
+        <div class="prop-hl">
+          <span class="hl g t" data-en="Outside CAZ" data-es="Fuera CAZ">Outside CAZ</span>
+          <span class="hl t" data-en="Private garden" data-es="Jardín privado">Private garden</span>
+          <span class="hl t" data-en="Smart lock" data-es="Cerradura inteligente">Smart lock</span>
+          <span class="hl t" data-en="10 min City Hospital" data-es="10 min City Hospital">10 min City Hospital</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GUEST INFO -->
+<section class="info-sec">
+  <div style="text-align:center">
+    <span class="t" style="font-size:.61rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(210,190,150,.7);display:block;margin-bottom:.65rem" data-en="Everything You Need to Know" data-es="Todo lo que necesitas saber">Everything You Need to Know</span>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.4rem);color:#fff" class="t" data-en="Your stay, <em>made simple.</em>" data-es="Tu estancia, <em>sin complicaciones.</em>">Your stay, <em>made simple.</em></h2>
+  </div>
+  <div class="info-grid">
+    <div class="info-card">
+      <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      <h4 class="t" data-en="Easy Check-In" data-es="Check-in sencillo">Easy Check-In</h4>
+      <p class="t" data-en="Self check-in via smart lock or key. Full instructions and key collection details are sent in advance through your personal Guest Portal. Check-in from 15:00." data-es="Autofacturación mediante cerradura inteligente o llave. Las instrucciones completas se envían con antelación a través de tu Guest Portal personal. Check-in desde las 15:00.">Self check-in via smart lock or key. Full instructions and key collection details are sent in advance through your personal Guest Portal. Check-in from 15:00.</p>
+    </div>
+    <div class="info-card">
+      <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+      <h4 class="t" data-en="Your Guest Portal" data-es="Tu Guest Portal">Your Guest Portal</h4>
+      <p class="t" data-en="Every booking includes access to your personalised Guest Portal — apartment guide, appliance instructions, local recommendations, and direct contact with our team, available 24/7." data-es="Cada reserva incluye acceso a tu Guest Portal personalizado — guía del apartamento, instrucciones de electrodomésticos, recomendaciones locales y contacto directo con nuestro equipo, disponible 24/7.">Every booking includes access to your personalised Guest Portal — apartment guide, appliance instructions, local recommendations, and direct contact with our team, available 24/7.</p>
+    </div>
+    <div class="info-card">
+      <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <h4 class="t" data-en="Local Team, Always Available" data-es="Equipo local, siempre disponible">Local Team, Always Available</h4>
+      <p class="t" data-en="We are based locally and available throughout your stay. Need airport transfer recommendations, restaurant tips, or help with something in the property? Just ask — any time." data-es="Estamos en la zona y disponibles durante toda tu estancia. ¿Necesitas recomendaciones de traslados, restaurantes o ayuda con algo en la propiedad? Solo pregunta, a cualquier hora.">We are based locally and available throughout your stay. Need airport transfer recommendations, restaurant tips, or help with something in the property? Just ask — any time.</p>
+    </div>
+    <div class="info-card">
+      <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <h4 class="t" data-en="Check-Out &amp; Extensions" data-es="Check-out y extensiones">Check-Out &amp; Extensions</h4>
+      <p class="t" data-en="Standard check-out is 10:00. Late check-out may be available on request — fees apply. Weekly and monthly discounts are available for longer stays." data-es="El check-out estándar es a las 10:00. El check-out tardío puede estar disponible bajo petición. Descuentos semanales y mensuales disponibles para estancias largas.">Standard check-out is 10:00. Late check-out may be available on request — fees apply. Weekly and monthly discounts are available for longer stays.</p>
+    </div>
+    <div class="info-card">
+      <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      <h4 class="t" data-en="Work Stays &amp; Invoices" data-es="Estancias de trabajo y facturas">Work Stays &amp; Invoices</h4>
+      <p class="t" data-en="Staying for work? We can provide a formal invoice for expense purposes. Just let us know at the time of booking and we will arrange it." data-es="¿Te quedas por trabajo? Podemos emitir una factura formal para gastos. Indícanoslo en el momento de la reserva y lo gestionamos.">Staying for work? We can provide a formal invoice for expense purposes. Just let us know at the time of booking and we will arrange it.</p>
+    </div>
+    <div class="info-card">
+      <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.9a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <h4 class="t" data-en="Contact &amp; Support" data-es="Contacto y soporte">Contact &amp; Support</h4>
+      <p class="t" data-en="WhatsApp is the fastest way to reach us. You can also email lettings@hollgroup.co.uk or call +44 7799 777284. We respond quickly — always." data-es="WhatsApp es la forma más rápida de contactarnos. También puedes escribir a lettings@hollgroup.co.uk o llamar al +44 7799 777284. Respondemos rápido, siempre.">WhatsApp is the fastest way to reach us. You can also email lettings@hollgroup.co.uk or call +44 7799 777284. We respond quickly — always.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <h2 class="t" data-en="Have a question before<br><em>you book?</em>" data-es="¿Tienes alguna pregunta<br><em>antes de reservar?</em>">Have a question before<br><em>you book?</em></h2>
+  <p class="t" data-en="Message us on WhatsApp and we will get back to you straight away — whether it is about availability, parking, long stays, or anything else." data-es="Escríbenos por WhatsApp y te respondemos enseguida — sobre disponibilidad, parking, estancias largas o cualquier otra cosa.">Message us on WhatsApp and we will get back to you straight away — whether it is about availability, parking, long stays, or anything else.</p>
+  <a href="https://wa.me/447799777284?text=Hi%20Holl%20Living!%20I%27d%20like%20to%20enquire%20about%20a%20stay." target="_blank" class="btn-wa t" data-en="Chat on WhatsApp" data-es="Chatea por WhatsApp">Chat on WhatsApp</a>
+  <a href="/properties.html" class="btn-p t" data-en="View All Properties" data-es="Ver todas las propiedades">View All Properties</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">HOLL GROUP LTD<span>Holl Living — Thoughtful Stays</span></div>
+    <div class="ft-mid">
+      <div>lettings@hollgroup.co.uk &nbsp;·&nbsp; +44 7799 777284</div>
+      <div>ICO Registered &nbsp;·&nbsp; Property Redress Scheme Member</div>
+    </div>
+    <div class="ft-social">
+      <a href="https://www.facebook.com/profile.php?id=61572991770050" target="_blank"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      <a href="https://www.linkedin.com/company/holl-group-ltd/" target="_blank"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="https://www.instagram.com/holl_group/" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>© Holl Group Ltd, Company Registration No: 15323418 (Companies House, UK)</span>
+    <span><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms</a></span>
+  </div>
+</footer>
+
+<script>
+function setLang(lang){
+  document.querySelectorAll('.t[data-en][data-es]').forEach(function(el){
+    el.innerHTML=el.getAttribute('data-'+lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.classList.toggle('active',b.dataset.lang===lang);
+  });
+  document.documentElement.lang=lang;
+}
+</script>
+</body>
+</html>

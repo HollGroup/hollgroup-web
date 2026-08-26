@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Properties — Holl Group Ltd</title>
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dyojhaiig/image/upload/v1781020925/logo_cropped_pezlyx.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--cream:#fff;--cream2:#F5F5F3;--cream3:#EAEAE6;--navy:#1A3461;--navy-h:#142849;--navy-l:#EEF2FA;--dark:#0F172A;--mid:#475569;--muted:#94A3B8;--bd:rgba(15,23,42,.09);--wa:#25D366;--green:#2D6A56}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--dark);font-family:'Inter',-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* WHATSAPP */
+.wa{position:fixed;bottom:1.75rem;right:1.75rem;z-index:200;width:52px;height:52px;background:var(--wa);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;animation:wap 2.5s infinite;box-shadow:0 4px 18px rgba(37,211,102,.35)}
+.wa svg{width:26px;height:26px;fill:#fff}
+@keyframes wap{0%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}70%{box-shadow:0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.9rem 6%;background:rgba(255,255,255,.97);border-bottom:1px solid var(--bd);backdrop-filter:blur(12px)}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{color:var(--mid);text-decoration:none;font-size:.72rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--dark)}
+.nav-r{display:flex;align-items:center;gap:.9rem}
+.lang-toggle{display:flex;gap:2px;background:var(--cream3);border-radius:4px;padding:2px}
+.lang-btn{background:none;border:none;padding:.26rem .58rem;font-size:.66rem;font-weight:600;letter-spacing:.06em;cursor:pointer;border-radius:3px;color:var(--muted);transition:all .2s}
+.lang-btn.active{background:var(--cream);color:var(--dark);box-shadow:0 1px 3px rgba(20,18,20,.1)}
+.nav-cta{background:var(--navy);color:#fff;text-decoration:none;padding:.5rem 1.2rem;font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:4px;transition:background .2s}
+.nav-cta:hover{background:var(--navy-h)}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:.35rem;color:var(--dark)}
+.nav-hamburger svg{width:22px;height:22px;stroke:var(--dark);fill:none;stroke-width:2;stroke-linecap:round}
+
+/* HERO */
+.hero{background:var(--dark);padding:5rem 6% 4rem;text-align:center}
+.eyebrow{font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(210,190,150,.7);margin-bottom:1.25rem;display:block}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);line-height:1.07;color:#fff;margin-bottom:1rem}
+.hero h1 em{font-style:italic;color:rgba(210,190,150,.85)}
+.hero p{font-size:.95rem;color:rgba(255,255,255,.45);max-width:520px;margin:0 auto;line-height:1.9}
+
+/* SCROLL BANNER */
+.scroll-banner{background:var(--navy);padding:.95rem 0;overflow:hidden}
+.scroll-track{display:flex;width:max-content;animation:scrollbanner 38s linear infinite}
+.scroll-track:hover{animation-play-state:paused}
+@keyframes scrollbanner{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.sb-item{display:flex;align-items:center;gap:.65rem;padding:0 2.75rem;white-space:nowrap;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.sb-item strong{color:#fff}
+.sb-sep{color:rgba(210,190,150,.45);font-size:.85rem;flex-shrink:0}
+
+/* MAP */
+.map-sec{background:var(--cream2)}
+.map-header{padding:3.5rem 6% 1.5rem}
+.map-header h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);color:var(--dark);margin-bottom:.5rem}
+.map-header h2 em{font-style:italic}
+.map-header p{font-size:.88rem;color:var(--muted)}
+#propMap{height:400px;width:100%;max-width:1200px;margin:0 auto;border-radius:12px;position:relative;z-index:0;box-shadow:0 4px 20px rgba(15,23,42,0.08)}
+.map-legend{padding:1rem 6% 2.5rem;display:flex;gap:1.5rem;flex-wrap:wrap;max-width:1200px;margin:0 auto;}
+.leg-item{display:flex;align-items:center;gap:.5rem;font-size:.72rem;color:var(--mid)}
+.leg-dot{width:12px;height:12px;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.2);flex-shrink:0}
+
+/* CAT CARDS */
+.cat-row{display:grid;grid-template-columns:repeat(3,1fr);height:480px}
+.cat-card{position:relative;overflow:hidden}
+.cat-fill{width:100%;height:100%}
+.cat-bg{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.cat-card:hover .cat-bg{transform:scale(1.04)}
+.cat-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,16,30,.88) 0%,rgba(10,16,30,.25) 100%)}
+.cat-content{position:absolute;bottom:0;left:0;right:0;padding:2.25rem 2rem;z-index:2}
+.cat-tag{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(210,190,150,.8);margin-bottom:.55rem;display:block}
+.cat-content h2{font-family:'Playfair Display',serif;font-size:1.75rem;color:#fff;line-height:1.1;margin-bottom:.65rem}
+.cat-content h2 em{font-style:italic}
+.cat-content p{font-size:.8rem;color:rgba(255,255,255,.58);line-height:1.75}
+
+/* SECTIONS */
+.sec{padding:5rem 6%}
+.sec-alt{background:var(--cream2)}
+.sec-dark{background:var(--dark)}
+.sec-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--bd)}
+.sec-header span{font-size:.61rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:.5rem}
+.sec-header h2{font-family:'Playfair Display',serif;font-size:clamp(1.55rem,2.5vw,2rem);color:var(--dark);margin:0}
+.sec-header h2 em{font-style:italic}
+.sec-dark .sec-header{border-color:rgba(255,255,255,.07)}
+.sec-dark .sec-header span{color:rgba(210,190,150,.7)}
+.sec-dark .sec-header h2{color:#fff}
+.prop-count{font-size:.78rem;color:var(--muted)}
+
+/* GRIDS */
+.prop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.prop-grid.two{grid-template-columns:repeat(2,1fr)}
+
+/* CARDS */
+.prop-card{border:1px solid var(--bd);border-radius:10px;overflow:hidden;background:var(--cream);transition:box-shadow .25s,transform .25s}
+.prop-card:hover{box-shadow:0 8px 32px rgba(15,23,42,.1);transform:translateY(-2px)}
+.prop-img{aspect-ratio:4/3;overflow:hidden;position:relative;background:var(--cream3)}
+.prop-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.prop-card:hover .prop-img img{transform:scale(1.04)}
+.prop-img-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;color:var(--muted)}
+.prop-img-ph svg{width:30px;height:30px;opacity:.35}
+.prop-img-ph span{font-size:.63rem;letter-spacing:.07em;text-transform:uppercase}
+.prop-loc-tag{position:absolute;top:.85rem;left:.85rem;background:rgba(10,16,30,.75);backdrop-filter:blur(8px);color:#fff;font-size:.6rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .65rem;border-radius:3px}
+.prop-badge{position:absolute;top:.85rem;right:.85rem;font-size:.58rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .65rem;border-radius:3px}
+.badge-soon{background:rgba(201,164,85,.9);color:#0F172A}
+.badge-new{background:rgba(26,52,97,.9);color:#fff}
+.prop-body{padding:1.4rem}
+.prop-type{font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin-bottom:.35rem;display:block}
+.prop-body h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--dark);margin-bottom:.55rem;line-height:1.2}
+.prop-desc{font-size:.81rem;color:var(--mid);line-height:1.8;margin-bottom:1rem}
+.prop-hl{display:flex;flex-wrap:wrap;gap:.35rem}
+.hl{font-size:.65rem;font-weight:500;color:var(--mid);background:var(--cream2);border:1px solid var(--bd);padding:.2rem .6rem;border-radius:3px}
+.hl.accent{background:var(--navy-l);color:var(--navy);border-color:rgba(26,52,97,.15)}
+.prop-book{margin-top:1.1rem;padding-top:1rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap}
+.prop-book-note{font-size:.62rem;color:var(--muted);line-height:1.35;max-width:130px}
+.prop-book-btn{background:var(--navy);color:#fff;text-decoration:none;font-size:.66rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.55rem 1.1rem;border-radius:4px;white-space:nowrap;transition:background .2s;flex-shrink:0}
+.prop-book-btn:hover{background:var(--navy-h)}
+.combo-banner{grid-column:1/-1;display:flex;gap:1.75rem;align-items:flex-start;background:var(--navy);border-radius:10px;padding:2.25rem 2.5rem}
+.combo-icon{width:44px;height:44px;flex-shrink:0;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center}
+.combo-icon svg{width:22px;height:22px;stroke:rgba(210,190,150,.85)}
+.combo-tag{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(210,190,150,.8);display:block;margin-bottom:.5rem}
+.combo-text h4{font-family:'Playfair Display',serif;font-size:1.35rem;color:#fff;line-height:1.2;margin-bottom:.65rem}
+.combo-text h4 em{font-style:italic}
+.combo-text{flex:1;min-width:0}
+.combo-text p{font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:1.1rem;max-width:680px}
+.combo-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.75rem;margin-bottom:1.4rem}
+.combo-shot{position:relative;aspect-ratio:3/4;border-radius:6px;overflow:hidden;background:rgba(255,255,255,.06)}
+.combo-shot img{width:100%;height:100%;object-fit:cover;display:block}
+.combo-shot span{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(10,16,30,.85),transparent);color:#fff;font-size:.5rem;font-weight:600;letter-spacing:.03em;padding:.35rem .3rem .3rem;line-height:1.2;text-align:center}
+.combo-btn{background:rgba(210,190,150,.9);color:#0F172A;text-decoration:none;padding:.65rem 1.4rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;display:inline-block;border-radius:4px;transition:background .2s}
+.combo-btn:hover{background:#D2BE96}
+
+/* PARTNERSHIP */
+.partnership{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.pl h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);color:#fff;margin-bottom:1rem}
+.pl h2 em{font-style:italic}
+.pl p{font-size:.9rem;color:rgba(255,255,255,.48);line-height:1.9;margin-bottom:1.25rem}
+.ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.75rem}
+.ps{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:1.4rem}
+.ps-n{font-family:'Playfair Display',serif;font-size:2rem;color:#fff;line-height:1;margin-bottom:.3rem}
+.ps-l{font-size:.63rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.32)}
+.pr-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:2.25rem}
+.pr-card h4{font-family:'Playfair Display',serif;font-size:1.2rem;color:#fff;margin-bottom:1.1rem}
+.pr-items{display:flex;flex-direction:column;gap:.7rem}
+.pri{display:flex;align-items:flex-start;gap:.65rem;font-size:.81rem;color:rgba(255,255,255,.43)}
+.pri-dot{width:4px;height:4px;border-radius:50%;background:rgba(210,190,150,.6);flex-shrink:0;margin-top:.5rem}
+
+/* LIRAIN (si se usa en la página) */
+.lirain-sec{background:var(--cream2);border-top:1px solid var(--bd)}
+.lirain-inner{padding:5rem 6%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.lirain-left span{font-size:.61rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:.85rem}
+.lirain-left h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);color:var(--dark);margin-bottom:1.1rem;line-height:1.12}
+.lirain-left h2 em{font-style:italic}
+.lirain-left p{font-size:.9rem;color:var(--mid);line-height:1.9;margin-bottom:1.25rem}
+.lirain-card{background:var(--cream);border:1px solid var(--bd);border-radius:10px;padding:2.25rem;box-shadow:0 4px 20px rgba(15,23,42,.06)}
+.lirain-card-top{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid var(--bd)}
+.lirain-logo-box{width:48px;height:48px;background:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.lirain-logo-box svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:1.5}
+.lirain-card-name{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--dark)}
+.lirain-card-sub{font-size:.68rem;color:var(--muted);letter-spacing:.04em}
+.lirain-services{display:flex;flex-direction:column;gap:.7rem;margin-bottom:1.75rem}
+.ls{display:flex;align-items:flex-start;gap:.7rem;font-size:.83rem;color:var(--mid)}
+.ls-dot{width:5px;height:5px;border-radius:50%;background:var(--navy);flex-shrink:0;margin-top:.45rem;opacity:.5}
+.lirain-note{background:var(--navy-l);border:1px solid rgba(26,52,97,.12);border-radius:6px;padding:.85rem 1rem;font-size:.78rem;color:var(--navy);line-height:1.7}
+
+/* CTA */
+.cta-sec{text-align:center;padding:6rem 5%;background:var(--cream);border-top:1px solid var(--bd)}
+.cta-sec h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);color:var(--dark);margin:0 auto 1rem;max-width:520px}
+.cta-sec h2 em{font-style:italic}
+.cta-sec p{color:var(--mid);font-size:.9rem;margin:0 auto 2.25rem;max-width:400px;line-height:1.85}
+.btn-p{background:var(--navy);color:#fff;text-decoration:none;padding:.85rem 2rem;font-size:.77rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;display:inline-block;border-radius:4px;transition:background .2s;margin:.4rem}
+.btn-p:hover{background:var(--navy-h)}
+.btn-o{background:transparent;color:var(--mid);text-decoration:none;padding:.85rem 2rem;font-size:.77rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;display:inline-block;border-radius:4px;border:1px solid var(--bd);transition:all .2s;margin:.4rem}
+.btn-o:hover{color:var(--dark);border-color:rgba(15,23,42,.22)}
+
+/* FOOTER */
+footer{background:var(--dark);padding:2.5rem 6%}
+.ft-top{display:grid;grid-template-columns:auto 1fr auto;gap:4rem;align-items:start;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.ft-brand{font-family:'Playfair Display',serif;font-size:1rem;color:#fff}
+.ft-brand span{color:rgba(255,255,255,.25);font-family:'Inter',sans-serif;font-size:.68rem;font-weight:400;display:block;margin-top:.2rem}
+.ft-mid{font-size:.7rem;color:rgba(255,255,255,.26);line-height:2}
+.ft-social{display:flex;gap:.7rem}
+.ft-social a{width:32px;height:32px;border:1px solid rgba(255,255,255,.09);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:border-color .2s}
+.ft-social a:hover{border-color:rgba(255,255,255,.3)}
+.ft-social svg{width:14px;height:14px;fill:rgba(255,255,255,.35)}
+.ft-bottom{display:flex;justify-content:space-between;font-size:.68rem;color:rgba(255,255,255,.2)}
+.ft-bottom a{color:rgba(255,255,255,.2);text-decoration:none}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .prop-grid{grid-template-columns:repeat(2,1fr)!important}
+  .partnership{grid-template-columns:1fr;gap:3rem}
+  .cat-row{height:auto;grid-template-columns:1fr}
+  .cat-card{height:300px}
+  .lirain-inner{grid-template-columns:1fr;gap:3rem}
+}
+@media(max-width:768px){
+  .nav{padding:.8rem 5%;flex-wrap:wrap;gap:.5rem}
+  .nav-hamburger{display:block}
+  .nav-links{display:none;width:100%;flex-direction:column;gap:0;background:var(--cream);border-top:1px solid var(--bd);padding:.5rem 0;order:4}
+  .nav-links.open{display:flex}
+  .nav-links li{border-bottom:1px solid var(--bd)}
+  .nav-links a{display:block;padding:.85rem 1rem;font-size:.78rem}
+  .nav-r{gap:.6rem}
+  .nav-cta{padding:.45rem .9rem;font-size:.65rem}
+  .hero{padding:3rem 5% 2.5rem}
+  .sb-item{padding:0 1.5rem;font-size:.62rem}
+  .map-header{padding:2.5rem 5% 1rem}
+  #propMap{height:380px}
+  .map-legend{padding:.75rem 5% 1.75rem;gap:.85rem}
+  .cat-row{grid-template-columns:1fr;height:auto}
+  .cat-card{height:260px}
+  .sec{padding:3rem 5%}
+  .sec-header{flex-direction:column;align-items:flex-start;gap:.4rem}
+  .prop-count{font-size:.72rem}
+  .prop-grid{grid-template-columns:1fr!important}
+  .prop-grid.two{grid-template-columns:1fr!important}
+  .combo-banner{flex-direction:column;padding:1.75rem}
+  .combo-gallery{grid-template-columns:repeat(3,1fr);max-width:100%}
+  .partnership{grid-template-columns:1fr;gap:2.5rem}
+  .ps-grid{grid-template-columns:1fr 1fr}
+  .lirain-inner{grid-template-columns:1fr;gap:2.5rem;padding:3rem 5%}
+  .cta-sec{padding:4rem 5%}
+  .btn-p,.btn-o{display:block;text-align:center;margin:.35rem 0;width:100%;max-width:320px;margin-left:auto;margin-right:auto}
+  .ft-top{grid-template-columns:1fr;gap:1.5rem}
+  .ft-bottom{flex-direction:column;gap:.5rem;text-align:center}
+}
+@media(max-width:480px){
+  .nav-r .lang-toggle{display:flex}
+  .hero h1{font-size:2.2rem}
+  .cat-card{height:220px}
+  .cat-content h2{font-size:1.4rem}
+  .ps-grid{grid-template-columns:1fr}
+  .map-legend{flex-direction:column;gap:.6rem}
+}
+</style>
+</head>
+<body>
+
+<a class="wa" href="https://wa.me/447799777284" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav class="nav">
+  <a href="/"><img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1781020925/logo_cropped_pezlyx.png" alt="Holl Group" style="height:38px;width:auto;mix-blend-mode:multiply"></a>
+  <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <ul class="nav-links">
+    <li><a href="/" class="t" data-en="Home" data-es="Inicio">Home</a></li>
+    <li><a href="/#services" class="t" data-en="Services" data-es="Servicios">Services</a></li>
+    <li><a href="/#results" class="t" data-en="Results" data-es="Resultados">Results</a></li>
+    <li><a href="/properties.html" class="t" data-en="Properties" data-es="Propiedades">Properties</a></li>
+    <li><a href="/nottingham.html" class="t" data-en="Nottingham" data-es="Nottingham">Nottingham</a></li>
+    <li><a href="/about.html" class="t" data-en="About" data-es="Quiénes somos">About</a></li>
+    <li><a href="/" class="t" data-en="Contact" data-es="Contacto">Contact</a></li>
+  </ul>
+  <div class="nav-r">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+    </div>
+    <a href="/proposal.html" class="nav-cta t" data-en="Get a Proposal" data-es="Solicitar propuesta">Get a Proposal</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <span class="eyebrow t" data-en="Holl Living · Our Portfolio" data-es="Holl Living · Nuestro portfolio">Holl Living · Our Portfolio</span>
+  <h1 class="t" data-en="Thoughtful spaces.<br><em>Every kind of stay.</em>" data-es="Espacios con cuidado.<br><em>Para cada tipo de estancia.</em>">Thoughtful spaces.<br><em>Every kind of stay.</em></h1>
+  <p class="t" data-en="From city centre apartments to quiet professional retreats — every property professionally staged, dynamically priced, and personally managed." data-es="Desde apartamentos en el centro hasta tranquilos retiros profesionales — cada propiedad preparada profesionalmente, con precios dinámicos y gestión personal.">From city centre apartments to quiet professional retreats — every property professionally staged, dynamically priced, and personally managed.</p>
+</div>
+
+<div class="scroll-banner">
+  <div class="scroll-track">
+    <span class="sb-item"><strong>Birmingham</strong> &amp; Nottingham</span><span class="sb-sep">·</span>
+    <span class="sb-item">Experts in <strong>Spain &amp; UK</strong></span><span class="sb-sep">·</span>
+    <span class="sb-item"><strong>Short &amp; Mid-Term</strong> Lets</span><span class="sb-sep">·</span>
+    <span class="sb-item">Trusted by <strong>Landlords across the Midlands</strong></span><span class="sb-sep">·</span>
+    <span class="sb-item"><strong>Holl Living</strong> — Thoughtful Stays</span><span class="sb-sep">·</span>
+    <span class="sb-item">Gestión de Propiedades en <strong>España y Reino Unido</strong></span><span class="sb-sep">·</span>
+    <span class="sb-item"><strong>Expertos</strong> en Alquiler Turístico</span><span class="sb-sep">·</span>
+    <span class="sb-item">Expanding to <strong>New Markets</strong></span><span class="sb-sep">·</span>
+    <span class="sb-item"><strong>Birmingham</strong> &amp; Nottingham</span><span class="sb-sep">·</span>
+    <span class="sb-item">Experts in <strong>Spain &amp; UK</strong></span><span class="sb-sep">·</span>
+    <span class="sb-item"><strong>Short &amp; Mid-Term</strong> Lets</span><span class="sb-sep">·</span>
+    <span class="sb-item">Trusted by <strong>Landlords across the Midlands</strong></span><span class="sb-sep">·</span>
+    <span class="sb-item"><strong>Holl Living</strong> — Thoughtful Stays</span><span class="sb-sep">·</span>
+    <span class="sb-item">Gestión de Propiedades en <strong>España y Reino Unido</strong></span><span class="sb-sep">·</span>
+    <span class="sb-item"><strong>Expertos</strong> en Alquiler Turístico</span><span class="sb-sep">·</span>
+    <span class="sb-item">Expanding to <strong>New Markets</strong></span><span class="sb-sep">·</span>
+  </div>
+</div>
+
+<section class="map-sec">
+  <div class="map-header">
+    <span class="t" style="font-size:.61rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:.6rem" data-en="Where We Operate" data-es="Dónde operamos">Where We Operate</span>
+    <h2 class="t" data-en="Birmingham <em>&amp; beyond.</em>" data-es="Birmingham <em>y más allá.</em>">Birmingham <em>&amp; beyond.</em></h2>
+    <p class="t" data-en="Click any pin to see property details. Zoom in and out to explore." data-es="Haz clic en cualquier pin para ver los detalles. Zoom para explorar.">Click any pin to see property details. Zoom in and out to explore.</p>
+  </div>
+  
+  <div id="propMap" style="background:var(--cream3);display:flex;align-items:center;justify-content:center;">
+    <span style="color:var(--muted);font-size:0.8rem;letter-spacing:0.05em;text-transform:uppercase;font-weight:600;" class="t" data-en="Loading map..." data-es="Cargando mapa...">Loading map...</span>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
+  <script>
+    function initMap() {
+      document.getElementById('propMap').innerHTML = '';
+      
+      var map=L.map('propMap',{center:[52.475,-1.935],zoom:12,scrollWheelZoom:true});
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        attribution: '© OpenStreetMap contributors © CARTO',
+        maxZoom: 19
+      }).addTo(map);
+      
+      function pin(c,s){s=s||16;return L.divIcon({className:'',html:'<div style="width:'+s+'px;height:'+s+'px;border-radius:50%;background:'+c+';border:3px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.35);cursor:pointer;transition:transform .15s" onmouseover="this.style.transform=\'scale(1.3)\'" onmouseout="this.style.transform=\'scale(1)\'"></div>',iconSize:[s,s],iconAnchor:[s/2,s/2],popupAnchor:[0,-s/2-4]})}
+      function card(cat,title,loc,pc,tags,note,img){note=note||'';var imgHtml=img?'<div style="width:100%;height:110px;overflow:hidden;border-radius:8px 8px 0 0;margin:-1rem -1.1rem .75rem;"><img src="'+img+'" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.parentElement.style.display=\'none\'"></div>':'';return'<div style="padding:1rem 1.1rem;font-family:Inter,sans-serif;width:215px">'+imgHtml+'<span style="font-size:.53rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1A3461;display:block;margin-bottom:.25rem">'+cat+'</span><div style="font-family:Georgia,serif;font-size:.9rem;color:#0F172A;margin-bottom:.15rem;line-height:1.2">'+title+'</div><div style="font-size:.65rem;color:#94A3B8;margin-bottom:.6rem">'+loc+' · '+pc+'</div><div style="display:flex;flex-wrap:wrap;gap:.28rem">'+tags.map(function(t){return'<span style="font-size:.56rem;color:#475569;background:#F5F5F3;border:1px solid rgba(15,23,42,.09);padding:.1rem .42rem;border-radius:3px">'+t+'</span>'}).join('')+'</div>'+note+'</div>'}
+      
+      L.marker([52.472908,-1.885155],{icon:pin('#1A3461')}).addTo(map).bindPopup(card('City Apartment','Creative Quarter Apartment','Digbeth','B12 0AH',['Sleeps 8','5 beds','2 bathrooms','Free parking','Football table'],'','https://hollgroup.co.uk/assets/properties/digbeth-lombard-st/IbonDigbethC2CLRMain.jpg'));
+      L.marker([52.473747,-1.906879],{icon:pin('#1A3461')}).addTo(map).bindPopup(card('City Apartment','Oasis in the City','B1 City Centre','B1 1JY',['Sleeps 6','2 bedrooms','2 bathrooms','Private balcony','Peace Gardens views'],'','https://hollgroup.co.uk/assets/properties/skyline-179/IBONFlat1C2C-2.jpg'));
+      L.marker([52.474920,-1.905640],{icon:pin('#1A3461')}).addTo(map).bindPopup(card('City Apartment','Executive B1 Apartment','B1 City Centre','B1 1LA',['Sleeps 6','2 bedrooms','2 bathrooms','Private balcony','Free secure parking','Dedicated workspace'],'','https://hollgroup.co.uk/assets/properties/upper-marshall/IMG_4291.png'));
+      L.marker([52.480523,-1.973142],{icon:pin('#2D6A56')}).addTo(map).bindPopup(card('Professional Stay','Bearwood House','Bearwood, Smethwick','B67 5AF',['Sleeps 5','3 bedrooms','4 beds','Outside CAZ','Free parking','Near Midland Met Hospital'],'','https://hollgroup.co.uk/assets/properties/reginald-rd/IMG_4343_airbnb.jpg'));
+      L.marker([52.478607,-1.931621],{icon:pin('#2D6A56')}).addTo(map).bindPopup(card('Professional Stay','Lakeside Nook','Edgbaston (Shire Close)','B16 9EX',['Sleeps 4','King bed','Smart lock','Outside CAZ','Private garden','Walk to City Hospital'],'','https://hollgroup.co.uk/assets/properties/shire-close/Copia%20de%20DSC02959%20(1).jpg'));
+      L.marker([52.471500,-1.928000],{icon:pin('#2D6A56')}).addTo(map).bindPopup(card('Professional Stay','Edgbaston Apartment','Edgbaston','B16 8EX',['2 bedrooms','2 parking spaces','Near Brindleyplace','Near Utilita Arena'],'','https://hollgroup.co.uk/assets/properties/ashton-croft/IBONFlat2C2C-6.jpg'));
+      L.marker([52.463500,-1.998600],{icon:pin('#2D6A56')}).addTo(map).bindPopup(card('Professional Stay','Hagley Road — 2 Bed','Oldbury / Quinton','B68 0BS',['First floor','2 bedrooms','Professional stays'],'','https://hollgroup.co.uk/assets/properties/hagley-rd-first-floor/IbonOldburyDownstairs-8.jpg'));
+      L.marker([52.463050,-1.998050],{icon:pin('#2D6A56')}).addTo(map).bindPopup(card('Professional Stay','Hagley Road — 3 Bed','Oldbury / Quinton','B68 0BS',['Top floor','3 bedrooms','Groups & Teams'],'','https://hollgroup.co.uk/assets/properties/hagley-rd-top-floor/IbonOldburyUpstairsC-11.jpg'));
+      
+      var soon='<div style="margin-top:.6rem;padding-top:.6rem;border-top:1px solid rgba(15,23,42,.08)"><span style="font-size:.57rem;font-weight:700;color:#C9A455;letter-spacing:.08em;text-transform:uppercase">Coming Soon</span></div>';
+      L.marker([52.473665,-1.919930],{icon:pin('#C9A455',14)}).addTo(map).bindPopup(card('Coming Soon','Ladywood Middleway Gem','Ladywood','B16',['1 bedroom','Graded building','Arcade machine'],soon));
+      L.marker([52.488327,-1.787342],{icon:pin('#C9A455',14)}).addTo(map).bindPopup(card('Coming Soon','Cole Hall Lane House','Kitts Green','B33',['3 bedrooms','Sleeps 8+','Driveway 3 cars'],soon));
+      
+      var nLink='<div style="margin-top:.65rem;padding-top:.65rem;border-top:1px solid rgba(15,23,42,.08);text-align:center"><a href="https://slokapropertiesltd.zeevou.direct/properties" target="_blank" style="font-size:.68rem;color:#1A3461;font-weight:600;text-decoration:none">View Nottingham properties →</a></div>';
+      L.marker([52.9548,-1.1581],{icon:pin('#C9A455',18)}).addTo(map).bindPopup(card('Partnership · Sloka Properties','Nottingham Portfolio','Nottingham City Centre','NG1',['16 units','Fully managed','Short & mid-term'],nLink));
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      var mapContainer = document.getElementById("propMap");
+      if ("IntersectionObserver" in window) {
+        var mapObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              initMap();
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: "400px 0px" }); 
+        
+        mapObserver.observe(mapContainer);
+      } else {
+        initMap();
+      }
+    });
+  </script>
+  <div class="map-legend">
+    <div class="leg-item"><div class="leg-dot" style="background:#1A3461"></div><span class="t" data-en="City Apartments" data-es="Apartamentos en el centro">City Apartments</span></div>
+    <div class="leg-item"><div class="leg-dot" style="background:#2D6A56"></div><span class="t" data-en="Professional &amp; Contractor Stays" data-es="Estancias para profesionales">Professional &amp; Contractor Stays</span></div>
+    <div class="leg-item"><div class="leg-dot" style="background:#C9A455"></div><span class="t" data-en="Coming Soon &amp; Nottingham" data-es="Próximamente y Nottingham">Coming Soon &amp; Nottingham</span></div>
+  </div>
+</section>
+
+<div class="cat-row">
+  <div class="cat-card">
+    <img class="cat-bg" src="https://res.cloudinary.com/dyojhaiig/image/upload/v1781022688/IMG_4291_wjnabj.png" alt="City Apartments">
+    <div class="cat-overlay"></div>
+    <div class="cat-content">
+      <span class="cat-tag t" data-en="Birmingham City Centre" data-es="Centro de Birmingham">Birmingham City Centre</span>
+      <h2 class="t" data-en="City <em>Apartments</em>" data-es="Apartamentos <em>en el centro</em>">City <em>Apartments</em></h2>
+      <p class="t" data-en="Professionally staged apartments in the heart of Birmingham. Ideal for city breaks, leisure stays, and business trips." data-es="Apartamentos preparados profesionalmente en el corazón de Birmingham. Ideales para escapadas, ocio y viajes de negocios.">Professionally staged apartments in the heart of Birmingham. Ideal for city breaks, leisure stays, and business trips.</p>
+    </div>
+  </div>
+  <div class="cat-card">
+    <img class="cat-bg" src="https://hollgroup.co.uk/assets/properties/hagley-rd-top-floor/IbonOldburyUpstairsC-11.jpg" alt="Professional & Contractor Stays">
+    <div class="cat-overlay"></div>
+    <div class="cat-content">
+      <span class="cat-tag t" data-en="Birmingham · West &amp; Edgbaston" data-es="Birmingham · Oeste y Edgbaston">Birmingham · West &amp; Edgbaston</span>
+      <h2 class="t" data-en="Professional <em>&amp; Contractor Stays</em>" data-es="Estancias para <em>Profesionales</em>">Professional <em>&amp; Contractor Stays</em></h2>
+      <p class="t" data-en="Spacious homes for longer stays. No CAZ charges, free parking, everything a professional team needs." data-es="Casas amplias para estancias largas. Sin cargos por CAZ, parking gratuito, todo lo que un equipo profesional necesita.">Spacious homes for longer stays. No CAZ charges, free parking, everything a professional team needs.</p>
+    </div>
+  </div>
+  <a href="/nottingham.html" class="cat-card" style="display:block;text-decoration:none;cursor:pointer">
+    <img class="cat-bg" src="https://hollgroup.co.uk/assets/properties/andy-nottingham/AirBNBSloka-Down42A-3.jpg" alt="Nottingham Portfolio">
+    <div class="cat-overlay"></div>
+    <div class="cat-content">
+      <span class="cat-tag t" data-en="Nottingham · via Sloka Properties" data-es="Nottingham · via Sloka Properties">Nottingham · via Sloka Properties</span>
+      <h2 class="t" data-en="Expanding <em>to Nottingham</em>" data-es="Expandiéndonos <em>a Nottingham</em>">Expanding <em>to Nottingham</em></h2>
+      <p class="t" data-en="16 managed units through our trusted partnership with Sloka Properties. Same standards, new city." data-es="16 unidades gestionadas a través de nuestro partnership de confianza con Sloka Properties. Los mismos estándares, nueva ciudad.">16 managed units through our trusted partnership with Sloka Properties. Same standards, new city.</p>
+    </div>
+  </a>
+</div>
+
+<section class="sec" id="city">
+  <div class="sec-header">
+    <div>
+      <span class="t" data-en="Birmingham City Centre" data-es="Centro de Birmingham">Birmingham City Centre</span>
+      <h2 class="t" data-en="City <em>Apartments</em>" data-es="Apartamentos <em>en el centro</em>">City <em>Apartments</em></h2>
+    </div>
+    <span class="prop-count t" data-en="4 properties" data-es="4 propiedades">4 properties</span>
+  </div>
+  <div class="prop-grid" style="grid-template-columns:repeat(2,1fr)">
+
+    <div class="prop-card">
+      <div class="prop-img">
+        <img src="https://hollgroup.co.uk/assets/properties/digbeth-lombard-st/IbonDigbethC2CLRMain.jpg" alt="Digbeth apartment" onerror="this.style.display='none'">
+        <span class="prop-loc-tag">Digbeth · B12 0AH</span>
+      </div>
+      <div class="prop-body">
+        <span class="prop-type t" data-en="City Apartment" data-es="Apartamento en el centro">City Apartment</span>
+        <h3 class="t" data-en="Creative Quarter Apartment" data-es="Apartamento del Barrio Creativo">Creative Quarter Apartment</h3>
+        <p class="prop-desc t" data-en="Spacious 2-bed apartment in the heart of Digbeth — steps from the Custard Factory, indie bars, and Birmingham city centre. 5 proper beds, football table, and free secured parking." data-es="Amplio apartamento de 2 habitaciones en el corazón de Digbeth — a pasos de la Custard Factory, bares indie y el centro de Birmingham. 5 camas reales, futbolín y parking seguro gratuito.">Spacious 2-bed apartment in the heart of Digbeth — steps from the Custard Factory, indie bars, and Birmingham city centre. 5 proper beds, football table, and free secured parking.</p>
+        <div class="prop-hl">
+          <span class="hl accent t" data-en="Sleeps 8" data-es="Hasta 8 huéspedes">Sleeps 8</span>
+          <span class="hl t" data-en="5 beds (no sofa beds)" data-es="5 camas (sin sofá cama)">5 beds (no sofa beds)</span>
+          <span class="hl t" data-en="2 bathrooms" data-es="2 baños">2 bathrooms</span>
+          <span class="hl t" data-en="Free secured parking" data-es="Parking seguro gratuito">Free secured parking</span>
+          <span class="hl t" data-en="Football table" data-es="Futbolín">Football table</span>
+          <span class="hl t" data-en="Groups &amp; Families" data-es="Grupos y familias">Groups &amp; Families</span>
+        </div>
+        <div class="prop-book">
+          <span class="prop-book-note t" data-en="Best rates guaranteed when booking direct" data-es="Mejor precio garantizado reservando directo">Best rates guaranteed when booking direct</span>
+          <a href="https://booking.hollgroup.co.uk/" target="_blank" class="prop-book-btn t" data-en="Book Direct" data-es="Reservar directo">Book Direct</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-card">
+      <div class="prop-img">
+        <img src="https://hollgroup.co.uk/assets/properties/skyline-179/IBONFlat1C2C-2.jpg" alt="Oasis in the City balcony" onerror="this.style.display='none'">
+        <span class="prop-loc-tag">B1 · B1 1JY</span>
+      </div>
+      <div class="prop-body">
+        <span class="prop-type t" data-en="City Apartment" data-es="Apartamento en el centro">City Apartment</span>
+        <h3 class="t" data-en="Oasis in the City" data-es="Oasis en la Ciudad">Oasis in the City</h3>
+        <p class="prop-desc t" data-en="Directly opposite Peace Gardens, next to The Mailbox &amp; The Cube. Private balcony with city views, 2 full bathrooms, and premium Whirlpool kitchen. 10-min walk to New Street Station." data-es="Enfrente de los Peace Gardens, junto a The Mailbox y The Cube. Balcón privado con vistas a la ciudad, 2 baños completos y cocina Whirlpool premium. A 10 min a pie de New Street Station.">Directly opposite Peace Gardens, next to The Mailbox &amp; The Cube. Private balcony with city views, 2 full bathrooms, and premium Whirlpool kitchen. 10-min walk to New Street Station.</p>
+        <div class="prop-hl">
+          <span class="hl accent t" data-en="Sleeps 6" data-es="Hasta 6 huéspedes">Sleeps 6</span>
+          <span class="hl t" data-en="2 bedrooms + sofa bed" data-es="2 habitaciones + sofá cama">2 bedrooms + sofa bed</span>
+          <span class="hl t" data-en="2 bathrooms" data-es="2 baños">2 bathrooms</span>
+          <span class="hl t" data-en="Private balcony" data-es="Balcón privado">Private balcony</span>
+          <span class="hl t" data-en="Peace Gardens views" data-es="Vistas Peace Gardens">Peace Gardens views</span>
+          <span class="hl t" data-en="Lift access" data-es="Acceso por ascensor">Lift access</span>
+        </div>
+        <div class="prop-book">
+          <span class="prop-book-note t" data-en="Best rates guaranteed when booking direct" data-es="Mejor precio garantizado reservando directo">Best rates guaranteed when booking direct</span>
+          <a href="https://booking.hollgroup.co.uk/" target="_blank" class="prop-book-btn t" data-en="Book Direct" data-es="Reservar directo">Book Direct</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-card">
+      <div class="prop-img">
+        <img src="https://hollgroup.co.uk/assets/properties/upper-marshall/IMG_4291.png" alt="Executive B1 Apartment" onerror="this.style.display='none'">
+        <span class="prop-loc-tag">B1 · B1 1LA</span>
+      </div>
+      <div class="prop-body">
+        <span class="prop-type t" data-en="City Apartment" data-es="Apartamento en el centro">City Apartment</span>
+        <h3 class="t" data-en="Executive B1 Apartment" data-es="Apartamento Ejecutivo B1">Executive B1 Apartment</h3>
+        <p class="prop-desc t" data-en="Modern 2-bed apartment with free secure gated parking — one of the rarest perks in central Birmingham. Private balcony, dedicated workspace with monitor, and 2 full bathrooms. 2 min to The Mailbox." data-es="Moderno apartamento de 2 hab. con parking seguro gratuito — una de las mayores ventajas en el centro de Birmingham. Balcón privado, espacio de trabajo con monitor y 2 baños completos. A 2 min de The Mailbox.">Modern 2-bed apartment with free secure gated parking — one of the rarest perks in central Birmingham. Private balcony, dedicated workspace with monitor, and 2 full bathrooms. 2 min to The Mailbox.</p>
+        <div class="prop-hl">
+          <span class="hl accent t" data-en="Sleeps 6" data-es="Hasta 6 huéspedes">Sleeps 6</span>
+          <span class="hl t" data-en="King + double + 2 singles" data-es="King + doble + 2 individuales">King + double + 2 singles</span>
+          <span class="hl t" data-en="2 bathrooms" data-es="2 baños">2 bathrooms</span>
+          <span class="hl t" data-en="Free secure parking" data-es="Parking seguro gratuito">Free secure parking</span>
+          <span class="hl t" data-en="Private balcony" data-es="Balcón privado">Private balcony</span>
+          <span class="hl t" data-en="Dedicated workspace" data-es="Espacio de trabajo dedicado">Dedicated workspace</span>
+        </div>
+        <div class="prop-book">
+          <span class="prop-book-note t" data-en="Best rates guaranteed when booking direct" data-es="Mejor precio garantizado reservando directo">Best rates guaranteed when booking direct</span>
+          <a href="https://booking.hollgroup.co.uk/" target="_blank" class="prop-book-btn t" data-en="Book Direct" data-es="Reservar directo">Book Direct</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-card">
+      <div class="prop-img">
+        <img src="https://hollgroup.co.uk/assets/properties/ashton-croft/IBONFlat2C2C-6.jpg" alt="Edgbaston Apartment" onerror="this.style.display='none'">
+        <span class="prop-loc-tag">Edgbaston · B16 8EX</span>
+        <span class="prop-badge badge-new t" data-en="Versatile" data-es="Versátil">Versatile</span>
+      </div>
+      <div class="prop-body">
+        <span class="prop-type t" data-en="City Apartment" data-es="Apartamento en el centro">City Apartment</span>
+        <h3 class="t" data-en="Edgbaston Apartment" data-es="Apartamento Edgbaston">Edgbaston Apartment</h3>
+        <p class="prop-desc t" data-en="A genuinely versatile 2-bedroom apartment in Edgbaston, right by Birmingham's canal network and minutes from Brindleyplace and the city centre — as good for a leisure break as it is for a professional stay. That's why it's featured in both our City Apartments and Professional & Contractor Stays collections." data-es="Un apartamento de 2 habitaciones genuinamente versátil en Edgbaston, junto a la red de canales de Birmingham y a minutos de Brindleyplace y el centro — tan bueno para una escapada de ocio como para una estancia profesional. Por eso aparece tanto en City Apartments como en Professional & Contractor Stays.">A genuinely versatile 2-bedroom apartment in Edgbaston, right by Birmingham's canal network and minutes from Brindleyplace and the city centre — as good for a leisure break as it is for a professional stay. That's why it's featured in both our City Apartments and Professional & Contractor Stays collections.</p>
+        <div class="prop-hl">
+          <span class="hl accent t" data-en="2 bedrooms" data-es="2 habitaciones">2 bedrooms</span>
+          <span class="hl t" data-en="Canal-side location" data-es="Junto al canal">Canal-side location</span>
+          <span class="hl t" data-en="Near Brindleyplace" data-es="Cerca de Brindleyplace">Near Brindleyplace</span>
+          <span class="hl t" data-en="Near Utilita Arena" data-es="Cerca de Utilita Arena">Near Utilita Arena</span>
+          <span class="hl accent t" data-en="2 parking spaces" data-es="2 plazas de parking">2 parking spaces</span>
+        </div>
+        <div class="prop-book">
+          <span class="prop-book-note t" data-en="Best rates guaranteed when booking direct" data-es="Mejor precio garantizado reservando directo">Best rates guaranteed when booking direct</span>
+          <a href="https://booking.hollgroup.co.uk/" target="_blank" class="prop-book-btn t" data-en="Book Direct" data-es="Reservar directo">Book Direct</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="sec sec-alt" id="professional">
+  <div class="sec-header">
+    <div>
+      <span class="t" data-en="Birmingham · West &amp; Edgbaston" data-es="Birmingham · Oeste y Edgbaston">Birmingham · West &amp; Edgbaston</span>
+      <h2 class="t" data-en="Professional <em>&amp; Contractor Stays</em>" data-es="Estancias para <em>Profesionales</em>">Professional <em>&amp; Contractor Stays</em></h2>
+    </div>
+    <span class="prop-count t" data-en="5 properties" data-es="5 propiedades">5 properties</span>
+  </div>
+  <div class="prop-grid">
+
+    <div class="prop-card">
+      <div class="prop-img">
+        <img src="https://hollgroup.co.uk/assets/properties/reginald-rd/IMG_4343_airbnb.jpg" alt="Bearwood House" onerror="this.style.display='none'">
+        <span class="prop-loc-tag">Bearwood · B67 5AF</span>
+      </div>
+      <div class="prop-body">
+        <span class="prop-type t" data-en="Terraced House" data-es="Casa adosada">Terraced House</span>
+        <h3 class="t" data-en="Bearwood House" data-es="Bearwood House">Bearwood House</h3>
+        <p class="prop-desc t" data-en="Newly refurbished 3-bed house in quiet residential Bearwood. Outside the Clean Air Zone — no daily charge. Free street parking, close to Midland Met Hospital and Lightwoods Park." data-es="Casa de 3 habitaciones recién reformada en el tranquilo barrio residencial de Bearwood. Fuera de la Zona de Aire Limpio — sin cargo diario. Parking gratuito, cerca del Hospital Midland Met y Lightwoods Park.">Newly refurbished 3-bed house in quiet residential Bearwood. Outside the Clean Air Zone — no daily charge. Free street parking, close to Midland Met Hospital and Lightwoods Park.</p>
+        <div class="prop-hl">
+          <span class="hl accent t" data-en="Sleeps 5" data-es="Hasta 5 huéspedes">Sleeps 5</span>
+          <span class="hl t" data-en="3 beds" data-es="3 camas">3 beds</span>
+          <span class="hl accent t" data-en="Outside CAZ" data-es="Fuera de la CAZ">Outside CAZ</span>
+          <span class="hl t" data-en="Free parking" data-es="Parking gratuito">Free parking</span>
+          <span class="hl t" data-en="Near Midland Met Hospital" data-es="Cerca del Hospital Midland Met">Near Midland Met Hospital</span>
+        </div>
+        <div class="prop-book">
+          <span class="prop-book-note t" data-en="Best rates guaranteed when booking direct" data-es="Mejor precio garantizado reservando directo">Best rates guaranteed when booking direct</span>
+          <a href="https://booking.hollgroup.co.uk/" target="_blank" class="prop-book-btn t" data-en="Book Direct" data-es="Reservar directo">Book Direct</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-card">
+      <div class="prop-img">
+        <img src="https://hollgroup.co.uk/assets/properties/shire-close/Copia%20de%20DSC02959%20(1).jpg" alt="Lakeside Nook" onerror="this.style.display='none'">
+        <span class="prop-loc-tag">Edgbaston · B16 9EX</span>
+      </div>
+      <div class="prop-body">
+        <span class="prop-type t" data-en="Two-Storey House" data-es="Casa de dos plantas">Two-Storey House</span>
+        <h3 class="t" data-en="Lakeside Nook" data-es="Lakeside Nook">Lakeside Nook</h3>
+        <p class="prop-desc t" data-en="Peaceful two-storey house on a private cul-de-sac near Edgbaston Reservoir. Outside the CAZ, smart lock entry, private garden, 10-min walk to City Hospital." data-es="Tranquila casa de dos plantas en una calle privada cerca del embalse de Edgbaston. Fuera de la CAZ, acceso inteligente, jardín privado, a 10 min a pie del City Hospital.">Peaceful two-storey house on a private cul-de-sac near Edgbaston Reservoir. Outside the CAZ, smart lock entry, private garden, 10-min walk to City Hospital.</p>
+        <div class="prop-hl">
+          <span class="hl accent t" data-en="Sleeps 4" data-es="Hasta 4 huéspedes">Sleeps 4</span>
+          <span class="hl t" data-en="King bed" data-es="Cama king size">King bed</span>
+          <span class="hl accent t" data-en="Outside CAZ" data-es="Fuera de la CAZ">Outside CAZ</span>
+          <span class="hl t" data-en="Free private driveway" data-es="Entrada privada gratuita">Free private driveway</span>
+          <span class="hl t" data-en="Smart lock" data-es="Cerradura inteligente">Smart lock</span>
+          <span class="hl t" data-en="10 min City Hospital" data-es="10 min City Hospital">10 min City Hospital</span>
+        </div>
+        <div class="prop-book">
+          <span class="prop-book-note t" data-en="Best rates guaranteed when booking direct" data-es="Mejor precio garantizado reservando directo">Best rates guaranteed when booking direct</span>
+          <a href="https://booking.hollgroup.co.uk/" target="_blank" class="prop-book-btn t" data-en="Book Direct" data-es="Reservar directo">Book Direct</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-card">
+      <div class="prop-img">
+        <img src="https://hollgroup.co.uk/assets/properties/ashton-croft/IBONFlat2C2C-6.jpg" alt="Edgbaston Apartment" onerror="this.style.display='none'">
+        <span class="prop-loc-tag">Edgbaston · B16 8EX</span>
+        <span class="prop-badge badge-new t" data-en="Versatile" data-es="Versátil">Versatile</span>
+      </div>
+      <div class="prop-body">
+        <span class="prop-type t" data-en="Apartment" data-es="Apartamento">Apartment</span>
+        <h3 class="t" data-en="Edgbaston Apartment" data-es="Apartamento Edgbaston">Edgbaston Apartment</h3>
+        <p class="prop-desc t" data-en="Well-located 2-bedroom apartment in Edgbaston, minutes from Brindleyplace and Utilita Arena — equally suited to leisure stays and professionals on short or extended stays. Two private parking spaces, a rare perk for contractor teams. Also featured in our City Apartments collection." data-es="Apartamento de 2 habitaciones bien ubicado en Edgbaston, a minutos de Brindleyplace y Utilita Arena — igual de bueno para ocio que para profesionales en estancias cortas o largas. Dos plazas de parking privadas, algo poco habitual para equipos de contratistas. Disponible también en nuestra colección de City Apartments.">Well-located 2-bedroom apartment in Edgbaston, minutes from Brindleyplace and Utilita Arena — equally suited to leisure stays and professionals on short or extended stays. Two private parking spaces, a rare perk for contractor teams. Also featured in our City Apartments collection.</p>
+        <div class="prop-hl">
+          <span class="hl accent t" data-en="2 bedrooms" data-es="2 habitaciones">2 bedrooms</span>
+          <span class="hl t" data-en="1 bathroom" data-es="1 baño">1 bathroom</span>
+          <span class="hl accent t" data-en="2 parking spaces" data-es="2 plazas de parking">2 parking spaces</span>
+          <span class="hl t" data-en="Near Brindleyplace" data-es="Cerca de Brindleyplace">Near Brindleyplace</span>
+          <span class="hl t" data-en="Near Utilita Arena" data-es="Cerca de Utilita Arena">Near Utilita Arena</span>
+          <span class="hl t" data-en="Leisure &amp; Professional stays" data-es="Estancias de ocio y profesionales">Leisure &amp; Professional stays</span>
+        </div>
+        <div class="prop-book">
+          <span class="prop-book-note t" data-en="Best rates guaranteed when booking direct" data-es="Mejor precio garantizado reservando directo">Best rates guaranteed when booking direct</span>
+          <a href="https://booking.hollgroup.co.uk/" target="_blank" class="prop-book-btn t" data-en="Book Direct" data-es="Reservar directo">Book Direct</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-card">
+      <div class="prop-img">
+        <img src="https://hollgroup.co.uk/assets/properties/hagley-rd-first-floor/IbonOldburyDownstairs-8.jpg" alt="Hagley Road First Floor" onerror="this.style.display='none'">
+        <span class="prop-loc-tag">Hagley Rd W · B68 0BS</span>
+      </div>
+      <div class="prop-body">
+        <span class="prop-type t" data-en="Apartment" data-es="Apartamento">Apartment</span>
+        <h3 class="t" data-en="Hagley Road — 2 Bed" data-es="Hagley Road — 2 Habitaciones">Hagley Road — 2 Bed</h3>
+        <p class="prop-desc t" data-en="A 2-bedroom first-floor apartment on Hagley Road West. Ideal for professionals accessing Birmingham and the West Midlands, outside the CAZ." data-es="Apartamento de 2 habitaciones en la primera planta de Hagley Road West. Ideal para profesionales con acceso a Birmingham y West Midlands, fuera de la CAZ.">A 2-bedroom first-floor apartment on Hagley Road West. Ideal for professionals accessing Birmingham and the West Midlands, outside the CAZ.</p>
+        <div class="prop-hl">
+          <span class="hl accent t" data-en="2 bedrooms" data-es="2 habitaciones">2 bedrooms</span>
+          <span class="hl t" data-en="Hagley Rd West" data-es="Hagley Rd West">Hagley Rd West</span>
+          <span class="hl t" data-en="Professional stays" data-es="Estancias profesionales">Professional stays</span>
+        </div>
+        <div class="prop-book">
+          <span class="prop-book-note t" data-en="Best rates guaranteed when booking direct" data-es="Mejor precio garantizado reservando directo">Best rates guaranteed when booking direct</span>
+          <a href="https://booking.hollgroup.co.uk/" target="_blank" class="prop-book-btn t" data-en="Book Direct" data-es="Reservar directo">Book Direct</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-card">
+      <div class="prop-img">
+        <img src="https://hollgroup.co.uk/assets/properties/hagley-rd-top-floor/IbonOldburyUpstairsC-11.jpg" alt="Hagley Road Top Floor" onerror="this.style.display='none'">
+        <span class="prop-loc-tag">Hagley Rd W · B68 0BS</span>
+      </div>
+      <div class="prop-body">
+        <span class="prop-type t" data-en="Apartment" data-es="Apartamento">Apartment</span>
+        <h3 class="t" data-en="Hagley Road — 3 Bed" data-es="Hagley Road — 3 Habitaciones">Hagley Road — 3 Bed</h3>
+        <p class="prop-desc t" data-en="A 3-bedroom top-floor apartment directly above the 2-bed unit. Perfect for larger groups or contractor teams needing two separate units in the same building." data-es="Apartamento de 3 habitaciones en la última planta, directamente encima del de 2 habitaciones. Perfecto para grupos más grandes o equipos de contratistas que necesitan dos unidades en el mismo edificio.">A 3-bedroom top-floor apartment directly above the 2-bed unit. Perfect for larger groups or contractor teams needing two separate units in the same building.</p>
+        <div class="prop-hl">
+          <span class="hl accent t" data-en="3 bedrooms" data-es="3 habitaciones">3 bedrooms</span>
+          <span class="hl t" data-en="Hagley Rd West" data-es="Hagley Rd West">Hagley Rd West</span>
+          <span class="hl t" data-en="Groups &amp; Teams" data-es="Grupos y equipos">Groups &amp; Teams</span>
+        </div>
+        <div class="prop-book">
+          <span class="prop-book-note t" data-en="Best rates guaranteed when booking direct" data-es="Mejor precio garantizado reservando directo">Best rates guaranteed when booking direct</span>
+          <a href="https://booking.hollgroup.co.uk/" target="_blank" class="prop-book-btn t" data-en="Book Direct" data-es="Reservar directo">Book Direct</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="combo-banner">
+      <div class="combo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V9l7-6 7 6v12M9 21v-6h6v6M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>
+      </div>
+      <div class="combo-text">
+        <span class="combo-tag t" data-en="Book Both Floors" data-es="Reserva las dos plantas">Book Both Floors</span>
+        <h4 class="t" data-en="The Whole Building, <em>Just for You</em>" data-es="El Edificio Entero, <em>Solo para Ti</em>">The Whole Building, <em>Just for You</em></h4>
+        <p class="t" data-en="Book the 2-bed and 3-bed Hagley Road apartments together and take over the entire building — sleeping up to 14 across two full floors. Two kitchens, two lounges, two bathrooms, and privacy split naturally between floors. Perfect for large teams or groups who want space without sharing." data-es="Reserva juntos el apartamento de 2 y el de 3 habitaciones en Hagley Road y quédate con el edificio entero — hasta 14 personas repartidas en dos plantas completas. Dos cocinas, dos salones, dos baños, e intimidad repartida de forma natural entre plantas. Ideal para equipos o grupos grandes que quieren espacio sin compartir.">Book the 2-bed and 3-bed Hagley Road apartments together and take over the entire building — sleeping up to 14 across two full floors. Two kitchens, two lounges, two bathrooms, and privacy split naturally between floors. Perfect for large teams or groups who want space without sharing.</p>
+        <div class="prop-hl" style="margin-bottom:1.4rem">
+          <span class="hl accent t" data-en="Sleeps up to 14" data-es="Hasta 14 huéspedes">Sleeps up to 14</span>
+          <span class="hl t" data-en="Whole building exclusivity" data-es="Edificio en exclusiva">Whole building exclusivity</span>
+          <span class="hl t" data-en="2 kitchens &amp; 2 lounges" data-es="2 cocinas y 2 salones">2 kitchens &amp; 2 lounges</span>
+          <span class="hl t" data-en="Privacy across 2 floors" data-es="Intimidad en 2 plantas">Privacy across 2 floors</span>
+        </div>
+        <div class="combo-gallery">
+          <div class="combo-shot">
+            <img src="https://hollgroup.co.uk/assets/properties/hagley-rd-first-floor/IbonOldburyDownstairs-2.jpg" alt="First floor bedroom 1" onerror="this.parentElement.style.display='none'">
+            <span class="t" data-en="Floor 1 · Bed 1" data-es="Planta 1 · Hab. 1">Floor 1 · Bed 1</span>
+          </div>
+          <div class="combo-shot">
+            <img src="https://hollgroup.co.uk/assets/properties/hagley-rd-first-floor/IbonOldburyDownstairs-5.jpg" alt="First floor bedroom 2" onerror="this.parentElement.style.display='none'">
+            <span class="t" data-en="Floor 1 · Bed 2" data-es="Planta 1 · Hab. 2">Floor 1 · Bed 2</span>
+          </div>
+          <div class="combo-shot">
+            <img src="https://hollgroup.co.uk/assets/properties/hagley-rd-first-floor/IbonOldburyDownstairs-8.jpg" alt="First floor bedroom 3" onerror="this.parentElement.style.display='none'">
+            <span class="t" data-en="Floor 1 · Bed 3" data-es="Planta 1 · Hab. 3">Floor 1 · Bed 3</span>
+          </div>
+          <div class="combo-shot">
+            <img src="https://hollgroup.co.uk/assets/properties/hagley-rd-top-floor/IbonOldburyUpstairsC-3.jpg" alt="Top floor bedroom 1" onerror="this.parentElement.style.display='none'">
+            <span class="t" data-en="Floor 2 · Bed 1" data-es="Planta 2 · Hab. 1">Floor 2 · Bed 1</span>
+          </div>
+          <div class="combo-shot">
+            <img src="https://hollgroup.co.uk/assets/properties/hagley-rd-top-floor/IbonOldburyUpstairsC-8.jpg" alt="Top floor bedroom 2" onerror="this.parentElement.style.display='none'">
+            <span class="t" data-en="Floor 2 · Bed 2" data-es="Planta 2 · Hab. 2">Floor 2 · Bed 2</span>
+          </div>
+          <div class="combo-shot">
+            <img src="https://hollgroup.co.uk/assets/properties/hagley-rd-top-floor/IbonOldburyUpstairsA-15.jpg" alt="Top floor sofa bed" onerror="this.parentElement.style.display='none'">
+            <span class="t" data-en="Floor 2 · Sofa Bed" data-es="Planta 2 · Sofá Cama">Floor 2 · Sofa Bed</span>
+          </div>
+        </div>
+        <a href="https://booking.hollgroup.co.uk/" target="_blank" class="combo-btn t" data-en="Book the Combined Stay" data-es="Reservar la estancia combinada">Book the Combined Stay</a>
+      </div>
+    </div>
+
+  </div></section>
+
+<section class="sec" id="pipeline">
+  <div class="sec-header">
+    <div>
+      <span class="t" data-en="New to the Portfolio" data-es="Nuevas en el portfolio">New to the Portfolio</span>
+      <h2 class="t" data-en="Coming <em>Soon</em>" data-es="<em>Próximamente</em>">Coming <em>Soon</em></h2>
+    </div>
+    <span class="prop-count t" data-en="2 properties onboarding" data-es="2 propiedades en proceso">2 properties onboarding</span>
+  </div>
+  <div class="prop-grid two">
+
+    <div class="prop-card">
+      <div class="prop-img">
+        <div class="prop-img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg><span class="t" data-en="Coming soon" data-es="Próximamente">Coming soon</span></div>
+        <span class="prop-loc-tag">Ladywood · B16</span>
+        <span class="prop-badge badge-soon t" data-en="Coming Soon" data-es="Próximamente">Coming Soon</span>
+      </div>
+      <div class="prop-body">
+        <span class="prop-type t" data-en="Graded Building Apartment" data-es="Apartamento en edificio protegido">Graded Building Apartment</span>
+        <h3 class="t" data-en="Ladywood Middleway Gem" data-es="La Joya de Ladywood Middleway">Ladywood Middleway Gem</h3>
+        <p class="prop-desc t" data-en="A super high-spec 1-bedroom apartment at 231 Ladywood Middleway, inside a listed graded building — steps from Broad Street and Broadway Plaza's cinema, bowling and restaurants. Finished with premium materials throughout and a standout feature: a full-size arcade machine." data-es="Apartamento de 1 habitación de altísimo nivel en 231 Ladywood Middleway, dentro de un edificio catalogado (graded building) — a pasos de Broad Street y Broadway Plaza, con cine, bolera y restaurantes. Acabado con materiales premium y una máquina arcade como pieza destacada.">A super high-spec 1-bedroom apartment at 231 Ladywood Middleway, inside a listed graded building — steps from Broad Street and Broadway Plaza's cinema, bowling and restaurants. Finished with premium materials throughout and a standout feature: a full-size arcade machine.</p>
+        <div class="prop-hl">
+          <span class="hl accent t" data-en="1 bedroom" data-es="1 habitación">1 bedroom</span>
+          <span class="hl t" data-en="Graded building" data-es="Edificio catalogado">Graded building</span>
+          <span class="hl t" data-en="Premium finish" data-es="Acabado premium">Premium finish</span>
+          <span class="hl t" data-en="Arcade machine" data-es="Máquina arcade">Arcade machine</span>
+          <span class="hl t" data-en="Near Broad St &amp; Broadway Plaza" data-es="Cerca de Broad St y Broadway Plaza">Near Broad St &amp; Broadway Plaza</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-card">
+      <div class="prop-img">
+        <div class="prop-img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg><span class="t" data-en="Coming soon" data-es="Próximamente">Coming soon</span></div>
+        <span class="prop-loc-tag">Kitts Green · B33</span>
+        <span class="prop-badge badge-soon t" data-en="Coming Soon" data-es="Próximamente">Coming Soon</span>
+      </div>
+      <div class="prop-body">
+        <span class="prop-type t" data-en="Three-Storey Terraced House" data-es="Casa adosada de tres plantas">Three-Storey Terraced House</span>
+        <h3 class="t" data-en="Cole Hall Lane House" data-es="Cole Hall Lane House">Cole Hall Lane House</h3>
+        <p class="prop-desc t" data-en="A spacious 3-bed, 3-storey mid-terraced house on Cole Hall Lane, close to Solihull. Driveway for up to 3 cars, large garden with outbuilding storage, and gigabit-capable broadband. Under 5 minutes from two train stations and 10 minutes from Birmingham Airport." data-es="Amplia casa adosada de 3 habitaciones y 3 plantas en Cole Hall Lane, cerca de Solihull. Entrada para hasta 3 coches, jardín amplio con edificio anexo de almacenaje, e internet de banda ancha ultrarrápida. A menos de 5 min de dos estaciones de tren y 10 min del Aeropuerto de Birmingham.">A spacious 3-bed, 3-storey mid-terraced house on Cole Hall Lane, close to Solihull. Driveway for up to 3 cars, large garden with outbuilding storage, and gigabit-capable broadband. Under 5 minutes from two train stations and 10 minutes from Birmingham Airport.</p>
+        <div class="prop-hl">
+          <span class="hl accent t" data-en="Sleeps 8+" data-es="Hasta 8+ huéspedes">Sleeps 8+</span>
+          <span class="hl t" data-en="3 bedrooms" data-es="3 habitaciones">3 bedrooms</span>
+          <span class="hl t" data-en="Driveway (3 cars)" data-es="Entrada para 3 coches">Driveway (3 cars)</span>
+          <span class="hl t" data-en="Large garden + outbuilding" data-es="Jardín amplio + anexo">Large garden + outbuilding</span>
+          <span class="hl t" data-en="10 min Birmingham Airport" data-es="10 min Aeropuerto Birmingham">10 min Birmingham Airport</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="sec sec-dark" id="nottingham">
+  <div class="partnership">
+    <div class="pl">
+      <span class="t" style="font-size:.61rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(210,190,150,.7);display:block;margin-bottom:.85rem" data-en="Partnership · Sloka Properties" data-es="Partnership · Sloka Properties">Partnership · Sloka Properties</span>
+      <h2 class="t" data-en="Now in <em>Nottingham.</em>" data-es="Ahora también <em>en Nottingham.</em>">Now in <em>Nottingham.</em></h2>
+      <p class="t" data-en="Through our trusted partnership with Sloka Properties, Holl Group's management standards now extend to Nottingham — 16 units, the same approach, the same quality." data-es="A través de nuestro partnership de confianza con Sloka Properties, los estándares de gestión de Holl Group se extienden ahora a Nottingham — 16 unidades, el mismo enfoque, la misma calidad.">Through our trusted partnership with Sloka Properties, Holl Group's management standards now extend to Nottingham — 16 units, the same approach, the same quality.</p>
+      <p class="t" data-en="This is how we grow: not by cutting corners at scale, but by working with the right people in the right markets." data-es="Así es como crecemos: no recortando en calidad, sino trabajando con las personas adecuadas en los mercados adecuados.">This is how we grow: not by cutting corners at scale, but by working with the right people in the right markets.</p>
+      <div class="ps-grid">
+        <div class="ps"><div class="ps-n">16</div><div class="ps-l t" data-en="Units in Nottingham" data-es="Unidades en Nottingham">Units in Nottingham</div></div>
+        <div class="ps"><div class="ps-n">2</div><div class="ps-l t" data-en="Cities, one standard" data-es="Ciudades, un estándar">Cities, one standard</div></div>
+      </div>
+    </div>
+    <div class="pr-card">
+      <h4 class="t" data-en="What the partnership covers" data-es="Qué cubre el partnership">What the partnership covers</h4>
+      <div class="pr-items">
+        <div class="pri"><span class="pri-dot"></span><span class="t" data-en="Full short-stay management across all 16 Nottingham units" data-es="Gestión completa de alquiler turístico de las 16 unidades en Nottingham">Full short-stay management across all 16 Nottingham units</span></div>
+        <div class="pri"><span class="pri-dot"></span><span class="t" data-en="Dynamic pricing and multi-channel distribution" data-es="Precios dinámicos y distribución multicanal">Dynamic pricing and multi-channel distribution</span></div>
+        <div class="pri"><span class="pri-dot"></span><span class="t" data-en="Professional staging and guest experience" data-es="Staging profesional y experiencia de huéspedes">Professional staging and guest experience</span></div>
+        <div class="pri"><span class="pri-dot"></span><span class="t" data-en="Owner portal and monthly performance reporting" data-es="Portal del propietario e informes mensuales de rendimiento">Owner portal and monthly performance reporting</span></div>
+        <div class="pri"><span class="pri-dot"></span><span class="t" data-en="Local maintenance and housekeeping coordination" data-es="Coordinación local de mantenimiento y limpieza">Local maintenance and housekeeping coordination</span></div>
+      </div>
+      <div style="margin-top:1.5rem">
+        <a href="/nottingham.html" class="btn-p t" style="font-size:.72rem;padding:.65rem 1.4rem" data-en="View Nottingham Properties →" data-es="Ver propiedades en Nottingham →">View Nottingham Properties →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-sec">
+  <span class="t" style="font-size:.61rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:.75rem" data-en="For Landlords" data-es="Para propietarios">For Landlords</span>
+  <h2 class="t" data-en="Want your property<br><em>in our portfolio?</em>" data-es="¿Quieres tu propiedad<br><em>en nuestro portfolio?</em>">Want your property<br><em>in our portfolio?</em></h2>
+  <p class="t" data-en="We only take on properties we genuinely believe we can perform for. Request a free proposal and we will tell you honestly whether we are the right fit." data-es="Solo aceptamos propiedades en las que genuinamente creemos que podemos obtener resultados. Solicita una propuesta gratuita y te diremos honestamente si somos la opción adecuada.">We only take on properties we genuinely believe we can perform for. Request a free proposal and we will tell you honestly whether we are the right fit.</p>
+  <div>
+    <a href="/proposal.html" class="btn-p t" data-en="Request a Free Proposal" data-es="Solicitar propuesta gratuita">Request a Free Proposal</a>
+    <a href="/about.html" class="btn-o t" data-en="Learn About Us" data-es="Quiénes somos">Learn About Us</a>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">HOLL GROUP LTD<span>Holl Living — Thoughtful Stays</span></div>
+    <div class="ft-mid">
+      <div>lettings@hollgroup.co.uk &nbsp;·&nbsp; +44 7799 777284</div>
+      <div>ICO Registered &nbsp;·&nbsp; Property Redress Scheme Member</div>
+    </div>
+    <div class="ft-social">
+      <a href="https://www.facebook.com/profile.php?id=61572991770050" target="_blank"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      <a href="https://www.linkedin.com/company/holl-group-ltd/" target="_blank"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="https://www.instagram.com/holl_group/" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>© Holl Group Ltd, Company Registration No: 15323418 (Companies House, UK)</span>
+    <span><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms</a></span>
+  </div>
+</footer>
+
+<script>
+function setLang(lang){
+  document.querySelectorAll('.t[data-en][data-es]').forEach(function(el){
+    el.innerHTML=el.getAttribute('data-'+lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.classList.toggle('active',b.dataset.lang===lang);
+  });
+  document.documentElement.lang=lang;
+}
+</script>
+</body>
+</html>

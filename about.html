@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Holl Group Ltd</title>
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dyojhaiig/image/upload/v1781020925/logo_cropped_pezlyx.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#FFFFFF;--cream2:#F5F5F3;--cream3:#EAEAE6;
+  --navy:#1A3461;--navy-h:#142849;--navy-l:#EEF2FA;
+  --dark:#0F172A;--mid:#475569;--muted:#94A3B8;
+  --bd:rgba(15,23,42,0.09);--wa:#25D366;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--dark);font-family:'Inter',-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* WA */
+.wa{position:fixed;bottom:1.75rem;right:1.75rem;z-index:200;width:52px;height:52px;background:var(--wa);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;animation:wap 2.5s infinite;box-shadow:0 4px 18px rgba(37,211,102,.35)}
+.wa svg{width:26px;height:26px;fill:#fff}
+@keyframes wap{0%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}70%{box-shadow:0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.9rem 6%;background:rgba(255,255,255,.97);border-bottom:1px solid var(--bd);backdrop-filter:blur(12px)}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{color:var(--mid);text-decoration:none;font-size:.72rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--dark)}
+.nav-cta{background:var(--navy);color:#fff;text-decoration:none;padding:.5rem 1.2rem;font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:4px;transition:background .2s}
+.nav-cta:hover{background:var(--navy-h)}
+.nav-r{display:flex;align-items:center;gap:.9rem}
+.lang-toggle{display:flex;gap:2px;background:var(--cream3);border-radius:4px;padding:2px}
+.lang-btn{background:none;border:none;padding:.26rem .58rem;font-size:.66rem;font-weight:600;letter-spacing:.06em;cursor:pointer;border-radius:3px;color:var(--muted);transition:all .2s}
+.lang-btn.active{background:var(--cream);color:var(--dark);box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.4rem}
+.hamburger span{width:22px;height:2px;background:var(--dark);display:block}
+.mobile-menu{display:none;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;z-index:150;padding:5rem 6% 2rem;gap:1.5rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--dark);text-decoration:none;font-size:1.1rem;font-weight:500;padding-bottom:1rem;border-bottom:1px solid var(--bd)}
+.mobile-menu .close-x{position:absolute;top:1.1rem;right:5%;background:none;border:none;font-size:1.6rem;color:var(--dark);cursor:pointer}
+
+/* HERO */
+.hero{background:var(--dark);padding:5rem 6%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;min-height:70vh}
+.hero-text{display:flex;flex-direction:column;justify-content:center}
+.eyebrow{font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(210,190,150,.7);margin-bottom:1.25rem;display:block}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);line-height:1.07;color:#fff;margin-bottom:1.5rem;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:rgba(210,190,150,.85)}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.5);line-height:1.9;max-width:480px}
+.hero-photo{position:relative;max-width:360px;margin-left:auto}
+.photo-frame{width:100%;aspect-ratio:3/4;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:4px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.photo-frame img{width:100%;height:100%;object-fit:cover;object-position:85% 0%;display:block}
+.photo-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;padding:2rem;text-align:center}
+.photo-placeholder svg{width:48px;height:48px;color:rgba(255,255,255,.15)}
+.photo-placeholder span{font-size:.72rem;color:rgba(255,255,255,.2);letter-spacing:.06em;text-transform:uppercase;line-height:1.7}
+.name-tag{position:absolute;bottom:-1px;left:0;right:0;background:var(--navy);padding:1.25rem 1.5rem}
+.name-tag h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:#fff;margin-bottom:.15rem}
+.name-tag span{font-size:.72rem;color:rgba(255,255,255,.45);letter-spacing:.06em;text-transform:uppercase}
+.name-tag .li-link{display:inline-flex;align-items:center;gap:.35rem;margin-top:.5rem;font-size:.7rem;color:rgba(210,190,150,.85);text-decoration:none;letter-spacing:.04em;text-transform:none}
+.name-tag .li-link:hover{color:#fff}
+.name-tag .li-link svg{width:13px;height:13px;fill:currentColor}
+
+/* SECTIONS */
+.sec{padding:5rem 6%}
+.sec-alt{background:var(--cream2)}
+.sec-dark{background:var(--dark)}
+.sec-navy{background:var(--navy)}
+.sec-tag{font-size:.61rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--navy);margin-bottom:.75rem;display:block}
+.sec-dark .sec-tag,.sec-navy .sec-tag{color:rgba(210,190,150,.7)}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.12;color:var(--dark);margin-bottom:1.1rem}
+h2 em{font-style:italic}
+.sec-dark h2,.sec-navy h2{color:#fff}
+
+/* STORY */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.story-text p{font-size:.95rem;color:var(--mid);line-height:1.95;margin-bottom:1.25rem}
+.story-text p:last-child{margin-bottom:0}
+.story-text strong{color:var(--dark);font-weight:600}
+.story-aside{display:flex;flex-direction:column;gap:1.25rem}
+.stat-card{background:var(--cream2);border:1px solid var(--bd);border-radius:8px;padding:1.75rem}
+.stat-card-n{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--navy);line-height:1;margin-bottom:.35rem}
+.stat-card-l{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.stat-card-s{font-size:.8rem;color:var(--mid);margin-top:.4rem;line-height:1.6}
+
+/* QUOTE */
+.quote-sec{padding:5rem 6%;text-align:center}
+blockquote{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.8vw,2rem);line-height:1.5;color:#fff;font-style:italic;max-width:780px;margin:0 auto 1.5rem;font-weight:400}
+blockquote::before{content:'\201C';font-size:4rem;line-height:0;vertical-align:-.5em;color:rgba(210,190,150,.3);margin-right:.15em}
+cite{font-size:.78rem;color:rgba(255,255,255,.4);letter-spacing:.08em;text-transform:uppercase;font-style:normal}
+
+/* VALUES */
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
+.val{padding:2rem;border:1px solid var(--bd);border-radius:8px;background:var(--cream)}
+.val-num{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--cream3);line-height:1;margin-bottom:1rem}
+.val h4{font-size:.9rem;font-weight:600;color:var(--dark);margin-bottom:.5rem}
+.val p{font-size:.81rem;color:var(--mid);line-height:1.85}
+
+/* APPROACH */
+.approach-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.approach-items{display:flex;flex-direction:column;gap:0}
+.ap-item{display:grid;grid-template-columns:2.5rem 1fr;gap:1rem;padding:1.5rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.ap-item:first-child{border-top:1px solid rgba(255,255,255,.07)}
+.ap-n{font-family:'Playfair Display',serif;font-size:1.4rem;color:rgba(210,190,150,.3);line-height:1}
+.ap-item h4{font-size:.88rem;font-weight:600;color:#fff;margin-bottom:.3rem}
+.ap-item p{font-size:.81rem;color:rgba(255,255,255,.42);line-height:1.8}
+.approach-right p{font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.9;margin-bottom:1.25rem}
+
+/* PHOTO GRID */
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
+.photo-slot{aspect-ratio:4/3;background:var(--cream3);border-radius:8px;overflow:hidden;border:1px solid var(--bd)}
+.photo-slot img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-slot-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+
+/* CTA */
+.cta-sec{text-align:center;padding:6rem 5%;background:var(--navy)}
+.cta-sec h2{color:#fff;margin:0 auto 1rem;max-width:520px}
+.cta-sec p{color:rgba(255,255,255,.55);font-size:.9rem;margin:0 auto 2.25rem;max-width:400px;line-height:1.85}
+.btn-cream{background:var(--cream);color:var(--navy);text-decoration:none;padding:.85rem 2rem;font-size:.77rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;display:inline-block;border-radius:4px;transition:opacity .2s;margin:.4rem}
+.btn-cream:hover{opacity:.92}
+.btn-outline-w{background:transparent;color:rgba(255,255,255,.75);text-decoration:none;padding:.85rem 2rem;font-size:.77rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;display:inline-block;border-radius:4px;border:1px solid rgba(255,255,255,.2);transition:all .2s;margin:.4rem}
+.btn-outline-w:hover{color:#fff;border-color:rgba(255,255,255,.5)}
+
+/* FOOTER */
+footer{background:var(--dark);padding:2.5rem 6%}
+.ft-top{display:grid;grid-template-columns:auto 1fr auto;gap:4rem;align-items:start;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.ft-brand{font-family:'Playfair Display',serif;font-size:1rem;color:#fff}
+.ft-brand span{color:rgba(255,255,255,.25);font-family:'Inter',sans-serif;font-size:.68rem;font-weight:400;display:block;margin-top:.2rem}
+.ft-mid{font-size:.7rem;color:rgba(255,255,255,.26);line-height:2}
+.ft-social{display:flex;gap:.7rem}
+.ft-social a{width:32px;height:32px;border:1px solid rgba(255,255,255,.09);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:border-color .2s}
+.ft-social a:hover{border-color:rgba(255,255,255,.3)}
+.ft-social svg{width:14px;height:14px;fill:rgba(255,255,255,.35)}
+.ft-bottom{display:flex;justify-content:space-between;font-size:.68rem;color:rgba(255,255,255,.2)}
+.ft-bottom a{color:rgba(255,255,255,.2);text-decoration:none}
+.ft-bottom a:hover{color:rgba(255,255,255,.55)}
+
+/* RESPONSIVE */
+@media (max-width: 860px){
+  .nav{padding:.8rem 5%}
+  .nav-links{display:none}
+  .nav-cta{padding:.45rem 1rem;font-size:.65rem}
+  .hamburger{display:flex}
+  .nav-r{gap:.5rem}
+
+  .hero{grid-template-columns:1fr;gap:2.5rem;padding:3rem 6%;min-height:auto}
+  .hero-photo{max-width:280px;margin:0 auto}
+  .hero-text{text-align:left}
+
+  .sec{padding:3rem 6%}
+
+  .story-grid{grid-template-columns:1fr;gap:2.5rem}
+  .story-aside{flex-direction:row;flex-wrap:wrap}
+  .stat-card{flex:1 1 45%;padding:1.25rem}
+
+  .quote-sec{padding:3rem 6%}
+  blockquote{font-size:1.3rem}
+
+  .values-grid{grid-template-columns:1fr;gap:1rem;margin-top:2rem}
+
+  .approach-grid{grid-template-columns:1fr;gap:2.5rem}
+
+  .photo-grid{grid-template-columns:1fr 1fr;gap:.75rem;margin-top:2rem}
+
+  .cta-sec{padding:4rem 6%}
+  .btn-cream,.btn-outline-w{display:block;width:100%;margin:.4rem 0;text-align:center}
+
+  .ft-top{grid-template-columns:1fr;gap:1.5rem;text-align:left}
+  .ft-social{justify-content:flex-start}
+  .ft-bottom{flex-direction:column;gap:.5rem}
+
+  .wa{width:46px;height:46px;bottom:1.25rem;right:1.25rem}
+}
+
+@media (max-width: 480px){
+  .stat-card{flex:1 1 100%}
+  .photo-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<a class="wa" href="https://wa.me/447799777284?text=Hi%20Holl%20Group!" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="/"><img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1781020925/logo_cropped_pezlyx.png" alt="Holl Group" style="height:38px;width:auto;mix-blend-mode:multiply"></a>
+  <ul class="nav-links">
+    <li><a href="/" class="t" data-en="Home" data-es="Inicio">Home</a></li>
+    <li><a href="/about.html" class="t" data-en="About" data-es="Quiénes somos">About</a></li>
+    <li><a href="/properties.html" class="t" data-en="Properties" data-es="Propiedades">Properties</a></li>
+    <li><a href="/" class="t" data-en="Contact" data-es="Contacto">Contact</a></li>
+  </ul>
+  <div class="nav-r">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+    </div>
+    <a href="/proposal.html" class="nav-cta t" data-en="Get a Proposal" data-es="Solicitar propuesta">Get a Proposal</a>
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-x" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label="Close">&times;</button>
+  <a href="/" class="t" data-en="Home" data-es="Inicio">Home</a>
+  <a href="/about.html" class="t" data-en="About" data-es="Quiénes somos">About</a>
+  <a href="/properties.html" class="t" data-en="Properties" data-es="Propiedades">Properties</a>
+  <a href="/" class="t" data-en="Contact" data-es="Contacto">Contact</a>
+  <a href="/proposal.html" class="t" data-en="Get a Proposal" data-es="Solicitar propuesta">Get a Proposal</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <span class="eyebrow t" data-en="About Holl Group" data-es="Sobre Holl Group">About Holl Group</span>
+    <h1 class="t" data-en="Built on data.&lt;br&gt;Run with &lt;em&gt;personal care.&lt;/em&gt;" data-es="Construido con datos.&lt;br&gt;Gestionado con &lt;em&gt;cuidado personal.&lt;/em&gt;">Built on data.<br>Run with <em>personal care.</em></h1>
+    <p class="hero-sub t" data-en="Holl Group was founded by someone who spent a decade reading markets, building systems, and extracting signal from noise — and who decided to apply all of that to something more personal: helping property owners make the most of what they have, without it costing them their time." data-es="Holl Group fue fundado por alguien que pasó una década leyendo mercados, construyendo sistemas y extrayendo señal del ruido — y que decidió aplicar todo eso a algo más personal: ayudar a los propietarios a sacar el máximo partido a lo que tienen, sin que les cueste su tiempo.">Holl Group was founded by someone who spent a decade reading markets, building systems, and extracting signal from noise — and who decided to apply all of that to something more personal: helping property owners make the most of what they have, without it costing them their time.</p>
+  </div>
+  <div class="hero-photo">
+    <div class="photo-frame">
+      <img src="https://hollgroup.co.uk/assets/personal%20pictures/aiboryyy-20251211-0001.jpg" alt="Ibon Martinez Ramos" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><svg viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><path d=\'M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2\'/><circle cx=\'12\' cy=\'7\' r=\'4\'/></svg><span>Add your photo here</span></div>'">
+    </div>
+    <div class="name-tag">
+      <h3>Ibon Martinez Ramos</h3>
+      <span class="t" data-en="Director — Holl Group Ltd" data-es="Director — Holl Group Ltd">Director — Holl Group Ltd</span><br>
+      <a class="li-link" href="https://www.linkedin.com/in/ibon-martinez-ramos-a6581421a/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        <span class="t" data-en="View LinkedIn profile" data-es="Ver perfil de LinkedIn">View LinkedIn profile</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="sec">
+  <div class="story-grid">
+    <div class="story-text">
+      <span class="sec-tag t" data-en="The Story" data-es="La Historia">The Story</span>
+      <h2 class="t" data-en="From global logistics&lt;br&gt;&lt;em&gt;to local property.&lt;/em&gt;" data-es="De la logística global&lt;br&gt;&lt;em&gt;a la propiedad local.&lt;/em&gt;">From global logistics<br><em>to local property.</em></h2>
+      <p class="t" data-en="I spent close to a decade at Kuehne+Nagel, one of the world's largest logistics companies, working in sea freight pricing and data analytics. The job was about one thing: turning complex, messy market data into decisions that made financial sense. Rate structures, demand patterns, competitive positioning — I built the tools and ran the numbers, across carriers and corridors, at scale." data-es="Pasé cerca de una década en Kuehne+Nagel, una de las mayores empresas de logística del mundo, trabajando en pricing de flete marítimo y análisis de datos. El trabajo consistía en una sola cosa: convertir datos de mercado complejos y desordenados en decisiones con sentido financiero. Estructuras de tarifas, patrones de demanda, posicionamiento competitivo — construí las herramientas y ejecuté los números, a través de navieras y corredores, a gran escala.">I spent close to a decade at Kuehne+Nagel, one of the world's largest logistics companies, working in sea freight pricing and data analytics. The job was about one thing: turning complex, messy market data into decisions that made financial sense. Rate structures, demand patterns, competitive positioning — I built the tools and ran the numbers, across carriers and corridors, at scale.</p>
+      <p class="t" data-en="When I moved to Birmingham in 2019, I started to see the same patterns in the short-let market that I had seen in freight. &lt;strong&gt;Properties consistently underperforming not because of bad locations or bad owners, but because of bad information and no time.&lt;/strong&gt; Landlords setting static prices, listing on one platform, using whoever picked up the phone for cleaning — and leaving significant revenue on the table every single month." data-es="Cuando me mudé a Birmingham en 2019, empecé a ver los mismos patrones en el mercado de alquiler de corta estancia que había visto en el flete. &lt;strong&gt;Propiedades que rendían sistemáticamente por debajo de su potencial, no por mala ubicación o malos propietarios, sino por falta de información y de tiempo.&lt;/strong&gt; Propietarios con precios estáticos, publicando en una sola plataforma, usando al primero que cogía el teléfono para la limpieza — y dejando ingresos significativos sobre la mesa cada mes.">When I moved to Birmingham in 2019, I started to see the same patterns in the short-let market that I had seen in freight. <strong>Properties consistently underperforming not because of bad locations or bad owners, but because of bad information and no time.</strong> Landlords setting static prices, listing on one platform, using whoever picked up the phone for cleaning — and leaving significant revenue on the table every single month.</p>
+      <p class="t" data-en="I started Holl Group to fix that. Not as a faceless management agency, but as a genuine partner — someone who applies the same rigour I brought to logistics data to the performance of your property, while treating it with the care it deserves as one of the most significant things you own." data-es="Empecé Holl Group para solucionar eso. No como una agencia de gestión sin rostro, sino como un socio genuino — alguien que aplica el mismo rigor que aportaba a los datos de logística al rendimiento de tu propiedad, tratándola con el cuidado que merece como una de las cosas más importantes que posees.">I started Holl Group to fix that. Not as a faceless management agency, but as a genuine partner — someone who applies the same rigour I brought to logistics data to the performance of your property, while treating it with the care it deserves as one of the most significant things you own.</p>
+    </div>
+    <div class="story-aside">
+      <div class="stat-card">
+        <div class="stat-card-n">10</div>
+        <div class="stat-card-l t" data-en="Years in Data & Pricing" data-es="Años en Datos y Pricing">Years in Data & Pricing</div>
+        <div class="stat-card-s t" data-en="Global logistics background in maritime freight rate analytics, competitive analysis, and market modelling at Kuehne+Nagel." data-es="Trayectoria en logística global: análisis de tarifas de flete marítimo, análisis competitivo y modelado de mercado en Kuehne+Nagel.">Global logistics background in maritime freight rate analytics, competitive analysis, and market modelling at Kuehne+Nagel.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-n">2019</div>
+        <div class="stat-card-l t" data-en="Birmingham, since" data-es="En Birmingham desde">Birmingham, since</div>
+        <div class="stat-card-s t" data-en="Based here for over seven years. We know the city, its demand patterns, its seasonal rhythms, and which properties consistently outperform." data-es="Llevamos aquí más de siete años. Conocemos la ciudad, sus patrones de demanda, sus ritmos estacionales y qué propiedades rinden sistemáticamente mejor.">Based here for over seven years. We know the city, its demand patterns, its seasonal rhythms, and which properties consistently outperform.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-n">2,500<span style="font-size:1.2rem">+</span></div>
+        <div class="stat-card-l t" data-en="Nights Managed" data-es="Noches Gestionadas">Nights Managed</div>
+        <div class="stat-card-s t" data-en="Every property in our portfolio arrived through a landlord recommendation. We do not advertise to grow. Our results do that for us." data-es="Cada propiedad de nuestra cartera llegó a través de la recomendación de un propietario. No hacemos publicidad para crecer. Nuestros resultados lo hacen por nosotros.">Every property in our portfolio arrived through a landlord recommendation. We do not advertise to grow. Our results do that for us.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-sec sec-dark">
+  <blockquote class="t" data-en="If it does not work for you, it does not work for us. That is not a slogan — it is literally how our business model functions." data-es="Si no funciona para ti, no funciona para nosotros. Eso no es un eslogan — es literalmente cómo funciona nuestro modelo de negocio.">If it does not work for you, it does not work for us. That is not a slogan — it is literally how our business model functions.</blockquote>
+  <cite class="t" data-en="Ibon Martinez Ramos — Director, Holl Group Ltd" data-es="Ibon Martinez Ramos — Director, Holl Group Ltd">Ibon Martinez Ramos — Director, Holl Group Ltd</cite>
+</section>
+
+<!-- VALUES -->
+<section class="sec sec-alt">
+  <span class="sec-tag t" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</span>
+  <h2 class="t" data-en="What you can always&lt;br&gt;&lt;em&gt;expect from us.&lt;/em&gt;" data-es="Lo que siempre puedes&lt;br&gt;&lt;em&gt;esperar de nosotros.&lt;/em&gt;">What you can always<br><em>expect from us.</em></h2>
+  <div class="values-grid">
+    <div class="val">
+      <div class="val-num">01</div>
+      <h4 class="t" data-en="Honesty before everything" data-es="Honestidad ante todo">Honesty before everything</h4>
+      <p class="t" data-en="We give you realistic projections, not numbers designed to win your business. If a property is not a good fit for short-let management, we will tell you that before we start." data-es="Te damos proyecciones realistas, no cifras diseñadas para ganar tu negocio. Si una propiedad no encaja bien con la gestión de corta estancia, te lo diremos antes de empezar.">We give you realistic projections, not numbers designed to win your business. If a property is not a good fit for short-let management, we will tell you that before we start.</p>
+    </div>
+    <div class="val">
+      <div class="val-num">02</div>
+      <h4 class="t" data-en="Personal, not transactional" data-es="Personal, no transaccional">Personal, not transactional</h4>
+      <p class="t" data-en="You deal with me directly, not a call centre or a rotating team of account managers. I know your property, your goals, and your situation — and I stay accountable to all three." data-es="Tratas conmigo directamente, no con un call centre ni un equipo rotativo de gestores. Conozco tu propiedad, tus objetivos y tu situación — y me hago responsable de los tres.">You deal with me directly, not a call centre or a rotating team of account managers. I know your property, your goals, and your situation — and I stay accountable to all three.</p>
+    </div>
+    <div class="val">
+      <div class="val-num">03</div>
+      <h4 class="t" data-en="Data-driven decisions" data-es="Decisiones basadas en datos">Data-driven decisions</h4>
+      <p class="t" data-en="Every pricing decision, every channel choice, every staging recommendation is backed by real market data. Not gut feel, not what worked for someone else's property." data-es="Cada decisión de precio, cada elección de canal, cada recomendación de puesta en escena está respaldada por datos reales de mercado. No por instinto, ni por lo que funcionó en la propiedad de otro.">Every pricing decision, every channel choice, every staging recommendation is backed by real market data. Not gut feel, not what worked for someone else's property.</p>
+    </div>
+    <div class="val">
+      <div class="val-num">04</div>
+      <h4 class="t" data-en="Selective by design" data-es="Selectivos por diseño">Selective by design</h4>
+      <p class="t" data-en="We do not take on every property. We assess each one carefully and only agree to manage properties we genuinely believe we can perform for. Your success is our success." data-es="No aceptamos todas las propiedades. Evaluamos cada una cuidadosamente y solo aceptamos gestionar aquellas para las que genuinamente creemos poder rendir. Tu éxito es nuestro éxito.">We do not take on every property. We assess each one carefully and only agree to manage properties we genuinely believe we can perform for. Your success is our success.</p>
+    </div>
+    <div class="val">
+      <div class="val-num">05</div>
+      <h4 class="t" data-en="Complete transparency" data-es="Transparencia total">Complete transparency</h4>
+      <p class="t" data-en="Monthly statements, real-time portal access, clear fee structures. No surprises, no hidden deductions. Your income is yours and you can see exactly where every pound goes." data-es="Estados de cuenta mensuales, acceso en tiempo real al portal, estructuras de comisiones claras. Sin sorpresas, sin deducciones ocultas. Tus ingresos son tuyos y puedes ver exactamente adónde va cada libra.">Monthly statements, real-time portal access, clear fee structures. No surprises, no hidden deductions. Your income is yours and you can see exactly where every pound goes.</p>
+    </div>
+    <div class="val">
+      <div class="val-num">06</div>
+      <h4 class="t" data-en="Flexible agreements" data-es="Acuerdos flexibles">Flexible agreements</h4>
+      <p class="t" data-en="No two contracts are the same. Every agreement is tailored to your property and your situation, agreed together at the final meeting, with periodic reviews built in." data-es="No hay dos contratos iguales. Cada acuerdo se adapta a tu propiedad y a tu situación, pactado conjuntamente en la reunión final, con revisiones periódicas incluidas.">No two contracts are the same. Every agreement is tailored to your property and your situation, agreed together at the final meeting, with periodic reviews built in.</p>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="sec sec-dark">
+  <div class="approach-grid">
+    <div>
+      <span class="sec-tag t" data-en="The Holl Approach" data-es="El Enfoque Holl">The Holl Approach</span>
+      <h2 class="t" data-en="What a data analyst&lt;br&gt;&lt;em&gt;does with a property.&lt;/em&gt;" data-es="Lo que un analista de datos&lt;br&gt;&lt;em&gt;hace con una propiedad.&lt;/em&gt;">What a data analyst<br><em>does with a property.</em></h2>
+      <div class="approach-items">
+        <div class="ap-item">
+          <span class="ap-n">01</span>
+          <div><h4 class="t" data-en="Read the market, not the calendar" data-es="Leer el mercado, no el calendario">Read the market, not the calendar</h4><p class="t" data-en="Pricing based on live demand, competitor rates, local events, and seasonal patterns — updated continuously, not set once and forgotten." data-es="Precios basados en demanda en tiempo real, tarifas de la competencia, eventos locales y patrones estacionales — actualizados continuamente, no fijados una vez y olvidados.">Pricing based on live demand, competitor rates, local events, and seasonal patterns — updated continuously, not set once and forgotten.</p></div>
+        </div>
+        <div class="ap-item">
+          <span class="ap-n">02</span>
+          <div><h4 class="t" data-en="Prepare the property like a product" data-es="Preparar la propiedad como un producto">Prepare the property like a product</h4><p class="t" data-en="Every property is staged and presented for the specific guest profile that will pay the most for it. Photography, listing copy, and pricing all aligned." data-es="Cada propiedad se prepara y presenta para el perfil de huésped específico que más pagará por ella. Fotografía, textos del anuncio y precios, todo alineado.">Every property is staged and presented for the specific guest profile that will pay the most for it. Photography, listing copy, and pricing all aligned.</p></div>
+        </div>
+        <div class="ap-item">
+          <span class="ap-n">03</span>
+          <div><h4 class="t" data-en="Distribute across every relevant channel" data-es="Distribuir en todos los canales relevantes">Distribute across every relevant channel</h4><p class="t" data-en="15+ booking platforms plus our own growing base of direct clients. More channels, better occupancy, higher ADR." data-es="Más de 15 plataformas de reserva más nuestra propia base creciente de clientes directos. Más canales, mejor ocupación, mayor tarifa media.">15+ booking platforms plus our own growing base of direct clients. More channels, better occupancy, higher ADR.</p></div>
+        </div>
+        <div class="ap-item">
+          <span class="ap-n">04</span>
+          <div><h4 class="t" data-en="Report everything, clearly" data-es="Reportar todo, con claridad">Report everything, clearly</h4><p class="t" data-en="Monthly performance statements and a live owner portal. You always know exactly what your property is earning and why." data-es="Informes de rendimiento mensuales y un portal en vivo para propietarios. Siempre sabes exactamente cuánto gana tu propiedad y por qué.">Monthly performance statements and a live owner portal. You always know exactly what your property is earning and why.</p></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="approach-right t" style="font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.9;margin-bottom:1.25rem" data-en="The skills that made me useful in logistics — pattern recognition, market modelling, process design — translate directly into property management. The difference is that here, the asset belongs to someone who trusts me with it." data-es="Las habilidades que me hicieron útil en logística — reconocimiento de patrones, modelado de mercado, diseño de procesos — se trasladan directamente a la gestión de propiedades. La diferencia es que aquí, el activo pertenece a alguien que confía en mí para gestionarlo.">The skills that made me useful in logistics — pattern recognition, market modelling, process design — translate directly into property management. The difference is that here, the asset belongs to someone who trusts me with it.</p>
+      <p class="approach-right t" style="font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.9;margin-bottom:1.25rem" data-en="That responsibility is something I take seriously. Every property in our portfolio came to us because another landlord recommended us. We have never needed to advertise. That is the standard we intend to keep." data-es="Esa responsabilidad me la tomo en serio. Cada propiedad de nuestra cartera llegó a nosotros porque otro propietario nos recomendó. Nunca hemos necesitado hacer publicidad. Ese es el estándar que pretendemos mantener.">That responsibility is something I take seriously. Every property in our portfolio came to us because another landlord recommended us. We have never needed to advertise. That is the standard we intend to keep.</p>
+      <p class="approach-right t" style="font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.9" data-en="Based in Birmingham since 2019, originally from Irún in northern Spain — I understand what it means to manage a property from a distance, to not be on the ground, and to need someone you can genuinely trust to handle it." data-es="Con base en Birmingham desde 2019, originario de Irún, en el norte de España — entiendo lo que significa gestionar una propiedad a distancia, no estar sobre el terreno, y necesitar a alguien de confianza genuina para gestionarla.">Based in Birmingham since 2019, originally from Irún in northern Spain — I understand what it means to manage a property from a distance, to not be on the ground, and to need someone you can genuinely trust to handle it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROPERTIES PHOTO GRID -->
+<section class="sec">
+  <span class="sec-tag t" data-en="Our Properties" data-es="Nuestras Propiedades">Our Properties</span>
+  <h2 class="t" data-en="What we manage.&lt;br&gt;&lt;em&gt;How we present it.&lt;/em&gt;" data-es="Lo que gestionamos.&lt;br&gt;&lt;em&gt;Cómo lo presentamos.&lt;/em&gt;">What we manage.<br><em>How we present it.</em></h2>
+ <div class="photo-grid">
+    <div class="photo-slot">
+      <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1781022688/IMG_4291_wjnabj.png" alt="Holl Group managed property" onerror="this.parentElement.innerHTML='<div class=\'photo-slot-placeholder\'>Add photo</div>'">
+    </div>
+    <div class="photo-slot">
+      <img src="https://hollgroup.co.uk/assets/IbonDigbethC2CLRMain.jpg" alt="Holl Group managed property" onerror="this.parentElement.innerHTML='<div class=\'photo-slot-placeholder\'>Add photo</div>'">
+    </div>
+    <div class="photo-slot">
+      <img src="https://hollgroup.co.uk/assets/living%20room.png" alt="Holl Group managed property" onerror="this.parentElement.innerHTML='<div class=\'photo-slot-placeholder\'>Add photo</div>'">
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <span class="sec-tag t" style="display:block;text-align:center;color:rgba(210,190,150,.7)" data-en="Work With Us" data-es="Trabaja Con Nosotros">Work With Us</span>
+  <h2 class="t" data-en="Ready to find out if&lt;br&gt;&lt;em&gt;we're the right fit?&lt;/em&gt;" data-es="¿Listo para descubrir si&lt;br&gt;&lt;em&gt;encajamos bien?&lt;/em&gt;">Ready to find out if<br><em>we're the right fit?</em></h2>
+  <p class="t" data-en="We'll be honest with you about what your property can realistically achieve — and whether we're the right people to help you get there." data-es="Seremos honestos contigo sobre lo que tu propiedad puede lograr realmente — y sobre si somos las personas adecuadas para ayudarte a conseguirlo.">We'll be honest with you about what your property can realistically achieve — and whether we're the right people to help you get there.</p>
+  <div>
+    <a href="/proposal.html" class="btn-cream t" data-en="Request a Free Proposal" data-es="Solicitar propuesta gratuita">Request a Free Proposal</a>
+    <a href="https://wa.me/447799777284" class="btn-outline-w t" target="_blank" data-en="Message on WhatsApp" data-es="Escríbenos por WhatsApp">Message on WhatsApp</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">HOLL GROUP LTD<span>Holl Living — Thoughtful Stays</span></div>
+    <div class="ft-mid">
+      <div>lettings@hollgroup.co.uk &nbsp;·&nbsp; +44 7799 777284</div>
+      <div>ICO Registered &nbsp;·&nbsp; Property Redress Scheme Member</div>
+    </div>
+    <div class="ft-social">
+      <a href="https://www.facebook.com/profile.php?id=61572991770050" target="_blank"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      <a href="https://www.linkedin.com/company/holl-group-ltd/" target="_blank"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="https://www.instagram.com/holl_group/" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="t" data-en="© Holl Group Ltd, Company Registration No: 15323418 (Companies House, UK)" data-es="© Holl Group Ltd, N.º de Registro de Empresa: 15323418 (Companies House, UK)">© Holl Group Ltd, Company Registration No: 15323418 (Companies House, UK)</span>
+    <span><a href="#" class="t" data-en="Privacy Policy" data-es="Política de privacidad">Privacy Policy</a> &nbsp;·&nbsp; <a href="#" class="t" data-en="Terms &amp; Conditions" data-es="Términos y condiciones">Terms &amp; Conditions</a></span>
+  </div>
+</footer>
+
+<!-- LANG TOGGLE -->
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-en]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelector('.lang-btn[data-lang="' + lang + '"]').classList.add('active');
+  document.documentElement.lang = lang;
+}
+</script>
+</body>
+</html>
