@@ -121,7 +121,9 @@ body{background:var(--cream);color:var(--dark);font-family:'Inter',-apple-system
 .combo-text h4 em{font-style:italic}
 .combo-text{flex:1;min-width:0}
 .combo-text p{font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:1.1rem;max-width:680px}
-.combo-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.75rem;margin-bottom:1.4rem}
+.combo-floor-group{margin-bottom:1.4rem}
+.combo-floor-label{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(210,190,150,.85);margin-bottom:.65rem;padding-bottom:.45rem;border-bottom:1px solid rgba(255,255,255,.12);display:block}
+.combo-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.75rem}
 .combo-shot{position:relative;aspect-ratio:3/4;border-radius:6px;overflow:hidden;background:rgba(255,255,255,.06)}
 .combo-shot img{width:100%;height:100%;object-fit:cover;display:block}
 .combo-shot span{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(10,16,30,.85),transparent);color:#fff;font-size:.5rem;font-weight:600;letter-spacing:.03em;padding:.35rem .3rem .3rem;line-height:1.2;text-align:center}
@@ -633,46 +635,54 @@ footer{background:var(--dark);padding:2.5rem 6%}
           <span class="hl t" data-en="2 kitchens &amp; 2 lounges" data-es="2 cocinas y 2 salones">2 kitchens &amp; 2 lounges</span>
           <span class="hl t" data-en="Privacy across 2 floors" data-es="Intimidad en 2 plantas">Privacy across 2 floors</span>
         </div>
-        <div class="combo-gallery">
-          <div class="combo-shot">
-            <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787832982/IbonOldburyDownstairs-2_i9vzu9.jpg" alt="First floor bedroom 1" onerror="this.parentElement.style.display='none'">
-            <span class="t" data-en="Floor 1 · Bed 1" data-es="Planta 1 · Hab. 1">Floor 1 · Bed 1</span>
+        <div class="combo-floor-group">
+          <span class="combo-floor-label t" data-en="First Floor · 3 Bed" data-es="Primera Planta · 3 Habitaciones">First Floor · 3 Bed</span>
+          <div class="combo-gallery">
+            <div class="combo-shot">
+              <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787832982/IbonOldburyDownstairs-2_i9vzu9.jpg" alt="First floor bedroom 1" onerror="this.parentElement.style.display='none'">
+              <span class="t" data-en="Bedroom 1" data-es="Habitación 1">Bedroom 1</span>
+            </div>
+            <div class="combo-shot">
+              <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787833023/IbonOldburyDownstairs-5_uejdmw.jpg" alt="First floor bedroom 2" onerror="this.parentElement.style.display='none'">
+              <span class="t" data-en="Bedroom 2" data-es="Habitación 2">Bedroom 2</span>
+            </div>
+            <div class="combo-shot">
+              <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787831711/IbonOldburyDownstairs-8_rc6xrp.jpg" alt="First floor bedroom 3" onerror="this.parentElement.style.display='none'">
+              <span class="t" data-en="Bedroom 3" data-es="Habitación 3">Bedroom 3</span>
+            </div>
+            <div class="combo-shot">
+              <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787834579/IbonOldburyDownstairs-11_hlp5uz.jpg" alt="First floor kitchen" onerror="this.parentElement.style.display='none'">
+              <span class="t" data-en="Kitchen" data-es="Cocina">Kitchen</span>
+            </div>
+            <div class="combo-shot">
+              <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787834578/IbonOldburyDownstairs-9_oizgis.jpg" alt="First floor living room" onerror="this.parentElement.style.display='none'">
+              <span class="t" data-en="Lounge" data-es="Salón">Lounge</span>
+            </div>
           </div>
-          <div class="combo-shot">
-            <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787833023/IbonOldburyDownstairs-5_uejdmw.jpg" alt="First floor bedroom 2" onerror="this.parentElement.style.display='none'">
-            <span class="t" data-en="Floor 1 · Bed 2" data-es="Planta 1 · Hab. 2">Floor 1 · Bed 2</span>
-          </div>
-          <div class="combo-shot">
-            <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787831711/IbonOldburyDownstairs-8_rc6xrp.jpg" alt="First floor bedroom 3" onerror="this.parentElement.style.display='none'">
-            <span class="t" data-en="Floor 1 · Bed 3" data-es="Planta 1 · Hab. 3">Floor 1 · Bed 3</span>
-          </div>
-          <div class="combo-shot">
-            <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787832680/IbonOldburyUpstairsC-3_ql5s41.jpg" alt="Top floor bedroom 1" onerror="this.parentElement.style.display='none'">
-            <span class="t" data-en="Floor 2 · Bed 1" data-es="Planta 2 · Hab. 1">Floor 2 · Bed 1</span>
-          </div>
-          <div class="combo-shot">
-            <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787832772/IbonOldburyUpstairsC-8_ecuama.jpg" alt="Top floor bedroom 2" onerror="this.parentElement.style.display='none'">
-            <span class="t" data-en="Floor 2 · Bed 2" data-es="Planta 2 · Hab. 2">Floor 2 · Bed 2</span>
-          </div>
-          <div class="combo-shot">
-            <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787832814/IbonOldburyUpstairsA-15_a4o74b.jpg" alt="Top floor sofa bed" onerror="this.parentElement.style.display='none'">
-            <span class="t" data-en="Floor 2 · Sofa Bed" data-es="Planta 2 · Sofá Cama">Floor 2 · Sofa Bed</span>
-          </div>
-          <div class="combo-shot">
-            <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787834579/IbonOldburyDownstairs-11_hlp5uz.jpg" alt="First floor kitchen" onerror="this.parentElement.style.display='none'">
-            <span class="t" data-en="Floor 1 · Kitchen" data-es="Planta 1 · Cocina">Floor 1 · Kitchen</span>
-          </div>
-          <div class="combo-shot">
-            <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787834578/IbonOldburyDownstairs-9_oizgis.jpg" alt="First floor living room" onerror="this.parentElement.style.display='none'">
-            <span class="t" data-en="Floor 1 · Lounge" data-es="Planta 1 · Salón">Floor 1 · Lounge</span>
-          </div>
-          <div class="combo-shot">
-            <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787834578/IbonOldburyUpstairsC-17_enflj7.jpg" alt="Top floor kitchen" onerror="this.parentElement.style.display='none'">
-            <span class="t" data-en="Floor 2 · Kitchen" data-es="Planta 2 · Cocina">Floor 2 · Kitchen</span>
-          </div>
-          <div class="combo-shot">
-            <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787834580/IbonOldburyUpstairsC-15_kq3wjf.jpg" alt="Top floor living room" onerror="this.parentElement.style.display='none'">
-            <span class="t" data-en="Floor 2 · Lounge" data-es="Planta 2 · Salón">Floor 2 · Lounge</span>
+        </div>
+        <div class="combo-floor-group">
+          <span class="combo-floor-label t" data-en="Top Floor · 2 Bed" data-es="Última Planta · 2 Habitaciones">Top Floor · 2 Bed</span>
+          <div class="combo-gallery">
+            <div class="combo-shot">
+              <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787832680/IbonOldburyUpstairsC-3_ql5s41.jpg" alt="Top floor bedroom 1" onerror="this.parentElement.style.display='none'">
+              <span class="t" data-en="Bedroom 1" data-es="Habitación 1">Bedroom 1</span>
+            </div>
+            <div class="combo-shot">
+              <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787832772/IbonOldburyUpstairsC-8_ecuama.jpg" alt="Top floor bedroom 2" onerror="this.parentElement.style.display='none'">
+              <span class="t" data-en="Bedroom 2" data-es="Habitación 2">Bedroom 2</span>
+            </div>
+            <div class="combo-shot">
+              <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787832814/IbonOldburyUpstairsA-15_a4o74b.jpg" alt="Top floor sofa bed" onerror="this.parentElement.style.display='none'">
+              <span class="t" data-en="Sofa Bed" data-es="Sofá Cama">Sofa Bed</span>
+            </div>
+            <div class="combo-shot">
+              <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787834578/IbonOldburyUpstairsC-17_enflj7.jpg" alt="Top floor kitchen" onerror="this.parentElement.style.display='none'">
+              <span class="t" data-en="Kitchen" data-es="Cocina">Kitchen</span>
+            </div>
+            <div class="combo-shot">
+              <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787834580/IbonOldburyUpstairsC-15_kq3wjf.jpg" alt="Top floor living room" onerror="this.parentElement.style.display='none'">
+              <span class="t" data-en="Lounge" data-es="Salón">Lounge</span>
+            </div>
           </div>
         </div>
         <a href="https://booking.hollgroup.co.uk/" target="_blank" class="combo-btn t" data-en="Book the Combined Stay" data-es="Reservar la estancia combinada">Book the Combined Stay</a>
