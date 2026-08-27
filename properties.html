@@ -314,14 +314,14 @@ footer{background:var(--dark);padding:2.5rem 6%}
       function pin(c,s){s=s||16;return L.divIcon({className:'',html:'<div style="width:'+s+'px;height:'+s+'px;border-radius:50%;background:'+c+';border:3px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.35);cursor:pointer;transition:transform .15s" onmouseover="this.style.transform=\'scale(1.3)\'" onmouseout="this.style.transform=\'scale(1)\'"></div>',iconSize:[s,s],iconAnchor:[s/2,s/2],popupAnchor:[0,-s/2-4]})}
       function card(cat,title,loc,pc,tags,note,img){note=note||'';var imgHtml=img?'<div style="width:100%;height:110px;overflow:hidden;border-radius:8px 8px 0 0;margin:-1rem -1.1rem .75rem;"><img src="'+img+'" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.parentElement.style.display=\'none\'"></div>':'';return'<div style="padding:1rem 1.1rem;font-family:Inter,sans-serif;width:215px">'+imgHtml+'<span style="font-size:.53rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1A3461;display:block;margin-bottom:.25rem">'+cat+'</span><div style="font-family:Georgia,serif;font-size:.9rem;color:#0F172A;margin-bottom:.15rem;line-height:1.2">'+title+'</div><div style="font-size:.65rem;color:#94A3B8;margin-bottom:.6rem">'+loc+' · '+pc+'</div><div style="display:flex;flex-wrap:wrap;gap:.28rem">'+tags.map(function(t){return'<span style="font-size:.56rem;color:#475569;background:#F5F5F3;border:1px solid rgba(15,23,42,.09);padding:.1rem .42rem;border-radius:3px">'+t+'</span>'}).join('')+'</div>'+note+'</div>'}
       
-      L.marker([52.472908,-1.885155],{icon:pin('#1A3461')}).addTo(map).bindPopup(card('City Apartment','Creative Quarter Apartment','Digbeth','B12 0AH',['Sleeps 8','5 beds','2 bathrooms','Free parking','Football table'],'','https://hollgroup.co.uk/assets/properties/digbeth-lombard-st/IbonDigbethC2CLRMain.jpg'));
-      L.marker([52.473747,-1.906879],{icon:pin('#1A3461')}).addTo(map).bindPopup(card('City Apartment','Oasis in the City','B1 City Centre','B1 1JY',['Sleeps 6','2 bedrooms','2 bathrooms','Private balcony','Peace Gardens views'],'','https://hollgroup.co.uk/assets/properties/skyline-179/IBONFlat1C2C-2.jpg'));
-      L.marker([52.474920,-1.905640],{icon:pin('#1A3461')}).addTo(map).bindPopup(card('City Apartment','Executive B1 Apartment','B1 City Centre','B1 1LA',['Sleeps 6','2 bedrooms','2 bathrooms','Private balcony','Free secure parking','Dedicated workspace'],'','https://hollgroup.co.uk/assets/properties/upper-marshall/IMG_4291.png'));
+      L.marker([52.472908,-1.885155],{icon:pin('#1A3461')}).addTo(map).bindPopup(card('City Apartment','Creative Quarter Apartment','Digbeth','B12 0AH',['Sleeps 8','5 beds','2 bathrooms','Free parking','Football table'],'','https://res.cloudinary.com/dyojhaiig/image/upload/v1787832446/IbonDigbethC2CLRMain_z8hfyl.jpg'));
+      L.marker([52.473747,-1.906879],{icon:pin('#1A3461')}).addTo(map).bindPopup(card('City Apartment','Oasis in the City','B1 City Centre','B1 1JY',['Sleeps 6','2 bedrooms','2 bathrooms','Private balcony','Peace Gardens views'],'','https://res.cloudinary.com/dyojhaiig/image/upload/v1787832512/IBONFlat1C2C-2_gu615u.jpg'));
+      L.marker([52.474920,-1.905640],{icon:pin('#1A3461')}).addTo(map).bindPopup(card('City Apartment','Executive B1 Apartment','B1 City Centre','B1 1LA',['Sleeps 6','2 bedrooms','2 bathrooms','Private balcony','Free secure parking','Dedicated workspace'],'','https://res.cloudinary.com/dyojhaiig/image/upload/v1787832574/IMG_4291_cyyylu.jpg'));
       L.marker([52.480523,-1.973142],{icon:pin('#2D6A56')}).addTo(map).bindPopup(card('Professional Stay','Bearwood House','Bearwood, Smethwick','B67 5AF',['Sleeps 5','3 bedrooms','4 beds','Outside CAZ','Free parking','Near Midland Met Hospital'],'','https://res.cloudinary.com/dyojhaiig/image/upload/v1787831711/IMG_4343_airbnb_xvulbs.jpg'));
       L.marker([52.478607,-1.931621],{icon:pin('#2D6A56')}).addTo(map).bindPopup(card('Professional Stay','Lakeside Nook','Edgbaston (Shire Close)','B16 9EX',['Sleeps 4','King bed','Smart lock','Outside CAZ','Private garden','Walk to City Hospital'],'','https://res.cloudinary.com/dyojhaiig/image/upload/v1787832078/Copia_de_DSC02959_1_slasat.jpg'));
       L.marker([52.471500,-1.928000],{icon:pin('#2D6A56')}).addTo(map).bindPopup(card('Professional Stay','Edgbaston Apartment','Edgbaston','B16 8EX',['2 bedrooms','2 parking spaces','Near Brindleyplace','Near Utilita Arena'],'','https://res.cloudinary.com/dyojhaiig/image/upload/v1787831712/IBONFlat2C2C-6_t3lcts.jpg'));
       L.marker([52.463500,-1.998600],{icon:pin('#2D6A56')}).addTo(map).bindPopup(card('Professional Stay','Hagley Road — 3 Bed','Oldbury / Quinton','B68 0BS',['First floor','3 bedrooms','Groups & Teams'],'','https://res.cloudinary.com/dyojhaiig/image/upload/v1787831711/IbonOldburyDownstairs-8_rc6xrp.jpg'));
-      L.marker([52.463050,-1.998050],{icon:pin('#2D6A56')}).addTo(map).bindPopup(card('Professional Stay','Hagley Road — 2 Bed','Oldbury / Quinton','B68 0BS',['Top floor','2 bedrooms','Professional stays'],'','https://hollgroup.co.uk/assets/properties/hagley-rd-top-floor/IbonOldburyUpstairsC-11.jpg'));
+      L.marker([52.463050,-1.998050],{icon:pin('#2D6A56')}).addTo(map).bindPopup(card('Professional Stay','Hagley Road — 2 Bed','Oldbury / Quinton','B68 0BS',['Top floor','2 bedrooms','Professional stays'],'','https://res.cloudinary.com/dyojhaiig/image/upload/v1787832636/IbonOldburyUpstairsC-11_kerydd.jpg'));
       
       var soon='<div style="margin-top:.6rem;padding-top:.6rem;border-top:1px solid rgba(15,23,42,.08)"><span style="font-size:.57rem;font-weight:700;color:#C9A455;letter-spacing:.08em;text-transform:uppercase">Coming Soon</span></div>';
       L.marker([52.473665,-1.919930],{icon:pin('#C9A455',14)}).addTo(map).bindPopup(card('Coming Soon','Ladywood Middleway Gem','Ladywood','B16',['1 bedroom','Graded building','Arcade machine'],soon));
@@ -367,7 +367,7 @@ footer{background:var(--dark);padding:2.5rem 6%}
     </div>
   </div>
   <div class="cat-card">
-    <img class="cat-bg" src="https://hollgroup.co.uk/assets/properties/hagley-rd-top-floor/IbonOldburyUpstairsC-11.jpg" alt="Professional & Contractor Stays">
+    <img class="cat-bg" src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787832636/IbonOldburyUpstairsC-11_kerydd.jpg" alt="Professional & Contractor Stays">
     <div class="cat-overlay"></div>
     <div class="cat-content">
       <span class="cat-tag t" data-en="Birmingham · West &amp; Edgbaston" data-es="Birmingham · Oeste y Edgbaston">Birmingham · West &amp; Edgbaston</span>
@@ -398,7 +398,7 @@ footer{background:var(--dark);padding:2.5rem 6%}
 
     <div class="prop-card">
       <div class="prop-img">
-        <img src="https://hollgroup.co.uk/assets/properties/digbeth-lombard-st/IbonDigbethC2CLRMain.jpg" alt="Digbeth apartment" onerror="this.style.display='none'">
+        <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787832446/IbonDigbethC2CLRMain_z8hfyl.jpg" alt="Digbeth apartment" onerror="this.style.display='none'">
         <span class="prop-loc-tag">Digbeth · B12 0AH</span>
       </div>
       <div class="prop-body">
@@ -422,7 +422,7 @@ footer{background:var(--dark);padding:2.5rem 6%}
 
     <div class="prop-card">
       <div class="prop-img">
-        <img src="https://hollgroup.co.uk/assets/properties/skyline-179/IBONFlat1C2C-2.jpg" alt="Oasis in the City balcony" onerror="this.style.display='none'">
+        <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787832512/IBONFlat1C2C-2_gu615u.jpg" alt="Oasis in the City balcony" onerror="this.style.display='none'">
         <span class="prop-loc-tag">B1 · B1 1JY</span>
       </div>
       <div class="prop-body">
@@ -446,7 +446,7 @@ footer{background:var(--dark);padding:2.5rem 6%}
 
     <div class="prop-card">
       <div class="prop-img">
-        <img src="https://hollgroup.co.uk/assets/properties/upper-marshall/IMG_4291.png" alt="Executive B1 Apartment" onerror="this.style.display='none'">
+        <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787832574/IMG_4291_cyyylu.jpg" alt="Executive B1 Apartment" onerror="this.style.display='none'">
         <span class="prop-loc-tag">B1 · B1 1LA</span>
       </div>
       <div class="prop-body">
@@ -600,7 +600,7 @@ footer{background:var(--dark);padding:2.5rem 6%}
 
     <div class="prop-card">
       <div class="prop-img">
-        <img src="https://hollgroup.co.uk/assets/properties/hagley-rd-top-floor/IbonOldburyUpstairsC-11.jpg" alt="Hagley Road Top Floor" onerror="this.style.display='none'">
+        <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787832636/IbonOldburyUpstairsC-11_kerydd.jpg" alt="Hagley Road Top Floor" onerror="this.style.display='none'">
         <span class="prop-loc-tag">Hagley Rd W · B68 0BS</span>
       </div>
       <div class="prop-body">
@@ -647,15 +647,15 @@ footer{background:var(--dark);padding:2.5rem 6%}
             <span class="t" data-en="Floor 1 · Bed 3" data-es="Planta 1 · Hab. 3">Floor 1 · Bed 3</span>
           </div>
           <div class="combo-shot">
-            <img src="https://hollgroup.co.uk/assets/properties/hagley-rd-top-floor/IbonOldburyUpstairsC-3.jpg" alt="Top floor bedroom 1" onerror="this.parentElement.style.display='none'">
+            <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787832680/IbonOldburyUpstairsC-3_ql5s41.jpg" alt="Top floor bedroom 1" onerror="this.parentElement.style.display='none'">
             <span class="t" data-en="Floor 2 · Bed 1" data-es="Planta 2 · Hab. 1">Floor 2 · Bed 1</span>
           </div>
           <div class="combo-shot">
-            <img src="https://hollgroup.co.uk/assets/properties/hagley-rd-top-floor/IbonOldburyUpstairsC-8.jpg" alt="Top floor bedroom 2" onerror="this.parentElement.style.display='none'">
+            <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787832772/IbonOldburyUpstairsC-8_ecuama.jpg" alt="Top floor bedroom 2" onerror="this.parentElement.style.display='none'">
             <span class="t" data-en="Floor 2 · Bed 2" data-es="Planta 2 · Hab. 2">Floor 2 · Bed 2</span>
           </div>
           <div class="combo-shot">
-            <img src="https://hollgroup.co.uk/assets/properties/hagley-rd-top-floor/IbonOldburyUpstairsA-15.jpg" alt="Top floor sofa bed" onerror="this.parentElement.style.display='none'">
+            <img src="https://res.cloudinary.com/dyojhaiig/image/upload/v1787832814/IbonOldburyUpstairsA-15_a4o74b.jpg" alt="Top floor sofa bed" onerror="this.parentElement.style.display='none'">
             <span class="t" data-en="Floor 2 · Sofa Bed" data-es="Planta 2 · Sofá Cama">Floor 2 · Sofa Bed</span>
           </div>
         </div>
