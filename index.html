@@ -105,6 +105,8 @@ h2 em{font-style:italic}
 /* PAIN POINTS */
 .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
 .pain-item{padding:1.85rem;border:1px solid rgba(255,255,255,.08);border-radius:8px;background:rgba(255,255,255,.04)}
+.pain-subhead{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(210,190,150,.85);margin:2.75rem 0 1.1rem;text-align:center}
+.pain-subhead:first-of-type{margin-top:2.25rem}
 .pain-icon{width:32px;height:32px;color:rgba(210,190,150,.7);margin-bottom:1rem}
 .pain-item h4{font-size:.9rem;font-weight:600;color:#fff;margin-bottom:.5rem;font-family:'Inter',sans-serif}
 .pain-item p{font-size:.81rem;color:rgba(255,255,255,.42);line-height:1.85}
@@ -190,7 +192,7 @@ h2 em{font-style:italic}
 .f-list li::before{content:'—';color:var(--navy);flex-shrink:0}
 
 /* TESTIMONIALS */
-.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
+.tgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:3rem}
 .tc{background:var(--cream);border:1px solid var(--bd);border-radius:10px;padding:1.75rem}
 .tc-stars{display:flex;gap:.2rem;margin-bottom:.85rem}
 .tstar{width:12px;height:12px;fill:#C9A455}
@@ -421,13 +423,13 @@ footer{background:var(--dark);padding:3rem 6%}
     <div class="ti"><span class="td"></span><strong>£200K+</strong><span data-en="Revenue Generated" data-es="Ingresos generados">Revenue Generated</span></div>
     <div class="ti"><span class="td"></span><strong>9</strong><span data-en="Active Properties" data-es="Propiedades activas">Active Properties</span></div>
     <div class="ti"><span class="td"></span><strong>1,750+</strong><span data-en="Guests Hosted" data-es="Huéspedes atendidos">Guests Hosted</span></div>
-    <div class="ti"><span class="td"></span><strong>4.8★</strong><span data-en="Average Rating" data-es="Valoración media">Average Rating</span></div>
+    <div class="ti"><span class="td"></span><strong>4.8★</strong><span data-en="Avg. Rating, All Platforms" data-es="Valoración media, todas las plataformas">Avg. Rating, All Platforms</span></div>
     <div class="ti"><span class="td"></span><span data-en="Birmingham's Trusted STR Partner" data-es="Socio STR de confianza en Birmingham">Birmingham's Trusted STR Partner</span></div>
     <div class="ti"><span class="td"></span><strong>1,900+</strong><span data-en="Nights Booked" data-es="Noches reservadas">Nights Booked</span></div>
     <div class="ti"><span class="td"></span><strong>£200K+</strong><span data-en="Revenue Generated" data-es="Ingresos generados">Revenue Generated</span></div>
     <div class="ti"><span class="td"></span><strong>9</strong><span data-en="Active Properties" data-es="Propiedades activas">Active Properties</span></div>
     <div class="ti"><span class="td"></span><strong>1,750+</strong><span data-en="Guests Hosted" data-es="Huéspedes atendidos">Guests Hosted</span></div>
-    <div class="ti"><span class="td"></span><strong>4.8★</strong><span data-en="Average Rating" data-es="Valoración media">Average Rating</span></div>
+    <div class="ti"><span class="td"></span><strong>4.8★</strong><span data-en="Avg. Rating, All Platforms" data-es="Valoración media, todas las plataformas">Avg. Rating, All Platforms</span></div>
     <div class="ti"><span class="td"></span><span data-en="Birmingham's Trusted STR Partner" data-es="Socio STR de confianza en Birmingham">Birmingham's Trusted STR Partner</span></div>
   </div>
 </div>
@@ -443,11 +445,12 @@ footer{background:var(--dark);padding:3rem 6%}
   </div>
 </div>
 
-<!-- PAIN POINTS -->
-<section class="sec sec-dark">
-  <span class="sec-tag" data-en="The Problem" data-es="El Problema">The Problem</span>
+<!-- PAIN POINTS + WHY LANDLORDS SWITCH (merged) -->
+<section class="sec sec-dark" id="switch">
+  <span class="sec-tag" data-en="Sound Familiar?" data-es="¿Te suena?">Sound Familiar?</span>
   <h2 data-en="Managing short lets <em>is a full-time job.</em>" data-es="Gestionar alquileres cortos <em>es un trabajo a tiempo completo.</em>">Managing short lets <em>is a full-time job.</em></h2>
-  <p class="sec-sub" data-en="Most landlords lose money, time, and sleep trying to do it themselves." data-es="La mayoría de los propietarios pierden dinero, tiempo y sueño intentándolo solos.">Most landlords lose money, time, and sleep trying to do it themselves.</p>
+  <p class="sec-sub" data-en="Most landlords lose money, time, and sleep trying to do it themselves — these are the reasons we hear most often." data-es="La mayoría de los propietarios pierden dinero, tiempo y sueño intentándolo solos — estas son las razones que más escuchamos.">Most landlords lose money, time, and sleep trying to do it themselves — these are the reasons we hear most often.</p>
+  <h3 class="pain-subhead" data-en="If you're already managing it yourself" data-es="Si ya lo gestionas tú mismo">If you're already managing it yourself</h3>
   <div class="pain-grid">
     <div class="pain-item">
       <svg class="pain-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -462,16 +465,10 @@ footer{background:var(--dark);padding:3rem 6%}
     <div class="pain-item">
       <svg class="pain-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
       <h4 data-en="Risk and compliance" data-es="Riesgo y normativa">Risk and compliance</h4>
-      <p data-en="Damage, difficult guests, safety checks. One bad situation can cost thousands." data-es="Daños, huéspedes difíciles, revisiones de seguridad. Una situación mala puede costar miles." data-es="Danños, huéspedes difíciles, revisiones de seguridad. Una situación mala puede costar miles.">Damage, difficult guests, safety checks. One bad situation can cost thousands.</p>
+      <p data-en="Damage, difficult guests, safety checks. One bad situation can cost thousands." data-es="Daños, huéspedes difíciles, revisiones de seguridad. Una situación mala puede costar miles.">Damage, difficult guests, safety checks. One bad situation can cost thousands.</p>
     </div>
   </div>
-</section>
-
-<!-- WHY LANDLORDS SWITCH -->
-<section class="sec sec-dark" id="switch">
-  <span class="sec-tag" data-en="Sound Familiar?" data-es="¿Te suena?">Sound Familiar?</span>
-  <h2 data-en="Why landlords <em>make the switch.</em>" data-es="Por qué los propietarios <em>dan el paso.</em>">Why landlords <em>make the switch.</em></h2>
-  <p class="sec-sub" data-en="These are the reasons we hear most often." data-es="Estas son las razones que más escuchamos.">These are the reasons we hear most often.</p>
+  <h3 class="pain-subhead" data-en="If you're coming from traditional letting" data-es="Si vienes del alquiler tradicional">If you're coming from traditional letting</h3>
   <div class="pain-grid">
     <div class="pain-item">
       <svg class="pain-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21s7-7.58 7-12a7 7 0 10-14 0c0 4.42 7 12 7 12z"/><circle cx="12" cy="9" r="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
@@ -491,6 +488,62 @@ footer{background:var(--dark);padding:3rem 6%}
   </div>
   <div class="landlord-story">
     <p data-en="This is usually how it starts: a landlord who has had a difficult experience with traditional renting picks up the phone. We talk it through, answer every question, and show real numbers — including what a modest refurbishment could add to the return. If they go ahead, we handle everything ourselves: the refurbishment, the styling, every purchase, always visible and accounted for. Updates go out along the way, and the next real decision is simply reviewing the numbers once it's live. Most landlords tell us the whole thing felt too smooth to be genuine — until the first months of statements arrived, and the numbers spoke for themselves." data-es="Así suele empezar: un propietario que ha tenido una mala experiencia con el alquiler tradicional nos llama. Hablamos con calma, respondemos a todas las preguntas y mostramos números reales, incluido lo que una pequeña reforma podría sumar a la rentabilidad. Si deciden seguir adelante, nos encargamos de todo: la reforma, la decoración, cada compra, siempre visible y justificada. Vamos enviando actualizaciones por el camino, y la siguiente decisión real es simplemente revisar los números una vez todo está en marcha. La mayoría de los propietarios nos dice que todo parecía demasiado fácil para ser real, hasta que llegaron los primeros extractos y los números hablaron por sí solos.">This is usually how it starts: a landlord who has had a difficult experience with traditional renting picks up the phone. We talk it through, answer every question, and show real numbers — including what a modest refurbishment could add to the return. If they go ahead, we handle everything ourselves: the refurbishment, the styling, every purchase, always visible and accounted for. Updates go out along the way, and the next real decision is simply reviewing the numbers once it's live. Most landlords tell us the whole thing felt too smooth to be genuine — until the first months of statements arrived, and the numbers spoke for themselves.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec sec-dark">
+  <span class="sec-tag" data-en="Landlord Reviews" data-es="Opiniones de propietarios">Landlord Reviews</span>
+  <h2 data-en="What our landlords <em>say.</em>" data-es="Lo que dicen nuestros <em>propietarios.</em>">What our landlords <em>say.</em></h2>
+  <div class="tgrid">
+    <div class="tc">
+      <div class="tc-stars">
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p data-en="After relocating abroad for work, I needed someone reliable to manage my Birmingham property. A well-established agency I tried before was disappointing on every level. Since Ibon took over, everything has run smoothly and the returns have been notably stronger." data-es="Tras trasladarme al extranjero por trabajo, necesitaba a alguien de confianza para gestionar mi propiedad en Birmingham. Una agencia consolidada que probé antes fue decepcionante en todos los sentidos. Desde que Ibon se hizo cargo, todo funciona sin problemas y la rentabilidad ha mejorado notablemente.">"After relocating abroad for work, I needed someone reliable to manage my Birmingham property. A well-established agency I tried before was disappointing on every level. Since Ibon took over, everything has run smoothly and the returns have been notably stronger."</p>
+      <div class="tc-auth">Davide Cesa</div>
+      <div class="tc-prop" data-en="LinkedIn Recommendation" data-es="Recomendación en LinkedIn">LinkedIn Recommendation</div>
+    </div>
+    <div class="tc">
+      <div class="tc-stars">
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p data-en="Ibon has managed my property for two years now. I have consistently been impressed by his proactive approach and sharp business sense. Whenever an issue comes up, he addresses it quickly, and I have complete confidence in his ability to handle anything that arises." data-es="Ibon lleva dos años gestionando mi propiedad. Siempre me ha impresionado su enfoque proactivo y su buen criterio empresarial. Cuando surge algún problema, lo resuelve con rapidez, y tengo total confianza en su capacidad para afrontar cualquier situación.">"Ibon has managed my property for two years now. I have consistently been impressed by his proactive approach and sharp business sense. Whenever an issue comes up, he addresses it quickly, and I have complete confidence in his ability to handle anything that arises."</p>
+      <div class="tc-auth">Ali Ebrahim</div>
+      <div class="tc-prop" data-en="LinkedIn Recommendation" data-es="Recomendación en LinkedIn">LinkedIn Recommendation</div>
+    </div>
+    <div class="tc">
+      <div class="tc-stars">
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p data-en="I was spending hours every week on messages and cleaners. Now I just check my bank statement. The income is genuinely better than my old AST." data-es="Pasaba horas cada semana con mensajes y limpiezas. Ahora solo reviso mi extracto bancario. Los ingresos son realmente mejores que con mi anterior arrendamiento.">"I was spending hours every week on messages and cleaners. Now I just check my bank statement. The income is genuinely better than my old AST."</p>
+      <div class="tc-auth">Arjun Mehta</div>
+      <div class="tc-prop" data-en="B16 — 2 Bed Property" data-es="B16 — Propiedad 2 hab.">B16 — 2 Bed Property</div>
+    </div>
+    <div class="tc">
+      <div class="tc-stars">
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p data-en="I referred a friend after three months. The results speak for themselves and it genuinely requires zero involvement from me." data-es="Recomendé a un amigo después de tres meses. Los resultados hablan por sí solos y realmente no requiere ninguna participación de mi parte.">"I referred a friend after three months. The results speak for themselves and it genuinely requires zero involvement from me."</p>
+      <div class="tc-auth">Charlotte Bennett</div>
+      <div class="tc-prop" data-en="B16 — 1 Bed Property" data-es="B16 — Propiedad 1 hab.">B16 — 1 Bed Property</div>
+    </div>
   </div>
 </section>
 
@@ -700,62 +753,6 @@ footer{background:var(--dark);padding:3rem 6%}
         <div class="gr-l" data-en="Active Properties" data-es="Propiedades activas">Active Properties</div>
         <div class="gr-sub" data-en="2 more completing purchase" data-es="2 más terminando la compra">2 more completing purchase</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="sec sec-dark">
-  <span class="sec-tag" data-en="Landlord Reviews" data-es="Opiniones de propietarios">Landlord Reviews</span>
-  <h2 data-en="What our landlords <em>say.</em>" data-es="Lo que dicen nuestros <em>propietarios.</em>">What our landlords <em>say.</em></h2>
-  <div class="tgrid">
-    <div class="tc">
-      <div class="tc-stars">
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      </div>
-      <p data-en="I was spending hours every week on messages and cleaners. Now I just check my bank statement. The income is genuinely better than my old AST." data-es="Pasaba horas cada semana con mensajes y limpiezas. Ahora solo reviso mi extracto bancario. Los ingresos son realmente mejores que con mi anterior arrendamiento.">"I was spending hours every week on messages and cleaners. Now I just check my bank statement. The income is genuinely better than my old AST."</p>
-      <div class="tc-auth">Arjun Mehta</div>
-      <div class="tc-prop" data-en="B16 — 2 Bed Property" data-es="B16 — Propiedad 2 hab.">B16 — 2 Bed Property</div>
-    </div>
-    <div class="tc">
-      <div class="tc-stars">
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      </div>
-      <p data-en="I referred a friend after three months. The results speak for themselves and it genuinely requires zero involvement from me." data-es="Recomendé a un amigo después de tres meses. Los resultados hablan por sí solos y realmente no requiere ninguna participación de mi parte.">"I referred a friend after three months. The results speak for themselves and it genuinely requires zero involvement from me."</p>
-      <div class="tc-auth">Charlotte Bennett</div>
-      <div class="tc-prop" data-en="B16 — 1 Bed Property" data-es="B16 — Propiedad 1 hab.">B16 — 1 Bed Property</div>
-    </div>
-    <div class="tc">
-      <div class="tc-stars">
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      </div>
-      <p data-en="After relocating abroad for work, I needed someone reliable to manage my Birmingham property. A well-established agency I tried before was disappointing on every level. Since Ibon took over, everything has run smoothly and the returns have been notably stronger." data-es="Tras trasladarme al extranjero por trabajo, necesitaba a alguien de confianza para gestionar mi propiedad en Birmingham. Una agencia consolidada que probé antes fue decepcionante en todos los sentidos. Desde que Ibon se hizo cargo, todo funciona sin problemas y la rentabilidad ha mejorado notablemente.">"After relocating abroad for work, I needed someone reliable to manage my Birmingham property. A well-established agency I tried before was disappointing on every level. Since Ibon took over, everything has run smoothly and the returns have been notably stronger."</p>
-      <div class="tc-auth">Davide Cesa</div>
-      <div class="tc-prop" data-en="LinkedIn Recommendation" data-es="Recomendación en LinkedIn">LinkedIn Recommendation</div>
-    </div>
-    <div class="tc">
-      <div class="tc-stars">
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg class="tstar" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      </div>
-      <p data-en="Ibon has managed my property for two years now. I have consistently been impressed by his proactive approach and sharp business sense. Whenever an issue comes up, he addresses it quickly, and I have complete confidence in his ability to handle anything that arises." data-es="Ibon lleva dos años gestionando mi propiedad. Siempre me ha impresionado su enfoque proactivo y su buen criterio empresarial. Cuando surge algún problema, lo resuelve con rapidez, y tengo total confianza en su capacidad para afrontar cualquier situación.">"Ibon has managed my property for two years now. I have consistently been impressed by his proactive approach and sharp business sense. Whenever an issue comes up, he addresses it quickly, and I have complete confidence in his ability to handle anything that arises."</p>
-      <div class="tc-auth">Ali Ebrahim</div>
-      <div class="tc-prop" data-en="LinkedIn Recommendation" data-es="Recomendación en LinkedIn">LinkedIn Recommendation</div>
     </div>
   </div>
 </section>
