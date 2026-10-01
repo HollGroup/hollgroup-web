@@ -321,8 +321,8 @@ footer{background:var(--dark);padding:2.5rem 6%}
       document.getElementById('propMap').innerHTML = '';
       
       var map=L.map('propMap',{center:[52.475,-1.935],zoom:12,scrollWheelZoom:true});
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-        attribution: '© OpenStreetMap contributors © CARTO',
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors',
         maxZoom: 19
       }).addTo(map);
       
