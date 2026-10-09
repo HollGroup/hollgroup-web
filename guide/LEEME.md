@@ -17,6 +17,14 @@
 4. Si la propiedad tiene lockbox, añade la foto de la zona como `lockbox-area.jpg` en esa misma carpeta.
 5. Commit en GitHub. El enlace para los huéspedes será `https://hollgroup.co.uk/guide/skyline-k29xq4/`.
 
+## Qué sale solo y qué hay que rellenar
+
+Sale solo en todas las guías (está en `assets/`): los 9 idiomas, la pantalla de idioma, el aviso del regalo arriba, la sección del regalo con 5REPEATING, el formulario de la lista del 7% conectado a Brevo, el "gracias" con banderas, el botón grande a todas las propiedades, las fotos que se amplían, el QR del Wi-Fi, las normas y la seguridad.
+
+Hay que rellenar en el CONFIG de cada propiedad: nombre y zona, tipo (piso o casa), entrada (lockbox o cerradura), Wi-Fi, horarios, aparcamiento (y enlaces de Maps), cómo llegar, rutas con fotos, electrodomésticos, basura, incendio, farmacias, urgencias, cómo cerrar al salir y las recomendaciones. Lo que se deja vacío no sale. Lo que queda entre [CORCHETES] sale marcado para que se vea que falta.
+
+Los textos de cada propiedad pueden ir en un solo idioma (inglés) o en los 9. Lo más rápido: rellenar en inglés y pedir a Claude las traducciones.
+
 ## Cambiar algo en todas las guías
 
 - **Importante:** cada vez que cambies un archivo de `assets/`, sube el número `?v=` (por ejemplo de `20261009b` a `20261010a`) en el `index.html` de cada propiedad y de `_template`. Si no, Cloudflare y los móviles siguen mostrando la versión vieja.

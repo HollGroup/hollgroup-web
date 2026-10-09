@@ -36,10 +36,24 @@ const CONFIG = {
   parkingNearby: "[PROPERTY: nearest car parks, distance and approximate price]",  // also shown as "second car" advice when parking is available
   parkingCoords: "",             // optional: our car park entrance (coordinates or Google Maps link)
   parkingNearbyCoords: "",       // optional: car park link or coordinates
+  parkingPhotos: [               // optional: photos of the car park entrance or signs
+    // { img: "https://res.cloudinary.com/...", caption: "[WHAT THE PHOTO SHOWS]" }
+  ],
 
   directions: "[PROPERTY: directions, nearest transport]",
   entranceCoords: "",            // coordinates "52.4796, -1.9026" or a Google Maps link
   lockboxCoords: "",             // recommended: leave empty, send it in the check-in message
+  lockboxAreaPhoto: "",          // optional: Cloudinary link to a photo of the GENERAL area only, never the exact spot or the code
+  keysNote: "",                  // optional: extra note about keys, e.g. replacement cost of a key card
+
+  // Optional step by step routes with photos. Leave steps empty to hide them.
+  // Photo links: Cloudinary, ideally with c_limit,w_900,f_auto,q_auto in the link.
+  arrivalRoute: { title: "", steps: [
+    // { text: "[STEP: what to do]", imgs: ["https://res.cloudinary.com/..."] }
+  ] },
+  binsRoute: { title: "", steps: [
+    // { text: "[STEP: how to reach the bins]", imgs: [] }
+  ] },
 
   checkIn: "15:00",
   checkOut: "10:00",
