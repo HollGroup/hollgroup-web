@@ -396,17 +396,25 @@
         if (!document.getElementById("joinConsent").checked) return showErr(esc(T("fErrConsent")));
         err.hidden = true;
         btn.disabled = true; btn.textContent = T("fSending");
-        fetch(BREVO, { method: "POST", mode: "no-cors", body: new URLSearchParams(new FormData(jf)) })
-          .then(() => {
-            store.set("hollJoined", "1");
-            jf.hidden = true;
-            document.getElementById("joinOk").hidden = false;
-            const pr = document.getElementById("promo"); if (pr) pr.remove();
-          })
-          .catch(() => {
-            btn.disabled = false; btn.textContent = T("fSend");
-            showErr(`${esc(T("fErrSend"))} <a href="${BREVO}" target="_blank" rel="noopener">${esc(T("fErrLink"))}</a>`);
-          });
+        const body = new URLSearchParams(new FormData(jf));
+        const ok = () => {
+          store.set("hollJoined", "1");
+          jf.hidden = true;
+          document.getElementById("joinOk").hidden = false;
+          const pr = document.getElementById("promo"); if (pr) pr.remove();
+        };
+        const fail = msg => {
+          btn.disabled = false; btn.textContent = T("fSend");
+          showErr(`${msg ? esc(msg) + "<br>" : esc(T("fErrSend")) + " "}<a href="${BREVO}" target="_blank" rel="noopener">${esc(T("fErrLink"))}</a>`);
+        };
+        // Brevo answers with {"success": true/false, "message": "..."}; read it so a refusal is never silent
+        fetch(BREVO + "?isAjax=1", { method: "POST", body })
+          .then(r => r.text().then(t => {
+            let j = null; try { j = JSON.parse(t); } catch (e) {}
+            console.log("Brevo sign up:", r.status, t);
+            if (!r.ok || (j && j.success === false)) fail(j && (j.message || (j.errors && JSON.stringify(j.errors)))); else ok();
+          }))
+          .catch(err => { console.log("Brevo sign up blocked:", err); fail(null); });
       });
     }
 
