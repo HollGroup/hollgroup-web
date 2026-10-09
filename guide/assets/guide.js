@@ -70,6 +70,19 @@
     key: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.7 12.3L21 2"/><path d="M16 7l3 3"/><path d="M18.5 4.5l2 2"/></svg>',
     copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>',
     qr: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg>',
+    train: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 10h14M9 14h.01M15 14h.01M8 21l2-4M16 21l-2-4"/></svg>',
+    tram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="6" width="14" height="12" rx="3"/><path d="M8 2h8M12 2v4M5 12h14M9 15h.01M15 15h.01M8 22l1.5-4M16 22l-1.5-4"/></svg>',
+    bus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="15" rx="3"/><path d="M4 11h16M8 15h.01M16 15h.01M7 18v3M17 18v3"/></svg>',
+    plane: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>',
+    car: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14v-5l-2-5H7l-2 5v5z"/><path d="M5 12h14"/><circle cx="8" cy="17" r="2"/><circle cx="16" cy="17" r="2"/></svg>',
+    walk: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="M10 21l2-6 3 3v3M8 12l2-4 4 1 2 4 2 1M10 8l-1 5"/></svg>',
+    pill: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20.5a7 7 0 0 1-9.9-9.9l6-6a7 7 0 0 1 9.9 9.9z"/><path d="M8.5 8.5l7 7"/></svg>',
+    hospital: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M12 7v10M7 12h10"/></svg>',
+    eat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2v20M4 2v6a3 3 0 0 0 6 0V2M17 22V2c-2.2 1.5-3 4-3 7v4h3"/></svg>',
+    coffee: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 2v3M12 2v3"/></svg>',
+    drinks: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l-1 8a5 5 0 0 1-10 0z"/><path d="M12 16v5M8 21h8M6.5 7h11"/></svg>',
+    essentials: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18l-2 11H5z"/><path d="M8 9l4-6 4 6M9 13v4M15 13v4"/></svg>',
+    see: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>',
     gift: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>'
   };
 
@@ -110,6 +123,17 @@
     // Lockbox away from the building: guests must collect the keys before going to the entrance
     const keysFirst = isLockbox && C.keysFirst;
     const keysFirstBox = () => !keysFirst ? "" : `<div class="keys-first"><div class="sub">${I.key}${T("keysFirstH")}</div><p>${T("keysFirstD", { where: P(C.keysFirstWhere) })}</p>${clean(C.lockboxCoords) ? mapBtn(C.lockboxCoords, T("keysFirstBtn"), "btn-primary") : ""}</div>`;
+    // Visual cards (transport, pharmacies, A&E, local picks): big icon, optional photo, name, minutes, short note. Tap opens Maps.
+    const card = (c, ico, label, wide) => {
+      const img = c.img ? `<img class="cd-img" src="${esc(c.img)}" alt="" loading="lazy">` : "";
+      const time = c.mins ? `<span class="tr-time">${I[c.how || "walk"] || ""}${T("tmin_" + (c.how || "walk"), { n: esc(c.mins) })}</span>` : "";
+      const tag = c.tag ? `<span class="cd-tag">${T("tag_" + c.tag)}</span>` : "";
+      const inner = `${img}<span class="cd-row"><span class="tr-ico">${I[ico] || I.pin}</span><span class="tr-body"><span class="tr-mode">${label}</span><span class="tr-name">${P(c.name)}</span>${tag}${time}${c.note ? `<span class="tr-note">${P(c.note)}</span>` : ""}</span></span>${clean(c.coords) ? `<span class="cd-go">${I.pin}${T("openMaps")}</span>` : ""}`;
+      const cls = "tr" + (wide ? " wide" : "") + (c.img ? " has-img" : "");
+      return clean(c.coords) ? `<a class="${cls}" href="${maps(c.coords)}" target="_blank" rel="noopener">${inner}</a>` : `<div class="${cls}">${inner}</div>`;
+    };
+    const cards = (title, list, fn, wide) => !list || !list.length ? "" : `${title ? `<div class="sub" style="margin-top:4px">${title}</div>` : ""}<div class="tr-grid${wide ? " one" : ""}">${list.map(fn).join("")}</div>`;
+    const transport = list => cards(T("transportTitle"), list, t => card(t, t.mode === "coach" ? "bus" : t.mode, T("tm_" + t.mode)));
     const nav = [["glance", "navGlance"], ["important", "navImportant"], ["arrive", "navArrival"], ["home", "navHome"], ["rules", "navRules"], ["safety", "navSafety"], ["help", "navHelp"], ["services", "navServices"], ["checkout", "navCheckout"], ["picks", "navPicks"], ["thanks", "navThanks"]];
     const phoneLink = `<a href="tel:${PHONE}" dir="ltr"><b>${PHONE_TXT}</b></a>`;
     const emailLink = `<a href="mailto:${EMAIL}" dir="ltr"><b>${EMAIL}</b></a>`;
@@ -180,7 +204,8 @@
     <h2>${T("arriveTitle")}</h2>
     <div class="stack">
       ${keysFirstBox()}
-      <p>${P(C.directions)}</p>
+      ${C.directions ? `<p>${P(C.directions)}</p>` : ""}
+      ${transport(C.transport)}
       ${mapBtn(C.entranceCoords, keysFirst ? T("entranceStep2") : T("entrance"), keysFirst ? "btn-light" : "btn-primary")}
       <div class="soft"><div class="sub">${T("parking")}</div>
         ${C.parking === "none"
@@ -242,14 +267,10 @@
       <a href="tel:${PHONE}"><span class="num">Ibon</span><span class="lbl" dir="ltr">${PHONE_TXT}</span></a>
     </div>
     <div class="stack" style="margin-top:12px">
-      ${(() => { const list = [].concat(C.pharmacy || []), many = list.length > 1;
-        return (many ? `<div class="sub" style="margin-bottom:-4px">${T("pharmacies")}</div>` : "") + list.map(ph => { const label = many ? P(ph.name) : `${T("pharmacy")}: ${P(ph.name)}`;
-          return clean(ph.coords) ? `<a class="btn btn-light" href="${maps(ph.coords)}" target="_blank" rel="noopener">${I.pin}${label}</a>` : `<div class="soft">${label}</div>`; }).join(""); })()}
+      ${cards(T("pharmacies"), [].concat(C.pharmacy || []), c => card(c, "pill", T("cardPharmacy")))}
       ${C.pharmacyNote ? `<p style="font-size:16px;color:var(--muted)">${P(C.pharmacyNote)}</p>` : ""}
-      ${(() => { const list = [].concat(C.hospital || []), many = list.length > 1;
-        return (many ? `<div class="sub" style="margin-bottom:-4px">${T("aes")}</div>` : "") + list.map(h => { const label = many ? P(h.name) : `${T("ae")}: ${P(h.name)}`;
-          return clean(h.coords) ? `<a class="btn btn-light" href="${maps(h.coords)}" target="_blank" rel="noopener">${I.pin}${label}</a>` : `<div class="soft">${label}</div>`; }).join(""); })()}
-      ${C.hospitalNote ? `<p style="font-size:16px;color:var(--muted)">${P(C.hospitalNote)}</p>` : ""}
+      ${cards(T("aes"), [].concat(C.hospital || []), c => card(Object.assign({ how: "car" }, c), "hospital", T("cardAE")))}
+      <p style="font-size:16px;color:var(--muted)">${C.hospitalNote ? P(C.hospitalNote) : T("aeNote")}</p>
       <div class="soft">${C.utilitiesLocked ? T("utilLocked") : `<b>${T("stopcock")}:</b> ${P(C.stopcock)}<br><b>${T("fuse")}:</b> ${P(C.fuseBox)}`}</div>
     </div>
   </section>
@@ -289,7 +310,11 @@
   ${(C.picks || []).length ? `<section class="card" id="picks">
     <h2>${T("picksTitle")}</h2>
     ${C.picksImage ? `<div style="margin:6px 0 14px">${photo(C.picksImage, T("picksTitle"))}</div>` : ""}
-    <div>${C.picks.map(p => `<div class="pick"><div><div class="cat">${T("cat_" + p.category)}</div><div class="name">${P(p.name)}</div><div class="note">${P(p.note)}${p.walkMins ? " · " + T("walk", { n: esc(p.walkMins) }) : ""}</div></div>${clean(p.coords) ? `<a href="${maps(p.coords)}" target="_blank" rel="noopener" aria-label="Maps">${I.pin}</a>` : ""}</div>`).join("")}</div>
+    ${(() => { const order = ["essentials", "eat", "coffee", "drinks", "see"];
+      const cats = order.filter(c => C.picks.some(p => p.category === c));
+      const sorted = order.flatMap(c => C.picks.filter(p => p.category === c)).concat(C.picks.filter(p => !order.includes(p.category)));
+      const chips = cats.length > 1 && C.picks.length > 6 ? `<div class="pk-chips" id="pkChips"><button type="button" class="on" data-cat="">${T("allCats")}</button>${cats.map(c => `<button type="button" data-cat="${c}">${T("cat_" + c)}</button>`).join("")}</div>` : "";
+      return chips + cards("", sorted, p => card(Object.assign({}, p, { mins: p.mins || p.walkMins }), p.category, T("cat_" + p.category), true).replace(/^<(a|div) class="/, `<$1 data-cat="${p.category}" class="`), true); })()}
   </section>` : ""}
 
   <section class="card gift" id="thanks">
@@ -437,6 +462,15 @@
           .catch(err => { console.log("Brevo sign up blocked:", err); fail(null); });
       });
     }
+
+    // Filter local picks by category
+    const pkChips = document.getElementById("pkChips");
+    if (pkChips) pkChips.addEventListener("click", e => {
+      const btn = e.target.closest("button"); if (!btn) return;
+      pkChips.querySelectorAll("button").forEach(b => b.classList.toggle("on", b === btn));
+      const cat = btn.dataset.cat;
+      document.querySelectorAll("#picks [data-cat]").forEach(el => { if (el.parentElement !== pkChips) el.hidden = !!cat && el.dataset.cat !== cat; });
+    });
 
     const toast = msg => { const el = document.getElementById("toast"); el.textContent = msg; el.classList.add("on"); setTimeout(() => el.classList.remove("on"), 1600); };
     document.getElementById("copyPw").addEventListener("click", () => {

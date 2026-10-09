@@ -8,7 +8,7 @@
 <title>Holl Group</title>
 <link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009q">
+<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009s">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
@@ -41,6 +41,10 @@ const CONFIG = {
   ],
 
   directions: "[PROPERTY: directions, nearest transport]",
+  // Transport cards. mode: train, tram, bus, coach, plane or car. how: walk, train, bus, tram or car. coords: link, coordinates or place name.
+  transport: [
+    // { mode: "train", name: "Birmingham New Street", how: "walk", mins: 10, coords: "Birmingham New Street station" }
+  ],
   entranceCoords: "",            // coordinates "52.4796, -1.9026" or a Google Maps link
   lockboxCoords: "",             // recommended: leave empty, send it in the check-in message
   keysFirst: false,              // true if the lockbox is NOT at the building: guests are told to collect the keys first
@@ -82,15 +86,15 @@ const CONFIG = {
   stopcock: "[PROPERTY: water stopcock location]",
   fuseBox: "[PROPERTY: fuse box location]",
   // One pharmacy, or several: [ { name: "...", coords: "..." }, { name: "...", coords: "..." } ]
-  pharmacy: { name: "[NEAREST PHARMACY]", coords: "" },
+  pharmacy: { name: "[NEAREST PHARMACY]", coords: "", mins: 5, how: "walk", img: "" },
   pharmacyNote: "",              // optional, e.g. how to get there
   // One A&E, or several, like pharmacy
-  hospital: { name: "[NEAREST A&E]", coords: "" },
-  hospitalNote: "",              // optional, e.g. travel times, children's hospital
+  hospital: { name: "[NEAREST A&E]", coords: "", mins: 15, how: "car" },   // add tag: "kids" for a children's hospital
+  hospitalNote: "",              // optional; if empty the standard 111 / 999 advice is shown
   securing: "[PROPERTY: how to secure the property when leaving]",
 
   // category: "eat", "coffee", "drinks", "essentials" or "see"
-  // coords: coordinates, a Google Maps link, or just the place name and city. walkMins is optional.
+  // coords: coordinates, a Google Maps link, or just the place name and city. mins (walking) and img (Cloudinary photo) are optional.
   picksImage: "",               // optional: Cloudinary link to a "what's on your doorstep" map or poster
   picks: [
     { category: "eat", name: "[PLACE]", note: "[WHY YOU LIKE IT]", walkMins: 5, coords: "" },
@@ -113,7 +117,7 @@ const CONFIG = {
 <body>
 <div id="app"></div>
 <div class="toast" id="toast"></div>
-<script src="/guide/assets/guide-i18n.js?v=20261009q"></script>
-<script src="/guide/assets/guide.js?v=20261009q"></script>
+<script src="/guide/assets/guide-i18n.js?v=20261009s"></script>
+<script src="/guide/assets/guide.js?v=20261009s"></script>
 </body>
 </html>

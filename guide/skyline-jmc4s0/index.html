@@ -8,7 +8,7 @@
 <title>Holl Group</title>
 <link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009q">
+<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009s">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
@@ -35,7 +35,7 @@ const CONFIG = {
   "parkingCoords": "",
   "parkingPhotos": [],
   "directions": {
-    "en": "Birmingham New Street station is about a 10 minute walk. The Mailbox, Gas Street Basin and Brindleyplace are all a few minutes away on foot."
+    "en": "The Mailbox, Gas Street Basin and Brindleyplace are all a few minutes away on foot."
   },
   "entranceCoords": "165 Granville Street, Birmingham B1 1JY",
   "lockboxCoords": "https://www.google.com/maps/search/?api=1&query=Washington+Street,+Birmingham+B1",
@@ -173,44 +173,39 @@ const CONFIG = {
   "fuseBox": "",
   "pharmacy": [
     {
-      "name": "Attwood Green Health Centre pharmacy",
-      "coords": "https://maps.app.goo.gl/AghFpU6FCUSEHoB2A"
+      "name": "Attwood Green Health Centre",
+      "coords": "https://maps.app.goo.gl/AghFpU6FCUSEHoB2A",
+      "mins": 4,
+      "how": "walk"
     },
     {
       "name": "Boots, Brindleyplace",
-      "coords": "https://maps.app.goo.gl/Nk2pRWJr52oHEBM29"
+      "coords": "https://maps.app.goo.gl/Nk2pRWJr52oHEBM29",
+      "mins": 12,
+      "how": "walk"
     }
   ],
   "pharmacyNote": {
-    "en": "Attwood Green Health Centre is about 4 minutes' walk. As well as the pharmacy, it has a GP practice and an out-of-hours dental service. Boots in Brindleyplace is about 12 minutes' walk."
+    "en": "Attwood Green Health Centre also has a GP practice and an out-of-hours dental service."
   },
   "hospital": [
     {
-      "name": "Queen Elizabeth Hospital",
-      "coords": "52.4521833, -1.9433519"
+      "name": "Birmingham Children's Hospital",
+      "coords": "52.4849039, -1.892619",
+      "mins": 7,
+      "tag": "kids"
     },
     {
-      "name": {
-        "en": "Birmingham Children's Hospital (under 16s)",
-        "es": "Birmingham Children's Hospital (menores de 16)",
-        "fr": "Birmingham Children's Hospital (moins de 16 ans)",
-        "de": "Birmingham Children's Hospital (unter 16 Jahren)",
-        "it": "Birmingham Children's Hospital (under 16)",
-        "pt": "Birmingham Children's Hospital (menores de 16)",
-        "zh": "Birmingham Children's Hospital（16 岁以下）",
-        "ar": "Birmingham Children's Hospital (دون 16 عامًا)",
-        "ja": "Birmingham Children's Hospital（16 歳未満）"
-      },
-      "coords": "52.4849039, -1.892619"
+      "name": "Queen Elizabeth Hospital",
+      "coords": "52.4521833, -1.9433519",
+      "mins": 11
     },
     {
       "name": "Birmingham Heartlands Hospital",
-      "coords": "52.4788084, -1.82865"
+      "coords": "52.4788084, -1.82865",
+      "mins": 17
     }
   ],
-  "hospitalNote": {
-    "en": "By car: Queen Elizabeth about 11 minutes, Heartlands about 17 minutes. Children under 16 go to Birmingham Children's Hospital, about 7 minutes. If it is urgent but not life threatening, call 111 first. In an emergency, call 999."
-  },
   "securing": {
     "en": "Before you leave: hang used towels in the bathroom, close all windows, lock the door, return the keys to the same lockbox, and send us a message with a few photos once you have checked out."
   },
@@ -447,7 +442,34 @@ const CONFIG = {
   "routerLocked": false,
   "keysFirst": true,
   "keysFirstWhere": "Washington Street",
-  "picksImage": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791546256/What_s_On_Your_Doorstep_cocbtc.png"
+  "picksImage": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791546256/What_s_On_Your_Doorstep_cocbtc.png",
+  "transport": [
+    {
+      "mode": "train",
+      "name": "Birmingham New Street",
+      "how": "walk",
+      "mins": 10,
+      "coords": "Birmingham New Street station"
+    },
+    {
+      "mode": "plane",
+      "name": "Birmingham Airport",
+      "how": "train",
+      "mins": 10,
+      "note": {
+        "en": "Direct train from New Street to Birmingham International, then the free Air-Rail Link to the terminal. Up to 10 trains an hour.",
+        "es": "Tren directo de New Street a Birmingham International y después el Air-Rail Link gratuito hasta la terminal. Hasta 10 trenes por hora.",
+        "fr": "Train direct de New Street à Birmingham International, puis l'Air-Rail Link gratuit jusqu'au terminal. Jusqu'à 10 trains par heure.",
+        "de": "Direktzug von New Street nach Birmingham International, dann mit dem kostenlosen Air-Rail Link zum Terminal. Bis zu 10 Züge pro Stunde.",
+        "it": "Treno diretto da New Street a Birmingham International, poi l'Air-Rail Link gratuito fino al terminal. Fino a 10 treni all'ora.",
+        "pt": "Comboio direto de New Street para Birmingham International e depois o Air-Rail Link gratuito até ao terminal. Até 10 comboios por hora.",
+        "zh": "从 New Street 乘直达列车到 Birmingham International，再换乘免费的 Air-Rail Link 到航站楼。每小时最多 10 班。",
+        "ar": "قطار مباشر من New Street إلى Birmingham International، ثم Air-Rail Link المجاني إلى مبنى الركاب. حتى 10 قطارات في الساعة.",
+        "ja": "New Street から Birmingham International まで直通列車、その後無料の Air-Rail Link でターミナルへ。1 時間に最大 10 本。"
+      },
+      "coords": "Birmingham Airport"
+    }
+  ]
 };
 /* ===================== END OF PROPERTY SETTINGS ===================== */
 </script>
@@ -455,7 +477,7 @@ const CONFIG = {
 <body>
 <div id="app"></div>
 <div class="toast" id="toast"></div>
-<script src="/guide/assets/guide-i18n.js?v=20261009q"></script>
-<script src="/guide/assets/guide.js?v=20261009q"></script>
+<script src="/guide/assets/guide-i18n.js?v=20261009s"></script>
+<script src="/guide/assets/guide.js?v=20261009s"></script>
 </body>
 </html>
