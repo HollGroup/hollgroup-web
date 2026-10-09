@@ -235,3 +235,15 @@ a.tr:active{background:var(--tint)}
 .pk-chips button{font:inherit;font-size:15px;font-weight:600;min-height:40px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--tint-2);color:var(--ink);cursor:pointer}
 .pk-chips button.on{background:var(--accent-ink);border-color:var(--accent-ink);color:#fff}
 #picks [hidden]{display:none!important}
+
+/* Sleeping arrangements */
+.bd-stats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.bd-stats span{display:inline-flex;align-items:center;gap:6px;background:var(--accent-ink);color:#fff;border-radius:999px;padding:6px 12px;font-weight:700;font-size:15px}
+.bd-stats svg{width:18px;height:18px}
+.bd{gap:6px}
+.bd-icons{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0}
+.bd-ico{width:44px;height:44px;border-radius:12px;background:#fff;border:1px solid var(--line);color:var(--accent-ink);display:flex;align-items:center;justify-content:center}
+.bd-ico svg{width:30px;height:30px}
+.bd-list{display:flex;flex-direction:column;gap:2px;font-size:15px}
+.bd-extra{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--accent-deep)}
+.bd-extra svg{width:18px;height:18px}

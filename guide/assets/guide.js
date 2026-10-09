@@ -83,6 +83,13 @@
     drinks: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l-1 8a5 5 0 0 1-10 0z"/><path d="M12 16v5M8 21h8M6.5 7h11"/></svg>',
     essentials: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18l-2 11H5z"/><path d="M8 9l4-6 4 6M9 13v4M15 13v4"/></svg>',
     see: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>',
+    bed_single: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2"/><rect x="9" y="5" width="6" height="3" rx="1"/><path d="M7 11h10"/></svg>',
+    bed_double: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><rect x="5" y="5" width="6" height="3" rx="1"/><rect x="13" y="5" width="6" height="3" rx="1"/><path d="M3 11h18"/></svg>',
+    bed_king: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><rect x="4" y="4" width="7" height="3.5" rx="1"/><rect x="13" y="4" width="7" height="3.5" rx="1"/><path d="M2 10.5h20"/></svg>',
+    bed_sofa: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M2 13a2 2 0 0 1 4 0v2h12v-2a2 2 0 0 1 4 0v5H2z"/><path d="M5 18v2M19 18v2"/></svg>',
+    bath: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18v3a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5z"/><path d="M6 12V5a2 2 0 0 1 4 0M7 20l-1 2M17 20l1 2"/></svg>',
+    people: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.5a5 5 0 0 1 5.5 5"/></svg>',
+    door: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v17M3 21h18"/><circle cx="15" cy="12" r="1"/></svg>',
     gift: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>'
   };
 
@@ -134,6 +141,19 @@
     };
     const cards = (title, list, fn, wide) => !list || !list.length ? "" : `${title ? `<div class="sub" style="margin-top:4px">${title}</div>` : ""}<div class="tr-grid${wide ? " one" : ""}">${list.map(fn).join("")}</div>`;
     const transport = list => cards(T("transportTitle"), list, t => card(t, t.mode === "coach" ? "bus" : t.mode, T("tm_" + t.mode)));
+    // Sleeping arrangements at a glance
+    const beds = list => {
+      if (!list || !list.length) return "";
+      const rooms = list.filter(r => r.room !== "living").length;
+      const stats = `<div class="bd-stats">${C.sleeps ? `<span>${I.people}${T("sleepsN", { n: esc(C.sleeps) })}</span>` : ""}<span>${I.door}${T("bedroomsN", { n: rooms })}</span>${C.bathrooms ? `<span>${I.bath}${T("bathroomsN", { n: esc(C.bathrooms) })}</span>` : ""}</div>`;
+      return stats + `<div class="tr-grid">${list.map(r => {
+        const counts = {}; (r.beds || []).forEach(b => counts[b] = (counts[b] || 0) + 1);
+        return `<div class="tr bd"><span class="tr-mode">${T("room_" + r.room)}</span>
+          <span class="bd-icons">${(r.beds || []).map(b => `<span class="bd-ico">${I["bed_" + b]}</span>`).join("")}</span>
+          <span class="bd-list">${Object.keys(counts).map(b => `<b>${counts[b]} × ${T("bed_" + b)}</b>`).join("")}</span>
+          ${r.ensuite ? `<span class="bd-extra">${I.bath}${T("ensuite")}</span>` : ""}
+          ${r.note ? `<span class="tr-note">${P(r.note)}</span>` : ""}</div>`; }).join("")}</div>`;
+    };
     const nav = [["glance", "navGlance"], ["important", "navImportant"], ["arrive", "navArrival"], ["home", "navHome"], ["rules", "navRules"], ["safety", "navSafety"], ["help", "navHelp"], ["services", "navServices"], ["checkout", "navCheckout"], ["picks", "navPicks"], ["thanks", "navThanks"]];
     const phoneLink = `<a href="tel:${PHONE}" dir="ltr"><b>${PHONE_TXT}</b></a>`;
     const emailLink = `<a href="mailto:${EMAIL}" dir="ltr"><b>${EMAIL}</b></a>`;
@@ -228,6 +248,7 @@
 
   <section class="card" id="home">
     <h2>${T("homeTitle")}</h2>
+    ${C.beds ? `<div class="sub" style="margin:4px 0 10px">${T("bedsTitle")}</div>${beds(C.beds)}<div style="height:16px"></div>` : ""}
     <div class="stack">${C.property.map(b => `<div class="soft"><div class="sub">${P(b.title)}</div><p>${P(b.text)}</p>${appliances(b.appliances)}</div>`).join("")}</div>
   </section>
 

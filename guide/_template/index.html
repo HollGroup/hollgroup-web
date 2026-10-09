@@ -8,7 +8,7 @@
 <title>Holl Group</title>
 <link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009s">
+<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009t">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
@@ -67,6 +67,14 @@ const CONFIG = {
   wifiName: "[WIFI NAME]",
   wifiPassword: "[WIFI PASSWORD]",
 
+  // Sleeping arrangements (shown with icons). room: bed1, bed2, bed3 or living. beds: king, double, single or sofa.
+  sleeps: 4,
+  bathrooms: 1,
+  beds: [
+    { room: "bed1", beds: ["double"], ensuite: false },
+    // { room: "living", beds: ["sofa"], note: "Need it? Let us know in advance." }
+  ],
+
   property: [
     { title: "Heating", text: "[PROPERTY: how the heating works]" },
     { title: "Hot water", text: "[PROPERTY: hot water]" },
@@ -117,7 +125,7 @@ const CONFIG = {
 <body>
 <div id="app"></div>
 <div class="toast" id="toast"></div>
-<script src="/guide/assets/guide-i18n.js?v=20261009s"></script>
-<script src="/guide/assets/guide.js?v=20261009s"></script>
+<script src="/guide/assets/guide-i18n.js?v=20261009t"></script>
+<script src="/guide/assets/guide.js?v=20261009t"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <title>Holl Group</title>
 <link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009s">
+<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009t">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
@@ -92,14 +92,6 @@ const CONFIG = {
   "wifiName": "SkylineHG",
   "wifiPassword": "www.hollgroup.co.uk",
   "property": [
-    {
-      "title": {
-        "en": "Bedrooms"
-      },
-      "text": {
-        "en": "Bedroom 1: two single beds. Bedroom 2: double bed. There is also a sofa bed in the living room; if you need it, please let us know in advance so we can leave bed linen ready. The flat has two bathrooms."
-      }
-    },
     {
       "title": {
         "en": "Balcony"
@@ -469,6 +461,41 @@ const CONFIG = {
       },
       "coords": "Birmingham Airport"
     }
+  ],
+  "sleeps": 6,
+  "bathrooms": 2,
+  "beds": [
+    {
+      "room": "bed1",
+      "beds": [
+        "single",
+        "single"
+      ]
+    },
+    {
+      "room": "bed2",
+      "beds": [
+        "single",
+        "single"
+      ]
+    },
+    {
+      "room": "living",
+      "beds": [
+        "sofa"
+      ],
+      "note": {
+        "en": "Need it? Let us know in advance so we can leave bed linen ready.",
+        "es": "¿Lo necesitas? Avísanos con antelación para dejarte la ropa de cama preparada.",
+        "fr": "Besoin du canapé-lit ? Prévenez-nous à l'avance pour que nous préparions le linge de lit.",
+        "de": "Brauchen Sie es? Sagen Sie uns vorher Bescheid, dann legen wir Bettwäsche bereit.",
+        "it": "Ti serve? Avvisaci in anticipo così prepariamo la biancheria.",
+        "pt": "Precisa dele? Avise-nos com antecedência para deixarmos a roupa de cama preparada.",
+        "zh": "需要使用？请提前告知，我们会备好床品。",
+        "ar": "تحتاجها؟ أخبرنا مسبقًا لنجهّز لك أغطية السرير.",
+        "ja": "ご利用の場合は、寝具をご用意しますので事前にお知らせください。"
+      }
+    }
   ]
 };
 /* ===================== END OF PROPERTY SETTINGS ===================== */
@@ -477,7 +504,7 @@ const CONFIG = {
 <body>
 <div id="app"></div>
 <div class="toast" id="toast"></div>
-<script src="/guide/assets/guide-i18n.js?v=20261009s"></script>
-<script src="/guide/assets/guide.js?v=20261009s"></script>
+<script src="/guide/assets/guide-i18n.js?v=20261009t"></script>
+<script src="/guide/assets/guide.js?v=20261009t"></script>
 </body>
 </html>
