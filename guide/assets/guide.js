@@ -101,7 +101,7 @@
   <div class="top-in"><img src="${LOGO}" alt="Holl Group"><span class="t">${name}</span>
     <select class="lang" id="langSel" aria-label="${esc(T("langLabel"))}">${LANGS.map(([c, n]) => `<option value="${c}"${c === lang ? " selected" : ""}>${n}</option>`).join("")}</select>
   </div>
-  <nav class="nav" aria-label="Sections">${nav.map(([id, k]) => `<a href="#${id}">${T(k)}</a>`).join("")}</nav>
+  <div class="nav-wrap" id="navWrap"><nav class="nav" id="navBar" aria-label="Sections">${nav.map(([id, k]) => `<a href="#${id}" data-id="${id}">${T(k)}</a>`).join("")}</nav></div>
 </header>
 
 <main class="wrap">
@@ -290,6 +290,29 @@
       render(l);
       window.scrollTo(0, y);
     });
+
+    // Section shortcuts: hide the fade at the end of the row, highlight the section on screen
+    const navBar = document.getElementById("navBar"), navWrap = document.getElementById("navWrap");
+    const fade = () => { const max = navBar.scrollWidth - navBar.clientWidth; navWrap.classList.toggle("end", max <= 2 || Math.abs(navBar.scrollLeft) >= max - 2); };
+    navBar.addEventListener("scroll", fade, { passive: true }); fade();
+    if ("IntersectionObserver" in window) {
+      const links = {}; navBar.querySelectorAll("a").forEach(a => links[a.dataset.id] = a);
+      let current = "";
+      const pick = () => {
+        const line = window.innerHeight * 0.4;
+        let best = null;
+        Object.keys(links).forEach(id => { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top <= line) best = id; });
+        if (!best || best === current) return;
+        current = best;
+        navBar.querySelectorAll("a.on").forEach(x => x.classList.remove("on"));
+        const a = links[best]; a.classList.add("on");
+        const left = a.offsetLeft - navBar.clientWidth / 2 + a.clientWidth / 2;
+        navBar.scrollTo({ left: document.documentElement.dir === "rtl" ? -Math.max(0, navBar.scrollWidth - navBar.clientWidth - left) : left, behavior: "smooth" });
+      };
+      const io = new IntersectionObserver(pick, { threshold: [0, 0.25, 0.5, 0.75, 1] });
+      Object.keys(links).forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
+      window.addEventListener("scroll", pick, { passive: true });
+    }
 
     const toast = msg => { const el = document.getElementById("toast"); el.textContent = msg; el.classList.add("on"); setTimeout(() => el.classList.remove("on"), 1600); };
     document.getElementById("copyPw").addEventListener("click", () => {
