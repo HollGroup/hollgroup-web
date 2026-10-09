@@ -80,6 +80,14 @@
     const mapBtn = (coords, label, cls) => clean(coords)
       ? `<a class="btn ${cls || "btn-primary"}" href="${maps(coords)}" target="_blank" rel="noopener">${I.pin}${esc(label)}</a>`
       : `<div class="soft"><span class="ph">[ADD COORDINATES IN CONFIG]</span></div>`;
+    // Photos and step-by-step routes (property data, optional)
+    const photo = (src, alt) => src ? `<img class="ph-img" src="${esc(src)}" alt="${esc(P(alt || "").replace(/<[^>]+>/g, ""))}" loading="lazy">` : "";
+    const route = r => !r || !r.steps || !r.steps.length ? "" : `
+      <div class="route">${r.title ? `<div class="sub">${P(r.title)}</div>` : ""}
+        <ol class="route-list">${r.steps.map((st, i) => `<li><span class="n">${i + 1}</span><div class="route-body">
+          ${(st.imgs || []).length ? `<div class="route-imgs${st.imgs.length > 1 ? " two" : ""}">${st.imgs.map(u => photo(u, st.text)).join("")}</div>` : ""}
+          <p>${P(st.text)}</p></div></li>`).join("")}</ol></div>`;
+    const gallery = list => !list || !list.length ? "" : `<div class="gallery">${list.map(g => `<figure>${photo(g.img, g.caption)}${g.caption ? `<figcaption>${P(g.caption)}</figcaption>` : ""}</figure>`).join("")}</div>`;
     const nav = [["glance", "navGlance"], ["important", "navImportant"], ["arrive", "navArrival"], ["home", "navHome"], ["rules", "navRules"], ["safety", "navSafety"], ["help", "navHelp"], ["services", "navServices"], ["checkout", "navCheckout"], ["picks", "navPicks"], ["thanks", "navThanks"]];
     const phoneLink = `<a href="tel:${PHONE}" dir="ltr"><b>${PHONE_TXT}</b></a>`;
     const emailLink = `<a href="mailto:${EMAIL}" dir="ltr"><b>${EMAIL}</b></a>`;
@@ -129,7 +137,7 @@
       ${isFlat ? `<li class="hot"><span class="h">${T("impCorrH")}</span>${T("impCorr")}</li>` : ""}
       <li><span class="h">${T("impGuestsH")}</span>${T("impGuests")}</li>
       <li><span class="h">${T("impLeaveH", { time: time(C.checkOut) })}</span>${T("impLeave")}</li>
-      ${isLockbox ? `<li><span class="h">${T("impKeysH")}</span>${T("impKeys")}</li>` : ""}
+      ${isLockbox ? `<li><span class="h">${T("impKeysH")}</span>${T("impKeys")}${C.keysNote ? ` <b>${P(C.keysNote)}</b>` : ""}</li>` : ""}
     </ul>
   </section>
 
@@ -150,17 +158,19 @@
       ${mapBtn(C.entranceCoords, T("entrance"))}
       <div class="soft"><div class="sub">${T("parking")}</div>
         ${C.parking === "none" ? `<p>${T("noParking")}</p><p style="margin-top:8px">${P(C.parkingNearby)}</p>` : `<p>${P(C.parkingDetails)}</p>`}
+        ${gallery(C.parkingPhotos)}
       </div>
     </div>
     <h2 style="margin-top:26px">${T("gettingIn")}</h2>
     <div class="stack">
       ${isLockbox
         ? `<p>${T("lockboxText")}</p>
-           <img src="lockbox-area.jpg" alt="" style="width:100%;border-radius:14px;display:block" onerror="this.outerHTML='<div class=&quot;soft&quot;><span class=&quot;ph&quot;>[PHOTO: lockbox-area.jpg in this folder]</span></div>'">
+           ${C.lockboxAreaPhoto ? photo(C.lockboxAreaPhoto, T("lockboxArea")) : `<img src="lockbox-area.jpg" alt="" style="width:100%;border-radius:14px;display:block" onerror="this.outerHTML='<div class=&quot;soft&quot;><span class=&quot;ph&quot;>[PHOTO: lockbox-area.jpg in this folder]</span></div>'">`}
            ${clean(C.lockboxCoords) ? mapBtn(C.lockboxCoords, T("lockboxArea"), "btn-light") : ""}`
         : `<p>${T("smartText")}${C.smartLockCodeTimeLimited ? " " + T("smartLimited") : ""}</p>
            <p>${P(C.smartLockHowTo)}</p>
            <p>${T("smartFail")}</p>`}
+      ${route(C.arrivalRoute)}
     </div>
   </section>
 
@@ -181,6 +191,7 @@
     </ul>
     <h2 style="margin-top:26px">${T("binsTitle")}</h2>
     <p>${P(C.bins)}</p>
+    ${route(C.binsRoute)}
   </section>
 
   <section class="card fire" id="safety">
