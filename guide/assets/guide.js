@@ -9,6 +9,7 @@
   // Brevo "Returning guests" form (shared by every property)
   const BREVO = "https://e839be71.sibforms.com/serve/MUIFAIpm5qy6-_i9pB5InRDHuU1d8EfMd-Cml7oOBTsq3vjWG_hJK4Snhz4klkhnlU4dIX_BulnSd9fYXhErq0ISEjxPXfu1NQJt23-LDMajkJLs0g4seC6Zz-ldBb35MeYYV6HJET4vBofO4jTL3J4Laoo_EloMPqxSHHAV5FzvdOpvV-zZKBpziZJA_naPmdqEC_72hXZuKjOirA==";
   const store = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
+  try { if (new URLSearchParams(location.search).get("join") === "reset") { localStorage.removeItem("hollJoined"); localStorage.removeItem("hollPromoHide"); } } catch (e) {}
   const LOGO = "https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png";
   const HOST = "https://res.cloudinary.com/dyojhaiig/image/upload/c_thumb,g_face,w_240,h_240,z_0.75,f_auto,q_auto/v1787835750/aiboryyy-20251211-0001_yx87j9.jpg";
 
@@ -285,7 +286,7 @@
       <h3>${T("joinTitle")}</h3>
       <p>${T("joinD")}</p>
       <div class="join-ok" id="joinOk" role="status"${store.get("hollJoined") ? "" : " hidden"}>${T("fOk")}</div>
-      <form id="joinForm" method="POST" action="${BREVO}" target="brevoFrame" novalidate${store.get("hollJoined") ? " hidden" : ""}>
+      <form id="joinForm" method="POST" action="${BREVO}" novalidate${store.get("hollJoined") ? " hidden" : ""}>
         <label class="f"><span>${T("fName")}</span><input type="text" name="NOMBRE" maxlength="200" autocomplete="given-name"></label>
         <label class="f"><span>${T("fEmail")} *</span><input type="email" name="EMAIL" id="joinEmail" autocomplete="email" inputmode="email" dir="ltr" required></label>
         <fieldset class="f"><legend>${T("fCities")}</legend>
@@ -307,7 +308,6 @@
         <button class="btn btn-primary" type="submit" id="joinBtn">${T("fSend")}</button>
         <p class="fine">${T("fBrevo")}</p>
       </form>
-      <iframe name="brevoFrame" id="brevoFrame" title="Brevo" hidden></iframe>
     </div>
   </section>
 
@@ -374,30 +374,30 @@
     const promoX = document.getElementById("promoX");
     if (promoX) promoX.addEventListener("click", () => { store.set("hollPromoHide", "1"); document.getElementById("promo").remove(); });
 
-    // Returning guests sign up: sent to Brevo in a hidden frame, the guest never leaves the guide
+    // Returning guests sign up: sent to Brevo in the background, the guest never leaves the guide
     const jf = document.getElementById("joinForm");
     if (jf) {
-      const err = document.getElementById("joinErr"), btn = document.getElementById("joinBtn"), frame = document.getElementById("brevoFrame");
-      let sent = false;
-      const done = () => {
-        if (!sent) return; sent = false;
-        store.set("hollJoined", "1");
-        jf.hidden = true;
-        document.getElementById("joinOk").hidden = false;
-        const pr = document.getElementById("promo"); if (pr) pr.remove();
-      };
-      frame.addEventListener("load", done);
+      const err = document.getElementById("joinErr"), btn = document.getElementById("joinBtn");
+      const showErr = html => { err.innerHTML = html; err.hidden = false; };
       jf.addEventListener("change", () => { err.hidden = true; });
       jf.addEventListener("submit", e => {
+        e.preventDefault();
         const email = document.getElementById("joinEmail").value.trim();
-        let msg = "";
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) msg = T("fErrEmail");
-        else if (!document.getElementById("joinConsent").checked) msg = T("fErrConsent");
-        if (msg) { e.preventDefault(); err.textContent = msg; err.hidden = false; return; }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return showErr(esc(T("fErrEmail")));
+        if (!document.getElementById("joinConsent").checked) return showErr(esc(T("fErrConsent")));
         err.hidden = true;
         btn.disabled = true; btn.textContent = T("fSending");
-        sent = true;
-        setTimeout(done, 8000);
+        fetch(BREVO, { method: "POST", mode: "no-cors", body: new URLSearchParams(new FormData(jf)) })
+          .then(() => {
+            store.set("hollJoined", "1");
+            jf.hidden = true;
+            document.getElementById("joinOk").hidden = false;
+            const pr = document.getElementById("promo"); if (pr) pr.remove();
+          })
+          .catch(() => {
+            btn.disabled = false; btn.textContent = T("fSend");
+            showErr(`${esc(T("fErrSend"))} <a href="${BREVO}" target="_blank" rel="noopener">${esc(T("fErrLink"))}</a>`);
+          });
       });
     }
 

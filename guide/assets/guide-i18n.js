@@ -82,7 +82,7 @@ en: {
   fName: "First name", fEmail: "Email", fCities: "Cities you are interested in", fPurpose: "You usually travel for", pWork: "Work", pLeisure: "Leisure", pBoth: "Both",
   fConsent: "I agree to receive emails from Holl Group with offers and news. I can unsubscribe at any time.", fBrevo: "We send our emails with Brevo. Your details are only used for Holl Group emails.",
   fSend: "Email me my 7% code", fSending: "Sending…", fOk: "Almost there. Open the email we have just sent you and tap the confirmation link. Your 7% code arrives straight after. Check your spam folder if you cannot see it.",
-  fErrEmail: "Please enter a valid email address.", fErrConsent: "Please tick the box to agree.", promo: "Returning guest? Get 7% off your next stay.", promoGo: "See how"
+  fErrEmail: "Please enter a valid email address.", fErrConsent: "Please tick the box to agree.", fErrSend: "We could not send your details. Your browser or an ad blocker may be blocking it.", fErrLink: "Use this sign up form instead", promo: "Returning guest? Get 7% off your next stay.", promoGo: "See how"
 },
 
 es: {
@@ -160,7 +160,7 @@ es: {
   fName: "Nombre", fEmail: "Email", fCities: "Ciudades que te interesan", fPurpose: "Sueles viajar por", pWork: "Trabajo", pLeisure: "Ocio", pBoth: "Ambos",
   fConsent: "Acepto recibir emails de Holl Group con ofertas y novedades. Puedo darme de baja cuando quiera.", fBrevo: "Enviamos nuestros emails con Brevo. Tus datos solo se usan para los emails de Holl Group.",
   fSend: "Envíame mi código del 7%", fSending: "Enviando…", fOk: "Ya casi está. Abre el email que te acabamos de enviar y pulsa el enlace de confirmación. Tu código del 7% llegará justo después. Revisa la carpeta de spam si no lo ves.",
-  fErrEmail: "Introduce un email válido.", fErrConsent: "Marca la casilla para aceptar.", promo: "¿Ya te has alojado con nosotros? Consigue un 7% en tu próxima estancia.", promoGo: "Ver cómo"
+  fErrEmail: "Introduce un email válido.", fErrConsent: "Marca la casilla para aceptar.", fErrSend: "No hemos podido enviar tus datos. Puede que tu navegador o un bloqueador de anuncios lo esté impidiendo.", fErrLink: "Usa este formulario de registro", promo: "¿Ya te has alojado con nosotros? Consigue un 7% en tu próxima estancia.", promoGo: "Ver cómo"
 },
 
 fr: {
@@ -238,7 +238,7 @@ fr: {
   fName: "Prénom", fEmail: "E-mail", fCities: "Villes qui vous intéressent", fPurpose: "Vous voyagez surtout pour", pWork: "Le travail", pLeisure: "Les loisirs", pBoth: "Les deux",
   fConsent: "J'accepte de recevoir des e-mails de Holl Group avec des offres et des nouveautés. Je peux me désinscrire à tout moment.", fBrevo: "Nous envoyons nos e-mails avec Brevo. Vos données servent uniquement aux e-mails de Holl Group.",
   fSend: "Recevoir mon code de 7 %", fSending: "Envoi…", fOk: "Presque terminé. Ouvrez l'e-mail que nous venons de vous envoyer et touchez le lien de confirmation. Votre code de 7 % arrive juste après. Vérifiez vos spams si vous ne le voyez pas.",
-  fErrEmail: "Veuillez saisir une adresse e-mail valide.", fErrConsent: "Veuillez cocher la case pour accepter.", promo: "Déjà séjourné chez nous ? Obtenez 7 % sur votre prochain séjour.", promoGo: "Voir comment"
+  fErrEmail: "Veuillez saisir une adresse e-mail valide.", fErrConsent: "Veuillez cocher la case pour accepter.", fErrSend: "Nous n'avons pas pu envoyer vos informations. Votre navigateur ou un bloqueur de publicités l'empêche peut-être.", fErrLink: "Utilisez plutôt ce formulaire d'inscription", promo: "Déjà séjourné chez nous ? Obtenez 7 % sur votre prochain séjour.", promoGo: "Voir comment"
 },
 
 de: {
@@ -316,7 +316,7 @@ de: {
   fName: "Vorname", fEmail: "E-Mail", fCities: "Städte, die Sie interessieren", fPurpose: "Sie reisen meist", pWork: "Beruflich", pLeisure: "Privat", pBoth: "Beides",
   fConsent: "Ich möchte E-Mails von Holl Group mit Angeboten und Neuigkeiten erhalten. Ich kann mich jederzeit abmelden.", fBrevo: "Wir versenden unsere E-Mails über Brevo. Ihre Daten werden nur für E-Mails von Holl Group verwendet.",
   fSend: "7 %-Code per E-Mail erhalten", fSending: "Wird gesendet…", fOk: "Fast geschafft. Öffnen Sie die E-Mail, die wir Ihnen gerade geschickt haben, und tippen Sie auf den Bestätigungslink. Ihr 7 %-Code kommt direkt danach. Sehen Sie im Spam-Ordner nach, falls Sie sie nicht finden.",
-  fErrEmail: "Bitte geben Sie eine gültige E-Mail-Adresse ein.", fErrConsent: "Bitte setzen Sie das Häkchen, um zuzustimmen.", promo: "Schon bei uns gewohnt? 7 % Rabatt auf Ihren nächsten Aufenthalt.", promoGo: "So geht's"
+  fErrEmail: "Bitte geben Sie eine gültige E-Mail-Adresse ein.", fErrConsent: "Bitte setzen Sie das Häkchen, um zuzustimmen.", fErrSend: "Wir konnten Ihre Angaben nicht senden. Möglicherweise blockiert Ihr Browser oder ein Werbeblocker die Übertragung.", fErrLink: "Nutzen Sie stattdessen dieses Anmeldeformular", promo: "Schon bei uns gewohnt? 7 % Rabatt auf Ihren nächsten Aufenthalt.", promoGo: "So geht's"
 },
 
 it: {
@@ -394,7 +394,7 @@ it: {
   fName: "Nome", fEmail: "Email", fCities: "Città che ti interessano", fPurpose: "Di solito viaggi per", pWork: "Lavoro", pLeisure: "Svago", pBoth: "Entrambi",
   fConsent: "Accetto di ricevere email da Holl Group con offerte e novità. Posso disiscrivermi in qualsiasi momento.", fBrevo: "Inviamo le nostre email con Brevo. I tuoi dati sono usati solo per le email di Holl Group.",
   fSend: "Inviami il codice del 7%", fSending: "Invio…", fOk: "Quasi fatto. Apri l'email che ti abbiamo appena inviato e tocca il link di conferma. Il tuo codice del 7% arriva subito dopo. Controlla lo spam se non la vedi.",
-  fErrEmail: "Inserisci un indirizzo email valido.", fErrConsent: "Spunta la casella per accettare.", promo: "Hai già soggiornato da noi? Ottieni il 7% sul prossimo soggiorno.", promoGo: "Scopri come"
+  fErrEmail: "Inserisci un indirizzo email valido.", fErrConsent: "Spunta la casella per accettare.", fErrSend: "Non siamo riusciti a inviare i tuoi dati. Il browser o un blocco annunci potrebbe impedirlo.", fErrLink: "Usa invece questo modulo di iscrizione", promo: "Hai già soggiornato da noi? Ottieni il 7% sul prossimo soggiorno.", promoGo: "Scopri come"
 },
 
 pt: {
@@ -472,7 +472,7 @@ pt: {
   fName: "Nome", fEmail: "Email", fCities: "Cidades que lhe interessam", fPurpose: "Costuma viajar por", pWork: "Trabalho", pLeisure: "Lazer", pBoth: "Ambos",
   fConsent: "Aceito receber emails da Holl Group com ofertas e novidades. Posso cancelar a subscrição a qualquer momento.", fBrevo: "Enviamos os nossos emails com a Brevo. Os seus dados só são usados para os emails da Holl Group.",
   fSend: "Enviar-me o código de 7%", fSending: "A enviar…", fOk: "Quase pronto. Abra o email que acabámos de lhe enviar e toque no link de confirmação. O seu código de 7% chega logo a seguir. Verifique a pasta de spam se não o encontrar.",
-  fErrEmail: "Introduza um email válido.", fErrConsent: "Assinale a caixa para aceitar.", promo: "Já ficou connosco? Obtenha 7% na próxima estadia.", promoGo: "Ver como"
+  fErrEmail: "Introduza um email válido.", fErrConsent: "Assinale a caixa para aceitar.", fErrSend: "Não conseguimos enviar os seus dados. O seu navegador ou um bloqueador de anúncios pode estar a impedi-lo.", fErrLink: "Use antes este formulário de inscrição", promo: "Já ficou connosco? Obtenha 7% na próxima estadia.", promoGo: "Ver como"
 },
 
 zh: {
@@ -550,7 +550,7 @@ zh: {
   fName: "名字", fEmail: "电子邮箱", fCities: "感兴趣的城市", fPurpose: "您通常出行是为了", pWork: "工作", pLeisure: "休闲", pBoth: "两者都有",
   fConsent: "我同意接收 Holl Group 的优惠和新闻邮件，可随时退订。", fBrevo: "我们通过 Brevo 发送邮件。您的信息仅用于 Holl Group 的邮件。",
   fSend: "把 7% 优惠码发给我", fSending: "发送中…", fOk: "快完成了。请打开我们刚发送的邮件并点击确认链接，7% 优惠码随后就会送达。如果没看到，请查看垃圾邮件文件夹。",
-  fErrEmail: "请输入有效的电子邮箱。", fErrConsent: "请勾选同意。", promo: "曾入住过？下次入住可享 7% 优惠。", promoGo: "了解方法"
+  fErrEmail: "请输入有效的电子邮箱。", fErrConsent: "请勾选同意。", fErrSend: "无法发送您的信息，可能是浏览器或广告拦截器阻止了发送。", fErrLink: "改用这个注册表单", promo: "曾入住过？下次入住可享 7% 优惠。", promoGo: "了解方法"
 },
 
 ar: {
@@ -628,7 +628,7 @@ ar: {
   fName: "الاسم الأول", fEmail: "البريد الإلكتروني", fCities: "المدن التي تهمك", fPurpose: "عادةً تسافر من أجل", pWork: "العمل", pLeisure: "الترفيه", pBoth: "كلاهما",
   fConsent: "أوافق على تلقي رسائل بريد إلكتروني من Holl Group تتضمن عروضًا وأخبارًا، ويمكنني إلغاء الاشتراك في أي وقت.", fBrevo: "نرسل رسائلنا عبر Brevo، وتُستخدم بياناتك لرسائل Holl Group فقط.",
   fSend: "أرسل لي رمز خصم 7%", fSending: "جارٍ الإرسال…", fOk: "اقتربت من الانتهاء. افتح الرسالة التي أرسلناها لك للتو واضغط على رابط التأكيد، وسيصلك رمز خصم 7% بعدها مباشرة. تحقق من مجلد الرسائل غير المرغوب فيها إن لم تجدها.",
-  fErrEmail: "يُرجى إدخال بريد إلكتروني صالح.", fErrConsent: "يُرجى تحديد المربع للموافقة.", promo: "أقمت معنا من قبل؟ احصل على خصم 7% على إقامتك القادمة.", promoGo: "اعرف كيف"
+  fErrEmail: "يُرجى إدخال بريد إلكتروني صالح.", fErrConsent: "يُرجى تحديد المربع للموافقة.", fErrSend: "تعذّر إرسال بياناتك، فقد يكون المتصفح أو أداة حظر الإعلانات يمنع ذلك.", fErrLink: "استخدم نموذج التسجيل هذا بدلًا من ذلك", promo: "أقمت معنا من قبل؟ احصل على خصم 7% على إقامتك القادمة.", promoGo: "اعرف كيف"
 },
 
 ja: {
@@ -706,6 +706,6 @@ ja: {
   fName: "名", fEmail: "メールアドレス", fCities: "興味のある都市", fPurpose: "主な旅行目的", pWork: "仕事", pLeisure: "レジャー", pBoth: "両方",
   fConsent: "Holl Group からお得な情報やお知らせのメールを受け取ることに同意します。いつでも配信停止できます。", fBrevo: "メールは Brevo を通じて送信します。お客様の情報は Holl Group のメール以外には使用しません。",
   fSend: "7% コードをメールで受け取る", fSending: "送信中…", fOk: "あと少しです。お送りしたメールを開き、確認リンクをタップしてください。その後すぐに 7% コードが届きます。見つからない場合は迷惑メールフォルダをご確認ください。",
-  fErrEmail: "有効なメールアドレスを入力してください。", fErrConsent: "同意するにはチェックを入れてください。", promo: "ご宿泊いただいたことがありますか？次回のご滞在が 7% オフに。", promoGo: "詳しく見る"
+  fErrEmail: "有効なメールアドレスを入力してください。", fErrConsent: "同意するにはチェックを入れてください。", fErrSend: "送信できませんでした。ブラウザまたは広告ブロッカーが送信を妨げている可能性があります。", fErrLink: "代わりにこちらの登録フォームをご利用ください", promo: "ご宿泊いただいたことがありますか？次回のご滞在が 7% オフに。", promoGo: "詳しく見る"
 }
 };
