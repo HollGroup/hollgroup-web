@@ -120,7 +120,7 @@
   <div class="top-in"><img src="${LOGO}" alt="Holl Group"><span class="t">${name}</span>
     <select class="lang" id="langSel" aria-label="${esc(T("langLabel"))}">${LANGS.map(([c, n]) => `<option value="${c}"${c === lang ? " selected" : ""}>${n}</option>`).join("")}</select>
   </div>
-  <div class="nav-wrap" id="navWrap"><nav class="nav" id="navBar" aria-label="Sections">${nav.map(([id, k]) => `<a href="#${id}" data-id="${id}">${T(k)}</a>`).join("")}</nav></div>
+  <div class="nav-wrap" id="navWrap"><nav class="nav" id="navBar" aria-label="Sections">${nav.filter(([id]) => id !== "picks" || (C.picks || []).length).map(([id, k]) => `<a href="#${id}" data-id="${id}">${T(k)}</a>`).join("")}</nav></div>
 </header>
 
 <main class="wrap">
@@ -187,7 +187,7 @@
     <div class="stack">
       ${isLockbox
         ? `<p>${T("lockboxText")}</p>
-           ${C.lockboxAreaPhoto ? photo(C.lockboxAreaPhoto, T("lockboxArea")) : `<img src="lockbox-area.jpg" alt="" style="width:100%;border-radius:14px;display:block" onerror="this.outerHTML='<div class=&quot;soft&quot;><span class=&quot;ph&quot;>[PHOTO: lockbox-area.jpg in this folder]</span></div>'">`}
+           ${C.lockboxAreaPhoto ? photo(C.lockboxAreaPhoto, T("lockboxArea")) : clean(C.lockboxCoords) ? "" : `<img src="lockbox-area.jpg" alt="" style="width:100%;border-radius:14px;display:block" onerror="this.outerHTML='<div class=&quot;soft&quot;><span class=&quot;ph&quot;>[PHOTO: lockbox-area.jpg in this folder]</span></div>'">`}
            ${clean(C.lockboxCoords) ? mapBtn(C.lockboxCoords, T("lockboxArea"), "btn-light") : ""}`
         : `<p>${T("smartText")}${C.smartLockCodeTimeLimited ? " " + T("smartLimited") : ""}</p>
            <p>${P(C.smartLockHowTo)}</p>
@@ -225,7 +225,7 @@
       <li><span class="n">4</span><p>${T("fire4")}</p></li>
       <li><span class="n">5</span><p>${T("fire5")}</p></li>
     </ol>
-    <p style="margin-top:14px">${P(C.fireDetails)}</p>
+    ${C.fireDetails ? `<p style="margin-top:14px">${P(C.fireDetails)}</p>` : ""}
   </section>
 
   <section class="card">
@@ -253,7 +253,7 @@
     <h2>${T("helpTitle")}</h2>
     <p style="margin-bottom:14px">${T("helpIntro")}</p>
     <div class="stack">
-      <div class="issue"><span class="icon">${I.wifi}</span><div><div class="sub">${T("wifiLabel")}</div><p>${C.utilitiesLocked ? T("wifiLocked") : `${T("wifiFix")} ${P(C.routerLocation)}`}</p></div></div>
+      <div class="issue"><span class="icon">${I.wifi}</span><div><div class="sub">${T("wifiLabel")}</div><p>${(C.routerLocked ?? C.utilitiesLocked) ? T("wifiLocked") : `${T("wifiFix")} ${P(C.routerLocation)}`}</p></div></div>
       <div class="issue"><span class="icon">${I.temp}</span><div><div class="sub">${T("heatLabel")}</div><p>${P(C.heatingCheck)}</p></div></div>
       <div class="issue"><span class="icon">${I.key}</span><div><div class="sub">${T("keyLabel")}</div><p>${T("keyFix")}</p></div></div>
     </div>
@@ -281,10 +281,10 @@
     </div>
   </section>
 
-  <section class="card" id="picks">
+  ${(C.picks || []).length ? `<section class="card" id="picks">
     <h2>${T("picksTitle")}</h2>
     <div>${C.picks.map(p => `<div class="pick"><div><div class="cat">${T("cat_" + p.category)}</div><div class="name">${P(p.name)}</div><div class="note">${P(p.note)}${p.walkMins ? " · " + T("walk", { n: esc(p.walkMins) }) : ""}</div></div>${clean(p.coords) ? `<a href="${maps(p.coords)}" target="_blank" rel="noopener" aria-label="Maps">${I.pin}</a>` : ""}</div>`).join("")}</div>
-  </section>
+  </section>` : ""}
 
   <section class="card gift" id="thanks">
     <div class="icon" style="margin:0 auto 12px;width:56px;height:56px">${I.gift}</div>

@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="theme-color" content="#1D7563">
+<title>Holl Group</title>
+<link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009p">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+/* =====================================================================
+   SKYLINE (public name: Oasis in the City): property settings.
+   Texts can be given per language { en, es, ... }. Edit the English and ask Claude for the other languages.
+   Never put the flat number, access codes or the exact lockbox position here.
+   ===================================================================== */
+const CONFIG = {
+  "propertyName": "Oasis in the City",
+  "area": "Birmingham city centre",
+  "propertyType": "flat",
+  "garden": false,
+  "exteriorCameras": false,
+  "entry": "lockbox",
+  "smartLockCodeTimeLimited": true,
+  "smartLockHowTo": "",
+  "parking": "none",
+  "parkingDetails": "",
+  "parkingNearby": {
+    "en": "Parking inside the building complex will be available from 30 October 2026. Until then, please use a public car park in the city centre."
+  },
+  "parkingNearbyCoords": "",
+  "parkingCoords": "",
+  "parkingPhotos": [],
+  "directions": {
+    "en": "Birmingham New Street station is about a 10 minute walk. The Mailbox, Gas Street Basin and Brindleyplace are all a few minutes away on foot."
+  },
+  "entranceCoords": "165 Granville Street, Birmingham B1 1JY",
+  "lockboxCoords": "https://www.google.com/maps/search/?api=1&query=Washington+Street,+Birmingham+B1",
+  "lockboxAreaPhoto": "",
+  "keysNote": "",
+  "arrivalRoute": {
+    "title": {
+      "en": "From the lockbox to the building"
+    },
+    "steps": [
+      {
+        "text": {
+          "en": "Collect your keys from the lockbox on Washington Street. The exact spot, with a photo and a short video, is in your check-in message."
+        },
+        "imgs": []
+      },
+      {
+        "text": {
+          "en": "Walk about 2 minutes along Ridley Street to Granville Street."
+        },
+        "imgs": []
+      },
+      {
+        "text": {
+          "en": "The building entrance is at 165 Granville Street, next to the Peace Gardens."
+        },
+        "imgs": []
+      }
+    ]
+  },
+  "binsRoute": {
+    "title": {
+      "en": "Bins"
+    },
+    "steps": [
+      {
+        "text": {
+          "en": "Take the lift down to the ground floor and turn left after the glass door."
+        },
+        "imgs": []
+      },
+      {
+        "text": {
+          "en": "Go into the car park and walk about 10 metres. The bin room door is on your right."
+        },
+        "imgs": []
+      }
+    ]
+  },
+  "checkIn": "15:00",
+  "checkOut": "10:00",
+  "wifiName": "SkylineHG",
+  "wifiPassword": "www.hollgroup.co.uk",
+  "property": [
+    {
+      "title": {
+        "en": "Bedrooms"
+      },
+      "text": {
+        "en": "Bedroom 1: two single beds. Bedroom 2: double bed. There is also a sofa bed in the living room; if you need it, please let us know in advance so we can leave bed linen ready. The flat has two bathrooms."
+      }
+    },
+    {
+      "title": {
+        "en": "Balcony"
+      },
+      "text": {
+        "en": "Enjoy the balcony with artificial grass and views over the Peace Gardens. Please keep noise down out there, especially during quiet hours, and never leave anything that could blow away."
+      }
+    },
+    {
+      "title": {
+        "en": "Heating"
+      },
+      "text": {
+        "en": "Smart electric radiators, controlled automatically to keep the flat comfortable. Please do not unplug them, change their settings, move them (even though they have wheels) or switch them off. They work best with the windows closed."
+      }
+    },
+    {
+      "title": {
+        "en": "Hot water",
+        "es": "Agua caliente",
+        "fr": "Eau chaude",
+        "de": "Warmwasser",
+        "it": "Acqua calda",
+        "pt": "Água quente",
+        "zh": "热水",
+        "ar": "الماء الساخن",
+        "ja": "お湯"
+      },
+      "text": {
+        "en": "Hot water comes from an electric water heater, as is typical in UK flats. It heats a set amount of water and keeps it hot. After a long shower, or several showers one after another, please give it time to heat up again, usually an hour or less.",
+        "es": "El agua caliente sale de un termo eléctrico, lo habitual en los pisos del Reino Unido. Calienta una cantidad fija de agua y la mantiene caliente. Después de una ducha larga, o de varias seguidas, dale tiempo para volver a calentarse, normalmente una hora o menos.",
+        "fr": "L'eau chaude provient d'un chauffe-eau électrique, comme souvent dans les appartements britanniques. Il chauffe une quantité d'eau fixe et la maintient chaude. Après une longue douche, ou plusieurs à la suite, laissez-lui le temps de chauffer à nouveau, généralement une heure ou moins.",
+        "de": "Das Warmwasser kommt aus einem elektrischen Warmwasserspeicher, wie in britischen Wohnungen üblich. Er erhitzt eine feste Wassermenge und hält sie warm. Nach einer langen Dusche oder mehreren Duschen hintereinander braucht er Zeit zum Nachheizen, meist eine Stunde oder weniger.",
+        "it": "L'acqua calda arriva da uno scaldabagno elettrico, come di solito negli appartamenti britannici. Riscalda una quantità fissa d'acqua e la mantiene calda. Dopo una doccia lunga, o più docce di seguito, lascia il tempo di riscaldarsi di nuovo, di solito un'ora o meno.",
+        "pt": "A água quente vem de um termoacumulador elétrico, o habitual nos apartamentos do Reino Unido. Aquece uma quantidade fixa de água e mantém-na quente. Depois de um duche longo, ou de vários seguidos, dê-lhe tempo para voltar a aquecer, normalmente uma hora ou menos.",
+        "zh": "热水来自电热水器，这在英国公寓中很常见。它会加热固定量的水并保持温度。长时间淋浴或多人连续淋浴后，请给热水器一些时间重新加热，通常一小时以内。",
+        "ar": "يأتي الماء الساخن من سخّان مياه كهربائي، وهو أمر معتاد في شقق المملكة المتحدة. يسخّن كمية محددة من الماء ويحافظ على حرارتها. بعد استحمام طويل أو عدة مرات متتالية، يرجى منحه وقتًا ليسخن مجددًا، عادةً ساعة أو أقل.",
+        "ja": "お湯は電気温水器から供給されます。これはイギリスのフラットでは一般的です。一定量のお湯を沸かして保温する仕組みのため、長時間のシャワーや続けてのシャワーの後は、再びお湯が沸くまで少し時間をおいてください（通常 1 時間以内）。"
+      }
+    },
+    {
+      "title": {
+        "en": "Kitchen and laundry"
+      },
+      "text": {
+        "en": "There is a washing machine for your use. If you need help with any appliance, just message us."
+      },
+      "appliances": []
+    },
+    {
+      "title": {
+        "en": "TV"
+      },
+      "text": {
+        "en": "Sony Bravia smart TV with Fire TV Stick: sign in to your favourite streaming apps with your own account, and please remember to sign out before you leave."
+      }
+    }
+  ],
+  "bins": {
+    "en": "Please take all rubbish down to the bin room before you check out. The route is just above."
+  },
+  "fireDetails": "",
+  "routerLocation": {
+    "en": "The router is in the hallway, in a small white cupboard below the door entry phone."
+  },
+  "heatingCheck": {
+    "en": "The smart radiators are controlled automatically to keep the flat comfortable. Please do not unplug them, change their settings, move them (even though they have wheels) or switch them off. They can take a little time to heat up or cool down, and they work less well if a window is left open. If you think something is wrong, message us and we will help."
+  },
+  "utilitiesLocked": true,
+  "stopcock": "",
+  "fuseBox": "",
+  "pharmacy": [
+    {
+      "name": "Attwood Green Health Centre pharmacy",
+      "coords": "https://maps.app.goo.gl/AghFpU6FCUSEHoB2A"
+    },
+    {
+      "name": "Boots, Brindleyplace",
+      "coords": "https://maps.app.goo.gl/Nk2pRWJr52oHEBM29"
+    }
+  ],
+  "pharmacyNote": {
+    "en": "Attwood Green Health Centre is about 4 minutes' walk. As well as the pharmacy, it has a GP practice and an out-of-hours dental service. Boots in Brindleyplace is about 12 minutes' walk."
+  },
+  "hospital": [
+    {
+      "name": "Queen Elizabeth Hospital",
+      "coords": "52.4521833, -1.9433519"
+    },
+    {
+      "name": {
+        "en": "Birmingham Children's Hospital (under 16s)",
+        "es": "Birmingham Children's Hospital (menores de 16)",
+        "fr": "Birmingham Children's Hospital (moins de 16 ans)",
+        "de": "Birmingham Children's Hospital (unter 16 Jahren)",
+        "it": "Birmingham Children's Hospital (under 16)",
+        "pt": "Birmingham Children's Hospital (menores de 16)",
+        "zh": "Birmingham Children's Hospital（16 岁以下）",
+        "ar": "Birmingham Children's Hospital (دون 16 عامًا)",
+        "ja": "Birmingham Children's Hospital（16 歳未満）"
+      },
+      "coords": "52.4849039, -1.892619"
+    },
+    {
+      "name": "Birmingham Heartlands Hospital",
+      "coords": "52.4788084, -1.82865"
+    }
+  ],
+  "hospitalNote": {
+    "en": "By car: Queen Elizabeth about 11 minutes, Heartlands about 17 minutes. Children under 16 go to Birmingham Children's Hospital, about 7 minutes. If it is urgent but not life threatening, call 111 first. In an emergency, call 999."
+  },
+  "securing": {
+    "en": "Before you leave: hang used towels in the bathroom, close all windows, lock the door, return the keys to the same lockbox, and send us a message with a few photos once you have checked out."
+  },
+  "picks": [
+    {
+      "category": "essentials",
+      "name": "Tesco Express",
+      "note": {
+        "en": "Supermarket right on the corner."
+      },
+      "walkMins": 1,
+      "coords": "https://maps.app.goo.gl/Hwzkq1hEnNnFqQNz7"
+    },
+    {
+      "category": "see",
+      "name": "Birmingham Peace Gardens",
+      "note": {
+        "en": "Public gardens right below the flat."
+      },
+      "coords": "52.47347486, -1.90606939"
+    },
+    {
+      "category": "eat",
+      "name": "Asha's",
+      "note": {
+        "en": "Award-winning Indian restaurant."
+      },
+      "coords": "52.4769, -1.9003"
+    },
+    {
+      "category": "eat",
+      "name": "The Cube (Marco Pierre White)",
+      "note": {
+        "en": "Rooftop restaurant and steakhouse with city views."
+      },
+      "coords": "52.4748, -1.9069"
+    },
+    {
+      "category": "drinks",
+      "name": "The Malthouse",
+      "note": {
+        "en": "Popular canal-side pub with food."
+      },
+      "coords": "52.47949222, -1.913405102"
+    },
+    {
+      "category": "drinks",
+      "name": "Slug & Lettuce Brindleyplace",
+      "note": {
+        "en": "Lively bar in Brindleyplace."
+      },
+      "coords": "52.4772, -1.9138"
+    },
+    {
+      "category": "drinks",
+      "name": "Broad Street",
+      "note": {
+        "en": "Birmingham's main nightlife street."
+      },
+      "coords": "52.4779, -1.912"
+    },
+    {
+      "category": "essentials",
+      "name": "The Mailbox",
+      "note": {
+        "en": "Shops, restaurants and canal-side bars, a few minutes away."
+      },
+      "coords": "52.47681412, -1.903632002"
+    },
+    {
+      "category": "essentials",
+      "name": "Bullring & Grand Central",
+      "note": {
+        "en": "The city's main shopping centre, with the Selfridges flagship."
+      },
+      "coords": "52.4775, -1.8951"
+    },
+    {
+      "category": "essentials",
+      "name": "Birmingham Indoor Market",
+      "note": {
+        "en": "Local market for meat, fish and fresh produce."
+      },
+      "coords": "52.4759, -1.8956"
+    },
+    {
+      "category": "see",
+      "name": "Gas Street Basin",
+      "note": {
+        "en": "Canal walks and waterside bars."
+      },
+      "coords": "52.477, -1.9097"
+    },
+    {
+      "category": "see",
+      "name": "Brindleyplace",
+      "note": {
+        "en": "Restaurants, bars and canals."
+      },
+      "coords": "52.4767, -1.9142"
+    },
+    {
+      "category": "see",
+      "name": "Library of Birmingham",
+      "note": {
+        "en": "Iconic modern library, free entry and a rooftop garden."
+      },
+      "coords": "52.4792, -1.9086"
+    },
+    {
+      "category": "see",
+      "name": "Birmingham Museum & Art Gallery",
+      "note": {
+        "en": "Free entry: city history and art."
+      },
+      "coords": "52.4801, -1.9035"
+    },
+    {
+      "category": "see",
+      "name": "Ikon Gallery",
+      "note": {
+        "en": "Free contemporary art gallery in Brindleyplace."
+      },
+      "coords": "52.4768, -1.9138"
+    },
+    {
+      "category": "see",
+      "name": "Thinktank Science Museum",
+      "note": {
+        "en": "Great for families."
+      },
+      "coords": "52.4825, -1.8868"
+    },
+    {
+      "category": "see",
+      "name": "Victoria Square",
+      "note": {
+        "en": "Civic square with the famous Floozie in the Jacuzzi fountain."
+      },
+      "coords": "52.4805, -1.9028"
+    },
+    {
+      "category": "see",
+      "name": "Centenary Square",
+      "note": {
+        "en": "Public square with outdoor events."
+      },
+      "coords": "52.479, -1.9079"
+    },
+    {
+      "category": "see",
+      "name": "Black Sabbath Bench",
+      "note": {
+        "en": "Rock landmark by the canal on Broad Street."
+      },
+      "coords": "52.4779, -1.9109"
+    },
+    {
+      "category": "see",
+      "name": "Peaky Blinders Mural",
+      "note": {
+        "en": "Iconic street art."
+      },
+      "coords": "52.4762, -1.8934"
+    },
+    {
+      "category": "see",
+      "name": "Birmingham Hippodrome",
+      "note": {
+        "en": "West End shows and ballet."
+      },
+      "coords": "52.4746, -1.8974"
+    },
+    {
+      "category": "see",
+      "name": "The Alexandra Theatre",
+      "note": {
+        "en": "Historic theatre for musicals and drama."
+      },
+      "coords": "52.4762, -1.9012"
+    },
+    {
+      "category": "see",
+      "name": "O2 Academy Birmingham",
+      "note": {
+        "en": "Live music venue."
+      },
+      "coords": "52.4733, -1.8999"
+    },
+    {
+      "category": "see",
+      "name": "Symphony Hall",
+      "note": {
+        "en": "World-class concert hall."
+      },
+      "coords": "52.4786, -1.9101"
+    },
+    {
+      "category": "see",
+      "name": "Utilita Arena",
+      "note": {
+        "en": "Birmingham's biggest arena for concerts and shows."
+      },
+      "coords": "52.4797, -1.9148"
+    },
+    {
+      "category": "see",
+      "name": "Custard Factory",
+      "note": {
+        "en": "Creative quarter in Digbeth with bars, studios and events."
+      },
+      "coords": "52.47545214, -1.884491757"
+    },
+    {
+      "category": "drinks",
+      "name": "The Old Crown",
+      "note": {
+        "en": "Birmingham's oldest pub, or so it proudly claims, in a timber-framed building from around 1500."
+      },
+      "coords": "52.4748, -1.8858"
+    },
+    {
+      "category": "see",
+      "name": "Golf Fang",
+      "note": {
+        "en": "Crazy golf and bar, great for groups."
+      },
+      "coords": "52.47614192, -1.883135204"
+    }
+  ],
+  "importantExtra": [],
+  "discountUrl": "https://booking.hollgroup.co.uk/?coupon=5REPEATING&utm=guide",
+  "discountCode": "5REPEATING",
+  "routerLocked": false
+};
+/* ===================== END OF PROPERTY SETTINGS ===================== */
+</script>
+</head>
+<body>
+<div id="app"></div>
+<div class="toast" id="toast"></div>
+<script src="/guide/assets/guide-i18n.js?v=20261009p"></script>
+<script src="/guide/assets/guide.js?v=20261009p"></script>
+</body>
+</html>
