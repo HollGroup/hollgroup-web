@@ -8,6 +8,7 @@ window.GUIDE_LANGS = [
 
 window.GUIDE_I18N = {
 en: {
+  close: "Close", zoom: "Enlarge photo",
   langLabel: "Language",
   legal: "",
   navGlance: "At a glance", navImportant: "Important", navArrival: "Arrival", navHome: "The property", navRules: "House rules", navSafety: "Safety", navHelp: "Help", navServices: "Services", navCheckout: "Check-out", navPicks: "Local picks", navThanks: "Thank you",
@@ -19,7 +20,7 @@ en: {
   glanceTitle: "Your stay at a glance", checkInFrom: "Check-in from", checkOutBy: "Check-out by", wifiNetwork: "Wi-Fi network", password: "Password", copy: "Copy", copied: "Password copied", copyFail: "Could not copy", showQr: "Show Wi-Fi QR code", entrance: "Building entrance",
   impTitle: "Important, please read",
   impCorrH: "Quiet in the corridors, always",
-  impCorr: "Please keep noise to a minimum in the corridors, lifts and stairwells at all times, day and night. Sound travels easily in the building and our neighbours live right next door.",
+  impCorr: "Making noise in the corridors, lifts and stairwells is not permitted, at any time of day or night. Sound travels easily in the building and our neighbours live right next door.",
   impGuestsH: "Only the guests on the booking",
   impGuests: "Only the guests named on the booking may stay at the property. This is a condition of our insurance. If someone would like to visit during the day, please let us know in advance. Visitors may not stay overnight under any circumstances.",
   impLeaveH: "Leave by {time}",
@@ -78,6 +79,7 @@ en: {
 },
 
 es: {
+  close: "Cerrar", zoom: "Ampliar foto",
   langLabel: "Idioma",
   legal: "Traducción para tu comodidad. En caso de diferencia, prevalece la versión en inglés.",
   navGlance: "Resumen", navImportant: "Importante", navArrival: "Llegada", navHome: "El alojamiento", navRules: "Normas", navSafety: "Seguridad", navHelp: "Ayuda", navServices: "Servicios", navCheckout: "Salida", navPicks: "Recomendaciones", navThanks: "Gracias",
@@ -89,7 +91,7 @@ es: {
   glanceTitle: "Tu estancia de un vistazo", checkInFrom: "Entrada desde", checkOutBy: "Salida antes de", wifiNetwork: "Red Wi-Fi", password: "Contraseña", copy: "Copiar", copied: "Contraseña copiada", copyFail: "No se pudo copiar", showQr: "Mostrar código QR del Wi-Fi", entrance: "Entrada del edificio",
   impTitle: "Importante, por favor léelo",
   impCorrH: "Silencio en los pasillos, siempre",
-  impCorr: "Por favor, haz el menor ruido posible en pasillos, ascensores y escaleras en todo momento, de día y de noche. El sonido se transmite fácilmente en el edificio y los vecinos viven justo al lado.",
+  impCorr: "Está prohibido hacer ruido en los pasillos, ascensores y escaleras, a cualquier hora del día o de la noche. El sonido se transmite fácilmente en el edificio y los vecinos viven justo al lado.",
   impGuestsH: "Solo los huéspedes de la reserva",
   impGuests: "Solo pueden alojarse las personas que figuran en la reserva. Es una condición de nuestro seguro. Si alguien quiere visitaros durante el día, avísanos con antelación. Las visitas no pueden quedarse a dormir bajo ninguna circunstancia.",
   impLeaveH: "Salida antes de las {time}",
@@ -148,6 +150,7 @@ es: {
 },
 
 fr: {
+  close: "Fermer", zoom: "Agrandir la photo",
   langLabel: "Langue",
   legal: "Traduction fournie pour votre confort. En cas de divergence, la version anglaise prévaut.",
   navGlance: "En bref", navImportant: "Important", navArrival: "Arrivée", navHome: "Le logement", navRules: "Règlement", navSafety: "Sécurité", navHelp: "Aide", navServices: "Services", navCheckout: "Départ", navPicks: "Bonnes adresses", navThanks: "Merci",
@@ -159,7 +162,7 @@ fr: {
   glanceTitle: "Votre séjour en bref", checkInFrom: "Arrivée à partir de", checkOutBy: "Départ avant", wifiNetwork: "Réseau Wi-Fi", password: "Mot de passe", copy: "Copier", copied: "Mot de passe copié", copyFail: "Copie impossible", showQr: "Afficher le QR code Wi-Fi", entrance: "Entrée de l'immeuble",
   impTitle: "Important, à lire",
   impCorrH: "Silence dans les couloirs, toujours",
-  impCorr: "Merci de faire le moins de bruit possible dans les couloirs, ascenseurs et escaliers, à toute heure du jour et de la nuit. Le son porte facilement dans l'immeuble et nos voisins vivent juste à côté.",
+  impCorr: "Il est interdit de faire du bruit dans les couloirs, ascenseurs et escaliers, à toute heure du jour et de la nuit. Le son porte facilement dans l'immeuble et nos voisins vivent juste à côté.",
   impGuestsH: "Uniquement les voyageurs de la réservation",
   impGuests: "Seules les personnes indiquées dans la réservation peuvent séjourner dans le logement. C'est une condition de notre assurance. Si quelqu'un souhaite vous rendre visite en journée, prévenez-nous à l'avance. Les visiteurs ne peuvent en aucun cas passer la nuit sur place.",
   impLeaveH: "Départ avant {time}",
@@ -218,6 +221,7 @@ fr: {
 },
 
 de: {
+  close: "Schließen", zoom: "Foto vergrößern",
   langLabel: "Sprache",
   legal: "Übersetzung zu Ihrer Information. Bei Abweichungen gilt die englische Fassung.",
   navGlance: "Überblick", navImportant: "Wichtig", navArrival: "Anreise", navHome: "Die Unterkunft", navRules: "Hausordnung", navSafety: "Sicherheit", navHelp: "Hilfe", navServices: "Services", navCheckout: "Abreise", navPicks: "Tipps", navThanks: "Danke",
@@ -229,7 +233,7 @@ de: {
   glanceTitle: "Ihr Aufenthalt im Überblick", checkInFrom: "Check-in ab", checkOutBy: "Check-out bis", wifiNetwork: "WLAN-Netz", password: "Passwort", copy: "Kopieren", copied: "Passwort kopiert", copyFail: "Kopieren nicht möglich", showQr: "WLAN-QR-Code anzeigen", entrance: "Gebäudeeingang",
   impTitle: "Wichtig, bitte lesen",
   impCorrH: "Ruhe in den Fluren, immer",
-  impCorr: "Bitte seien Sie in Fluren, Aufzügen und Treppenhäusern jederzeit leise, tagsüber wie nachts. Geräusche sind im Gebäude gut hörbar und unsere Nachbarn wohnen direkt nebenan.",
+  impCorr: "Lärm in Fluren, Aufzügen und Treppenhäusern ist zu keiner Tages- oder Nachtzeit erlaubt. Geräusche sind im Gebäude gut hörbar und unsere Nachbarn wohnen direkt nebenan.",
   impGuestsH: "Nur die Gäste der Buchung",
   impGuests: "Nur die in der Buchung genannten Gäste dürfen in der Unterkunft übernachten. Das ist eine Bedingung unserer Versicherung. Wenn Sie tagsüber Besuch bekommen möchten, sagen Sie uns bitte vorher Bescheid. Besucher dürfen unter keinen Umständen über Nacht bleiben.",
   impLeaveH: "Abreise bis {time}",
@@ -288,6 +292,7 @@ de: {
 },
 
 it: {
+  close: "Chiudi", zoom: "Ingrandisci la foto",
   langLabel: "Lingua",
   legal: "Traduzione fornita per comodità. In caso di differenze, prevale la versione inglese.",
   navGlance: "In breve", navImportant: "Importante", navArrival: "Arrivo", navHome: "L'alloggio", navRules: "Regole", navSafety: "Sicurezza", navHelp: "Aiuto", navServices: "Servizi", navCheckout: "Partenza", navPicks: "Consigli", navThanks: "Grazie",
@@ -299,7 +304,7 @@ it: {
   glanceTitle: "Il tuo soggiorno in breve", checkInFrom: "Check-in dalle", checkOutBy: "Check-out entro le", wifiNetwork: "Rete Wi-Fi", password: "Password", copy: "Copia", copied: "Password copiata", copyFail: "Impossibile copiare", showQr: "Mostra il QR code del Wi-Fi", entrance: "Ingresso dell'edificio",
   impTitle: "Importante, da leggere",
   impCorrH: "Silenzio nei corridoi, sempre",
-  impCorr: "Per favore, fai il minimo rumore possibile in corridoi, ascensori e scale, a qualsiasi ora del giorno e della notte. Il suono si propaga facilmente nell'edificio e i vicini abitano proprio accanto.",
+  impCorr: "Non è consentito fare rumore in corridoi, ascensori e scale, a nessuna ora del giorno o della notte. Il suono si propaga facilmente nell'edificio e i vicini abitano proprio accanto.",
   impGuestsH: "Solo gli ospiti della prenotazione",
   impGuests: "Possono soggiornare solo gli ospiti indicati nella prenotazione. È una condizione della nostra assicurazione. Se qualcuno vuole farti visita durante il giorno, avvisaci in anticipo. I visitatori non possono in alcun caso pernottare.",
   impLeaveH: "Partenza entro le {time}",
@@ -358,6 +363,7 @@ it: {
 },
 
 pt: {
+  close: "Fechar", zoom: "Ampliar foto",
   langLabel: "Idioma",
   legal: "Tradução para sua conveniência. Em caso de divergência, prevalece a versão em inglês.",
   navGlance: "Resumo", navImportant: "Importante", navArrival: "Chegada", navHome: "O alojamento", navRules: "Regras", navSafety: "Segurança", navHelp: "Ajuda", navServices: "Serviços", navCheckout: "Saída", navPicks: "Dicas", navThanks: "Obrigado",
@@ -369,7 +375,7 @@ pt: {
   glanceTitle: "A sua estadia num relance", checkInFrom: "Check-in a partir das", checkOutBy: "Check-out até às", wifiNetwork: "Rede Wi-Fi", password: "Palavra-passe", copy: "Copiar", copied: "Palavra-passe copiada", copyFail: "Não foi possível copiar", showQr: "Mostrar código QR do Wi-Fi", entrance: "Entrada do edifício",
   impTitle: "Importante, leia por favor",
   impCorrH: "Silêncio nos corredores, sempre",
-  impCorr: "Por favor, faça o mínimo de ruído possível nos corredores, elevadores e escadas, a qualquer hora do dia ou da noite. O som propaga-se facilmente no edifício e os vizinhos vivem mesmo ao lado.",
+  impCorr: "Não é permitido fazer barulho nos corredores, elevadores e escadas, a qualquer hora do dia ou da noite. O som propaga-se facilmente no edifício e os vizinhos vivem mesmo ao lado.",
   impGuestsH: "Apenas os hóspedes da reserva",
   impGuests: "Só podem ficar no alojamento as pessoas indicadas na reserva. É uma condição do nosso seguro. Se alguém quiser visitá-lo durante o dia, avise-nos com antecedência. As visitas não podem pernoitar em nenhuma circunstância.",
   impLeaveH: "Saída até às {time}",
@@ -428,6 +434,7 @@ pt: {
 },
 
 zh: {
+  close: "关闭", zoom: "放大照片",
   langLabel: "语言",
   legal: "本译文仅供参考。如有差异，以英文版本为准。",
   navGlance: "概览", navImportant: "重要须知", navArrival: "抵达", navHome: "房源", navRules: "入住规则", navSafety: "安全", navHelp: "帮助", navServices: "增值服务", navCheckout: "退房", navPicks: "本地推荐", navThanks: "感谢",
@@ -439,7 +446,7 @@ zh: {
   glanceTitle: "入住概览", checkInFrom: "入住时间", checkOutBy: "最晚退房", wifiNetwork: "Wi-Fi 名称", password: "密码", copy: "复制", copied: "密码已复制", copyFail: "无法复制", showQr: "显示 Wi-Fi 二维码", entrance: "大楼入口",
   impTitle: "重要须知，请仔细阅读",
   impCorrH: "走廊内请始终保持安静",
-  impCorr: "无论白天还是夜晚，请在走廊、电梯和楼梯间尽量保持安静。楼内声音很容易传播，邻居就住在隔壁。",
+  impCorr: "无论白天还是夜晚，禁止在走廊、电梯和楼梯间喧哗。楼内声音很容易传播，邻居就住在隔壁。",
   impGuestsH: "仅限预订名单上的住客",
   impGuests: "只有预订中登记的住客可以入住。这是我们保险的条件。如有人白天来访，请提前告知我们。访客在任何情况下都不得留宿。",
   impLeaveH: "请于 {time} 前退房",
@@ -498,6 +505,7 @@ zh: {
 },
 
 ar: {
+  close: "إغلاق", zoom: "تكبير الصورة",
   langLabel: "اللغة",
   legal: "هذه الترجمة لتسهيل القراءة فقط. في حال وجود أي اختلاف، تُعتمد النسخة الإنجليزية.",
   navGlance: "نظرة سريعة", navImportant: "مهم", navArrival: "الوصول", navHome: "المسكن", navRules: "القواعد", navSafety: "السلامة", navHelp: "المساعدة", navServices: "الخدمات", navCheckout: "المغادرة", navPicks: "توصيات محلية", navThanks: "شكرًا",
@@ -509,7 +517,7 @@ ar: {
   glanceTitle: "إقامتك في لمحة", checkInFrom: "تسجيل الوصول من", checkOutBy: "المغادرة قبل", wifiNetwork: "شبكة الواي فاي", password: "كلمة المرور", copy: "نسخ", copied: "تم نسخ كلمة المرور", copyFail: "تعذّر النسخ", showQr: "عرض رمز QR للواي فاي", entrance: "مدخل المبنى",
   impTitle: "مهم، يرجى القراءة",
   impCorrH: "الهدوء في الممرات دائمًا",
-  impCorr: "يرجى خفض الضوضاء إلى أدنى حد في الممرات والمصاعد والسلالم في جميع الأوقات، ليلًا ونهارًا. الصوت ينتقل بسهولة في المبنى وجيراننا يسكنون بجوارك مباشرة.",
+  impCorr: "يُمنع إحداث الضوضاء في الممرات والمصاعد والسلالم في أي وقت من الليل أو النهار. الصوت ينتقل بسهولة في المبنى وجيراننا يسكنون بجوارك مباشرة.",
   impGuestsH: "الضيوف المسجّلون في الحجز فقط",
   impGuests: "لا يُسمح بالإقامة إلا للضيوف المذكورين في الحجز، وهذا شرط من شروط التأمين لدينا. إذا رغب أحد في زيارتك خلال النهار، يرجى إبلاغنا مسبقًا. لا يُسمح للزوار بالمبيت تحت أي ظرف.",
   impLeaveH: "المغادرة قبل {time}",
@@ -568,6 +576,7 @@ ar: {
 },
 
 ja: {
+  close: "閉じる", zoom: "写真を拡大",
   langLabel: "言語",
   legal: "この翻訳は参考用です。内容に相違がある場合は英語版が優先されます。",
   navGlance: "概要", navImportant: "重要", navArrival: "到着", navHome: "お部屋", navRules: "ハウスルール", navSafety: "安全", navHelp: "ヘルプ", navServices: "サービス", navCheckout: "チェックアウト", navPicks: "おすすめ", navThanks: "ありがとう",
@@ -579,7 +588,7 @@ ja: {
   glanceTitle: "滞在情報まとめ", checkInFrom: "チェックイン", checkOutBy: "チェックアウト", wifiNetwork: "Wi-Fi ネットワーク", password: "パスワード", copy: "コピー", copied: "パスワードをコピーしました", copyFail: "コピーできませんでした", showQr: "Wi-Fi の QR コードを表示", entrance: "建物の入口",
   impTitle: "重要：必ずお読みください",
   impCorrH: "廊下では常にお静かに",
-  impCorr: "昼夜を問わず、廊下・エレベーター・階段では常にできるだけ静かにお過ごしください。建物内は音が響きやすく、すぐ隣に住民の方がいます。",
+  impCorr: "廊下・エレベーター・階段で騒ぐことは、昼夜を問わず禁止です。建物内は音が響きやすく、すぐ隣に住民の方がいます。",
   impGuestsH: "宿泊は予約者のみ",
   impGuests: "宿泊できるのは予約に記載されたゲストのみです。これは保険の条件です。日中に来客がある場合は、事前にお知らせください。来客の宿泊はいかなる場合も認められません。",
   impLeaveH: "{time} までにチェックアウト",

@@ -81,7 +81,8 @@
       ? `<a class="btn ${cls || "btn-primary"}" href="${maps(coords)}" target="_blank" rel="noopener">${I.pin}${esc(label)}</a>`
       : `<div class="soft"><span class="ph">[ADD COORDINATES IN CONFIG]</span></div>`;
     // Photos and step-by-step routes (property data, optional)
-    const photo = (src, alt) => src ? `<img class="ph-img" src="${esc(src)}" alt="${esc(P(alt || "").replace(/<[^>]+>/g, ""))}" loading="lazy">` : "";
+    const altText = v => { const raw = (v && typeof v === "object") ? (v[lang] ?? v.en ?? "") : (v || ""); return esc(raw); };
+    const photo = (src, alt) => src ? `<button type="button" class="zoom" data-src="${esc(src)}" aria-label="${esc(T("zoom"))}"><img class="ph-img" src="${esc(src)}" alt="${altText(alt)}" loading="lazy"></button>` : "";
     const route = r => !r || !r.steps || !r.steps.length ? "" : `
       <div class="route">${r.title ? `<div class="sub">${P(r.title)}</div>` : ""}
         <ol class="route-list">${r.steps.map((st, i) => `<li><span class="n">${i + 1}</span><div class="route-body">
@@ -135,6 +136,7 @@
     <h2>${T("impTitle")}</h2>
     <ul class="imp-list">
       ${isFlat ? `<li class="hot"><span class="h">${T("impCorrH")}</span>${T("impCorr")}</li>` : ""}
+      ${(C.importantExtra || []).map(x => `<li class="hot"><span class="h">${P(x.title)}</span>${P(x.text)}</li>`).join("")}
       <li><span class="h">${T("impGuestsH")}</span>${T("impGuests")}</li>
       <li><span class="h">${T("impLeaveH", { time: time(C.checkOut) })}</span>${T("impLeave")}</li>
       ${isLockbox ? `<li><span class="h">${T("impKeysH")}</span>${T("impKeys")}${C.keysNote ? ` <b>${P(C.keysNote)}</b>` : ""}</li>` : ""}
@@ -313,6 +315,22 @@
       Object.keys(links).forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
       window.addEventListener("scroll", pick, { passive: true });
     }
+
+    // Tap a photo to see it full screen
+    let lb = document.getElementById("lb");
+    if (!lb) { lb = document.createElement("div"); lb.id = "lb"; lb.className = "lb"; lb.hidden = true; lb.setAttribute("role", "dialog"); lb.setAttribute("aria-modal", "true"); lb.innerHTML = '<button type="button" class="lb-close">&times;</button><img alt="">'; document.body.appendChild(lb); }
+    const lbClose = lb.querySelector(".lb-close"), lbImg = lb.querySelector("img");
+    lbClose.setAttribute("aria-label", T("close"));
+    let lastBtn = null;
+    const closeLb = () => { lb.hidden = true; document.body.style.overflow = ""; lbImg.removeAttribute("src"); if (lastBtn) lastBtn.focus(); };
+    document.querySelectorAll(".zoom").forEach(btn => btn.addEventListener("click", () => {
+      lastBtn = btn;
+      lbImg.src = btn.dataset.src.replace("c_limit,w_900", "c_limit,w_1800");
+      lbImg.alt = btn.querySelector("img").alt;
+      lb.hidden = false; document.body.style.overflow = "hidden"; lbClose.focus();
+    }));
+    lb.onclick = e => { if (e.target !== lbImg) closeLb(); };
+    document.onkeydown = e => { if (e.key === "Escape" && !lb.hidden) closeLb(); };
 
     const toast = msg => { const el = document.getElementById("toast"); el.textContent = msg; el.classList.add("on"); setTimeout(() => el.classList.remove("on"), 1600); };
     document.getElementById("copyPw").addEventListener("click", () => {
