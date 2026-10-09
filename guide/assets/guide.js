@@ -107,6 +107,9 @@
         ${a.tip ? `<p class="appl-tip"><b>${T("applTip")}:</b> ${P(a.tip)}</p>` : ""}
         ${a.manual ? `<a class="appl-man" href="${esc(a.manual)}" target="_blank" rel="noopener">${T("applManual")}${a.model ? ` <span dir="ltr">(${esc(a.model)})</span>` : ""}</a>` : ""}
       </details>`; }).join("")}</div>`;
+    // Lockbox away from the building: guests must collect the keys before going to the entrance
+    const keysFirst = isLockbox && C.keysFirst;
+    const keysFirstBox = () => !keysFirst ? "" : `<div class="keys-first"><div class="sub">${I.key}${T("keysFirstH")}</div><p>${T("keysFirstD", { where: P(C.keysFirstWhere) })}</p>${clean(C.lockboxCoords) ? mapBtn(C.lockboxCoords, T("keysFirstBtn"), "btn-primary") : ""}</div>`;
     const nav = [["glance", "navGlance"], ["important", "navImportant"], ["arrive", "navArrival"], ["home", "navHome"], ["rules", "navRules"], ["safety", "navSafety"], ["help", "navHelp"], ["services", "navServices"], ["checkout", "navCheckout"], ["picks", "navPicks"], ["thanks", "navThanks"]];
     const phoneLink = `<a href="tel:${PHONE}" dir="ltr"><b>${PHONE_TXT}</b></a>`;
     const emailLink = `<a href="mailto:${EMAIL}" dir="ltr"><b>${EMAIL}</b></a>`;
@@ -148,12 +151,13 @@
         <div id="wifiQr" aria-label="Wi-Fi QR"></div>
       </div>
     </div>
-    <div class="stack" style="margin-top:12px">${mapBtn(C.entranceCoords, T("entrance"), "btn-white")}</div>
+    <div class="stack" style="margin-top:12px">${keysFirst && clean(C.lockboxCoords) ? mapBtn(C.lockboxCoords, T("keysFirstBtn"), "btn-white") : ""}${mapBtn(C.entranceCoords, keysFirst ? T("entranceStep2") : T("entrance"), "btn-white")}</div>
   </section>
 
   <section class="card imp" id="important">
     <h2>${T("impTitle")}</h2>
     <ul class="imp-list">
+      ${keysFirst ? `<li class="hot"><span class="h">${T("keysFirstH")}</span>${T("keysFirstD", { where: P(C.keysFirstWhere) })}</li>` : ""}
       ${isFlat ? `<li class="hot"><span class="h">${T("impCorrH")}</span>${T("impCorr")}</li>` : ""}
       ${(C.importantExtra || []).map(x => `<li class="hot"><span class="h">${P(x.title)}</span>${P(x.text)}</li>`).join("")}
       <li><span class="h">${T("impGuestsH")}</span>${T("impGuests")}</li>
@@ -175,8 +179,9 @@
   <section class="card" id="arrive">
     <h2>${T("arriveTitle")}</h2>
     <div class="stack">
+      ${keysFirstBox()}
       <p>${P(C.directions)}</p>
-      ${mapBtn(C.entranceCoords, T("entrance"))}
+      ${mapBtn(C.entranceCoords, keysFirst ? T("entranceStep2") : T("entrance"), keysFirst ? "btn-light" : "btn-primary")}
       <div class="soft"><div class="sub">${T("parking")}</div>
         ${C.parking === "none"
           ? `<p>${T("noParking")}</p><p style="margin-top:8px">${P(C.parkingNearby)}</p>${clean(C.parkingNearbyCoords) ? `<div style="margin-top:10px">${mapBtn(C.parkingNearbyCoords, T("parkingMap"), "btn-light")}</div>` : ""}`
@@ -283,6 +288,7 @@
 
   ${(C.picks || []).length ? `<section class="card" id="picks">
     <h2>${T("picksTitle")}</h2>
+    ${C.picksImage ? `<div style="margin:6px 0 14px">${photo(C.picksImage, T("picksTitle"))}</div>` : ""}
     <div>${C.picks.map(p => `<div class="pick"><div><div class="cat">${T("cat_" + p.category)}</div><div class="name">${P(p.name)}</div><div class="note">${P(p.note)}${p.walkMins ? " · " + T("walk", { n: esc(p.walkMins) }) : ""}</div></div>${clean(p.coords) ? `<a href="${maps(p.coords)}" target="_blank" rel="noopener" aria-label="Maps">${I.pin}</a>` : ""}</div>`).join("")}</div>
   </section>` : ""}
 
@@ -341,7 +347,7 @@
 <nav class="bar" aria-label="Quick actions"><div class="bar-in">
   <a class="main" href="${WA}">${I.chat}${T("whatsapp")}</a>
   <a href="tel:${PHONE}">${I.phone}${T("call")}</a>
-  ${clean(C.entranceCoords) ? `<a href="${maps(C.entranceCoords)}" target="_blank" rel="noopener">${I.pin}${T("directions")}</a>` : `<a href="mailto:${EMAIL}">${I.mail}${T("email")}</a>`}
+  ${clean(C.entranceCoords) ? `<a href="${maps(keysFirst && clean(C.lockboxCoords) ? C.lockboxCoords : C.entranceCoords)}" target="_blank" rel="noopener">${I.pin}${T("directions")}</a>` : `<a href="mailto:${EMAIL}">${I.mail}${T("email")}</a>`}
 </div></nav>`;
 
     document.title = (typeof C.propertyName === "string" && !C.propertyName.startsWith("[") ? C.propertyName + " | " : "") + "Holl Group";

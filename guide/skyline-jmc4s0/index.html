@@ -8,7 +8,7 @@
 <title>Holl Group</title>
 <link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009p">
+<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009q">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
@@ -39,8 +39,10 @@ const CONFIG = {
   },
   "entranceCoords": "165 Granville Street, Birmingham B1 1JY",
   "lockboxCoords": "https://www.google.com/maps/search/?api=1&query=Washington+Street,+Birmingham+B1",
-  "lockboxAreaPhoto": "",
-  "keysNote": "",
+  "lockboxAreaPhoto": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791546298/IMG20260204132804_llkdwt.jpg",
+  "keysNote": {
+    "en": "Once you have paid the refundable damage deposit and completed the pre check-in form, we will send you the lockbox code, which lockbox is yours and a short video of the route."
+  },
   "arrivalRoute": {
     "title": {
       "en": "From the lockbox to the building"
@@ -48,7 +50,7 @@ const CONFIG = {
     "steps": [
       {
         "text": {
-          "en": "Collect your keys from the lockbox on Washington Street. The exact spot, with a photo and a short video, is in your check-in message."
+          "en": "Go to Washington Street first, not to the building. Collect your keys from your lockbox there. The code, which lockbox is yours and a short video are sent once your deposit and pre check-in form are complete."
         },
         "imgs": []
       },
@@ -442,7 +444,10 @@ const CONFIG = {
   "importantExtra": [],
   "discountUrl": "https://booking.hollgroup.co.uk/?coupon=5REPEATING&utm=guide",
   "discountCode": "5REPEATING",
-  "routerLocked": false
+  "routerLocked": false,
+  "keysFirst": true,
+  "keysFirstWhere": "Washington Street",
+  "picksImage": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791546256/What_s_On_Your_Doorstep_cocbtc.png"
 };
 /* ===================== END OF PROPERTY SETTINGS ===================== */
 </script>
@@ -450,7 +455,7 @@ const CONFIG = {
 <body>
 <div id="app"></div>
 <div class="toast" id="toast"></div>
-<script src="/guide/assets/guide-i18n.js?v=20261009p"></script>
-<script src="/guide/assets/guide.js?v=20261009p"></script>
+<script src="/guide/assets/guide-i18n.js?v=20261009q"></script>
+<script src="/guide/assets/guide.js?v=20261009q"></script>
 </body>
 </html>
