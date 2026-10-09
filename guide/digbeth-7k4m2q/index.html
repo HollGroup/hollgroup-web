@@ -8,7 +8,7 @@
 <title>Holl Group</title>
 <link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009j">
+<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009l">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
@@ -48,6 +48,7 @@ const CONFIG = {
     "ar": "هل تأتون بأكثر من سيارة؟ أقرب موقف سيارات عام في 1 High Street Deritend، على بُعد دقائق سيرًا. الموقف مدفوع.",
     "ja": "車が 2 台以上ですか？最寄りの公共駐車場は 1 High Street Deritend にあり、徒歩数分です。有料駐車場です。"
   },
+  "parkingCoords": "https://maps.app.goo.gl/zDNoewrMupp29E4Q7",
   "parkingNearbyCoords": "https://maps.app.goo.gl/km1Y1aurNT4ZDEnd8",
   "directions": {
     "en": "The building is on Lombard Street, in Digbeth. Look for Entrance B: a brick building with tall glass windows and a large yellow \"B\" by the door. Birmingham Moor Street station is a 14-minute walk, New Street station 16 minutes, and Birmingham Coach Station 7 minutes. To and from Birmingham Airport: by train, take a direct train from New Street to Birmingham International (about 10 minutes, up to 10 trains an hour), then the free Air-Rail Link to the terminal. By bus, the X1 is a cheaper option and takes about 35 minutes, from the Adderley Street stop, a 5-minute walk away.",
@@ -439,7 +440,529 @@ const CONFIG = {
         "zh": "烤箱、微波炉、陶瓷电炉、洗碗机、电热水壶和滴滤式咖啡机。为了让咖啡机保持良好状态，使用后请倒空并冲洗滤网和咖啡壶。",
         "ar": "فرن، ميكروويف، موقد سيراميك، غسالة صحون، غلاية، وآلة قهوة بالفلتر. لتبقى آلة القهوة تعمل جيدًا للجميع، يرجى تفريغ الفلتر والإبريق وشطفهما بعد الاستخدام.",
         "ja": "オーブン、電子レンジ、電気コンロ（セラミックトップ）、食洗機、電気ケトル、ドリップ式コーヒーメーカーがあります。コーヒーメーカーを長く快適に使えるよう、ご使用後はフィルターとポットを空にしてすすいでください。"
-      }
+      },
+      "appliances": [
+        {
+          "name": {
+            "en": "Hob (ceramic)",
+            "es": "Vitrocerámica",
+            "fr": "Plaque vitrocéramique",
+            "de": "Kochfeld (Ceran)",
+            "it": "Piano cottura in vetroceramica",
+            "pt": "Placa vitrocerâmica",
+            "zh": "陶瓷电炉灶",
+            "ar": "موقد سيراميك",
+            "ja": "セラミックコンロ"
+          },
+          "brand": "Zanussi",
+          "manual": "https://www.zanussi.co.uk/support/user-manuals/",
+          "steps": {
+            "en": [
+              "Turn ON the wall switch behind the microwave.",
+              "Turn the dial for the cooking zone you want.",
+              "The hob takes 20 to 30 seconds to heat up.",
+              "Turn all dials to OFF after use, then turn OFF the wall switch.",
+              "Careful: the glass stays hot for a while after use."
+            ],
+            "es": [
+              "Enciende el interruptor de pared que hay detrás del microondas.",
+              "Gira el mando de la zona que quieras usar.",
+              "La placa tarda entre 20 y 30 segundos en calentarse.",
+              "Al terminar, pon todos los mandos en OFF y apaga el interruptor de pared.",
+              "Cuidado: el cristal sigue caliente un rato después de usarlo."
+            ],
+            "fr": [
+              "Allumez l'interrupteur mural derrière le micro-ondes.",
+              "Tournez le bouton de la zone de cuisson voulue.",
+              "La plaque met 20 à 30 secondes à chauffer.",
+              "Après usage, mettez tous les boutons sur OFF, puis éteignez l'interrupteur mural.",
+              "Attention : la vitre reste chaude un moment après usage."
+            ],
+            "de": [
+              "Schalten Sie den Wandschalter hinter der Mikrowelle EIN.",
+              "Drehen Sie den Regler der gewünschten Kochzone.",
+              "Das Kochfeld braucht 20 bis 30 Sekunden zum Aufheizen.",
+              "Nach dem Kochen alle Regler auf AUS stellen und den Wandschalter AUSschalten.",
+              "Vorsicht: Das Glas bleibt nach dem Gebrauch noch eine Weile heiß."
+            ],
+            "it": [
+              "Accendi l'interruttore a muro dietro il microonde.",
+              "Gira la manopola della zona di cottura che vuoi usare.",
+              "Il piano impiega 20-30 secondi a scaldarsi.",
+              "Dopo l'uso, porta tutte le manopole su OFF e spegni l'interruttore a muro.",
+              "Attenzione: il vetro resta caldo per un po' dopo l'uso."
+            ],
+            "pt": [
+              "Ligue o interruptor de parede atrás do micro-ondas.",
+              "Rode o botão da zona que quer usar.",
+              "A placa demora 20 a 30 segundos a aquecer.",
+              "No fim, ponha todos os botões em OFF e desligue o interruptor de parede.",
+              "Cuidado: o vidro continua quente durante algum tempo."
+            ],
+            "zh": [
+              "打开微波炉后面的墙上开关。",
+              "转动你要使用的炉区旋钮。",
+              "炉灶需要 20 到 30 秒加热。",
+              "用完后把所有旋钮转到 OFF，再关闭墙上开关。",
+              "注意：使用后玻璃面板会持续发烫一段时间。"
+            ],
+            "ar": [
+              "شغّل مفتاح الحائط الموجود خلف الميكروويف.",
+              "أدر مقبض منطقة الطهي التي تريدها.",
+              "يحتاج الموقد من 20 إلى 30 ثانية ليسخن.",
+              "بعد الاستخدام، أعد كل المقابض إلى OFF ثم أطفئ مفتاح الحائط.",
+              "انتبه: يبقى الزجاج ساخنًا لبعض الوقت بعد الاستخدام."
+            ],
+            "ja": [
+              "電子レンジの後ろにある壁のスイッチを ON にします。",
+              "使いたい加熱エリアのダイヤルを回します。",
+              "温まるまで 20〜30 秒かかります。",
+              "使用後はすべてのダイヤルを OFF にし、壁のスイッチも OFF にしてください。",
+              "ご注意：使用後しばらくはガラス面が熱いままです。"
+            ]
+          }
+        },
+        {
+          "name": {
+            "en": "Cooker hood",
+            "es": "Campana extractora",
+            "fr": "Hotte",
+            "de": "Dunstabzugshaube",
+            "it": "Cappa aspirante",
+            "pt": "Exaustor",
+            "zh": "抽油烟机",
+            "ar": "شفاط المطبخ",
+            "ja": "レンジフード"
+          },
+          "brand": "Zanussi",
+          "steps": {
+            "en": [
+              "Press button 1 to start.",
+              "Use 2 or 3 for stronger extraction.",
+              "The light button is on the left.",
+              "Switch it OFF after cooking."
+            ],
+            "es": [
+              "Pulsa el botón 1 para encenderla.",
+              "Usa el 2 o el 3 para más potencia.",
+              "El botón de la luz está a la izquierda.",
+              "Apágala al terminar de cocinar."
+            ],
+            "fr": [
+              "Appuyez sur le bouton 1 pour démarrer.",
+              "Utilisez 2 ou 3 pour une aspiration plus forte.",
+              "Le bouton de la lumière est à gauche.",
+              "Éteignez-la après la cuisson."
+            ],
+            "de": [
+              "Drücken Sie Taste 1 zum Starten.",
+              "Mit 2 oder 3 saugt sie stärker ab.",
+              "Die Lichttaste ist links.",
+              "Nach dem Kochen AUSschalten."
+            ],
+            "it": [
+              "Premi il tasto 1 per accenderla.",
+              "Usa il 2 o il 3 per aspirare di più.",
+              "Il tasto della luce è a sinistra.",
+              "Spegnila dopo aver cucinato."
+            ],
+            "pt": [
+              "Carregue no botão 1 para ligar.",
+              "Use o 2 ou o 3 para mais potência.",
+              "O botão da luz está à esquerda.",
+              "Desligue depois de cozinhar."
+            ],
+            "zh": [
+              "按 1 号键启动。",
+              "按 2 或 3 加大抽力。",
+              "照明按钮在左边。",
+              "做完饭后请关闭。"
+            ],
+            "ar": [
+              "اضغط الزر 1 للتشغيل.",
+              "استخدم 2 أو 3 لشفط أقوى.",
+              "زر الإضاءة على اليسار.",
+              "أطفئه بعد الطهي."
+            ],
+            "ja": [
+              "ボタン 1 を押して起動します。",
+              "吸引を強くするには 2 または 3 を使います。",
+              "照明ボタンは左側です。",
+              "調理後は OFF にしてください。"
+            ]
+          }
+        },
+        {
+          "name": {
+            "en": "Oven",
+            "es": "Horno",
+            "fr": "Four",
+            "de": "Backofen",
+            "it": "Forno",
+            "pt": "Forno",
+            "zh": "烤箱",
+            "ar": "الفرن",
+            "ja": "オーブン"
+          },
+          "brand": "Zanussi",
+          "manual": "https://www.zanussi.co.uk/support/user-manuals/",
+          "steps": {
+            "en": [
+              "Turn ON the wall switch.",
+              "Top dial: choose the function. Fan oven (recommended), grill or top and bottom heat.",
+              "Bottom dial: set the temperature.",
+              "Preheat for 5 to 10 minutes.",
+              "Switch it OFF after use."
+            ],
+            "es": [
+              "Enciende el interruptor de pared.",
+              "Mando de arriba: elige la función. Horno con ventilador (recomendado), grill o calor arriba y abajo.",
+              "Mando de abajo: elige la temperatura.",
+              "Precalienta de 5 a 10 minutos.",
+              "Apágalo al terminar."
+            ],
+            "fr": [
+              "Allumez l'interrupteur mural.",
+              "Bouton du haut : choisissez la fonction. Chaleur tournante (conseillée), gril ou chaleur haut et bas.",
+              "Bouton du bas : réglez la température.",
+              "Préchauffez 5 à 10 minutes.",
+              "Éteignez-le après usage."
+            ],
+            "de": [
+              "Wandschalter EINschalten.",
+              "Oberer Regler: Funktion wählen. Umluft (empfohlen), Grill oder Ober- und Unterhitze.",
+              "Unterer Regler: Temperatur einstellen.",
+              "5 bis 10 Minuten vorheizen.",
+              "Nach Gebrauch AUSschalten."
+            ],
+            "it": [
+              "Accendi l'interruttore a muro.",
+              "Manopola in alto: scegli la funzione. Ventilato (consigliato), grill o calore sopra e sotto.",
+              "Manopola in basso: imposta la temperatura.",
+              "Preriscalda per 5-10 minuti.",
+              "Spegnilo dopo l'uso."
+            ],
+            "pt": [
+              "Ligue o interruptor de parede.",
+              "Botão de cima: escolha a função. Ventilado (recomendado), grelhador ou calor em cima e em baixo.",
+              "Botão de baixo: escolha a temperatura.",
+              "Pré-aqueça 5 a 10 minutos.",
+              "Desligue depois de usar."
+            ],
+            "zh": [
+              "打开墙上开关。",
+              "上方旋钮选择功能：热风（推荐）、烧烤或上下加热。",
+              "下方旋钮设置温度。",
+              "预热 5 到 10 分钟。",
+              "用完后请关闭。"
+            ],
+            "ar": [
+              "شغّل مفتاح الحائط.",
+              "المقبض العلوي: اختر الوظيفة. فرن بمروحة (مُستحسن) أو شواية أو تسخين علوي وسفلي.",
+              "المقبض السفلي: اضبط الحرارة.",
+              "سخّن الفرن مسبقًا من 5 إلى 10 دقائق.",
+              "أطفئه بعد الاستخدام."
+            ],
+            "ja": [
+              "壁のスイッチを ON にします。",
+              "上のダイヤルで機能を選びます：ファンオーブン（おすすめ）、グリル、上下ヒーター。",
+              "下のダイヤルで温度を設定します。",
+              "5〜10 分予熱します。",
+              "使用後は OFF にしてください。"
+            ]
+          },
+          "tip": {
+            "en": "Fan oven at 160 to 170°C uses the least energy.",
+            "es": "El horno con ventilador a 160–170 °C es lo que menos energía gasta.",
+            "fr": "La chaleur tournante à 160–170 °C consomme le moins d'énergie.",
+            "de": "Umluft bei 160 bis 170 °C spart am meisten Energie.",
+            "it": "Il ventilato a 160-170 °C consuma meno energia.",
+            "pt": "O ventilado a 160–170 °C é o que gasta menos energia.",
+            "zh": "热风模式 160 至 170°C 最省电。",
+            "ar": "الفرن بالمروحة على 160 إلى 170 درجة هو الأقل استهلاكًا للطاقة.",
+            "ja": "ファンオーブン 160〜170°C が最も省エネです。"
+          }
+        },
+        {
+          "name": {
+            "en": "Microwave",
+            "es": "Microondas",
+            "fr": "Micro-ondes",
+            "de": "Mikrowelle",
+            "it": "Microonde",
+            "pt": "Micro-ondas",
+            "zh": "微波炉",
+            "ar": "الميكروويف",
+            "ja": "電子レンジ"
+          },
+          "brand": "Russell Hobbs",
+          "model": "RHMD714G-N",
+          "manual": "https://manuals.russellhobbs.com/",
+          "steps": {
+            "en": [
+              "Turn the main dial to set the cooking time.",
+              "Press Start.",
+              "Never use metal or foil."
+            ],
+            "es": [
+              "Gira el mando principal para elegir el tiempo.",
+              "Pulsa Start.",
+              "No metas nunca metal ni papel de aluminio."
+            ],
+            "fr": [
+              "Tournez le bouton principal pour régler le temps.",
+              "Appuyez sur Start.",
+              "N'utilisez jamais de métal ni de papier aluminium."
+            ],
+            "de": [
+              "Mit dem Hauptregler die Garzeit einstellen.",
+              "Start drücken.",
+              "Niemals Metall oder Alufolie verwenden."
+            ],
+            "it": [
+              "Gira la manopola principale per impostare il tempo.",
+              "Premi Start.",
+              "Non usare mai metallo né carta stagnola."
+            ],
+            "pt": [
+              "Rode o botão principal para escolher o tempo.",
+              "Carregue em Start.",
+              "Nunca use metal nem papel de alumínio."
+            ],
+            "zh": [
+              "转动主旋钮设置加热时间。",
+              "按 Start。",
+              "切勿放入金属或锡箔纸。"
+            ],
+            "ar": [
+              "أدر المقبض الرئيسي لضبط وقت الطهي.",
+              "اضغط Start.",
+              "لا تستخدم المعادن أو ورق الألمنيوم أبدًا."
+            ],
+            "ja": [
+              "メインダイヤルで加熱時間を設定します。",
+              "Start を押します。",
+              "金属やアルミホイルは絶対に使わないでください。"
+            ]
+          }
+        },
+        {
+          "name": {
+            "en": "Fridge freezer",
+            "es": "Frigorífico y congelador",
+            "fr": "Réfrigérateur congélateur",
+            "de": "Kühl-Gefrierkombination",
+            "it": "Frigorifero con congelatore",
+            "pt": "Frigorífico com congelador",
+            "zh": "冰箱冷冻柜",
+            "ar": "الثلاجة والفريزر",
+            "ja": "冷蔵冷凍庫"
+          },
+          "brand": "Zanussi",
+          "model": "ZBB27450SV",
+          "manual": "https://www.zanussi.co.uk/support/user-manuals/",
+          "steps": {
+            "en": [
+              "The wall switch labelled Fridge/Freezer must stay ON.",
+              "Recommended settings: fridge on level 3 to 4, freezer at minus 18°C."
+            ],
+            "es": [
+              "El interruptor de pared marcado Fridge/Freezer tiene que estar siempre encendido.",
+              "Ajustes recomendados: frigorífico en el nivel 3 o 4, congelador a menos 18 °C."
+            ],
+            "fr": [
+              "L'interrupteur mural marqué Fridge/Freezer doit rester allumé.",
+              "Réglages conseillés : réfrigérateur sur 3 ou 4, congélateur à moins 18 °C."
+            ],
+            "de": [
+              "Der Wandschalter mit der Aufschrift Fridge/Freezer muss immer EIN sein.",
+              "Empfohlen: Kühlschrank auf Stufe 3 bis 4, Gefrierfach auf minus 18 °C."
+            ],
+            "it": [
+              "L'interruttore a muro con scritto Fridge/Freezer deve restare acceso.",
+              "Impostazioni consigliate: frigo al livello 3-4, congelatore a meno 18 °C."
+            ],
+            "pt": [
+              "O interruptor de parede com a etiqueta Fridge/Freezer tem de estar sempre ligado.",
+              "Definições recomendadas: frigorífico no nível 3 a 4, congelador a menos 18 °C."
+            ],
+            "zh": [
+              "标有 Fridge/Freezer 的墙上开关必须保持开启。",
+              "推荐设置：冷藏 3 至 4 档，冷冻零下 18°C。"
+            ],
+            "ar": [
+              "يجب أن يبقى مفتاح الحائط المكتوب عليه Fridge/Freezer مشغّلًا دائمًا.",
+              "الإعدادات المُستحسنة: الثلاجة على المستوى 3 إلى 4، والفريزر على 18 درجة تحت الصفر."
+            ],
+            "ja": [
+              "Fridge/Freezer と書かれた壁のスイッチは常に ON にしておいてください。",
+              "おすすめ設定：冷蔵はレベル 3〜4、冷凍はマイナス 18°C。"
+            ]
+          }
+        },
+        {
+          "name": {
+            "en": "Washer dryer",
+            "es": "Lavadora secadora",
+            "fr": "Lave-linge séchant",
+            "de": "Waschtrockner",
+            "it": "Lavasciuga",
+            "pt": "Máquina de lavar e secar",
+            "zh": "洗衣烘干机",
+            "ar": "غسالة ومجففة",
+            "ja": "洗濯乾燥機"
+          },
+          "brand": "Zanussi",
+          "model": "Z716WT83BI",
+          "manual": "https://www.zanussi.co.uk/support/user-manuals/",
+          "steps": {
+            "en": [
+              "Turn ON the wall switch labelled Washing Machine.",
+              "Load the clothes without overfilling.",
+              "Add detergent.",
+              "Choose a programme: Eco 40 to 60 is the most efficient, 20 to 30 minutes for a quick light wash.",
+              "Press Start/Pause."
+            ],
+            "es": [
+              "Enciende el interruptor de pared marcado Washing Machine.",
+              "Mete la ropa sin llenarla demasiado.",
+              "Añade detergente.",
+              "Elige un programa: Eco 40–60 es el más eficiente, y 20–30 minutos para un lavado rápido.",
+              "Pulsa Start/Pause."
+            ],
+            "fr": [
+              "Allumez l'interrupteur mural marqué Washing Machine.",
+              "Chargez le linge sans trop remplir.",
+              "Ajoutez la lessive.",
+              "Choisissez un programme : Eco 40–60 est le plus économique, 20–30 minutes pour un lavage rapide.",
+              "Appuyez sur Start/Pause."
+            ],
+            "de": [
+              "Den Wandschalter mit der Aufschrift Washing Machine EINschalten.",
+              "Wäsche einlegen, nicht überladen.",
+              "Waschmittel hinzufügen.",
+              "Programm wählen: Eco 40–60 ist am sparsamsten, 20–30 Minuten für eine schnelle leichte Wäsche.",
+              "Start/Pause drücken."
+            ],
+            "it": [
+              "Accendi l'interruttore a muro con scritto Washing Machine.",
+              "Carica i vestiti senza riempirla troppo.",
+              "Aggiungi il detersivo.",
+              "Scegli un programma: Eco 40-60 è il più efficiente, 20-30 minuti per un lavaggio rapido.",
+              "Premi Start/Pause."
+            ],
+            "pt": [
+              "Ligue o interruptor de parede com a etiqueta Washing Machine.",
+              "Coloque a roupa sem encher demasiado.",
+              "Adicione detergente.",
+              "Escolha um programa: Eco 40–60 é o mais eficiente, 20–30 minutos para uma lavagem rápida.",
+              "Carregue em Start/Pause."
+            ],
+            "zh": [
+              "打开标有 Washing Machine 的墙上开关。",
+              "放入衣物，不要装得太满。",
+              "加入洗衣剂。",
+              "选择程序：Eco 40–60 最节能，20–30 分钟用于快速轻洗。",
+              "按 Start/Pause。"
+            ],
+            "ar": [
+              "شغّل مفتاح الحائط المكتوب عليه Washing Machine.",
+              "ضع الملابس دون ملء الغسالة أكثر من اللازم.",
+              "أضف المنظف.",
+              "اختر برنامجًا: Eco 40–60 هو الأكثر توفيرًا، و20–30 دقيقة لغسلة خفيفة سريعة.",
+              "اضغط Start/Pause."
+            ],
+            "ja": [
+              "Washing Machine と書かれた壁のスイッチを ON にします。",
+              "洗濯物は詰め込みすぎないように入れます。",
+              "洗剤を入れます。",
+              "コースを選びます：Eco 40–60 が最も効率的、20〜30 分は軽い洗濯向けのスピードコースです。",
+              "Start/Pause を押します。"
+            ]
+          }
+        },
+        {
+          "name": {
+            "en": "Dishwasher",
+            "es": "Lavavajillas",
+            "fr": "Lave-vaisselle",
+            "de": "Geschirrspüler",
+            "it": "Lavastoviglie",
+            "pt": "Máquina de lavar loiça",
+            "zh": "洗碗机",
+            "ar": "غسالة الصحون",
+            "ja": "食器洗い機"
+          },
+          "brand": "Zanussi",
+          "model": "ZDLN1511",
+          "manual": "https://www.zanussi.co.uk/support/user-manuals/",
+          "steps": {
+            "en": [
+              "Turn ON the wall switch labelled Dishwasher.",
+              "Load the dishes facing downwards.",
+              "Add one all-in-one tablet.",
+              "Choose a programme: Eco, 160 minutes (recommended), 90 minutes normal or 30 minutes quick.",
+              "Close the door fully. The machine starts by itself."
+            ],
+            "es": [
+              "Enciende el interruptor de pared marcado Dishwasher.",
+              "Coloca la vajilla boca abajo.",
+              "Añade una pastilla todo en uno.",
+              "Elige un programa: Eco, 160 minutos (recomendado), 90 minutos normal o 30 minutos rápido.",
+              "Cierra bien la puerta. El lavavajillas arranca solo."
+            ],
+            "fr": [
+              "Allumez l'interrupteur mural marqué Dishwasher.",
+              "Placez la vaisselle tournée vers le bas.",
+              "Ajoutez une pastille tout-en-un.",
+              "Choisissez un programme : Eco, 160 minutes (conseillé), 90 minutes normal ou 30 minutes rapide.",
+              "Fermez bien la porte. La machine démarre toute seule."
+            ],
+            "de": [
+              "Den Wandschalter mit der Aufschrift Dishwasher EINschalten.",
+              "Geschirr mit der Öffnung nach unten einräumen.",
+              "Ein All-in-One-Tab hinzufügen.",
+              "Programm wählen: Eco, 160 Minuten (empfohlen), 90 Minuten normal oder 30 Minuten kurz.",
+              "Tür fest schließen. Die Maschine startet von selbst."
+            ],
+            "it": [
+              "Accendi l'interruttore a muro con scritto Dishwasher.",
+              "Metti le stoviglie rivolte verso il basso.",
+              "Aggiungi una pastiglia tutto in uno.",
+              "Scegli un programma: Eco, 160 minuti (consigliato), 90 minuti normale o 30 minuti rapido.",
+              "Chiudi bene lo sportello. La macchina parte da sola."
+            ],
+            "pt": [
+              "Ligue o interruptor de parede com a etiqueta Dishwasher.",
+              "Coloque a loiça virada para baixo.",
+              "Adicione uma pastilha tudo em um.",
+              "Escolha um programa: Eco, 160 minutos (recomendado), 90 minutos normal ou 30 minutos rápido.",
+              "Feche bem a porta. A máquina começa sozinha."
+            ],
+            "zh": [
+              "打开标有 Dishwasher 的墙上开关。",
+              "餐具开口朝下放入。",
+              "放入一颗多合一洗碗块。",
+              "选择程序：Eco 160 分钟（推荐）、90 分钟标准或 30 分钟快洗。",
+              "关紧门，机器会自动启动。"
+            ],
+            "ar": [
+              "شغّل مفتاح الحائط المكتوب عليه Dishwasher.",
+              "ضع الصحون ووجهها إلى الأسفل.",
+              "أضف قرصًا واحدًا متعدد الاستخدامات.",
+              "اختر برنامجًا: Eco لمدة 160 دقيقة (مُستحسن)، أو 90 دقيقة عادي، أو 30 دقيقة سريع.",
+              "أغلق الباب جيدًا، وستبدأ الغسالة تلقائيًا."
+            ],
+            "ja": [
+              "Dishwasher と書かれた壁のスイッチを ON にします。",
+              "食器は下向きに入れます。",
+              "オールインワンタブレットを 1 つ入れます。",
+              "コースを選びます：Eco 160 分（おすすめ）、標準 90 分、スピード 30 分。",
+              "扉をしっかり閉めると自動で始まります。"
+            ]
+          }
+        }
+      ]
     },
     {
       "title": {
@@ -725,7 +1248,7 @@ const CONFIG = {
 <body>
 <div id="app"></div>
 <div class="toast" id="toast"></div>
-<script src="/guide/assets/guide-i18n.js?v=20261009j"></script>
-<script src="/guide/assets/guide.js?v=20261009j"></script>
+<script src="/guide/assets/guide-i18n.js?v=20261009l"></script>
+<script src="/guide/assets/guide.js?v=20261009l"></script>
 </body>
 </html>

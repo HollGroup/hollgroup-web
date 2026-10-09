@@ -10,6 +10,7 @@
   const BREVO = "https://e839be71.sibforms.com/serve/MUIFAIpm5qy6-_i9pB5InRDHuU1d8EfMd-Cml7oOBTsq3vjWG_hJK4Snhz4klkhnlU4dIX_BulnSd9fYXhErq0ISEjxPXfu1NQJt23-LDMajkJLs0g4seC6Zz-ldBb35MeYYV6HJET4vBofO4jTL3J4Laoo_EloMPqxSHHAV5FzvdOpvV-zZKBpziZJA_naPmdqEC_72hXZuKjOirA==";
   const store = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
   try { if (new URLSearchParams(location.search).get("join") === "reset") { localStorage.removeItem("hollJoined"); localStorage.removeItem("hollPromoHide"); } } catch (e) {}
+  const THANKS = "🇬🇧 Thank you · 🥂 Cheers, bab! · 🇪🇸 Gracias · Eskerrik asko · Gràcies · Graciñas · 🇫🇷 Merci · 🇩🇪 Danke · 🇮🇹 Grazie · 🇵🇹 Obrigado · 🏴󠁧󠁢󠁷󠁬󠁳󠁿 Diolch · 🇮🇪 Go raibh maith agat · 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Tapadh leat · 🇳🇱 Dank u · 🇸🇪 Tack · 🇳🇴 Takk · 🇩🇰 Tak · 🇫🇮 Kiitos · 🇪🇪 Aitäh · 🇵🇱 Dziękuję · 🇨🇿 Děkuji · 🇭🇺 Köszönöm · 🇷🇴 Mulțumesc · 🇬🇷 Efcharistó · 🇹🇷 Teşekkürler · 🇺🇦 Diakuiu · 🇷🇺 Spasibo · 🇸🇦 Shukran · 🇮🇱 Toda · 🇮🇷 Mamnoon · 🇮🇳 Dhanyavaad · 🇵🇰 Shukriya · 🇧🇩 Dhonnobad · 🇨🇳 Xièxie · 🇭🇰 M'goi · 🇯🇵 Arigato · 🇰🇷 Gamsahamnida · 🇵🇭 Salamat · 🇮🇩 Terima kasih · 🇹🇭 Khop khun · 🇻🇳 Cảm ơn · 🇰🇪 Asante · 🇿🇦 Dankie · 🇸🇴 Mahadsanid · 🇯🇲 Give tanks · 🏳️‍🌈 Gracias · Thank you ·&nbsp;";
   const HOMES = "https://hollgroup.co.uk/properties.html";
   const LOGO = "https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png";
   const HOST = "https://res.cloudinary.com/dyojhaiig/image/upload/c_thumb,g_face,w_240,h_240,z_0.75,f_auto,q_auto/v1787835750/aiboryyy-20251211-0001_yx87j9.jpg";
@@ -95,6 +96,14 @@
           ${(st.imgs || []).length ? `<div class="route-imgs${st.imgs.length > 1 ? " two" : ""}">${st.imgs.map(u => photo(u, st.text)).join("")}</div>` : ""}
           <p>${P(st.text)}</p></div></li>`).join("")}</ol></div>`;
     const gallery = list => !list || !list.length ? "" : `<div class="gallery">${list.map(g => `<figure>${photo(g.img, g.caption)}${g.caption ? `<figcaption>${P(g.caption)}</figcaption>` : ""}</figure>`).join("")}</div>`;
+    // Appliance guides: tap a name to open its steps
+    const appliances = list => !list || !list.length ? "" : `<div class="appl-list">${list.map(a => {
+      const steps = (a.steps && (a.steps[lang] || a.steps.en)) || [];
+      return `<details class="appl"><summary><span>${P(a.name)}</span><small dir="ltr">${esc([a.brand, a.model].filter(Boolean).join(" · "))}</small></summary>
+        <ol>${steps.map(x => `<li>${esc(x)}</li>`).join("")}</ol>
+        ${a.tip ? `<p class="appl-tip"><b>${T("applTip")}:</b> ${P(a.tip)}</p>` : ""}
+        ${a.manual ? `<a class="appl-man" href="${esc(a.manual)}" target="_blank" rel="noopener">${T("applManual")}${a.model ? ` <span dir="ltr">(${esc(a.model)})</span>` : ""}</a>` : ""}
+      </details>`; }).join("")}</div>`;
     const nav = [["glance", "navGlance"], ["important", "navImportant"], ["arrive", "navArrival"], ["home", "navHome"], ["rules", "navRules"], ["safety", "navSafety"], ["help", "navHelp"], ["services", "navServices"], ["checkout", "navCheckout"], ["picks", "navPicks"], ["thanks", "navThanks"]];
     const phoneLink = `<a href="tel:${PHONE}" dir="ltr"><b>${PHONE_TXT}</b></a>`;
     const emailLink = `<a href="mailto:${EMAIL}" dir="ltr"><b>${EMAIL}</b></a>`;
@@ -166,9 +175,9 @@
       <p>${P(C.directions)}</p>
       ${mapBtn(C.entranceCoords, T("entrance"))}
       <div class="soft"><div class="sub">${T("parking")}</div>
-        ${C.parking === "none" ? `<p>${T("noParking")}</p><p style="margin-top:8px">${P(C.parkingNearby)}</p>` : `<p>${P(C.parkingDetails)}</p>${C.parkingNearby ? `<p style="margin-top:8px">${P(C.parkingNearby)}</p>` : ""}`}
-        ${clean(C.parkingNearbyCoords) ? `<div style="margin-top:10px">${mapBtn(C.parkingNearbyCoords, T("parkingMap"), "btn-light")}</div>` : ""}
-        ${gallery(C.parkingPhotos)}
+        ${C.parking === "none"
+          ? `<p>${T("noParking")}</p><p style="margin-top:8px">${P(C.parkingNearby)}</p>${clean(C.parkingNearbyCoords) ? `<div style="margin-top:10px">${mapBtn(C.parkingNearbyCoords, T("parkingMap"), "btn-light")}</div>` : ""}`
+          : `<p>${P(C.parkingDetails)}</p>${clean(C.parkingCoords) ? `<div style="margin-top:10px">${mapBtn(C.parkingCoords, T("parkingEntrance"), "btn-primary")}</div>` : ""}${gallery(C.parkingPhotos)}${C.parkingNearby ? `<p style="margin-top:12px">${P(C.parkingNearby)}</p>` : ""}${clean(C.parkingNearbyCoords) ? `<div style="margin-top:10px">${mapBtn(C.parkingNearbyCoords, T("parkingMap"), "btn-light")}</div>` : ""}`}
       </div>
     </div>
     <h2 style="margin-top:26px">${T("gettingIn")}</h2>
@@ -186,7 +195,7 @@
 
   <section class="card" id="home">
     <h2>${T("homeTitle")}</h2>
-    <div class="stack">${C.property.map(b => `<div class="soft"><div class="sub">${P(b.title)}</div><p>${P(b.text)}</p></div>`).join("")}</div>
+    <div class="stack">${C.property.map(b => `<div class="soft"><div class="sub">${P(b.title)}</div><p>${P(b.text)}</p>${appliances(b.appliances)}</div>`).join("")}</div>
   </section>
 
   <section class="card" id="rules">
@@ -277,6 +286,7 @@
   <section class="card gift" id="thanks">
     <div class="icon" style="margin:0 auto 12px;width:56px;height:56px">${I.gift}</div>
     <h2>${T("thanksTitle")}</h2>
+    <div class="thanks-ticker" aria-hidden="true" dir="ltr"><div class="thanks-track"><span>${THANKS}</span><span>${THANKS}</span></div></div>
     <p style="font-family:'Outfit',system-ui,sans-serif;font-size:20px;font-weight:600;color:var(--accent-ink);margin-bottom:10px">${T("bookDirect")}</p>
     <p style="margin-bottom:16px">${T("same")}</p>
     <div class="offer">

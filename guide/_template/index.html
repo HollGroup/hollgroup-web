@@ -8,7 +8,7 @@
 <title>Holl Group</title>
 <link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009j">
+<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009l">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
@@ -34,6 +34,7 @@ const CONFIG = {
   parking: "available",          // "available" or "none"
   parkingDetails: "[PROPERTY: where to park, space number or permit details]",
   parkingNearby: "[PROPERTY: nearest car parks, distance and approximate price]",  // also shown as "second car" advice when parking is available
+  parkingCoords: "",             // optional: our car park entrance (coordinates or Google Maps link)
   parkingNearbyCoords: "",       // optional: car park link or coordinates
 
   directions: "[PROPERTY: directions, nearest transport]",
@@ -49,7 +50,10 @@ const CONFIG = {
   property: [
     { title: "Heating", text: "[PROPERTY: how the heating works]" },
     { title: "Hot water", text: "[PROPERTY: hot water]" },
-    { title: "Kitchen and appliances", text: "[PROPERTY: oven, hob, washing machine, dishwasher]" },
+    { title: "Kitchen and appliances", text: "[PROPERTY: oven, hob, washing machine, dishwasher]",
+      // optional step by step guides, one per appliance (see Digbeth One for a full example):
+      // appliances: [ { name: "Oven", brand: "Zanussi", model: "", manual: "https://...", steps: { en: ["Step 1", "Step 2"] }, tip: "" } ]
+    },
     { title: "TV", text: "[PROPERTY: TV, apps, remote]" }
   ],
 
@@ -91,7 +95,7 @@ const CONFIG = {
 <body>
 <div id="app"></div>
 <div class="toast" id="toast"></div>
-<script src="/guide/assets/guide-i18n.js?v=20261009j"></script>
-<script src="/guide/assets/guide.js?v=20261009j"></script>
+<script src="/guide/assets/guide-i18n.js?v=20261009l"></script>
+<script src="/guide/assets/guide.js?v=20261009l"></script>
 </body>
 </html>

@@ -175,3 +175,22 @@ footer img{height:64px;width:auto;display:block;margin:0 auto 8px}
 .more{text-align:center}
 .more p{margin:8px 0 16px}
 .btn-big{min-height:60px;font-size:19px;border-radius:16px}
+
+/* Appliance guides */
+.appl-list{display:grid;gap:8px;margin-top:12px}
+.appl{background:#fff;border:1px solid var(--line);border-radius:12px}
+.appl summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;padding:10px 14px;font-weight:700}
+.appl summary::-webkit-details-marker{display:none}
+.appl summary::after{content:"+";font-size:22px;color:var(--accent-ink);margin-inline-start:4px}
+.appl[open] summary::after{content:"\2212"}
+.appl summary small{font-weight:400;color:var(--muted);font-size:14px;margin-inline-start:auto;text-align:end}
+.appl ol{margin:0;padding-block:0 6px;padding-inline:34px 14px;font-size:16px}
+.appl li{margin:4px 0}
+.appl-tip{font-size:15px;padding:0 14px 8px}
+.appl-man{display:inline-block;margin:0 14px 12px;font-size:15px;font-weight:600}
+/* Thank you in many languages */
+.thanks-ticker{overflow:hidden;margin:10px -4px 14px;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.thanks-track{display:flex;width:max-content;animation:thanks 120s linear infinite;font-size:15px;color:var(--accent-deep);white-space:nowrap}
+.thanks-track span{padding-inline-end:6px}
+@keyframes thanks{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.thanks-track{animation:none;white-space:normal;width:auto}.thanks-track span+span{display:none}}
