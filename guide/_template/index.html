@@ -36,7 +36,7 @@ const CONFIG = {
   parkingNearby: "[PROPERTY: nearest car parks, distance and approximate price]",
 
   directions: "[PROPERTY: directions, nearest transport]",
-  entranceCoords: "",            // e.g. "52.4796, -1.9026"
+  entranceCoords: "",            // coordinates "52.4796, -1.9026" or a Google Maps link
   lockboxCoords: "",             // recommended: leave empty, send it in the check-in message
 
   checkIn: "15:00",
@@ -56,6 +56,7 @@ const CONFIG = {
   fireDetails: "[PROPERTY: alarm locations, exit route, assembly point, extinguisher or fire blanket if present]",
   routerLocation: "[PROPERTY: router location]",
   heatingCheck: "[PROPERTY: how it works and what to check]",
+  utilitiesLocked: false,       // true if router, stopcock and fuse box are in a locked room
   stopcock: "[PROPERTY: water stopcock location]",
   fuseBox: "[PROPERTY: fuse box location]",
   pharmacy: { name: "[NEAREST PHARMACY]", coords: "" },

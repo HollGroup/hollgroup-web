@@ -11,7 +11,8 @@
 
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const clean = v => String(v || "").replace(/\s+/g, "");
-  const maps = c => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(clean(c));
+  // Accepts coordinates ("52.47, -1.89") or a full Google Maps link
+  const maps = c => /^https?:\/\//i.test(clean(c)) ? clean(c) : "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(clean(c));
   const isFlat = C.propertyType !== "house";
   const isLockbox = C.entry !== "smartlock";
 
@@ -219,7 +220,7 @@
     <div class="stack" style="margin-top:12px">
       ${clean(C.pharmacy.coords) ? `<a class="btn btn-light" href="${maps(C.pharmacy.coords)}" target="_blank" rel="noopener">${I.pin}${T("pharmacy")}: ${P(C.pharmacy.name)}</a>` : `<div class="soft">${T("pharmacy")}: ${P(C.pharmacy.name)}</div>`}
       ${clean(C.hospital.coords) ? `<a class="btn btn-light" href="${maps(C.hospital.coords)}" target="_blank" rel="noopener">${I.pin}${T("ae")}: ${P(C.hospital.name)}</a>` : `<div class="soft">${T("ae")}: ${P(C.hospital.name)}</div>`}
-      <div class="soft"><b>${T("stopcock")}:</b> ${P(C.stopcock)}<br><b>${T("fuse")}:</b> ${P(C.fuseBox)}</div>
+      <div class="soft">${C.utilitiesLocked ? T("utilLocked") : `<b>${T("stopcock")}:</b> ${P(C.stopcock)}<br><b>${T("fuse")}:</b> ${P(C.fuseBox)}`}</div>
     </div>
   </section>
 
@@ -227,7 +228,7 @@
     <h2>${T("helpTitle")}</h2>
     <p style="margin-bottom:14px">${T("helpIntro")}</p>
     <div class="stack">
-      <div class="issue"><span class="icon">${I.wifi}</span><div><div class="sub">${T("wifiLabel")}</div><p>${T("wifiFix")} ${P(C.routerLocation)}</p></div></div>
+      <div class="issue"><span class="icon">${I.wifi}</span><div><div class="sub">${T("wifiLabel")}</div><p>${C.utilitiesLocked ? T("wifiLocked") : `${T("wifiFix")} ${P(C.routerLocation)}`}</p></div></div>
       <div class="issue"><span class="icon">${I.temp}</span><div><div class="sub">${T("heatLabel")}</div><p>${P(C.heatingCheck)}</p></div></div>
       <div class="issue"><span class="icon">${I.key}</span><div><div class="sub">${T("keyLabel")}</div><p>${T("keyFix")}</p></div></div>
     </div>

@@ -9,6 +9,8 @@ window.GUIDE_LANGS = [
 window.GUIDE_I18N = {
 en: {
   close: "Close", zoom: "Enlarge photo",
+  wifiLocked: "The router is kept in a locked utility room. If the Wi-Fi stops working, message us and we will sort it out as quickly as possible.",
+  utilLocked: "The water stopcock and the fuse box are in a locked utility room. If you have a water leak or a power cut, call us straight away and we will deal with it.",
   langLabel: "Language",
   legal: "",
   navGlance: "At a glance", navImportant: "Important", navArrival: "Arrival", navHome: "The property", navRules: "House rules", navSafety: "Safety", navHelp: "Help", navServices: "Services", navCheckout: "Check-out", navPicks: "Local picks", navThanks: "Thank you",
@@ -80,6 +82,8 @@ en: {
 
 es: {
   close: "Cerrar", zoom: "Ampliar foto",
+  wifiLocked: "El router está en un cuarto técnico cerrado con llave. Si el Wi-Fi deja de funcionar, escríbenos y lo solucionamos lo antes posible.",
+  utilLocked: "La llave de paso del agua y el cuadro eléctrico están en un cuarto técnico cerrado con llave. Si hay una fuga de agua o un corte de luz, llámanos de inmediato y nos encargamos.",
   langLabel: "Idioma",
   legal: "Traducción para tu comodidad. En caso de diferencia, prevalece la versión en inglés.",
   navGlance: "Resumen", navImportant: "Importante", navArrival: "Llegada", navHome: "El alojamiento", navRules: "Normas", navSafety: "Seguridad", navHelp: "Ayuda", navServices: "Servicios", navCheckout: "Salida", navPicks: "Recomendaciones", navThanks: "Gracias",
@@ -151,6 +155,8 @@ es: {
 
 fr: {
   close: "Fermer", zoom: "Agrandir la photo",
+  wifiLocked: "La box est rangée dans un local technique fermé à clé. Si le Wi-Fi ne fonctionne plus, écrivez-nous et nous réglerons le problème au plus vite.",
+  utilLocked: "Le robinet d'arrivée d'eau et le tableau électrique se trouvent dans un local technique fermé à clé. En cas de fuite d'eau ou de coupure de courant, appelez-nous immédiatement et nous nous en occupons.",
   langLabel: "Langue",
   legal: "Traduction fournie pour votre confort. En cas de divergence, la version anglaise prévaut.",
   navGlance: "En bref", navImportant: "Important", navArrival: "Arrivée", navHome: "Le logement", navRules: "Règlement", navSafety: "Sécurité", navHelp: "Aide", navServices: "Services", navCheckout: "Départ", navPicks: "Bonnes adresses", navThanks: "Merci",
@@ -222,6 +228,8 @@ fr: {
 
 de: {
   close: "Schließen", zoom: "Foto vergrößern",
+  wifiLocked: "Der Router befindet sich in einem abgeschlossenen Technikraum. Wenn das WLAN nicht mehr funktioniert, schreiben Sie uns und wir kümmern uns so schnell wie möglich darum.",
+  utilLocked: "Hauptwasserhahn und Sicherungskasten befinden sich in einem abgeschlossenen Technikraum. Bei einem Wasserschaden oder Stromausfall rufen Sie uns bitte sofort an, wir kümmern uns darum.",
   langLabel: "Sprache",
   legal: "Übersetzung zu Ihrer Information. Bei Abweichungen gilt die englische Fassung.",
   navGlance: "Überblick", navImportant: "Wichtig", navArrival: "Anreise", navHome: "Die Unterkunft", navRules: "Hausordnung", navSafety: "Sicherheit", navHelp: "Hilfe", navServices: "Services", navCheckout: "Abreise", navPicks: "Tipps", navThanks: "Danke",
@@ -293,6 +301,8 @@ de: {
 
 it: {
   close: "Chiudi", zoom: "Ingrandisci la foto",
+  wifiLocked: "Il router si trova in un locale tecnico chiuso a chiave. Se il Wi-Fi smette di funzionare, scrivici e lo risolviamo il prima possibile.",
+  utilLocked: "Il rubinetto generale dell'acqua e il quadro elettrico sono in un locale tecnico chiuso a chiave. In caso di perdita d'acqua o blackout, chiamaci subito e ce ne occupiamo noi.",
   langLabel: "Lingua",
   legal: "Traduzione fornita per comodità. In caso di differenze, prevale la versione inglese.",
   navGlance: "In breve", navImportant: "Importante", navArrival: "Arrivo", navHome: "L'alloggio", navRules: "Regole", navSafety: "Sicurezza", navHelp: "Aiuto", navServices: "Servizi", navCheckout: "Partenza", navPicks: "Consigli", navThanks: "Grazie",
@@ -364,6 +374,8 @@ it: {
 
 pt: {
   close: "Fechar", zoom: "Ampliar foto",
+  wifiLocked: "O router está numa sala técnica fechada à chave. Se o Wi-Fi deixar de funcionar, envie-nos uma mensagem e resolvemos o mais depressa possível.",
+  utilLocked: "A torneira de segurança da água e o quadro elétrico estão numa sala técnica fechada à chave. Se houver uma fuga de água ou um corte de luz, ligue-nos de imediato e tratamos do assunto.",
   langLabel: "Idioma",
   legal: "Tradução para sua conveniência. Em caso de divergência, prevalece a versão em inglês.",
   navGlance: "Resumo", navImportant: "Importante", navArrival: "Chegada", navHome: "O alojamento", navRules: "Regras", navSafety: "Segurança", navHelp: "Ajuda", navServices: "Serviços", navCheckout: "Saída", navPicks: "Dicas", navThanks: "Obrigado",
@@ -435,6 +447,8 @@ pt: {
 
 zh: {
   close: "关闭", zoom: "放大照片",
+  wifiLocked: "路由器放在上锁的设备间内。如果 Wi-Fi 无法使用，请给我们发消息，我们会尽快处理。",
+  utilLocked: "总水阀和电闸箱位于上锁的设备间内。如遇漏水或停电，请立即致电我们，我们会马上处理。",
   langLabel: "语言",
   legal: "本译文仅供参考。如有差异，以英文版本为准。",
   navGlance: "概览", navImportant: "重要须知", navArrival: "抵达", navHome: "房源", navRules: "入住规则", navSafety: "安全", navHelp: "帮助", navServices: "增值服务", navCheckout: "退房", navPicks: "本地推荐", navThanks: "感谢",
@@ -506,6 +520,8 @@ zh: {
 
 ar: {
   close: "إغلاق", zoom: "تكبير الصورة",
+  wifiLocked: "جهاز الراوتر موجود في غرفة خدمات مقفلة. إذا توقّف الواي فاي عن العمل، راسلنا وسنحلّ المشكلة بأسرع ما يمكن.",
+  utilLocked: "محبس المياه الرئيسي ولوحة الكهرباء موجودان في غرفة خدمات مقفلة. في حال حدوث تسرّب مياه أو انقطاع كهرباء، اتصل بنا فورًا وسنتولى الأمر.",
   langLabel: "اللغة",
   legal: "هذه الترجمة لتسهيل القراءة فقط. في حال وجود أي اختلاف، تُعتمد النسخة الإنجليزية.",
   navGlance: "نظرة سريعة", navImportant: "مهم", navArrival: "الوصول", navHome: "المسكن", navRules: "القواعد", navSafety: "السلامة", navHelp: "المساعدة", navServices: "الخدمات", navCheckout: "المغادرة", navPicks: "توصيات محلية", navThanks: "شكرًا",
@@ -577,6 +593,8 @@ ar: {
 
 ja: {
   close: "閉じる", zoom: "写真を拡大",
+  wifiLocked: "ルーターは施錠された設備室にあります。Wi-Fi がつながらない場合はメッセージをください。できるだけ早く対応します。",
+  utilLocked: "水道の元栓とブレーカーは施錠された設備室にあります。水漏れや停電の際は、すぐにお電話ください。こちらで対応します。",
   langLabel: "言語",
   legal: "この翻訳は参考用です。内容に相違がある場合は英語版が優先されます。",
   navGlance: "概要", navImportant: "重要", navArrival: "到着", navHome: "お部屋", navRules: "ハウスルール", navSafety: "安全", navHelp: "ヘルプ", navServices: "サービス", navCheckout: "チェックアウト", navPicks: "おすすめ", navThanks: "ありがとう",
