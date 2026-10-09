@@ -13,7 +13,7 @@ en: {
   utilLocked: "The water stopcock and the fuse box are in a locked utility room. If you have a water leak or a power cut, call us straight away and we will deal with it.",
   langLabel: "Language",
   legal: "",
-  navGlance: "At a glance", navImportant: "Important", navArrival: "Arrival", navHome: "The property", navRules: "House rules", navSafety: "Safety", navHelp: "Help", navServices: "Services", navCheckout: "Check-out", navPicks: "Local picks", navThanks: "Thank you",
+  navGlance: "At a glance", navImportant: "Important", navArrival: "Arrival", navHome: "The property", navRules: "House rules", navSafety: "Safety", navHelp: "Help", navServices: "Services", navCheckout: "Check-out", navPicks: "Local picks", navThanks: "Your gift",
   eyebrow: "Your guest guide",
   welcomeTo: "Welcome to {name}",
   hostTitle: "Hi, I'm Ibon. Welcome to Birmingham.",
@@ -58,7 +58,7 @@ en: {
   fire4: "Do not re-enter the building.",
   fire5: "Please do not tamper with smoke alarms.",
   emTitle: "Emergencies and useful numbers", em999: "Fire, police, ambulance", em111: "NHS, urgent but not an emergency", emGas: "Gas emergency, if you smell gas",
-  pharmacy: "Nearest pharmacy", pharmacies: "Nearest pharmacies", ae: "Nearest A&E (hospital emergency department)", stopcock: "Water stopcock", fuse: "Fuse box",
+  pharmacy: "Nearest pharmacy", pharmacies: "Nearest pharmacies", ae: "Nearest A&E (hospital emergency department)", aes: "Nearest A&E (hospital emergency departments)", stopcock: "Water stopcock", fuse: "Fuse box",
   helpTitle: "If something goes wrong",
   helpIntro: "Most issues can be fixed quickly. Contact us first, tell us what is happening, and send a photo if you can.",
   wifiLabel: "Wi-Fi", wifiFix: "Switch the router off for 30 seconds, then back on.",
@@ -82,7 +82,7 @@ en: {
   fName: "First name", fEmail: "Email", fCities: "Cities you are interested in", fPurpose: "You usually travel for", pWork: "Work", pLeisure: "Leisure", pBoth: "Both",
   fConsent: "I agree to receive emails from Holl Group with offers and news. I can unsubscribe at any time.", fBrevo: "We send our emails with Brevo. Your details are only used for Holl Group emails.",
   fSend: "Email me my 7% code", fSending: "Sending…", fOk: "Almost there. Open the email we have just sent you and tap the confirmation link. Your 7% code arrives straight after. Check your spam folder if you cannot see it.",
-  fErrEmail: "Please enter a valid email address.", fErrConsent: "Please tick the box to agree.", fErrSend: "We could not send your details. Your browser or an ad blocker may be blocking it.", fErrLink: "Use this sign up form instead", promo: "Returning guest? Get 7% off your next stay.", promoGo: "See how"
+  fErrEmail: "Please enter a valid email address.", fErrConsent: "Please tick the box to agree.", fErrSend: "We could not send your details. Your browser or an ad blocker may be blocking it.", fErrLink: "Use this sign up form instead", promo: "A gift for your next stay: up to 7% off.", promoGo: "See it"
 },
 
 es: {
@@ -91,7 +91,7 @@ es: {
   utilLocked: "La llave de paso del agua y el cuadro eléctrico están en un cuarto técnico cerrado con llave. Si hay una fuga de agua o un corte de luz, llámanos de inmediato y nos encargamos.",
   langLabel: "Idioma",
   legal: "Traducción para tu comodidad. En caso de diferencia, prevalece la versión en inglés.",
-  navGlance: "Resumen", navImportant: "Importante", navArrival: "Llegada", navHome: "El alojamiento", navRules: "Normas", navSafety: "Seguridad", navHelp: "Ayuda", navServices: "Servicios", navCheckout: "Salida", navPicks: "Recomendaciones", navThanks: "Gracias",
+  navGlance: "Resumen", navImportant: "Importante", navArrival: "Llegada", navHome: "El alojamiento", navRules: "Normas", navSafety: "Seguridad", navHelp: "Ayuda", navServices: "Servicios", navCheckout: "Salida", navPicks: "Recomendaciones", navThanks: "Tu regalo",
   eyebrow: "Tu guía de huésped",
   welcomeTo: "Bienvenido a {name}",
   hostTitle: "Hola, soy Ibon. Bienvenido a Birmingham.",
@@ -136,7 +136,7 @@ es: {
   fire4: "No vuelvas a entrar en el edificio.",
   fire5: "No manipules los detectores de humo.",
   emTitle: "Emergencias y números útiles", em999: "Bomberos, policía, ambulancia", em111: "NHS, urgente pero no emergencia", emGas: "Emergencia de gas, si hueles a gas",
-  pharmacy: "Farmacia más cercana", pharmacies: "Farmacias más cercanas", ae: "Urgencias más cercanas (A&E)", stopcock: "Llave de paso del agua", fuse: "Cuadro eléctrico",
+  pharmacy: "Farmacia más cercana", pharmacies: "Farmacias más cercanas", ae: "Urgencias más cercanas (A&E)", aes: "Urgencias de hospital más cercanas (A&E)", stopcock: "Llave de paso del agua", fuse: "Cuadro eléctrico",
   helpTitle: "Si algo falla",
   helpIntro: "La mayoría de los problemas se solucionan rápido. Contáctanos primero, cuéntanos qué pasa y envía una foto si puedes.",
   wifiLabel: "Wi-Fi", wifiFix: "Apaga el router 30 segundos y vuelve a encenderlo.",
@@ -160,7 +160,7 @@ es: {
   fName: "Nombre", fEmail: "Email", fCities: "Ciudades que te interesan", fPurpose: "Sueles viajar por", pWork: "Trabajo", pLeisure: "Ocio", pBoth: "Ambos",
   fConsent: "Acepto recibir emails de Holl Group con ofertas y novedades. Puedo darme de baja cuando quiera.", fBrevo: "Enviamos nuestros emails con Brevo. Tus datos solo se usan para los emails de Holl Group.",
   fSend: "Envíame mi código del 7%", fSending: "Enviando…", fOk: "Ya casi está. Abre el email que te acabamos de enviar y pulsa el enlace de confirmación. Tu código del 7% llegará justo después. Revisa la carpeta de spam si no lo ves.",
-  fErrEmail: "Introduce un email válido.", fErrConsent: "Marca la casilla para aceptar.", fErrSend: "No hemos podido enviar tus datos. Puede que tu navegador o un bloqueador de anuncios lo esté impidiendo.", fErrLink: "Usa este formulario de registro", promo: "¿Ya te has alojado con nosotros? Consigue un 7% en tu próxima estancia.", promoGo: "Ver cómo"
+  fErrEmail: "Introduce un email válido.", fErrConsent: "Marca la casilla para aceptar.", fErrSend: "No hemos podido enviar tus datos. Puede que tu navegador o un bloqueador de anuncios lo esté impidiendo.", fErrLink: "Usa este formulario de registro", promo: "Un regalo para tu próxima estancia: hasta un 7% de descuento.", promoGo: "Verlo"
 },
 
 fr: {
@@ -169,7 +169,7 @@ fr: {
   utilLocked: "Le robinet d'arrivée d'eau et le tableau électrique se trouvent dans un local technique fermé à clé. En cas de fuite d'eau ou de coupure de courant, appelez-nous immédiatement et nous nous en occupons.",
   langLabel: "Langue",
   legal: "Traduction fournie pour votre confort. En cas de divergence, la version anglaise prévaut.",
-  navGlance: "En bref", navImportant: "Important", navArrival: "Arrivée", navHome: "Le logement", navRules: "Règlement", navSafety: "Sécurité", navHelp: "Aide", navServices: "Services", navCheckout: "Départ", navPicks: "Bonnes adresses", navThanks: "Merci",
+  navGlance: "En bref", navImportant: "Important", navArrival: "Arrivée", navHome: "Le logement", navRules: "Règlement", navSafety: "Sécurité", navHelp: "Aide", navServices: "Services", navCheckout: "Départ", navPicks: "Bonnes adresses", navThanks: "Votre cadeau",
   eyebrow: "Votre guide de séjour",
   welcomeTo: "Bienvenue à {name}",
   hostTitle: "Bonjour, je suis Ibon. Bienvenue à Birmingham.",
@@ -214,7 +214,7 @@ fr: {
   fire4: "Ne retournez pas dans le bâtiment.",
   fire5: "Ne touchez pas aux détecteurs de fumée.",
   emTitle: "Urgences et numéros utiles", em999: "Pompiers, police, ambulance", em111: "NHS, urgent mais pas une urgence vitale", emGas: "Urgence gaz, si vous sentez du gaz",
-  pharmacy: "Pharmacie la plus proche", pharmacies: "Pharmacies les plus proches", ae: "Urgences les plus proches (A&E)", stopcock: "Robinet d'arrivée d'eau", fuse: "Tableau électrique",
+  pharmacy: "Pharmacie la plus proche", pharmacies: "Pharmacies les plus proches", ae: "Urgences les plus proches (A&E)", aes: "Services d'urgences les plus proches (A&E)", stopcock: "Robinet d'arrivée d'eau", fuse: "Tableau électrique",
   helpTitle: "En cas de problème",
   helpIntro: "La plupart des problèmes se règlent rapidement. Contactez-nous d'abord, expliquez-nous ce qui se passe et envoyez une photo si possible.",
   wifiLabel: "Wi-Fi", wifiFix: "Éteignez la box pendant 30 secondes, puis rallumez-la.",
@@ -238,7 +238,7 @@ fr: {
   fName: "Prénom", fEmail: "E-mail", fCities: "Villes qui vous intéressent", fPurpose: "Vous voyagez surtout pour", pWork: "Le travail", pLeisure: "Les loisirs", pBoth: "Les deux",
   fConsent: "J'accepte de recevoir des e-mails de Holl Group avec des offres et des nouveautés. Je peux me désinscrire à tout moment.", fBrevo: "Nous envoyons nos e-mails avec Brevo. Vos données servent uniquement aux e-mails de Holl Group.",
   fSend: "Recevoir mon code de 7 %", fSending: "Envoi…", fOk: "Presque terminé. Ouvrez l'e-mail que nous venons de vous envoyer et touchez le lien de confirmation. Votre code de 7 % arrive juste après. Vérifiez vos spams si vous ne le voyez pas.",
-  fErrEmail: "Veuillez saisir une adresse e-mail valide.", fErrConsent: "Veuillez cocher la case pour accepter.", fErrSend: "Nous n'avons pas pu envoyer vos informations. Votre navigateur ou un bloqueur de publicités l'empêche peut-être.", fErrLink: "Utilisez plutôt ce formulaire d'inscription", promo: "Déjà séjourné chez nous ? Obtenez 7 % sur votre prochain séjour.", promoGo: "Voir comment"
+  fErrEmail: "Veuillez saisir une adresse e-mail valide.", fErrConsent: "Veuillez cocher la case pour accepter.", fErrSend: "Nous n'avons pas pu envoyer vos informations. Votre navigateur ou un bloqueur de publicités l'empêche peut-être.", fErrLink: "Utilisez plutôt ce formulaire d'inscription", promo: "Un cadeau pour votre prochain séjour : jusqu'à 7 % de réduction.", promoGo: "Voir"
 },
 
 de: {
@@ -247,7 +247,7 @@ de: {
   utilLocked: "Hauptwasserhahn und Sicherungskasten befinden sich in einem abgeschlossenen Technikraum. Bei einem Wasserschaden oder Stromausfall rufen Sie uns bitte sofort an, wir kümmern uns darum.",
   langLabel: "Sprache",
   legal: "Übersetzung zu Ihrer Information. Bei Abweichungen gilt die englische Fassung.",
-  navGlance: "Überblick", navImportant: "Wichtig", navArrival: "Anreise", navHome: "Die Unterkunft", navRules: "Hausordnung", navSafety: "Sicherheit", navHelp: "Hilfe", navServices: "Services", navCheckout: "Abreise", navPicks: "Tipps", navThanks: "Danke",
+  navGlance: "Überblick", navImportant: "Wichtig", navArrival: "Anreise", navHome: "Die Unterkunft", navRules: "Hausordnung", navSafety: "Sicherheit", navHelp: "Hilfe", navServices: "Services", navCheckout: "Abreise", navPicks: "Tipps", navThanks: "Ihr Geschenk",
   eyebrow: "Ihr Gästeguide",
   welcomeTo: "Willkommen in {name}",
   hostTitle: "Hallo, ich bin Ibon. Willkommen in Birmingham.",
@@ -292,7 +292,7 @@ de: {
   fire4: "Betreten Sie das Gebäude nicht wieder.",
   fire5: "Bitte manipulieren Sie keine Rauchmelder.",
   emTitle: "Notfälle und nützliche Nummern", em999: "Feuerwehr, Polizei, Rettungsdienst", em111: "NHS, dringend, aber kein Notfall", emGas: "Gasnotruf, wenn Sie Gas riechen",
-  pharmacy: "Nächste Apotheke", pharmacies: "Nächste Apotheken", ae: "Nächste Notaufnahme (A&E)", stopcock: "Hauptwasserhahn", fuse: "Sicherungskasten",
+  pharmacy: "Nächste Apotheke", pharmacies: "Nächste Apotheken", ae: "Nächste Notaufnahme (A&E)", aes: "Nächste Notaufnahmen (A&E)", stopcock: "Hauptwasserhahn", fuse: "Sicherungskasten",
   helpTitle: "Wenn etwas nicht funktioniert",
   helpIntro: "Die meisten Probleme lassen sich schnell lösen. Kontaktieren Sie uns zuerst, beschreiben Sie, was passiert, und schicken Sie wenn möglich ein Foto.",
   wifiLabel: "WLAN", wifiFix: "Schalten Sie den Router 30 Sekunden aus und dann wieder ein.",
@@ -316,7 +316,7 @@ de: {
   fName: "Vorname", fEmail: "E-Mail", fCities: "Städte, die Sie interessieren", fPurpose: "Sie reisen meist", pWork: "Beruflich", pLeisure: "Privat", pBoth: "Beides",
   fConsent: "Ich möchte E-Mails von Holl Group mit Angeboten und Neuigkeiten erhalten. Ich kann mich jederzeit abmelden.", fBrevo: "Wir versenden unsere E-Mails über Brevo. Ihre Daten werden nur für E-Mails von Holl Group verwendet.",
   fSend: "7 %-Code per E-Mail erhalten", fSending: "Wird gesendet…", fOk: "Fast geschafft. Öffnen Sie die E-Mail, die wir Ihnen gerade geschickt haben, und tippen Sie auf den Bestätigungslink. Ihr 7 %-Code kommt direkt danach. Sehen Sie im Spam-Ordner nach, falls Sie sie nicht finden.",
-  fErrEmail: "Bitte geben Sie eine gültige E-Mail-Adresse ein.", fErrConsent: "Bitte setzen Sie das Häkchen, um zuzustimmen.", fErrSend: "Wir konnten Ihre Angaben nicht senden. Möglicherweise blockiert Ihr Browser oder ein Werbeblocker die Übertragung.", fErrLink: "Nutzen Sie stattdessen dieses Anmeldeformular", promo: "Schon bei uns gewohnt? 7 % Rabatt auf Ihren nächsten Aufenthalt.", promoGo: "So geht's"
+  fErrEmail: "Bitte geben Sie eine gültige E-Mail-Adresse ein.", fErrConsent: "Bitte setzen Sie das Häkchen, um zuzustimmen.", fErrSend: "Wir konnten Ihre Angaben nicht senden. Möglicherweise blockiert Ihr Browser oder ein Werbeblocker die Übertragung.", fErrLink: "Nutzen Sie stattdessen dieses Anmeldeformular", promo: "Ein Geschenk für Ihren nächsten Aufenthalt: bis zu 7 % Rabatt.", promoGo: "Ansehen"
 },
 
 it: {
@@ -325,7 +325,7 @@ it: {
   utilLocked: "Il rubinetto generale dell'acqua e il quadro elettrico sono in un locale tecnico chiuso a chiave. In caso di perdita d'acqua o blackout, chiamaci subito e ce ne occupiamo noi.",
   langLabel: "Lingua",
   legal: "Traduzione fornita per comodità. In caso di differenze, prevale la versione inglese.",
-  navGlance: "In breve", navImportant: "Importante", navArrival: "Arrivo", navHome: "L'alloggio", navRules: "Regole", navSafety: "Sicurezza", navHelp: "Aiuto", navServices: "Servizi", navCheckout: "Partenza", navPicks: "Consigli", navThanks: "Grazie",
+  navGlance: "In breve", navImportant: "Importante", navArrival: "Arrivo", navHome: "L'alloggio", navRules: "Regole", navSafety: "Sicurezza", navHelp: "Aiuto", navServices: "Servizi", navCheckout: "Partenza", navPicks: "Consigli", navThanks: "Il tuo regalo",
   eyebrow: "La tua guida",
   welcomeTo: "Benvenuto a {name}",
   hostTitle: "Ciao, sono Ibon. Benvenuto a Birmingham.",
@@ -370,7 +370,7 @@ it: {
   fire4: "Non rientrare nell'edificio.",
   fire5: "Non manomettere i rilevatori di fumo.",
   emTitle: "Emergenze e numeri utili", em999: "Vigili del fuoco, polizia, ambulanza", em111: "NHS, urgente ma non un'emergenza", emGas: "Emergenza gas, se senti odore di gas",
-  pharmacy: "Farmacia più vicina", pharmacies: "Farmacie più vicine", ae: "Pronto soccorso più vicino (A&E)", stopcock: "Rubinetto generale dell'acqua", fuse: "Quadro elettrico",
+  pharmacy: "Farmacia più vicina", pharmacies: "Farmacie più vicine", ae: "Pronto soccorso più vicino (A&E)", aes: "Pronto soccorso più vicini (A&E)", stopcock: "Rubinetto generale dell'acqua", fuse: "Quadro elettrico",
   helpTitle: "Se qualcosa non va",
   helpIntro: "La maggior parte dei problemi si risolve in fretta. Contattaci prima, spiegaci cosa succede e mandaci una foto se puoi.",
   wifiLabel: "Wi-Fi", wifiFix: "Spegni il router per 30 secondi, poi riaccendilo.",
@@ -394,7 +394,7 @@ it: {
   fName: "Nome", fEmail: "Email", fCities: "Città che ti interessano", fPurpose: "Di solito viaggi per", pWork: "Lavoro", pLeisure: "Svago", pBoth: "Entrambi",
   fConsent: "Accetto di ricevere email da Holl Group con offerte e novità. Posso disiscrivermi in qualsiasi momento.", fBrevo: "Inviamo le nostre email con Brevo. I tuoi dati sono usati solo per le email di Holl Group.",
   fSend: "Inviami il codice del 7%", fSending: "Invio…", fOk: "Quasi fatto. Apri l'email che ti abbiamo appena inviato e tocca il link di conferma. Il tuo codice del 7% arriva subito dopo. Controlla lo spam se non la vedi.",
-  fErrEmail: "Inserisci un indirizzo email valido.", fErrConsent: "Spunta la casella per accettare.", fErrSend: "Non siamo riusciti a inviare i tuoi dati. Il browser o un blocco annunci potrebbe impedirlo.", fErrLink: "Usa invece questo modulo di iscrizione", promo: "Hai già soggiornato da noi? Ottieni il 7% sul prossimo soggiorno.", promoGo: "Scopri come"
+  fErrEmail: "Inserisci un indirizzo email valido.", fErrConsent: "Spunta la casella per accettare.", fErrSend: "Non siamo riusciti a inviare i tuoi dati. Il browser o un blocco annunci potrebbe impedirlo.", fErrLink: "Usa invece questo modulo di iscrizione", promo: "Un regalo per il tuo prossimo soggiorno: fino al 7% di sconto.", promoGo: "Scoprilo"
 },
 
 pt: {
@@ -403,7 +403,7 @@ pt: {
   utilLocked: "A torneira de segurança da água e o quadro elétrico estão numa sala técnica fechada à chave. Se houver uma fuga de água ou um corte de luz, ligue-nos de imediato e tratamos do assunto.",
   langLabel: "Idioma",
   legal: "Tradução para sua conveniência. Em caso de divergência, prevalece a versão em inglês.",
-  navGlance: "Resumo", navImportant: "Importante", navArrival: "Chegada", navHome: "O alojamento", navRules: "Regras", navSafety: "Segurança", navHelp: "Ajuda", navServices: "Serviços", navCheckout: "Saída", navPicks: "Dicas", navThanks: "Obrigado",
+  navGlance: "Resumo", navImportant: "Importante", navArrival: "Chegada", navHome: "O alojamento", navRules: "Regras", navSafety: "Segurança", navHelp: "Ajuda", navServices: "Serviços", navCheckout: "Saída", navPicks: "Dicas", navThanks: "A sua oferta",
   eyebrow: "O seu guia de hóspede",
   welcomeTo: "Bem-vindo a {name}",
   hostTitle: "Olá, sou o Ibon. Bem-vindo a Birmingham.",
@@ -448,7 +448,7 @@ pt: {
   fire4: "Não volte a entrar no edifício.",
   fire5: "Não mexa nos detetores de fumo.",
   emTitle: "Emergências e números úteis", em999: "Bombeiros, polícia, ambulância", em111: "NHS, urgente mas não emergência", emGas: "Emergência de gás, se cheirar a gás",
-  pharmacy: "Farmácia mais próxima", pharmacies: "Farmácias mais próximas", ae: "Urgências mais próximas (A&E)", stopcock: "Torneira de segurança da água", fuse: "Quadro elétrico",
+  pharmacy: "Farmácia mais próxima", pharmacies: "Farmácias mais próximas", ae: "Urgências mais próximas (A&E)", aes: "Urgências hospitalares mais próximas (A&E)", stopcock: "Torneira de segurança da água", fuse: "Quadro elétrico",
   helpTitle: "Se algo correr mal",
   helpIntro: "A maioria dos problemas resolve-se depressa. Contacte-nos primeiro, diga-nos o que está a acontecer e envie uma foto se puder.",
   wifiLabel: "Wi-Fi", wifiFix: "Desligue o router durante 30 segundos e volte a ligá-lo.",
@@ -472,7 +472,7 @@ pt: {
   fName: "Nome", fEmail: "Email", fCities: "Cidades que lhe interessam", fPurpose: "Costuma viajar por", pWork: "Trabalho", pLeisure: "Lazer", pBoth: "Ambos",
   fConsent: "Aceito receber emails da Holl Group com ofertas e novidades. Posso cancelar a subscrição a qualquer momento.", fBrevo: "Enviamos os nossos emails com a Brevo. Os seus dados só são usados para os emails da Holl Group.",
   fSend: "Enviar-me o código de 7%", fSending: "A enviar…", fOk: "Quase pronto. Abra o email que acabámos de lhe enviar e toque no link de confirmação. O seu código de 7% chega logo a seguir. Verifique a pasta de spam se não o encontrar.",
-  fErrEmail: "Introduza um email válido.", fErrConsent: "Assinale a caixa para aceitar.", fErrSend: "Não conseguimos enviar os seus dados. O seu navegador ou um bloqueador de anúncios pode estar a impedi-lo.", fErrLink: "Use antes este formulário de inscrição", promo: "Já ficou connosco? Obtenha 7% na próxima estadia.", promoGo: "Ver como"
+  fErrEmail: "Introduza um email válido.", fErrConsent: "Assinale a caixa para aceitar.", fErrSend: "Não conseguimos enviar os seus dados. O seu navegador ou um bloqueador de anúncios pode estar a impedi-lo.", fErrLink: "Use antes este formulário de inscrição", promo: "Uma oferta para a sua próxima estadia: até 7% de desconto.", promoGo: "Ver"
 },
 
 zh: {
@@ -481,7 +481,7 @@ zh: {
   utilLocked: "总水阀和电闸箱位于上锁的设备间内。如遇漏水或停电，请立即致电我们，我们会马上处理。",
   langLabel: "语言",
   legal: "本译文仅供参考。如有差异，以英文版本为准。",
-  navGlance: "概览", navImportant: "重要须知", navArrival: "抵达", navHome: "房源", navRules: "入住规则", navSafety: "安全", navHelp: "帮助", navServices: "增值服务", navCheckout: "退房", navPicks: "本地推荐", navThanks: "感谢",
+  navGlance: "概览", navImportant: "重要须知", navArrival: "抵达", navHome: "房源", navRules: "入住规则", navSafety: "安全", navHelp: "帮助", navServices: "增值服务", navCheckout: "退房", navPicks: "本地推荐", navThanks: "您的礼物",
   eyebrow: "您的入住指南",
   welcomeTo: "欢迎入住 {name}",
   hostTitle: "您好，我是 Ibon。欢迎来到伯明翰。",
@@ -526,7 +526,7 @@ zh: {
   fire4: "请勿返回楼内。",
   fire5: "请勿擅自改动烟雾报警器。",
   emTitle: "紧急情况与常用电话", em999: "消防、警察、救护车", em111: "NHS，紧急但非危急情况", emGas: "燃气紧急情况，如闻到煤气味",
-  pharmacy: "最近的药店", pharmacies: "附近的药店", ae: "最近的急诊（A&E）", stopcock: "总水阀", fuse: "电闸箱",
+  pharmacy: "最近的药店", pharmacies: "附近的药店", ae: "最近的急诊（A&E）", aes: "附近的医院急诊（A&E）", stopcock: "总水阀", fuse: "电闸箱",
   helpTitle: "遇到问题时",
   helpIntro: "大多数问题都能很快解决。请先联系我们，告诉我们发生了什么，如可能请发送照片。",
   wifiLabel: "Wi-Fi", wifiFix: "关闭路由器 30 秒，然后重新开启。",
@@ -550,7 +550,7 @@ zh: {
   fName: "名字", fEmail: "电子邮箱", fCities: "感兴趣的城市", fPurpose: "您通常出行是为了", pWork: "工作", pLeisure: "休闲", pBoth: "两者都有",
   fConsent: "我同意接收 Holl Group 的优惠和新闻邮件，可随时退订。", fBrevo: "我们通过 Brevo 发送邮件。您的信息仅用于 Holl Group 的邮件。",
   fSend: "把 7% 优惠码发给我", fSending: "发送中…", fOk: "快完成了。请打开我们刚发送的邮件并点击确认链接，7% 优惠码随后就会送达。如果没看到，请查看垃圾邮件文件夹。",
-  fErrEmail: "请输入有效的电子邮箱。", fErrConsent: "请勾选同意。", fErrSend: "无法发送您的信息，可能是浏览器或广告拦截器阻止了发送。", fErrLink: "改用这个注册表单", promo: "曾入住过？下次入住可享 7% 优惠。", promoGo: "了解方法"
+  fErrEmail: "请输入有效的电子邮箱。", fErrConsent: "请勾选同意。", fErrSend: "无法发送您的信息，可能是浏览器或广告拦截器阻止了发送。", fErrLink: "改用这个注册表单", promo: "下次入住的礼物：最高 7% 优惠。", promoGo: "查看"
 },
 
 ar: {
@@ -559,7 +559,7 @@ ar: {
   utilLocked: "محبس المياه الرئيسي ولوحة الكهرباء موجودان في غرفة خدمات مقفلة. في حال حدوث تسرّب مياه أو انقطاع كهرباء، اتصل بنا فورًا وسنتولى الأمر.",
   langLabel: "اللغة",
   legal: "هذه الترجمة لتسهيل القراءة فقط. في حال وجود أي اختلاف، تُعتمد النسخة الإنجليزية.",
-  navGlance: "نظرة سريعة", navImportant: "مهم", navArrival: "الوصول", navHome: "المسكن", navRules: "القواعد", navSafety: "السلامة", navHelp: "المساعدة", navServices: "الخدمات", navCheckout: "المغادرة", navPicks: "توصيات محلية", navThanks: "شكرًا",
+  navGlance: "نظرة سريعة", navImportant: "مهم", navArrival: "الوصول", navHome: "المسكن", navRules: "القواعد", navSafety: "السلامة", navHelp: "المساعدة", navServices: "الخدمات", navCheckout: "المغادرة", navPicks: "توصيات محلية", navThanks: "هديتك",
   eyebrow: "دليل الإقامة الخاص بك",
   welcomeTo: "مرحبًا بك في {name}",
   hostTitle: "مرحبًا، أنا إيبون. أهلًا بك في برمنغهام.",
@@ -604,7 +604,7 @@ ar: {
   fire4: "لا تعد إلى داخل المبنى.",
   fire5: "يرجى عدم العبث بأجهزة إنذار الدخان.",
   emTitle: "الطوارئ وأرقام مفيدة", em999: "الإطفاء، الشرطة، الإسعاف", em111: "NHS، حالة عاجلة لكنها ليست طارئة", emGas: "طوارئ الغاز، إذا شممت رائحة غاز",
-  pharmacy: "أقرب صيدلية", pharmacies: "أقرب الصيدليات", ae: "أقرب قسم طوارئ (A&E)", stopcock: "محبس المياه الرئيسي", fuse: "لوحة الكهرباء",
+  pharmacy: "أقرب صيدلية", pharmacies: "أقرب الصيدليات", ae: "أقرب قسم طوارئ (A&E)", aes: "أقرب أقسام الطوارئ (A&E)", stopcock: "محبس المياه الرئيسي", fuse: "لوحة الكهرباء",
   helpTitle: "إذا حدثت مشكلة",
   helpIntro: "يمكن حلّ معظم المشكلات بسرعة. تواصل معنا أولًا، وأخبرنا بما يحدث، وأرسل صورة إن أمكن.",
   wifiLabel: "واي فاي", wifiFix: "أطفئ جهاز الراوتر لمدة 30 ثانية ثم أعد تشغيله.",
@@ -628,7 +628,7 @@ ar: {
   fName: "الاسم الأول", fEmail: "البريد الإلكتروني", fCities: "المدن التي تهمك", fPurpose: "عادةً تسافر من أجل", pWork: "العمل", pLeisure: "الترفيه", pBoth: "كلاهما",
   fConsent: "أوافق على تلقي رسائل بريد إلكتروني من Holl Group تتضمن عروضًا وأخبارًا، ويمكنني إلغاء الاشتراك في أي وقت.", fBrevo: "نرسل رسائلنا عبر Brevo، وتُستخدم بياناتك لرسائل Holl Group فقط.",
   fSend: "أرسل لي رمز خصم 7%", fSending: "جارٍ الإرسال…", fOk: "اقتربت من الانتهاء. افتح الرسالة التي أرسلناها لك للتو واضغط على رابط التأكيد، وسيصلك رمز خصم 7% بعدها مباشرة. تحقق من مجلد الرسائل غير المرغوب فيها إن لم تجدها.",
-  fErrEmail: "يُرجى إدخال بريد إلكتروني صالح.", fErrConsent: "يُرجى تحديد المربع للموافقة.", fErrSend: "تعذّر إرسال بياناتك، فقد يكون المتصفح أو أداة حظر الإعلانات يمنع ذلك.", fErrLink: "استخدم نموذج التسجيل هذا بدلًا من ذلك", promo: "أقمت معنا من قبل؟ احصل على خصم 7% على إقامتك القادمة.", promoGo: "اعرف كيف"
+  fErrEmail: "يُرجى إدخال بريد إلكتروني صالح.", fErrConsent: "يُرجى تحديد المربع للموافقة.", fErrSend: "تعذّر إرسال بياناتك، فقد يكون المتصفح أو أداة حظر الإعلانات يمنع ذلك.", fErrLink: "استخدم نموذج التسجيل هذا بدلًا من ذلك", promo: "هدية لإقامتك القادمة: خصم يصل إلى 7%.", promoGo: "اعرضها"
 },
 
 ja: {
@@ -637,7 +637,7 @@ ja: {
   utilLocked: "水道の元栓とブレーカーは施錠された設備室にあります。水漏れや停電の際は、すぐにお電話ください。こちらで対応します。",
   langLabel: "言語",
   legal: "この翻訳は参考用です。内容に相違がある場合は英語版が優先されます。",
-  navGlance: "概要", navImportant: "重要", navArrival: "到着", navHome: "お部屋", navRules: "ハウスルール", navSafety: "安全", navHelp: "ヘルプ", navServices: "サービス", navCheckout: "チェックアウト", navPicks: "おすすめ", navThanks: "ありがとう",
+  navGlance: "概要", navImportant: "重要", navArrival: "到着", navHome: "お部屋", navRules: "ハウスルール", navSafety: "安全", navHelp: "ヘルプ", navServices: "サービス", navCheckout: "チェックアウト", navPicks: "おすすめ", navThanks: "プレゼント",
   eyebrow: "ゲストガイド",
   welcomeTo: "{name} へようこそ",
   hostTitle: "こんにちは、Ibon です。バーミンガムへようこそ。",
@@ -682,7 +682,7 @@ ja: {
   fire4: "建物には再び入らないでください。",
   fire5: "煙探知機には触れないでください。",
   emTitle: "緊急時と便利な連絡先", em999: "消防・警察・救急", em111: "NHS（急ぎだが緊急ではない場合）", emGas: "ガス漏れ時（ガスのにおいがしたら）",
-  pharmacy: "最寄りの薬局", pharmacies: "近くの薬局", ae: "最寄りの救急外来（A&E）", stopcock: "水道の元栓", fuse: "ブレーカー",
+  pharmacy: "最寄りの薬局", pharmacies: "近くの薬局", ae: "最寄りの救急外来（A&E）", aes: "近くの救急外来（A&E）", stopcock: "水道の元栓", fuse: "ブレーカー",
   helpTitle: "困ったときは",
   helpIntro: "ほとんどの問題はすぐに解決できます。まずはご連絡いただき、状況を教えてください。可能であれば写真もお送りください。",
   wifiLabel: "Wi-Fi", wifiFix: "ルーターの電源を 30 秒切ってから、再度入れてください。",
@@ -706,6 +706,6 @@ ja: {
   fName: "名", fEmail: "メールアドレス", fCities: "興味のある都市", fPurpose: "主な旅行目的", pWork: "仕事", pLeisure: "レジャー", pBoth: "両方",
   fConsent: "Holl Group からお得な情報やお知らせのメールを受け取ることに同意します。いつでも配信停止できます。", fBrevo: "メールは Brevo を通じて送信します。お客様の情報は Holl Group のメール以外には使用しません。",
   fSend: "7% コードをメールで受け取る", fSending: "送信中…", fOk: "あと少しです。お送りしたメールを開き、確認リンクをタップしてください。その後すぐに 7% コードが届きます。見つからない場合は迷惑メールフォルダをご確認ください。",
-  fErrEmail: "有効なメールアドレスを入力してください。", fErrConsent: "同意するにはチェックを入れてください。", fErrSend: "送信できませんでした。ブラウザまたは広告ブロッカーが送信を妨げている可能性があります。", fErrLink: "代わりにこちらの登録フォームをご利用ください", promo: "ご宿泊いただいたことがありますか？次回のご滞在が 7% オフに。", promoGo: "詳しく見る"
+  fErrEmail: "有効なメールアドレスを入力してください。", fErrConsent: "同意するにはチェックを入れてください。", fErrSend: "送信できませんでした。ブラウザまたは広告ブロッカーが送信を妨げている可能性があります。", fErrLink: "代わりにこちらの登録フォームをご利用ください", promo: "次回のご滞在へのプレゼント：最大 7% オフ。", promoGo: "見る"
 }
 };

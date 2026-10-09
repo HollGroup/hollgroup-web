@@ -36,6 +36,12 @@
 - Cerca del principio hay un aviso pequeño que lleva al formulario. El huésped puede cerrarlo.
 - El formulario envía a Brevo: nombre, email, ciudades, motivo del viaje, consentimiento, PROPERTY (nombre de la propiedad) y GUIDE_LANGUAGE (idioma de la guía).
 - La dirección del formulario de Brevo está en `assets/guide.js` (constante BREVO). Si alguna vez creas otro formulario en Brevo, cambia solo esa línea.
+- Formulario en Brevo: "Guest guide signup", lista "Returning guests", doble confirmación.
+- Email 1 (plantilla #1, doble opt-in): "Confirm your email for your 7% code". No lleva el código.
+- Email 2 (plantilla #3, confirmación final): "Your 7% code is here", con 7FIRSTACCESS, botón y QR.
+- Al pulsar el botón del email 1, el huésped va a booking.hollgroup.co.uk con 7FIRSTACCESS aplicado.
+- Para probar otra vez en el mismo móvil, añade `?join=reset` al enlace de la guía. Usa siempre tu email real con +test (ibonholl+testN@gmail.com).
+- Si un email no llega: Brevo, Transaccional, Email, Logs. Ahí se ve si se envió, se entregó o rebotó.
 
 ## No olvidar
 

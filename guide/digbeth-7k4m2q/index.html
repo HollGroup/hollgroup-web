@@ -8,7 +8,7 @@
 <title>Holl Group</title>
 <link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009e">
+<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009g">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
@@ -502,9 +502,40 @@ const CONFIG = {
     "ar": "الصيدليتان داخل مركز التسوق Bullring، على بُعد نحو 13 دقيقة سيرًا على الأقدام. بالسيارة تستغرق 3 دقائق، لكن ستحتاج إلى الدفع للوقوف في موقف سيارات Bullring، لذا ننصح بالذهاب سيرًا.",
     "ja": "どちらも Bullring ショッピングセンター内にあり、徒歩約 13 分です。車なら 3 分ですが、Bullring の有料駐車場に停める必要があるため、徒歩をおすすめします。"
   },
-  "hospital": {
-    "name": "[NEAREST A&E]",
-    "coords": ""
+  "hospital": [
+    {
+      "name": "Birmingham Heartlands Hospital",
+      "coords": "52.4788084, -1.82865"
+    },
+    {
+      "name": "Queen Elizabeth Hospital",
+      "coords": "52.4521833, -1.9433519"
+    },
+    {
+      "name": {
+        "en": "Birmingham Children's Hospital (under 16s)",
+        "es": "Birmingham Children's Hospital (menores de 16)",
+        "fr": "Birmingham Children's Hospital (moins de 16 ans)",
+        "de": "Birmingham Children's Hospital (unter 16 Jahren)",
+        "it": "Birmingham Children's Hospital (under 16)",
+        "pt": "Birmingham Children's Hospital (menores de 16)",
+        "zh": "Birmingham Children's Hospital（16 岁以下）",
+        "ar": "Birmingham Children's Hospital (دون 16 عامًا)",
+        "ja": "Birmingham Children's Hospital（16 歳未満）"
+      },
+      "coords": "52.4849039, -1.892619"
+    }
+  ],
+  "hospitalNote": {
+    "en": "By car: Heartlands about 13 minutes, Queen Elizabeth about 17 minutes. Children under 16 go to Birmingham Children's Hospital, about 13 minutes. If it is urgent but not life threatening, call 111 first. In an emergency, call 999.",
+    "es": "En coche: Heartlands a unos 13 minutos y Queen Elizabeth a unos 17. Los menores de 16 van al Birmingham Children's Hospital, a unos 13 minutos. Si es urgente pero no hay peligro para la vida, llama primero al 111. En una emergencia, llama al 999.",
+    "fr": "En voiture : Heartlands à environ 13 minutes, Queen Elizabeth à environ 17 minutes. Les enfants de moins de 16 ans vont au Birmingham Children's Hospital, à environ 13 minutes. Si c'est urgent sans danger vital, appelez d'abord le 111. En cas d'urgence vitale, appelez le 999.",
+    "de": "Mit dem Auto: Heartlands etwa 13 Minuten, Queen Elizabeth etwa 17 Minuten. Kinder unter 16 Jahren gehen ins Birmingham Children's Hospital, etwa 13 Minuten. Wenn es dringend, aber nicht lebensbedrohlich ist, rufen Sie zuerst die 111 an. Im Notfall rufen Sie die 999.",
+    "it": "In auto: Heartlands a circa 13 minuti, Queen Elizabeth a circa 17. I minori di 16 anni vanno al Birmingham Children's Hospital, a circa 13 minuti. Se è urgente ma non c'è pericolo di vita, chiama prima il 111. In caso di emergenza, chiama il 999.",
+    "pt": "De carro: Heartlands a cerca de 13 minutos e Queen Elizabeth a cerca de 17. Os menores de 16 anos vão ao Birmingham Children's Hospital, a cerca de 13 minutos. Se for urgente mas sem risco de vida, ligue primeiro para o 111. Numa emergência, ligue para o 999.",
+    "zh": "开车前往：Heartlands 约 13 分钟，Queen Elizabeth 约 17 分钟。16 岁以下儿童请前往 Birmingham Children's Hospital，约 13 分钟。如情况紧急但不危及生命，请先拨打 111。紧急情况请拨打 999。",
+    "ar": "بالسيارة: Heartlands على بُعد نحو 13 دقيقة، وQueen Elizabeth نحو 17 دقيقة. الأطفال دون 16 عامًا يذهبون إلى Birmingham Children's Hospital، على بُعد نحو 13 دقيقة. إذا كانت الحالة عاجلة لكنها لا تهدد الحياة، اتصل أولًا بالرقم 111. في حالات الطوارئ اتصل بالرقم 999.",
+    "ja": "車で Heartlands は約 13 分、Queen Elizabeth は約 17 分です。16 歳未満のお子様は Birmingham Children's Hospital（約 13 分）へ。急を要するが命に関わらない場合は、まず 111 にお電話ください。緊急時は 999 にお電話ください。"
   },
   "securing": {
     "en": "To lock the door, lift the handle and turn the key. Please switch off the radiators, then return all keys, fobs and the parking remote as explained in your check-in message.",
@@ -583,7 +614,7 @@ const CONFIG = {
 <body>
 <div id="app"></div>
 <div class="toast" id="toast"></div>
-<script src="/guide/assets/guide-i18n.js?v=20261009e"></script>
-<script src="/guide/assets/guide.js?v=20261009e"></script>
+<script src="/guide/assets/guide-i18n.js?v=20261009g"></script>
+<script src="/guide/assets/guide.js?v=20261009g"></script>
 </body>
 </html>

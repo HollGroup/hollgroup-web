@@ -111,6 +111,7 @@
 </header>
 
 <main class="wrap">
+  ${store.get("hollJoined") || store.get("hollPromoHide") ? "" : `<div class="promo" id="promo"><span>${I.gift}${T("promo")}</span><a href="#thanks">${T("promoGo")}</a><button type="button" id="promoX" aria-label="${esc(T("close"))}">&times;</button></div>`}
   <section class="hero">
     <span class="eyebrow">${T("eyebrow")}</span>
     <h1>${T("welcomeTo", { name })}</h1>
@@ -120,8 +121,6 @@
       <div><b>${T("hostTitle")}</b><p>${T("hostP1")}</p><p style="margin-top:8px">${T("hostP2")}</p></div>
     </div>
   </section>
-
-  ${store.get("hollJoined") || store.get("hollPromoHide") ? "" : `<div class="promo" id="promo"><span>${I.gift}${T("promo")}</span><a href="#join">${T("promoGo")}</a><button type="button" id="promoX" aria-label="${esc(T("close"))}">&times;</button></div>`}
 
   <section class="card glance" id="glance">
     <h2>${T("glanceTitle")}</h2>
@@ -228,7 +227,10 @@
         return (many ? `<div class="sub" style="margin-bottom:-4px">${T("pharmacies")}</div>` : "") + list.map(ph => { const label = many ? P(ph.name) : `${T("pharmacy")}: ${P(ph.name)}`;
           return clean(ph.coords) ? `<a class="btn btn-light" href="${maps(ph.coords)}" target="_blank" rel="noopener">${I.pin}${label}</a>` : `<div class="soft">${label}</div>`; }).join(""); })()}
       ${C.pharmacyNote ? `<p style="font-size:16px;color:var(--muted)">${P(C.pharmacyNote)}</p>` : ""}
-      ${clean(C.hospital.coords) ? `<a class="btn btn-light" href="${maps(C.hospital.coords)}" target="_blank" rel="noopener">${I.pin}${T("ae")}: ${P(C.hospital.name)}</a>` : `<div class="soft">${T("ae")}: ${P(C.hospital.name)}</div>`}
+      ${(() => { const list = [].concat(C.hospital || []), many = list.length > 1;
+        return (many ? `<div class="sub" style="margin-bottom:-4px">${T("aes")}</div>` : "") + list.map(h => { const label = many ? P(h.name) : `${T("ae")}: ${P(h.name)}`;
+          return clean(h.coords) ? `<a class="btn btn-light" href="${maps(h.coords)}" target="_blank" rel="noopener">${I.pin}${label}</a>` : `<div class="soft">${label}</div>`; }).join(""); })()}
+      ${C.hospitalNote ? `<p style="font-size:16px;color:var(--muted)">${P(C.hospitalNote)}</p>` : ""}
       <div class="soft">${C.utilitiesLocked ? T("utilLocked") : `<b>${T("stopcock")}:</b> ${P(C.stopcock)}<br><b>${T("fuse")}:</b> ${P(C.fuseBox)}`}</div>
     </div>
   </section>
