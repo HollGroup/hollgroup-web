@@ -10,6 +10,7 @@
   const BREVO = "https://e839be71.sibforms.com/serve/MUIFAIpm5qy6-_i9pB5InRDHuU1d8EfMd-Cml7oOBTsq3vjWG_hJK4Snhz4klkhnlU4dIX_BulnSd9fYXhErq0ISEjxPXfu1NQJt23-LDMajkJLs0g4seC6Zz-ldBb35MeYYV6HJET4vBofO4jTL3J4Laoo_EloMPqxSHHAV5FzvdOpvV-zZKBpziZJA_naPmdqEC_72hXZuKjOirA==";
   const store = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
   try { if (new URLSearchParams(location.search).get("join") === "reset") { localStorage.removeItem("hollJoined"); localStorage.removeItem("hollPromoHide"); } } catch (e) {}
+  const HOMES = "https://hollgroup.co.uk/properties.html";
   const LOGO = "https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png";
   const HOST = "https://res.cloudinary.com/dyojhaiig/image/upload/c_thumb,g_face,w_240,h_240,z_0.75,f_auto,q_auto/v1787835750/aiboryyy-20251211-0001_yx87j9.jpg";
 
@@ -311,6 +312,12 @@
         <p class="fine">${T("fBrevo")}</p>
       </form>
     </div>
+  </section>
+
+  <section class="card more" id="more">
+    <h2>${T("moreTitle")}</h2>
+    <p>${T("moreD")}</p>
+    <a class="btn btn-primary btn-big" href="${HOMES}?utm_source=guest-guide&utm_medium=referral&utm_campaign=${encodeURIComponent((typeof C.propertyName === "string" ? C.propertyName : (C.propertyName.en || "")).toLowerCase().replace(/[^a-z0-9]+/g, "-"))}" target="_blank" rel="noopener">${I.pin}${T("moreBtn")}</a>
   </section>
 
   ${T("legal") ? `<p class="legal">${T("legal")}</p>` : ""}

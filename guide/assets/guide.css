@@ -170,3 +170,8 @@ footer img{height:64px;width:auto;display:block;margin:0 auto 8px}
 .join .fine{font-size:13px;color:var(--muted)}
 .join .btn[disabled]{opacity:.7}
 .join [hidden]{display:none!important}
+
+/* Link to all properties */
+.more{text-align:center}
+.more p{margin:8px 0 16px}
+.btn-big{min-height:60px;font-size:19px;border-radius:16px}
