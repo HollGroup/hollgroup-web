@@ -13,65 +13,505 @@
 
 <script>
 /* =====================================================================
-   PROPERTY SETTINGS: this is the ONLY part you edit for each property.
-   Keep the quotes. Anything left in [SQUARE BRACKETS] shows highlighted.
-   Any text can also be given per language, for example:
-     bins: { en: "Bins are by the gate.", es: "Los cubos están junto a la puerta." }
-   Languages without their own text show the English one.
+   DIGBETH ONE: property settings. Texts are given per language { en, es, ... }.
+   Edit the English and ask Claude to update the other languages.
    ===================================================================== */
 const CONFIG = {
-  propertyName: "Digbeth One",
-  area: "Digbeth, Birmingham",
-
-  propertyType: "flat",
-  garden: false,
-  exteriorCameras: false,
-
-  entry: "lockbox",
-  smartLockCodeTimeLimited: true,
-  smartLockHowTo: "",
-
-  parking: "available",
-  parkingDetails: "Secured on-site parking with one allocated space, No. 14. Please only use space 14. The car park entrance is on Cheapside Street, and the full steps to get in are in your check-in message.",
-  parkingNearby: "",
-
-  directions: "The building is on Lombard Street, in Digbeth. Look for Entrance B: a brick building with tall glass windows and a large yellow \"B\" by the door. [PROPERTY: nearest train station and bus stops, with walking times]",
-  entranceCoords: "",            // [ADD: coordinates of Entrance B]
-  lockboxCoords: "",
-
-  checkIn: "15:00",
-  checkOut: "10:00",
-
-  wifiName: "Holl Group Digbeth One 5",
-  wifiPassword: "HollGroupGuest$",
-
-  property: [
-    { title: "Bedrooms", text: "Bedroom 1: king, double and single bed. Bedroom 2: double and single bed. Both bedrooms have their own bathroom." },
-    { title: "Heating", text: "The heating is electric. Each radiator has its own control, so you can set every room as you like. Please switch all radiators off when you leave." },
-    { title: "Hot water", text: "[PROPERTY: hot water]" },
-    { title: "Kitchen and appliances", text: "[PROPERTY: oven, hob, washing machine, dishwasher]" },
-    { title: "TV and games", text: "[PROPERTY: TV and apps] There is also a football table for you to enjoy, please keep the noise down during quiet hours." }
+  "propertyName": "Digbeth One",
+  "area": "Digbeth, Birmingham",
+  "propertyType": "flat",
+  "garden": false,
+  "exteriorCameras": false,
+  "entry": "lockbox",
+  "smartLockCodeTimeLimited": true,
+  "smartLockHowTo": "",
+  "parking": "available",
+  "parkingDetails": {
+    "en": "Secured on-site parking with one allocated space, No. 14. Please only use space 14. The car park entrance is on Cheapside Street, and the full steps to get in are in your check-in message. On foot, the car park is reached the same way as the bin store, see Bins and recycling.",
+    "es": "Aparcamiento privado y seguro con una plaza asignada, la n.º 14. Usa solo la plaza 14, por favor. La entrada del parking está en Cheapside Street, y los pasos para entrar te llegan en el mensaje de check-in. A pie, se llega al parking por el mismo camino que a los contenedores (ver Basura y reciclaje).",
+    "fr": "Parking sécurisé sur place avec une place attribuée, la n° 14. Merci d'utiliser uniquement la place 14. L'entrée du parking se trouve sur Cheapside Street, et toutes les étapes pour y accéder figurent dans votre message d'arrivée. À pied, on rejoint le parking par le même chemin que le local poubelles (voir Poubelles et recyclage).",
+    "de": "Gesicherter Parkplatz auf dem Gelände mit einem zugewiesenen Stellplatz, Nr. 14. Bitte nutzen Sie nur Stellplatz 14. Die Einfahrt liegt in der Cheapside Street, die genaue Anleitung erhalten Sie in Ihrer Check-in-Nachricht. Zu Fuß erreichen Sie den Parkplatz auf demselben Weg wie den Müllraum (siehe Müll und Recycling).",
+    "it": "Parcheggio privato e sicuro con un posto assegnato, il n. 14. Usa solo il posto 14, per favore. L'ingresso del parcheggio è in Cheapside Street e tutti i passaggi per entrare sono nel messaggio di check-in. A piedi, il parcheggio si raggiunge con lo stesso percorso del locale rifiuti (vedi Rifiuti e raccolta differenziata).",
+    "pt": "Estacionamento privado e seguro com um lugar atribuído, o n.º 14. Use apenas o lugar 14, por favor. A entrada do estacionamento é na Cheapside Street, e os passos para entrar estão na mensagem de check-in. A pé, chega-se ao estacionamento pelo mesmo caminho que ao local do lixo (ver Lixo e reciclagem).",
+    "zh": "大楼内设有安全的私人停车场，您的专属车位为 14 号，请仅使用 14 号车位。停车场入口位于 Cheapside Street，进入方法会在入住消息中详细说明。步行前往停车场的路线与前往垃圾房的路线相同（见“垃圾与回收”）。",
+    "ar": "موقف سيارات آمن داخل المبنى مع مكان مخصّص رقم 14. يرجى استخدام المكان رقم 14 فقط. مدخل الموقف في شارع Cheapside Street، وستجد خطوات الدخول كاملة في رسالة تسجيل الوصول. سيرًا على الأقدام، يتم الوصول إلى الموقف بالطريق نفسه المؤدي إلى غرفة النفايات (انظر النفايات وإعادة التدوير).",
+    "ja": "敷地内にセキュリティ付きの専用駐車場があり、割り当てられた区画は 14 番です。14 番のみをご利用ください。駐車場の入口は Cheapside Street にあり、入り方の詳細はチェックインメッセージでお知らせします。徒歩の場合は、ゴミ置き場と同じルートで駐車場へ行けます（「ゴミとリサイクル」を参照）。"
+  },
+  "parkingNearby": "",
+  "directions": {
+    "en": "The building is on Lombard Street, in Digbeth. Look for Entrance B: a brick building with tall glass windows and a large yellow \"B\" by the door. [PROPERTY: nearest train station and bus stops, with walking times]",
+    "es": "El edificio está en Lombard Street, en Digbeth. Busca la Entrance B: un edificio de ladrillo con ventanales altos y una gran \"B\" amarilla junto a la puerta. [PROPERTY: nearest train station and bus stops, with walking times]",
+    "fr": "L'immeuble se trouve sur Lombard Street, à Digbeth. Cherchez l'Entrance B : un bâtiment en briques avec de hautes baies vitrées et un grand « B » jaune près de la porte. [PROPERTY: nearest train station and bus stops, with walking times]",
+    "de": "Das Gebäude liegt in der Lombard Street in Digbeth. Suchen Sie den Eingang B (Entrance B): ein Backsteingebäude mit hohen Glasfenstern und einem großen gelben „B“ neben der Tür. [PROPERTY: nearest train station and bus stops, with walking times]",
+    "it": "L'edificio si trova in Lombard Street, a Digbeth. Cerca l'Entrance B: un edificio in mattoni con alte vetrate e una grande \"B\" gialla accanto alla porta. [PROPERTY: nearest train station and bus stops, with walking times]",
+    "pt": "O edifício fica na Lombard Street, em Digbeth. Procure a Entrance B: um edifício de tijolo com janelas altas de vidro e um grande \"B\" amarelo junto à porta. [PROPERTY: nearest train station and bus stops, with walking times]",
+    "zh": "大楼位于 Digbeth 区的 Lombard Street。请找 B 入口（Entrance B）：一栋砖砌建筑，有高大的玻璃窗，门旁有一个醒目的黄色大字母\"B\"。[PROPERTY: nearest train station and bus stops, with walking times]",
+    "ar": "يقع المبنى في شارع Lombard Street في منطقة Digbeth. ابحث عن المدخل B (Entrance B): مبنى من الطوب بنوافذ زجاجية طويلة وحرف \"B\" أصفر كبير بجانب الباب. [PROPERTY: nearest train station and bus stops, with walking times]",
+    "ja": "建物は Digbeth 地区の Lombard Street にあります。入口 B（Entrance B）を探してください。高いガラス窓のあるレンガ造りの建物で、ドアの横に大きな黄色の「B」があります。[PROPERTY: nearest train station and bus stops, with walking times]"
+  },
+  "entranceCoords": "",
+  "lockboxCoords": "",
+  "lockboxAreaPhoto": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/472A9033_auk7y2.jpg",
+  "keysNote": {
+    "en": "The building key card costs £120 to replace, so please keep it safe.",
+    "es": "Reponer la tarjeta del edificio cuesta £120, así que guárdala bien.",
+    "fr": "Le remplacement de la carte d'accès de l'immeuble coûte 120 £, merci d'en prendre soin.",
+    "de": "Der Ersatz der Gebäude-Schlüsselkarte kostet 120 £, bitte bewahren Sie sie sicher auf.",
+    "it": "Sostituire la tessera dell'edificio costa 120 £, quindi custodiscila con cura.",
+    "pt": "Substituir o cartão do edifício custa 120 £, por isso guarde-o bem.",
+    "zh": "大楼门禁卡补办费用为 120 英镑，请妥善保管。",
+    "ar": "تكلفة استبدال بطاقة دخول المبنى 120 جنيهًا إسترلينيًا، لذا يرجى الحفاظ عليها.",
+    "ja": "建物のカードキーの再発行には 120 ポンドかかります。大切に保管してください。"
+  },
+  "arrivalRoute": {
+    "title": {
+      "en": "From Entrance B to your flat",
+      "es": "De la Entrance B a tu apartamento",
+      "fr": "De l'Entrance B à votre appartement",
+      "de": "Vom Eingang B zu Ihrer Wohnung",
+      "it": "Dall'Entrance B al tuo appartamento",
+      "pt": "Da Entrance B ao seu apartamento",
+      "zh": "从 B 入口到您的公寓",
+      "ar": "من المدخل B إلى شقتك",
+      "ja": "入口 B からお部屋まで"
+    },
+    "steps": [
+      {
+        "imgs": [
+          "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/472A9034_e5nkbh.jpg"
+        ],
+        "text": {
+          "en": "This is Entrance B from the street.",
+          "es": "Esta es la Entrance B vista desde la calle.",
+          "fr": "Voici l'Entrance B vue depuis la rue.",
+          "de": "Das ist Eingang B von der Straße aus.",
+          "it": "Questa è l'Entrance B vista dalla strada.",
+          "pt": "Esta é a Entrance B vista da rua.",
+          "zh": "这是从街上看到的 B 入口。",
+          "ar": "هذا هو المدخل B من الشارع.",
+          "ja": "通りから見た入口 B です。"
+        }
+      },
+      {
+        "imgs": [
+          "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/472A9028_vqynmx.jpg"
+        ],
+        "text": {
+          "en": "Inside the building, doors open with the key card we provide. Hold the card against the reader next to the door to unlock it. You will pass several of these.",
+          "es": "Dentro del edificio, las puertas se abren con la tarjeta que te damos. Acerca la tarjeta al lector junto a la puerta para desbloquearla. Pasarás varias puertas así.",
+          "fr": "À l'intérieur de l'immeuble, les portes s'ouvrent avec la carte d'accès que nous vous fournissons. Approchez la carte du lecteur à côté de la porte pour la déverrouiller. Vous passerez plusieurs portes de ce type.",
+          "de": "Im Gebäude öffnen sich die Türen mit der Schlüsselkarte, die wir Ihnen geben. Halten Sie die Karte an das Lesegerät neben der Tür, um sie zu entriegeln. Sie passieren mehrere solcher Türen.",
+          "it": "All'interno dell'edificio, le porte si aprono con la tessera che ti forniamo. Avvicina la tessera al lettore accanto alla porta per sbloccarla. Ne attraverserai diverse.",
+          "pt": "Dentro do edifício, as portas abrem com o cartão que lhe damos. Aproxime o cartão do leitor ao lado da porta para a desbloquear. Vai passar por várias portas assim.",
+          "zh": "楼内的门需用我们提供的门禁卡开启。将卡片靠近门旁的读卡器即可解锁。途中会经过好几道这样的门。",
+          "ar": "داخل المبنى، تُفتح الأبواب ببطاقة الدخول التي نقدّمها لك. ضع البطاقة قرب القارئ بجانب الباب لفتحه. ستمرّ بعدة أبواب من هذا النوع.",
+          "ja": "建物内のドアは、お渡しするカードキーで開きます。ドア横のリーダーにカードをかざすと解錠されます。このようなドアをいくつか通ります。"
+        }
+      },
+      {
+        "imgs": [
+          "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/472A9029_s4xxqz.jpg"
+        ],
+        "text": {
+          "en": "Once inside, this is the Entrance B lobby. It is also your way out when you leave.",
+          "es": "Una vez dentro, este es el vestíbulo de la Entrance B. También es tu salida cuando te vayas.",
+          "fr": "Une fois à l'intérieur, voici le hall de l'Entrance B. C'est aussi par là que vous sortirez.",
+          "de": "Drinnen sehen Sie die Lobby von Eingang B. Hier geht es auch wieder hinaus, wenn Sie abreisen.",
+          "it": "Una volta dentro, questa è la hall dell'Entrance B. È anche l'uscita quando te ne vai.",
+          "pt": "Lá dentro, este é o átrio da Entrance B. É também por aqui que sai quando for embora.",
+          "zh": "进门后就是 B 入口的大堂，离开时也从这里出去。",
+          "ar": "بعد الدخول، هذه هي ردهة المدخل B، وهي أيضًا طريق خروجك عند المغادرة.",
+          "ja": "中に入ると入口 B のロビーです。お帰りの際もここから出ます。"
+        }
+      },
+      {
+        "imgs": [
+          "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/472A9037_w9hwmw.jpg"
+        ],
+        "text": {
+          "en": "Walk through to the lift on the ground floor and take it to Floor 1.",
+          "es": "Sigue hasta el ascensor de la planta baja y sube a la planta 1.",
+          "fr": "Rejoignez l'ascenseur au rez-de-chaussée et montez au 1er étage.",
+          "de": "Gehen Sie zum Aufzug im Erdgeschoss und fahren Sie in den 1. Stock.",
+          "it": "Raggiungi l'ascensore al piano terra e sali al primo piano.",
+          "pt": "Siga até ao elevador no rés-do-chão e suba ao 1.º andar.",
+          "zh": "走到一楼（Ground Floor）的电梯，乘坐至 1 楼（Floor 1）。",
+          "ar": "توجّه إلى المصعد في الطابق الأرضي واصعد إلى الطابق 1.",
+          "ja": "1 階（Ground Floor）のエレベーターまで進み、Floor 1（日本の 2 階）へ上がってください。"
+        }
+      },
+      {
+        "imgs": [
+          "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/472A9018_vsko9c.jpg"
+        ],
+        "text": {
+          "en": "When you leave the lift, this sign confirms you are on Floor 1. Your flat number is in your check-in message.",
+          "es": "Al salir del ascensor, este cartel te confirma que estás en la planta 1. El número de tu apartamento está en el mensaje de check-in.",
+          "fr": "En sortant de l'ascenseur, ce panneau confirme que vous êtes au 1er étage. Le numéro de votre appartement figure dans votre message d'arrivée.",
+          "de": "Wenn Sie aus dem Aufzug kommen, bestätigt dieses Schild, dass Sie im 1. Stock sind. Ihre Wohnungsnummer steht in Ihrer Check-in-Nachricht.",
+          "it": "Uscito dall'ascensore, questo cartello conferma che sei al primo piano. Il numero del tuo appartamento è nel messaggio di check-in.",
+          "pt": "Ao sair do elevador, esta placa confirma que está no 1.º andar. O número do seu apartamento está na mensagem de check-in.",
+          "zh": "出电梯后，这块标识表明您已到达 1 楼。您的房号会在入住消息中告知。",
+          "ar": "عند الخروج من المصعد، تؤكّد هذه اللافتة أنك في الطابق 1. رقم شقتك موجود في رسالة تسجيل الوصول.",
+          "ja": "エレベーターを降りると、この表示で Floor 1 にいることを確認できます。お部屋番号はチェックインメッセージに記載されています。"
+        }
+      }
+    ]
+  },
+  "binsRoute": {
+    "title": {
+      "en": "How to get to the bin store",
+      "es": "Cómo llegar al cuarto de basuras",
+      "fr": "Comment rejoindre le local poubelles",
+      "de": "So kommen Sie zum Müllraum",
+      "it": "Come arrivare al locale rifiuti",
+      "pt": "Como chegar ao local do lixo",
+      "zh": "如何前往垃圾房",
+      "ar": "كيف تصل إلى غرفة النفايات",
+      "ja": "ゴミ置き場への行き方"
+    },
+    "steps": [
+      {
+        "imgs": [
+          "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/472A9037_w9hwmw.jpg"
+        ],
+        "text": {
+          "en": "On the ground floor, next to the lift, go through the door shown here.",
+          "es": "En la planta baja, junto al ascensor, pasa por la puerta de la foto.",
+          "fr": "Au rez-de-chaussée, à côté de l'ascenseur, passez la porte ci-dessus.",
+          "de": "Gehen Sie im Erdgeschoss neben dem Aufzug durch die abgebildete Tür.",
+          "it": "Al piano terra, accanto all'ascensore, passa dalla porta in foto.",
+          "pt": "No rés-do-chão, junto ao elevador, passe pela porta da foto.",
+          "zh": "在一楼电梯旁，穿过照片中的这扇门。",
+          "ar": "في الطابق الأرضي، بجانب المصعد، ادخل من الباب الظاهر في الصورة.",
+          "ja": "1 階のエレベーター横にある、写真のドアを通ってください。"
+        }
+      },
+      {
+        "imgs": [
+          "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/472A9039_ubuotl.jpg"
+        ],
+        "text": {
+          "en": "You are now in the ground floor corridor. Follow it to the end.",
+          "es": "Ahora estás en el pasillo de la planta baja. Síguelo hasta el final.",
+          "fr": "Vous êtes dans le couloir du rez-de-chaussée. Suivez-le jusqu'au bout.",
+          "de": "Sie sind jetzt im Flur des Erdgeschosses. Folgen Sie ihm bis zum Ende.",
+          "it": "Ora sei nel corridoio del piano terra. Seguilo fino in fondo.",
+          "pt": "Está agora no corredor do rés-do-chão. Siga-o até ao fim.",
+          "zh": "现在您在一楼走廊，沿走廊一直走到尽头。",
+          "ar": "أنت الآن في ممر الطابق الأرضي. اتبعه حتى نهايته.",
+          "ja": "1 階の廊下に出ます。突き当たりまで進んでください。"
+        }
+      },
+      {
+        "imgs": [
+          "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/472A9041_lcav88.jpg",
+          "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/472A9023_ow3vth.jpg"
+        ],
+        "text": {
+          "en": "This door opens with a motion sensor. Hold your hand close to the black circle with the red light and the door unlocks.",
+          "es": "Esta puerta se abre con un sensor de movimiento. Acerca la mano al círculo negro con la luz roja y la puerta se desbloquea.",
+          "fr": "Cette porte s'ouvre avec un détecteur de mouvement. Approchez la main du cercle noir à lumière rouge et la porte se déverrouille.",
+          "de": "Diese Tür öffnet sich mit einem Bewegungssensor. Halten Sie die Hand nah an den schwarzen Kreis mit dem roten Licht, dann wird die Tür entriegelt.",
+          "it": "Questa porta si apre con un sensore di movimento. Avvicina la mano al cerchio nero con la luce rossa e la porta si sblocca.",
+          "pt": "Esta porta abre com um sensor de movimento. Aproxime a mão do círculo preto com a luz vermelha e a porta desbloqueia.",
+          "zh": "这扇门由感应器控制。把手靠近带红灯的黑色圆形感应器，门就会解锁。",
+          "ar": "يُفتح هذا الباب بمستشعر حركة. قرّب يدك من الدائرة السوداء ذات الضوء الأحمر فيُفتح الباب.",
+          "ja": "このドアはモーションセンサーで開きます。赤いランプの付いた黒い円に手を近づけると解錠されます。"
+        }
+      },
+      {
+        "imgs": [
+          "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/472A9042_wnju6j.jpg",
+          "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/472A9043_z0nmst.jpg"
+        ],
+        "text": {
+          "en": "Go up the stairs and out through this door, then follow the pavement along the right-hand side of the building.",
+          "es": "Sube las escaleras y sal por esta puerta; después sigue la acera pegada al lado derecho del edificio.",
+          "fr": "Montez l'escalier et sortez par cette porte, puis suivez le trottoir le long du côté droit de l'immeuble.",
+          "de": "Gehen Sie die Treppe hinauf und durch diese Tür nach draußen, dann folgen Sie dem Gehweg entlang der rechten Seite des Gebäudes.",
+          "it": "Sali le scale ed esci da questa porta, poi segui il marciapiede lungo il lato destro dell'edificio.",
+          "pt": "Suba as escadas e saia por esta porta; depois siga o passeio ao longo do lado direito do edifício.",
+          "zh": "上楼梯后从这扇门出去，然后沿着大楼右侧的人行道走。",
+          "ar": "اصعد الدرج واخرج من هذا الباب، ثم اتبع الرصيف على امتداد الجانب الأيمن من المبنى.",
+          "ja": "階段を上ってこのドアから外に出たら、建物の右側に沿った歩道を進んでください。"
+        }
+      },
+      {
+        "imgs": [
+          "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/472A9044_khkjm9.jpg"
+        ],
+        "text": {
+          "en": "Continue along this passage to the very end.",
+          "es": "Sigue por este pasaje hasta el final del todo.",
+          "fr": "Continuez dans ce passage jusqu'au bout.",
+          "de": "Folgen Sie diesem Durchgang bis ganz zum Ende.",
+          "it": "Prosegui lungo questo passaggio fino in fondo.",
+          "pt": "Continue por esta passagem até ao fim.",
+          "zh": "沿着这条通道一直走到最里面。",
+          "ar": "تابع السير في هذا الممر حتى نهايته.",
+          "ja": "この通路を一番奥まで進んでください。"
+        }
+      },
+      {
+        "imgs": [
+          "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/472A9045_s19ydx.jpg"
+        ],
+        "text": {
+          "en": "This door is the bin store.",
+          "es": "Esta puerta es la del cuarto de basuras.",
+          "fr": "Cette porte est celle du local poubelles.",
+          "de": "Diese Tür führt zum Müllraum.",
+          "it": "Questa porta è quella del locale rifiuti.",
+          "pt": "Esta porta é a do local do lixo.",
+          "zh": "这扇门就是垃圾房。",
+          "ar": "هذا الباب هو باب غرفة النفايات.",
+          "ja": "このドアがゴミ置き場です。"
+        }
+      }
+    ]
+  },
+  "parkingPhotos": [
+    {
+      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/472A9051_zvfssi.jpg",
+      "caption": {
+        "en": "Car park entrance on Cheapside Street",
+        "es": "Entrada del parking en Cheapside Street",
+        "fr": "Entrée du parking sur Cheapside Street",
+        "de": "Parkplatzeinfahrt in der Cheapside Street",
+        "it": "Ingresso del parcheggio in Cheapside Street",
+        "pt": "Entrada do estacionamento na Cheapside Street",
+        "zh": "Cheapside Street 上的停车场入口",
+        "ar": "مدخل الموقف في شارع Cheapside Street",
+        "ja": "Cheapside Street の駐車場入口"
+      }
+    },
+    {
+      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/472A9054_zpbw0m.jpg",
+      "caption": {
+        "en": "Look for the yellow Car Park sign",
+        "es": "Busca el cartel amarillo de Car Park",
+        "fr": "Repérez le panneau jaune Car Park",
+        "de": "Achten Sie auf das gelbe Car-Park-Schild",
+        "it": "Cerca il cartello giallo Car Park",
+        "pt": "Procure a placa amarela Car Park",
+        "zh": "留意黄色的 Car Park 标志",
+        "ar": "ابحث عن لافتة Car Park الصفراء",
+        "ja": "黄色の「Car Park」看板が目印です"
+      }
+    },
+    {
+      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/472A9049_tjdjq5.jpg",
+      "caption": {
+        "en": "Private residential car park, remote access only",
+        "es": "Parking privado residencial, solo con mando",
+        "fr": "Parking privé résidentiel, accès par télécommande uniquement",
+        "de": "Privater Anwohnerparkplatz, Zufahrt nur mit Fernbedienung",
+        "it": "Parcheggio privato residenziale, accesso solo con telecomando",
+        "pt": "Estacionamento privado residencial, acesso só com comando",
+        "zh": "私人住宅停车场，仅限遥控器进入",
+        "ar": "موقف سكني خاص، الدخول بجهاز التحكم فقط",
+        "ja": "居住者専用の私有駐車場（リモコンでのみ入場可）"
+      }
+    },
+    {
+      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/472A9047_st9mim.jpg",
+      "caption": {
+        "en": "Your space: No. 14",
+        "es": "Tu plaza: n.º 14",
+        "fr": "Votre place : n° 14",
+        "de": "Ihr Stellplatz: Nr. 14",
+        "it": "Il tuo posto: n. 14",
+        "pt": "O seu lugar: n.º 14",
+        "zh": "您的车位：14 号",
+        "ar": "مكانك: رقم 14",
+        "ja": "お客様の区画：14 番"
+      }
+    }
   ],
-
-  bins: "[PROPERTY: where to put bins, collection day]",
-  fireDetails: "[PROPERTY: alarm locations, exit route, assembly point, extinguisher or fire blanket if present]",
-  routerLocation: "[PROPERTY: router location]",
-  heatingCheck: "Each radiator is controlled separately. If a room is cold, check that radiator is switched on and turned up. [PROPERTY: hot water check]",
-  stopcock: "[PROPERTY: water stopcock location]",
-  fuseBox: "[PROPERTY: fuse box location]",
-  pharmacy: { name: "[NEAREST PHARMACY]", coords: "" },
-  hospital: { name: "[NEAREST A&E]", coords: "" },
-  securing: "To lock the door, lift the handle and turn the key. Please switch off the radiators, then return all keys, fobs and the parking remote as explained in your check-in message.",
-
-  picks: [
-    { category: "eat", name: "[PLACE]", note: "[WHY YOU LIKE IT]", walkMins: 5, coords: "" },
-    { category: "eat", name: "[PLACE]", note: "[WHY YOU LIKE IT]", walkMins: 5, coords: "" },
-    { category: "coffee", name: "[PLACE]", note: "[WHY YOU LIKE IT]", walkMins: 5, coords: "" },
-    { category: "essentials", name: "[SUPERMARKET]", note: "[OPENING HOURS]", walkMins: 5, coords: "" }
+  "checkIn": "15:00",
+  "checkOut": "10:00",
+  "wifiName": "Holl Group Digbeth One 5",
+  "wifiPassword": "HollGroupGuest$",
+  "property": [
+    {
+      "title": {
+        "en": "Bedrooms",
+        "es": "Dormitorios",
+        "fr": "Chambres",
+        "de": "Schlafzimmer",
+        "it": "Camere",
+        "pt": "Quartos",
+        "zh": "卧室",
+        "ar": "غرف النوم",
+        "ja": "寝室"
+      },
+      "text": {
+        "en": "Bedroom 1: king, double and single bed. Bedroom 2: double and single bed. Both bedrooms have their own bathroom.",
+        "es": "Dormitorio 1: cama king, cama doble y cama individual. Dormitorio 2: cama doble e individual. Los dos dormitorios tienen baño propio.",
+        "fr": "Chambre 1 : lit king size, lit double et lit simple. Chambre 2 : lit double et lit simple. Chaque chambre a sa propre salle de bains.",
+        "de": "Schlafzimmer 1: Kingsize-, Doppel- und Einzelbett. Schlafzimmer 2: Doppel- und Einzelbett. Beide Schlafzimmer haben ein eigenes Bad.",
+        "it": "Camera 1: letto king, matrimoniale e singolo. Camera 2: letto matrimoniale e singolo. Entrambe le camere hanno il proprio bagno.",
+        "pt": "Quarto 1: cama king, cama de casal e cama de solteiro. Quarto 2: cama de casal e de solteiro. Ambos os quartos têm casa de banho própria.",
+        "zh": "卧室 1：一张特大床、一张双人床和一张单人床。卧室 2：一张双人床和一张单人床。两间卧室均带独立卫浴。",
+        "ar": "غرفة النوم 1: سرير كينغ وسرير مزدوج وسرير مفرد. غرفة النوم 2: سرير مزدوج وسرير مفرد. لكل غرفة حمّامها الخاص.",
+        "ja": "寝室 1：キングベッド、ダブルベッド、シングルベッド。寝室 2：ダブルベッドとシングルベッド。どちらの寝室にも専用バスルームがあります。"
+      }
+    },
+    {
+      "title": {
+        "en": "Heating",
+        "es": "Calefacción",
+        "fr": "Chauffage",
+        "de": "Heizung",
+        "it": "Riscaldamento",
+        "pt": "Aquecimento",
+        "zh": "暖气",
+        "ar": "التدفئة",
+        "ja": "暖房"
+      },
+      "text": {
+        "en": "The heating is electric. Each radiator has its own control, so you can set every room as you like. Please switch all radiators off when you leave.",
+        "es": "La calefacción es eléctrica. Cada radiador tiene su propio mando, así que puedes ajustar cada habitación a tu gusto. Por favor, apaga todos los radiadores al irte.",
+        "fr": "Le chauffage est électrique. Chaque radiateur a son propre réglage, vous pouvez donc régler chaque pièce comme vous le souhaitez. Merci d'éteindre tous les radiateurs en partant.",
+        "de": "Die Heizung ist elektrisch. Jeder Heizkörper hat einen eigenen Regler, so können Sie jeden Raum nach Wunsch einstellen. Bitte schalten Sie bei der Abreise alle Heizkörper aus.",
+        "it": "Il riscaldamento è elettrico. Ogni radiatore ha il suo comando, così puoi regolare ogni stanza come preferisci. Per favore, spegni tutti i radiatori quando parti.",
+        "pt": "O aquecimento é elétrico. Cada radiador tem o seu próprio comando, por isso pode ajustar cada divisão como quiser. Por favor, desligue todos os radiadores ao sair.",
+        "zh": "暖气为电暖。每个暖气片都可单独调节，您可以按需设置每个房间的温度。离开时请关闭所有暖气片。",
+        "ar": "التدفئة كهربائية، ولكل مشعاع تحكّم خاص به، فيمكنك ضبط كل غرفة كما تشاء. يرجى إطفاء جميع المشعاعات عند المغادرة.",
+        "ja": "暖房は電気式です。ラジエーターごとに個別に調整できるので、お部屋ごとにお好みの温度に設定できます。お帰りの際はすべてのラジエーターの電源を切ってください。"
+      }
+    },
+    {
+      "title": {
+        "en": "Hot water",
+        "es": "Agua caliente",
+        "fr": "Eau chaude",
+        "de": "Warmwasser",
+        "it": "Acqua calda",
+        "pt": "Água quente",
+        "zh": "热水",
+        "ar": "الماء الساخن",
+        "ja": "お湯"
+      },
+      "text": "[PROPERTY: hot water]"
+    },
+    {
+      "title": {
+        "en": "Kitchen and appliances",
+        "es": "Cocina y electrodomésticos",
+        "fr": "Cuisine et électroménager",
+        "de": "Küche und Geräte",
+        "it": "Cucina ed elettrodomestici",
+        "pt": "Cozinha e eletrodomésticos",
+        "zh": "厨房与电器",
+        "ar": "المطبخ والأجهزة",
+        "ja": "キッチンと家電"
+      },
+      "text": "[PROPERTY: oven, hob, washing machine, dishwasher]"
+    },
+    {
+      "title": {
+        "en": "TV and games",
+        "es": "TV y juegos",
+        "fr": "TV et jeux",
+        "de": "TV und Spiele",
+        "it": "TV e giochi",
+        "pt": "TV e jogos",
+        "zh": "电视与游戏",
+        "ar": "التلفاز والألعاب",
+        "ja": "テレビとゲーム"
+      },
+      "text": {
+        "en": "[PROPERTY: TV and apps] There is also a football table for you to enjoy, please keep the noise down during quiet hours.",
+        "es": "[PROPERTY: TV and apps] También hay un futbolín para que lo disfrutes; por favor, haz poco ruido en horario de silencio.",
+        "fr": "[PROPERTY: TV and apps] Il y a aussi un baby-foot à votre disposition ; merci de rester discrets pendant les heures de calme.",
+        "de": "[PROPERTY: TV and apps] Außerdem gibt es einen Tischkicker für Sie; bitte bleiben Sie während der Ruhezeiten leise.",
+        "it": "[PROPERTY: TV and apps] C'è anche un calcio balilla a tua disposizione; per favore, fai poco rumore negli orari di silenzio.",
+        "pt": "[PROPERTY: TV and apps] Há também uma mesa de matraquilhos para se divertir; por favor, faça pouco barulho no horário de silêncio.",
+        "zh": "[PROPERTY: TV and apps] 屋内还有一张桌上足球台供您娱乐，安静时段请注意音量。",
+        "ar": "[PROPERTY: TV and apps] تتوفر أيضًا طاولة كرة قدم للتسلية، يرجى خفض الضوضاء خلال ساعات الهدوء.",
+        "ja": "[PROPERTY: TV and apps] サッカーゲーム台もご自由にお使いください。静粛時間は音量にご配慮ください。"
+      }
+    }
   ],
-
-  discountUrl: "https://booking.hollgroup.co.uk/?coupon=7ALWAYS&utm=card",
-  discountCode: "7ALWAYS"
+  "bins": {
+    "en": "The bin store is just outside the building. Follow the steps below to get there.",
+    "es": "El cuarto de basuras está justo fuera del edificio. Sigue estos pasos para llegar.",
+    "fr": "Le local poubelles se trouve juste à l'extérieur de l'immeuble. Suivez les étapes ci-dessous pour y aller.",
+    "de": "Der Müllraum befindet sich direkt außerhalb des Gebäudes. Folgen Sie den Schritten unten.",
+    "it": "Il locale rifiuti è appena fuori dall'edificio. Segui i passaggi qui sotto per arrivarci.",
+    "pt": "O local do lixo fica mesmo à saída do edifício. Siga os passos abaixo para lá chegar.",
+    "zh": "垃圾房就在大楼外面，请按照以下步骤前往。",
+    "ar": "غرفة النفايات خارج المبنى مباشرة. اتبع الخطوات أدناه للوصول إليها.",
+    "ja": "ゴミ置き場は建物のすぐ外にあります。以下の手順で向かってください。"
+  },
+  "fireDetails": "[PROPERTY: alarm locations, exit route, assembly point, extinguisher or fire blanket if present]",
+  "routerLocation": "[PROPERTY: router location]",
+  "heatingCheck": {
+    "en": "Each radiator is controlled separately. If a room is cold, check that radiator is switched on and turned up. [PROPERTY: hot water check]",
+    "es": "Cada radiador se controla por separado. Si una habitación está fría, comprueba que su radiador está encendido y subido. [PROPERTY: hot water check]",
+    "fr": "Chaque radiateur se règle séparément. Si une pièce est froide, vérifiez que son radiateur est allumé et monté. [PROPERTY: hot water check]",
+    "de": "Jeder Heizkörper wird einzeln geregelt. Ist ein Raum kalt, prüfen Sie, ob der Heizkörper eingeschaltet und hochgedreht ist. [PROPERTY: hot water check]",
+    "it": "Ogni radiatore si regola separatamente. Se una stanza è fredda, controlla che il suo radiatore sia acceso e alzato. [PROPERTY: hot water check]",
+    "pt": "Cada radiador é controlado separadamente. Se uma divisão estiver fria, verifique se o radiador está ligado e com a temperatura subida. [PROPERTY: hot water check]",
+    "zh": "每个暖气片单独控制。如果某个房间冷，请检查该房间的暖气片是否已打开并调高。[PROPERTY: hot water check]",
+    "ar": "يتم التحكم في كل مشعاع على حدة. إذا كانت غرفة باردة، تأكّد من أن مشعاعها مُشغَّل ومرفوع. [PROPERTY: hot water check]",
+    "ja": "ラジエーターは個別に操作します。部屋が寒い場合は、その部屋のラジエーターの電源が入っていて温度が上がっているか確認してください。[PROPERTY: hot water check]"
+  },
+  "stopcock": "[PROPERTY: water stopcock location]",
+  "fuseBox": "[PROPERTY: fuse box location]",
+  "pharmacy": {
+    "name": "[NEAREST PHARMACY]",
+    "coords": ""
+  },
+  "hospital": {
+    "name": "[NEAREST A&E]",
+    "coords": ""
+  },
+  "securing": {
+    "en": "To lock the door, lift the handle and turn the key. Please switch off the radiators, then return all keys, fobs and the parking remote as explained in your check-in message.",
+    "es": "Para cerrar la puerta, levanta la manilla y gira la llave. Apaga los radiadores y devuelve todas las llaves, tarjetas y el mando del parking como se explica en el mensaje de check-in.",
+    "fr": "Pour fermer la porte à clé, relevez la poignée et tournez la clé. Éteignez les radiateurs, puis rendez toutes les clés, badges et la télécommande du parking comme indiqué dans votre message d'arrivée.",
+    "de": "Zum Abschließen den Türgriff anheben und den Schlüssel drehen. Bitte schalten Sie die Heizkörper aus und geben Sie alle Schlüssel, Chips und die Parkplatz-Fernbedienung zurück, wie in Ihrer Check-in-Nachricht beschrieben.",
+    "it": "Per chiudere la porta a chiave, alza la maniglia e gira la chiave. Spegni i radiatori, poi restituisci tutte le chiavi, i badge e il telecomando del parcheggio come spiegato nel messaggio di check-in.",
+    "pt": "Para trancar a porta, levante o puxador e rode a chave. Desligue os radiadores e devolva todas as chaves, cartões e o comando do estacionamento como explicado na mensagem de check-in.",
+    "zh": "锁门时，先将门把手向上抬起再转动钥匙。请关闭暖气片，然后按照入住消息中的说明归还所有钥匙、门禁卡和停车场遥控器。",
+    "ar": "لقفل الباب، ارفع المقبض ثم أدر المفتاح. يرجى إطفاء المشعاعات، ثم إعادة جميع المفاتيح وبطاقات الدخول وجهاز التحكم بالموقف كما هو موضّح في رسالة تسجيل الوصول.",
+    "ja": "ドアの施錠は、ハンドルを上げてから鍵を回します。ラジエーターの電源を切り、チェックインメッセージの案内に従って、すべての鍵・カードキー・駐車場のリモコンを返却してください。"
+  },
+  "picks": [
+    {
+      "category": "eat",
+      "name": "[PLACE]",
+      "note": "[WHY YOU LIKE IT]",
+      "walkMins": 5,
+      "coords": ""
+    },
+    {
+      "category": "eat",
+      "name": "[PLACE]",
+      "note": "[WHY YOU LIKE IT]",
+      "walkMins": 5,
+      "coords": ""
+    },
+    {
+      "category": "coffee",
+      "name": "[PLACE]",
+      "note": "[WHY YOU LIKE IT]",
+      "walkMins": 5,
+      "coords": ""
+    },
+    {
+      "category": "essentials",
+      "name": "[SUPERMARKET]",
+      "note": "[OPENING HOURS]",
+      "walkMins": 5,
+      "coords": ""
+    }
+  ],
+  "discountUrl": "https://booking.hollgroup.co.uk/?coupon=7ALWAYS&utm=card",
+  "discountCode": "7ALWAYS"
 };
 /* ===================== END OF PROPERTY SETTINGS ===================== */
 </script>
