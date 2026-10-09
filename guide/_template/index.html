@@ -8,7 +8,7 @@
 <title>Holl Group</title>
 <link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009i">
+<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009j">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
@@ -33,7 +33,8 @@ const CONFIG = {
 
   parking: "available",          // "available" or "none"
   parkingDetails: "[PROPERTY: where to park, space number or permit details]",
-  parkingNearby: "[PROPERTY: nearest car parks, distance and approximate price]",
+  parkingNearby: "[PROPERTY: nearest car parks, distance and approximate price]",  // also shown as "second car" advice when parking is available
+  parkingNearbyCoords: "",       // optional: car park link or coordinates
 
   directions: "[PROPERTY: directions, nearest transport]",
   entranceCoords: "",            // coordinates "52.4796, -1.9026" or a Google Maps link
@@ -68,6 +69,7 @@ const CONFIG = {
   securing: "[PROPERTY: how to secure the property when leaving]",
 
   // category: "eat", "coffee", "drinks", "essentials" or "see"
+  // coords: coordinates, a Google Maps link, or just the place name and city. walkMins is optional.
   picks: [
     { category: "eat", name: "[PLACE]", note: "[WHY YOU LIKE IT]", walkMins: 5, coords: "" },
     { category: "eat", name: "[PLACE]", note: "[WHY YOU LIKE IT]", walkMins: 5, coords: "" },
@@ -89,7 +91,7 @@ const CONFIG = {
 <body>
 <div id="app"></div>
 <div class="toast" id="toast"></div>
-<script src="/guide/assets/guide-i18n.js?v=20261009i"></script>
-<script src="/guide/assets/guide.js?v=20261009i"></script>
+<script src="/guide/assets/guide-i18n.js?v=20261009j"></script>
+<script src="/guide/assets/guide.js?v=20261009j"></script>
 </body>
 </html>

@@ -17,7 +17,7 @@
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const clean = v => String(v || "").replace(/\s+/g, "");
   // Accepts coordinates ("52.47, -1.89") or a full Google Maps link
-  const maps = c => /^https?:\/\//i.test(clean(c)) ? clean(c) : "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(clean(c));
+  const maps = c => /^https?:\/\//i.test(clean(c)) ? clean(c) : "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(/^-?\d/.test(String(c).trim()) ? clean(c) : String(c).trim());
   const isFlat = C.propertyType !== "house";
   const isLockbox = C.entry !== "smartlock";
 
@@ -166,7 +166,8 @@
       <p>${P(C.directions)}</p>
       ${mapBtn(C.entranceCoords, T("entrance"))}
       <div class="soft"><div class="sub">${T("parking")}</div>
-        ${C.parking === "none" ? `<p>${T("noParking")}</p><p style="margin-top:8px">${P(C.parkingNearby)}</p>` : `<p>${P(C.parkingDetails)}</p>`}
+        ${C.parking === "none" ? `<p>${T("noParking")}</p><p style="margin-top:8px">${P(C.parkingNearby)}</p>` : `<p>${P(C.parkingDetails)}</p>${C.parkingNearby ? `<p style="margin-top:8px">${P(C.parkingNearby)}</p>` : ""}`}
+        ${clean(C.parkingNearbyCoords) ? `<div style="margin-top:10px">${mapBtn(C.parkingNearbyCoords, T("parkingMap"), "btn-light")}</div>` : ""}
         ${gallery(C.parkingPhotos)}
       </div>
     </div>
@@ -270,7 +271,7 @@
 
   <section class="card" id="picks">
     <h2>${T("picksTitle")}</h2>
-    <div>${C.picks.map(p => `<div class="pick"><div><div class="cat">${T("cat_" + p.category)}</div><div class="name">${P(p.name)}</div><div class="note">${P(p.note)} · ${T("walk", { n: esc(p.walkMins) })}</div></div>${clean(p.coords) ? `<a href="${maps(p.coords)}" target="_blank" rel="noopener" aria-label="Maps">${I.pin}</a>` : ""}</div>`).join("")}</div>
+    <div>${C.picks.map(p => `<div class="pick"><div><div class="cat">${T("cat_" + p.category)}</div><div class="name">${P(p.name)}</div><div class="note">${P(p.note)}${p.walkMins ? " · " + T("walk", { n: esc(p.walkMins) }) : ""}</div></div>${clean(p.coords) ? `<a href="${maps(p.coords)}" target="_blank" rel="noopener" aria-label="Maps">${I.pin}</a>` : ""}</div>`).join("")}</div>
   </section>
 
   <section class="card gift" id="thanks">
