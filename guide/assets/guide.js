@@ -10,7 +10,10 @@
   const BREVO = "https://e839be71.sibforms.com/serve/MUIFAIpm5qy6-_i9pB5InRDHuU1d8EfMd-Cml7oOBTsq3vjWG_hJK4Snhz4klkhnlU4dIX_BulnSd9fYXhErq0ISEjxPXfu1NQJt23-LDMajkJLs0g4seC6Zz-ldBb35MeYYV6HJET4vBofO4jTL3J4Laoo_EloMPqxSHHAV5FzvdOpvV-zZKBpziZJA_naPmdqEC_72hXZuKjOirA==";
   const store = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
   try { if (new URLSearchParams(location.search).get("join") === "reset") { localStorage.removeItem("hollJoined"); localStorage.removeItem("hollPromoHide"); } } catch (e) {}
-  const THANKS = "🇬🇧 Thank you · 🥂 Cheers, bab! · 🇪🇸 Gracias · Eskerrik asko · Gràcies · Graciñas · 🇫🇷 Merci · 🇩🇪 Danke · 🇮🇹 Grazie · 🇵🇹 Obrigado · 🏴󠁧󠁢󠁷󠁬󠁳󠁿 Diolch · 🇮🇪 Go raibh maith agat · 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Tapadh leat · 🇳🇱 Dank u · 🇸🇪 Tack · 🇳🇴 Takk · 🇩🇰 Tak · 🇫🇮 Kiitos · 🇪🇪 Aitäh · 🇵🇱 Dziękuję · 🇨🇿 Děkuji · 🇭🇺 Köszönöm · 🇷🇴 Mulțumesc · 🇬🇷 Efcharistó · 🇹🇷 Teşekkürler · 🇺🇦 Diakuiu · 🇷🇺 Spasibo · 🇸🇦 Shukran · 🇮🇱 Toda · 🇮🇷 Mamnoon · 🇮🇳 Dhanyavaad · 🇵🇰 Shukriya · 🇧🇩 Dhonnobad · 🇨🇳 Xièxie · 🇭🇰 M'goi · 🇯🇵 Arigato · 🇰🇷 Gamsahamnida · 🇵🇭 Salamat · 🇮🇩 Terima kasih · 🇹🇭 Khop khun · 🇻🇳 Cảm ơn · 🇰🇪 Asante · 🇿🇦 Dankie · 🇸🇴 Mahadsanid · 🇯🇲 Give tanks · 🏳️‍🌈 Gracias · Thank you ·&nbsp;";
+  // Thank you in many languages. Flags are small images (emoji flags do not show on Windows); a flag that fails to load is simply removed.
+  const THANKS_LIST = [["gb", "Thank you"], ["cheers", "Cheers, bab!"], ["es", "Gracias"], [null, "Eskerrik asko"], [null, "Gràcies"], [null, "Graciñas"], ["fr", "Merci"], ["de", "Danke"], ["it", "Grazie"], ["pt", "Obrigado"], ["gb-wls", "Diolch"], ["ie", "Go raibh maith agat"], ["gb-sct", "Tapadh leat"], ["nl", "Dank u"], ["se", "Tack"], ["no", "Takk"], ["dk", "Tak"], ["fi", "Kiitos"], ["ee", "Aitäh"], ["pl", "Dziękuję"], ["cz", "Děkuji"], ["hu", "Köszönöm"], ["ro", "Mulțumesc"], ["gr", "Efcharistó"], ["tr", "Teşekkürler"], ["ua", "Diakuiu"], ["ru", "Spasibo"], ["sa", "Shukran"], ["il", "Toda"], ["ir", "Mamnoon"], ["in", "Dhanyavaad"], ["pk", "Shukriya"], ["bd", "Dhonnobad"], ["cn", "Xièxie"], ["hk", "M'goi"], ["jp", "Arigato"], ["kr", "Gamsahamnida"], ["ph", "Salamat"], ["id", "Terima kasih"], ["th", "Khop khun"], ["vn", "Cảm ơn"], ["ke", "Asante"], ["za", "Dankie"], ["so", "Mahadsanid"], ["jm", "Give tanks"], ["rainbow", "Gracias"], [null, "Thank you"]];
+  const flag = c => !c ? "" : c === "cheers" ? '<span class="tk-emo">🥂</span>' : c === "rainbow" ? '<span class="tk-rainbow"></span>' : `<img class="tk-flag" src="https://flagcdn.com/w40/${c}.png" width="20" height="15" alt="" loading="lazy" onerror="this.remove()">`;
+  const thanksHtml = () => THANKS_LIST.map(([c, t]) => `<span class="tk">${flag(c)}${esc(t)}</span>`).join('<span class="tk-dot">·</span>');
   const HOMES = "https://hollgroup.co.uk/properties.html";
   const LOGO = "https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png";
   const HOST = "https://res.cloudinary.com/dyojhaiig/image/upload/c_thumb,g_face,w_240,h_240,z_0.75,f_auto,q_auto/v1787835750/aiboryyy-20251211-0001_yx87j9.jpg";
@@ -286,7 +289,7 @@
   <section class="card gift" id="thanks">
     <div class="icon" style="margin:0 auto 12px;width:56px;height:56px">${I.gift}</div>
     <h2>${T("thanksTitle")}</h2>
-    <div class="thanks-ticker" aria-hidden="true" dir="ltr"><div class="thanks-track"><span>${THANKS}</span><span>${THANKS}</span></div></div>
+    <div class="thanks-ticker" aria-hidden="true" dir="ltr"><div class="thanks-track"><span class="tk-run">${thanksHtml()}<span class="tk-dot">·</span></span><span class="tk-run">${thanksHtml()}<span class="tk-dot">·</span></span></div></div>
     <p style="font-family:'Outfit',system-ui,sans-serif;font-size:20px;font-weight:600;color:var(--accent-ink);margin-bottom:10px">${T("bookDirect")}</p>
     <p style="margin-bottom:16px">${T("same")}</p>
     <div class="offer">

@@ -194,3 +194,10 @@ footer img{height:64px;width:auto;display:block;margin:0 auto 8px}
 .thanks-track span{padding-inline-end:6px}
 @keyframes thanks{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.thanks-track{animation:none;white-space:normal;width:auto}.thanks-track span+span{display:none}}
+
+.tk-run{display:inline-flex;align-items:center;flex-wrap:nowrap}
+.tk{display:inline-flex;align-items:center;gap:6px}
+.tk-dot{margin:0 8px;opacity:.6}
+.tk-flag{width:20px;height:15px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.08);object-fit:cover}
+.tk-rainbow{width:20px;height:15px;border-radius:2px;background:linear-gradient(#E40303 0 16.6%,#FF8C00 0 33.3%,#FFED00 0 50%,#008026 0 66.6%,#004DFF 0 83.3%,#750787 0)}
+@media (prefers-reduced-motion:reduce){.tk-run{flex-wrap:wrap;row-gap:4px}}
