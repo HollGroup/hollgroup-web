@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="theme-color" content="#1D7563">
+<title>Holl Group</title>
+<link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/guide/assets/guide.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+/* =====================================================================
+   PROPERTY SETTINGS: this is the ONLY part you edit for each property.
+   Keep the quotes. Anything left in [SQUARE BRACKETS] shows highlighted.
+   Any text can also be given per language, for example:
+     bins: { en: "Bins are by the gate.", es: "Los cubos están junto a la puerta." }
+   Languages without their own text show the English one.
+   ===================================================================== */
+const CONFIG = {
+  propertyName: "[PROPERTY NAME]",
+  area: "[AREA], Birmingham",
+
+  propertyType: "flat",          // "flat" or "house"
+  garden: false,                 // true or false (houses only)
+  exteriorCameras: false,        // true if a house has exterior cameras
+
+  entry: "lockbox",              // "lockbox" or "smartlock"
+  smartLockCodeTimeLimited: true,
+  smartLockHowTo: "[PROPERTY: how to use the keypad]",
+
+  parking: "available",          // "available" or "none"
+  parkingDetails: "[PROPERTY: where to park, space number or permit details]",
+  parkingNearby: "[PROPERTY: nearest car parks, distance and approximate price]",
+
+  directions: "[PROPERTY: directions, nearest transport]",
+  entranceCoords: "",            // e.g. "52.4796, -1.9026"
+  lockboxCoords: "",             // recommended: leave empty, send it in the check-in message
+
+  checkIn: "15:00",
+  checkOut: "10:00",
+
+  wifiName: "[WIFI NAME]",
+  wifiPassword: "[WIFI PASSWORD]",
+
+  property: [
+    { title: "Heating", text: "[PROPERTY: how the heating works]" },
+    { title: "Hot water", text: "[PROPERTY: hot water]" },
+    { title: "Kitchen and appliances", text: "[PROPERTY: oven, hob, washing machine, dishwasher]" },
+    { title: "TV", text: "[PROPERTY: TV, apps, remote]" }
+  ],
+
+  bins: "[PROPERTY: where to put bins, collection day]",
+  fireDetails: "[PROPERTY: alarm locations, exit route, assembly point, extinguisher or fire blanket if present]",
+  routerLocation: "[PROPERTY: router location]",
+  heatingCheck: "[PROPERTY: how it works and what to check]",
+  stopcock: "[PROPERTY: water stopcock location]",
+  fuseBox: "[PROPERTY: fuse box location]",
+  pharmacy: { name: "[NEAREST PHARMACY]", coords: "" },
+  hospital: { name: "[NEAREST A&E]", coords: "" },
+  securing: "[PROPERTY: how to secure the property when leaving]",
+
+  // category: "eat", "coffee", "drinks", "essentials" or "see"
+  picks: [
+    { category: "eat", name: "[PLACE]", note: "[WHY YOU LIKE IT]", walkMins: 5, coords: "" },
+    { category: "eat", name: "[PLACE]", note: "[WHY YOU LIKE IT]", walkMins: 5, coords: "" },
+    { category: "coffee", name: "[PLACE]", note: "[WHY YOU LIKE IT]", walkMins: 5, coords: "" },
+    { category: "essentials", name: "[SUPERMARKET]", note: "[OPENING HOURS]", walkMins: 5, coords: "" }
+  ],
+
+  discountUrl: "https://booking.hollgroup.co.uk/?coupon=7ALWAYS&utm=card",
+  discountCode: "7ALWAYS"
+};
+/* ===================== END OF PROPERTY SETTINGS ===================== */
+</script>
+</head>
+<body>
+<div id="app"></div>
+<div class="toast" id="toast"></div>
+<script src="/guide/assets/guide-i18n.js"></script>
+<script src="/guide/assets/guide.js"></script>
+</body>
+</html>
