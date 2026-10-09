@@ -123,7 +123,7 @@
     const appliances = list => !list || !list.length ? "" : `<div class="appl-list">${list.map(a => {
       const steps = (a.steps && (a.steps[lang] || a.steps.en)) || [];
       return `<details class="appl"><summary><span>${P(a.name)}</span><small dir="ltr">${esc([a.brand, a.model].filter(Boolean).join(" · "))}</small></summary>
-        <ol>${steps.map(x => `<li>${esc(x)}</li>`).join("")}</ol>
+        ${steps.length ? `<ol>${steps.map(x => `<li>${esc(x)}</li>`).join("")}</ol>` : ""}
         ${a.tip ? `<p class="appl-tip"><b>${T("applTip")}:</b> ${P(a.tip)}</p>` : ""}
         ${a.manual ? `<a class="appl-man" href="${esc(a.manual)}" target="_blank" rel="noopener">${T("applManual")}${a.model ? ` <span dir="ltr">(${esc(a.model)})</span>` : ""}</a>` : ""}
       </details>`; }).join("")}</div>`;
@@ -154,7 +154,7 @@
           ${r.ensuite ? `<span class="bd-extra">${I.bath}${T("ensuite")}</span>` : ""}
           ${r.note ? `<span class="tr-note">${P(r.note)}</span>` : ""}</div>`; }).join("")}</div>`;
     };
-    const nav = [["glance", "navGlance"], ["important", "navImportant"], ["arrive", "navArrival"], ["home", "navHome"], ["rules", "navRules"], ["safety", "navSafety"], ["help", "navHelp"], ["services", "navServices"], ["checkout", "navCheckout"], ["picks", "navPicks"], ["thanks", "navThanks"]];
+    const nav = [["glance", "navGlance"], ["important", "navImportant"], ["arrive", "navArrival"], ["home", "navHome"], ["story", "navStory"], ["rules", "navRules"], ["safety", "navSafety"], ["help", "navHelp"], ["services", "navServices"], ["checkout", "navCheckout"], ["picks", "navPicks"], ["thanks", "navThanks"]];
     const phoneLink = `<a href="tel:${PHONE}" dir="ltr"><b>${PHONE_TXT}</b></a>`;
     const emailLink = `<a href="mailto:${EMAIL}" dir="ltr"><b>${EMAIL}</b></a>`;
     const time = t => `<bdi dir="ltr">${esc(t)}</bdi>`;
@@ -167,7 +167,7 @@
   <div class="top-in"><img src="${LOGO}" alt="Holl Group"><span class="t">${name}</span>
     <select class="lang" id="langSel" aria-label="${esc(T("langLabel"))}">${LANGS.map(([c, n]) => `<option value="${c}"${c === lang ? " selected" : ""}>${n}</option>`).join("")}</select>
   </div>
-  <div class="nav-wrap" id="navWrap"><nav class="nav" id="navBar" aria-label="Sections">${nav.filter(([id]) => id !== "picks" || (C.picks || []).length).map(([id, k]) => `<a href="#${id}" data-id="${id}">${T(k)}</a>`).join("")}</nav></div>
+  <div class="nav-wrap" id="navWrap"><nav class="nav" id="navBar" aria-label="Sections">${nav.filter(([id]) => (id !== "picks" || (C.picks || []).length) && (id !== "story" || C.story)).map(([id, k]) => `<a href="#${id}" data-id="${id}">${T(k)}</a>`).join("")}</nav></div>
 </header>
 
 <main class="wrap">
@@ -251,6 +251,16 @@
     ${C.beds ? `<div class="sub" style="margin:4px 0 10px">${T("bedsTitle")}</div>${beds(C.beds)}<div style="height:16px"></div>` : ""}
     <div class="stack">${C.property.map(b => `<div class="soft"><div class="sub">${P(b.title)}</div><p>${P(b.text)}</p>${appliances(b.appliances)}</div>`).join("")}</div>
   </section>
+
+  ${C.story ? `<section class="card story" id="story">
+    <span class="eyebrow">${T("storyEyebrow")}</span>
+    <h2 style="margin-top:6px">${P(C.story.title)}</h2>
+    ${C.story.lead ? `<p class="story-lead">${P(C.story.lead)}</p>` : ""}
+    ${(C.story.timeline || []).length ? `<div class="tl">${C.story.timeline.map(t => `<div class="tl-row"><span class="tl-year">${esc(t.year)}</span><span>${P(t.text)}</span></div>`).join("")}</div>` : ""}
+    ${gallery((C.story.gallery || []).filter(g => g.img))}
+    ${(C.story.blocks || []).map(b => `<div class="soft" style="margin-top:12px"><div class="sub">${P(b.title)}</div><p>${P(b.text)}</p></div>`).join("")}
+    ${(C.story.challenge || []).length ? `<div class="sub" style="margin-top:18px">${T("storyChallenge")}</div><div class="hunt">${C.story.challenge.map((c, k) => `<label class="hunt-item"><input type="checkbox" data-k="${k}"><span><b>${P(c.title)}</b><small>${P(c.text)}</small></span></label>`).join("")}</div>` : ""}
+  </section>` : ""}
 
   <section class="card" id="rules">
     <h2>${T("rulesTitle")}</h2>
@@ -483,6 +493,13 @@
           .catch(err => { console.log("Brevo sign up blocked:", err); fail(null); });
       });
     }
+
+    // Garden challenge: remember ticks on this phone
+    document.querySelectorAll(".hunt input").forEach(cb => {
+      const key = "hollHunt" + location.pathname + cb.dataset.k;
+      cb.checked = store.get(key) === "1";
+      cb.addEventListener("change", () => store.set(key, cb.checked ? "1" : ""));
+    });
 
     // Filter local picks by category
     const pkChips = document.getElementById("pkChips");

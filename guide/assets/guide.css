@@ -247,3 +247,15 @@ a.tr:active{background:var(--tint)}
 .bd-list{display:flex;flex-direction:column;gap:2px;font-size:15px}
 .bd-extra{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--accent-deep)}
 .bd-extra svg{width:18px;height:18px}
+
+/* Story of the building */
+.story-lead{font-size:18px;margin:8px 0 14px}
+.tl{display:grid;gap:0;margin:6px 0 14px;border-top:1px solid var(--line)}
+.tl-row{display:grid;grid-template-columns:76px 1fr;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.tl-year{font-family:'Outfit',system-ui,sans-serif;font-size:24px;font-weight:700;color:var(--accent-ink)}
+.hunt{display:grid;gap:8px;margin-top:8px}
+.hunt-item{display:flex;gap:12px;align-items:flex-start;background:var(--tint-2);border:1px solid var(--line);border-radius:12px;padding:12px;cursor:pointer}
+.hunt-item input{width:26px;height:26px;margin:0;accent-color:var(--accent-ink);flex-shrink:0}
+.hunt-item span{display:flex;flex-direction:column;gap:2px}
+.hunt-item small{font-size:15px;color:var(--muted)}
+.hunt-item:has(input:checked){background:var(--tint);border-color:var(--accent)}
