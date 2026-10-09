@@ -8,7 +8,7 @@
 <title>Holl Group</title>
 <link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009b">
+<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009d">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
@@ -481,9 +481,26 @@ const CONFIG = {
   },
   "stopcock": "",
   "fuseBox": "",
-  "pharmacy": {
-    "name": "[NEAREST PHARMACY]",
-    "coords": ""
+  "pharmacy": [
+    {
+      "name": "Boots, Bullring (Level 2)",
+      "coords": "https://maps.app.goo.gl/8VT4QnnBFAjQU5Um6"
+    },
+    {
+      "name": "Superdrug, Bullring (Level 3)",
+      "coords": "https://maps.app.goo.gl/4nmNDFVai24oETdq6"
+    }
+  ],
+  "pharmacyNote": {
+    "en": "Both are inside the Bullring shopping centre, about 13 minutes on foot. By car it is 3 minutes, but you would have to pay to park in the Bullring car park, so we recommend walking.",
+    "es": "Las dos están dentro del centro comercial Bullring, a unos 13 minutos andando. En coche son 3 minutos, pero tendrías que pagar el parking del Bullring, así que te recomendamos ir andando.",
+    "fr": "Les deux se trouvent dans le centre commercial Bullring, à environ 13 minutes à pied. En voiture, c'est 3 minutes, mais il faudrait payer le parking du Bullring : nous vous conseillons d'y aller à pied.",
+    "de": "Beide befinden sich im Einkaufszentrum Bullring, etwa 13 Minuten zu Fuß. Mit dem Auto sind es 3 Minuten, aber Sie müssten im Parkhaus des Bullring bezahlen. Wir empfehlen daher, zu Fuß zu gehen.",
+    "it": "Entrambe si trovano nel centro commerciale Bullring, a circa 13 minuti a piedi. In auto sono 3 minuti, ma dovresti pagare il parcheggio del Bullring, quindi ti consigliamo di andare a piedi.",
+    "pt": "Ambas ficam dentro do centro comercial Bullring, a cerca de 13 minutos a pé. De carro são 3 minutos, mas teria de pagar o parque de estacionamento do Bullring, por isso recomendamos ir a pé.",
+    "zh": "两家药店都在 Bullring 购物中心内，步行约 13 分钟。开车只需 3 分钟，但需要在 Bullring 停车场付费停车，因此建议步行前往。",
+    "ar": "الصيدليتان داخل مركز التسوق Bullring، على بُعد نحو 13 دقيقة سيرًا على الأقدام. بالسيارة تستغرق 3 دقائق، لكن ستحتاج إلى الدفع للوقوف في موقف سيارات Bullring، لذا ننصح بالذهاب سيرًا.",
+    "ja": "どちらも Bullring ショッピングセンター内にあり、徒歩約 13 分です。車なら 3 分ですが、Bullring の有料駐車場に停める必要があるため、徒歩をおすすめします。"
   },
   "hospital": {
     "name": "[NEAREST A&E]",
@@ -530,8 +547,8 @@ const CONFIG = {
       "coords": ""
     }
   ],
-  "discountUrl": "https://booking.hollgroup.co.uk/?coupon=7ALWAYS&utm=card",
-  "discountCode": "7ALWAYS",
+  "discountUrl": "https://booking.hollgroup.co.uk/?coupon=5REPEATING&utm=guide",
+  "discountCode": "5REPEATING",
   "importantExtra": [
     {
       "title": {
@@ -566,7 +583,7 @@ const CONFIG = {
 <body>
 <div id="app"></div>
 <div class="toast" id="toast"></div>
-<script src="/guide/assets/guide-i18n.js?v=20261009b"></script>
-<script src="/guide/assets/guide.js?v=20261009b"></script>
+<script src="/guide/assets/guide-i18n.js?v=20261009d"></script>
+<script src="/guide/assets/guide.js?v=20261009d"></script>
 </body>
 </html>

@@ -6,6 +6,9 @@
   const DICT = window.GUIDE_I18N;
   const LANGS = window.GUIDE_LANGS;
   const PHONE = "+447799777284", PHONE_TXT = "+44 779 977 7284", EMAIL = "bookings@hollgroup.co.uk", WA = "https://wa.me/447799777284";
+  // Brevo "Returning guests" form (shared by every property)
+  const BREVO = "https://e839be71.sibforms.com/serve/MUIFAIpm5qy6-_i9pB5InRDHuU1d8EfMd-Cml7oOBTsq3vjWG_hJK4Snhz4klkhnlU4dIX_BulnSd9fYXhErq0ISEjxPXfu1NQJt23-LDMajkJLs0g4seC6Zz-ldBb35MeYYV6HJET4vBofO4jTL3J4Laoo_EloMPqxSHHAV5FzvdOpvV-zZKBpziZJA_naPmdqEC_72hXZuKjOirA==";
+  const store = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
   const LOGO = "https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png";
   const HOST = "https://res.cloudinary.com/dyojhaiig/image/upload/c_thumb,g_face,w_240,h_240,z_0.75,f_auto,q_auto/v1787835750/aiboryyy-20251211-0001_yx87j9.jpg";
 
@@ -117,6 +120,8 @@
     </div>
   </section>
 
+  ${store.get("hollJoined") || store.get("hollPromoHide") ? "" : `<div class="promo" id="promo"><span>${I.gift}${T("promo")}</span><a href="#join">${T("promoGo")}</a><button type="button" id="promoX" aria-label="${esc(T("close"))}">&times;</button></div>`}
+
   <section class="card glance" id="glance">
     <h2>${T("glanceTitle")}</h2>
     <div class="g-grid">
@@ -218,7 +223,10 @@
       <a href="tel:${PHONE}"><span class="num">Ibon</span><span class="lbl" dir="ltr">${PHONE_TXT}</span></a>
     </div>
     <div class="stack" style="margin-top:12px">
-      ${clean(C.pharmacy.coords) ? `<a class="btn btn-light" href="${maps(C.pharmacy.coords)}" target="_blank" rel="noopener">${I.pin}${T("pharmacy")}: ${P(C.pharmacy.name)}</a>` : `<div class="soft">${T("pharmacy")}: ${P(C.pharmacy.name)}</div>`}
+      ${(() => { const list = [].concat(C.pharmacy || []), many = list.length > 1;
+        return (many ? `<div class="sub" style="margin-bottom:-4px">${T("pharmacies")}</div>` : "") + list.map(ph => { const label = many ? P(ph.name) : `${T("pharmacy")}: ${P(ph.name)}`;
+          return clean(ph.coords) ? `<a class="btn btn-light" href="${maps(ph.coords)}" target="_blank" rel="noopener">${I.pin}${label}</a>` : `<div class="soft">${label}</div>`; }).join(""); })()}
+      ${C.pharmacyNote ? `<p style="font-size:16px;color:var(--muted)">${P(C.pharmacyNote)}</p>` : ""}
       ${clean(C.hospital.coords) ? `<a class="btn btn-light" href="${maps(C.hospital.coords)}" target="_blank" rel="noopener">${I.pin}${T("ae")}: ${P(C.hospital.name)}</a>` : `<div class="soft">${T("ae")}: ${P(C.hospital.name)}</div>`}
       <div class="soft">${C.utilitiesLocked ? T("utilLocked") : `<b>${T("stopcock")}:</b> ${P(C.stopcock)}<br><b>${T("fuse")}:</b> ${P(C.fuseBox)}`}</div>
     </div>
@@ -272,6 +280,35 @@
     </div>
     <a class="btn btn-primary" href="${esc(C.discountUrl)}" style="margin-top:16px">${T("claim")}</a>
     <p style="margin-top:12px;font-size:16px;color:var(--muted)">${T("orCode", { code: `<span class="code" dir="ltr">${esc(C.discountCode)}</span>` })}</p>
+
+    <div class="join" id="join">
+      <h3>${T("joinTitle")}</h3>
+      <p>${T("joinD")}</p>
+      <div class="join-ok" id="joinOk" role="status"${store.get("hollJoined") ? "" : " hidden"}>${T("fOk")}</div>
+      <form id="joinForm" method="POST" action="${BREVO}" target="brevoFrame" novalidate${store.get("hollJoined") ? " hidden" : ""}>
+        <label class="f"><span>${T("fName")}</span><input type="text" name="NOMBRE" maxlength="200" autocomplete="given-name"></label>
+        <label class="f"><span>${T("fEmail")} *</span><input type="email" name="EMAIL" id="joinEmail" autocomplete="email" inputmode="email" dir="ltr" required></label>
+        <fieldset class="f"><legend>${T("fCities")}</legend>
+          <label class="chk"><input type="checkbox" name="BIRMINGHAM" value="1"> Birmingham</label>
+          <label class="chk"><input type="checkbox" name="NOTTINGHAM" value="1"> Nottingham</label>
+        </fieldset>
+        <fieldset class="f"><legend>${T("fPurpose")}</legend>
+          <label class="chk"><input type="radio" name="TRAVEL_PURPOSE" value="1"> ${T("pWork")}</label>
+          <label class="chk"><input type="radio" name="TRAVEL_PURPOSE" value="2"> ${T("pLeisure")}</label>
+          <label class="chk"><input type="radio" name="TRAVEL_PURPOSE" value="3"> ${T("pBoth")}</label>
+        </fieldset>
+        <label class="chk consent"><input type="checkbox" name="OPT_IN" value="1" id="joinConsent"> <span>${T("fConsent")} *</span></label>
+        <input type="hidden" name="PROPERTY" value="${esc((typeof C.propertyName === "string" ? C.propertyName : (C.propertyName.en || "")))}">
+        <input type="hidden" name="GUIDE_LANGUAGE" value="${lang}">
+        <input type="hidden" name="locale" value="en">
+        <input type="hidden" name="html_type" value="simple">
+        <input type="text" name="email_address_check" value="" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="join-err" id="joinErr" role="alert" hidden></p>
+        <button class="btn btn-primary" type="submit" id="joinBtn">${T("fSend")}</button>
+        <p class="fine">${T("fBrevo")}</p>
+      </form>
+      <iframe name="brevoFrame" id="brevoFrame" title="Brevo" hidden></iframe>
+    </div>
   </section>
 
   ${T("legal") ? `<p class="legal">${T("legal")}</p>` : ""}
@@ -332,6 +369,37 @@
     }));
     lb.onclick = e => { if (e.target !== lbImg) closeLb(); };
     document.onkeydown = e => { if (e.key === "Escape" && !lb.hidden) closeLb(); };
+
+    // Promo strip: hide for good once closed
+    const promoX = document.getElementById("promoX");
+    if (promoX) promoX.addEventListener("click", () => { store.set("hollPromoHide", "1"); document.getElementById("promo").remove(); });
+
+    // Returning guests sign up: sent to Brevo in a hidden frame, the guest never leaves the guide
+    const jf = document.getElementById("joinForm");
+    if (jf) {
+      const err = document.getElementById("joinErr"), btn = document.getElementById("joinBtn"), frame = document.getElementById("brevoFrame");
+      let sent = false;
+      const done = () => {
+        if (!sent) return; sent = false;
+        store.set("hollJoined", "1");
+        jf.hidden = true;
+        document.getElementById("joinOk").hidden = false;
+        const pr = document.getElementById("promo"); if (pr) pr.remove();
+      };
+      frame.addEventListener("load", done);
+      jf.addEventListener("change", () => { err.hidden = true; });
+      jf.addEventListener("submit", e => {
+        const email = document.getElementById("joinEmail").value.trim();
+        let msg = "";
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) msg = T("fErrEmail");
+        else if (!document.getElementById("joinConsent").checked) msg = T("fErrConsent");
+        if (msg) { e.preventDefault(); err.textContent = msg; err.hidden = false; return; }
+        err.hidden = true;
+        btn.disabled = true; btn.textContent = T("fSending");
+        sent = true;
+        setTimeout(done, 8000);
+      });
+    }
 
     const toast = msg => { const el = document.getElementById("toast"); el.textContent = msg; el.classList.add("on"); setTimeout(() => el.classList.remove("on"), 1600); };
     document.getElementById("copyPw").addEventListener("click", () => {

@@ -58,7 +58,7 @@ en: {
   fire4: "Do not re-enter the building.",
   fire5: "Please do not tamper with smoke alarms.",
   emTitle: "Emergencies and useful numbers", em999: "Fire, police, ambulance", em111: "NHS, urgent but not an emergency", emGas: "Gas emergency, if you smell gas",
-  pharmacy: "Nearest pharmacy", ae: "Nearest A&E (hospital emergency department)", stopcock: "Water stopcock", fuse: "Fuse box",
+  pharmacy: "Nearest pharmacy", pharmacies: "Nearest pharmacies", ae: "Nearest A&E (hospital emergency department)", stopcock: "Water stopcock", fuse: "Fuse box",
   helpTitle: "If something goes wrong",
   helpIntro: "Most issues can be fixed quickly. Contact us first, tell us what is happening, and send a photo if you can.",
   wifiLabel: "Wi-Fi", wifiFix: "Switch the router off for 30 seconds, then back on.",
@@ -75,9 +75,14 @@ en: {
   cat_eat: "Eat", cat_coffee: "Coffee", cat_drinks: "Drinks", cat_essentials: "Essentials", cat_see: "See and do",
   thanksTitle: "Thank you for staying with us.", bookDirect: "Next time, book direct.",
   same: "Same apartment, same service, same conditions as booking through a platform. The only difference is the price.",
-  less: "10% less", lessD: "Our website prices are already 10% lower than on booking platforms.",
-  extra: "+7% extra", extraD: "Because you have already stayed with us, you get an extra 7% off on top.",
-  claim: "Claim my extra 7%", orCode: "Or use code {code} at booking.hollgroup.co.uk"
+  less: "Lower prices", lessD: "Our website prices are lower than on the booking apps.",
+  extra: "+5% off", extraD: "As a returning guest, you get an extra 5% off on top.",
+  claim: "Book with my 5% off", orCode: "Or use code {code} at booking.hollgroup.co.uk",
+  joinTitle: "Want 7% instead of 5%?", joinD: "Join our returning guests list and we will email you a 7% code. You will also hear first about new homes in Birmingham and Nottingham. Only occasional emails.",
+  fName: "First name", fEmail: "Email", fCities: "Cities you are interested in", fPurpose: "You usually travel for", pWork: "Work", pLeisure: "Leisure", pBoth: "Both",
+  fConsent: "I agree to receive emails from Holl Group with offers and news. I can unsubscribe at any time.", fBrevo: "We send our emails with Brevo. Your details are only used for Holl Group emails.",
+  fSend: "Email me my 7% code", fSending: "Sending…", fOk: "Almost there. Open the email we have just sent you and tap the confirmation link. Your 7% code arrives straight after. Check your spam folder if you cannot see it.",
+  fErrEmail: "Please enter a valid email address.", fErrConsent: "Please tick the box to agree.", promo: "Returning guest? Get 7% off your next stay.", promoGo: "See how"
 },
 
 es: {
@@ -131,7 +136,7 @@ es: {
   fire4: "No vuelvas a entrar en el edificio.",
   fire5: "No manipules los detectores de humo.",
   emTitle: "Emergencias y números útiles", em999: "Bomberos, policía, ambulancia", em111: "NHS, urgente pero no emergencia", emGas: "Emergencia de gas, si hueles a gas",
-  pharmacy: "Farmacia más cercana", ae: "Urgencias más cercanas (A&E)", stopcock: "Llave de paso del agua", fuse: "Cuadro eléctrico",
+  pharmacy: "Farmacia más cercana", pharmacies: "Farmacias más cercanas", ae: "Urgencias más cercanas (A&E)", stopcock: "Llave de paso del agua", fuse: "Cuadro eléctrico",
   helpTitle: "Si algo falla",
   helpIntro: "La mayoría de los problemas se solucionan rápido. Contáctanos primero, cuéntanos qué pasa y envía una foto si puedes.",
   wifiLabel: "Wi-Fi", wifiFix: "Apaga el router 30 segundos y vuelve a encenderlo.",
@@ -148,9 +153,14 @@ es: {
   cat_eat: "Comer", cat_coffee: "Café", cat_drinks: "Copas", cat_essentials: "Básicos", cat_see: "Qué ver y hacer",
   thanksTitle: "Gracias por alojarte con nosotros.", bookDirect: "La próxima vez, reserva directo.",
   same: "El mismo apartamento, el mismo servicio y las mismas condiciones que en una plataforma. La única diferencia es el precio.",
-  less: "10% menos", lessD: "Los precios de nuestra web ya son un 10% más bajos que en las plataformas.",
-  extra: "+7% extra", extraD: "Como ya te has alojado con nosotros, tienes un 7% extra de descuento.",
-  claim: "Quiero mi 7% extra", orCode: "O usa el código {code} en booking.hollgroup.co.uk"
+  less: "Precios más bajos", lessD: "Los precios de nuestra web son más bajos que en las apps de reservas.",
+  extra: "+5% extra", extraD: "Como ya te has alojado con nosotros, tienes un 5% extra de descuento.",
+  claim: "Reservar con mi 5%", orCode: "O usa el código {code} en booking.hollgroup.co.uk",
+  joinTitle: "¿Quieres un 7% en vez de un 5%?", joinD: "Únete a nuestra lista de huéspedes habituales y te enviaremos por email un código del 7%. Además, serás el primero en conocer nuevos alojamientos en Birmingham y Nottingham. Solo emails ocasionales.",
+  fName: "Nombre", fEmail: "Email", fCities: "Ciudades que te interesan", fPurpose: "Sueles viajar por", pWork: "Trabajo", pLeisure: "Ocio", pBoth: "Ambos",
+  fConsent: "Acepto recibir emails de Holl Group con ofertas y novedades. Puedo darme de baja cuando quiera.", fBrevo: "Enviamos nuestros emails con Brevo. Tus datos solo se usan para los emails de Holl Group.",
+  fSend: "Envíame mi código del 7%", fSending: "Enviando…", fOk: "Ya casi está. Abre el email que te acabamos de enviar y pulsa el enlace de confirmación. Tu código del 7% llegará justo después. Revisa la carpeta de spam si no lo ves.",
+  fErrEmail: "Introduce un email válido.", fErrConsent: "Marca la casilla para aceptar.", promo: "¿Ya te has alojado con nosotros? Consigue un 7% en tu próxima estancia.", promoGo: "Ver cómo"
 },
 
 fr: {
@@ -204,7 +214,7 @@ fr: {
   fire4: "Ne retournez pas dans le bâtiment.",
   fire5: "Ne touchez pas aux détecteurs de fumée.",
   emTitle: "Urgences et numéros utiles", em999: "Pompiers, police, ambulance", em111: "NHS, urgent mais pas une urgence vitale", emGas: "Urgence gaz, si vous sentez du gaz",
-  pharmacy: "Pharmacie la plus proche", ae: "Urgences les plus proches (A&E)", stopcock: "Robinet d'arrivée d'eau", fuse: "Tableau électrique",
+  pharmacy: "Pharmacie la plus proche", pharmacies: "Pharmacies les plus proches", ae: "Urgences les plus proches (A&E)", stopcock: "Robinet d'arrivée d'eau", fuse: "Tableau électrique",
   helpTitle: "En cas de problème",
   helpIntro: "La plupart des problèmes se règlent rapidement. Contactez-nous d'abord, expliquez-nous ce qui se passe et envoyez une photo si possible.",
   wifiLabel: "Wi-Fi", wifiFix: "Éteignez la box pendant 30 secondes, puis rallumez-la.",
@@ -221,9 +231,14 @@ fr: {
   cat_eat: "Manger", cat_coffee: "Café", cat_drinks: "Boire un verre", cat_essentials: "Essentiels", cat_see: "À voir et à faire",
   thanksTitle: "Merci d'avoir séjourné chez nous.", bookDirect: "La prochaine fois, réservez en direct.",
   same: "Même appartement, même service, mêmes conditions que sur une plateforme. Seul le prix change.",
-  less: "10 % de moins", lessD: "Les prix de notre site sont déjà 10 % moins chers que sur les plateformes.",
-  extra: "+7 % en plus", extraD: "Comme vous avez déjà séjourné chez nous, vous bénéficiez de 7 % de réduction supplémentaire.",
-  claim: "Profiter de mes 7 % en plus", orCode: "Ou utilisez le code {code} sur booking.hollgroup.co.uk"
+  less: "Prix plus bas", lessD: "Les prix de notre site sont plus bas que sur les applications de réservation.",
+  extra: "+5 % en plus", extraD: "Comme vous avez déjà séjourné chez nous, vous bénéficiez de 5 % de réduction supplémentaire.",
+  claim: "Réserver avec mes 5 %", orCode: "Ou utilisez le code {code} sur booking.hollgroup.co.uk",
+  joinTitle: "7 % au lieu de 5 % ?", joinD: "Inscrivez-vous à notre liste de clients fidèles et nous vous enverrons par e-mail un code de 7 %. Vous serez aussi informé en premier de nos nouveaux logements à Birmingham et Nottingham. Seulement des e-mails occasionnels.",
+  fName: "Prénom", fEmail: "E-mail", fCities: "Villes qui vous intéressent", fPurpose: "Vous voyagez surtout pour", pWork: "Le travail", pLeisure: "Les loisirs", pBoth: "Les deux",
+  fConsent: "J'accepte de recevoir des e-mails de Holl Group avec des offres et des nouveautés. Je peux me désinscrire à tout moment.", fBrevo: "Nous envoyons nos e-mails avec Brevo. Vos données servent uniquement aux e-mails de Holl Group.",
+  fSend: "Recevoir mon code de 7 %", fSending: "Envoi…", fOk: "Presque terminé. Ouvrez l'e-mail que nous venons de vous envoyer et touchez le lien de confirmation. Votre code de 7 % arrive juste après. Vérifiez vos spams si vous ne le voyez pas.",
+  fErrEmail: "Veuillez saisir une adresse e-mail valide.", fErrConsent: "Veuillez cocher la case pour accepter.", promo: "Déjà séjourné chez nous ? Obtenez 7 % sur votre prochain séjour.", promoGo: "Voir comment"
 },
 
 de: {
@@ -277,7 +292,7 @@ de: {
   fire4: "Betreten Sie das Gebäude nicht wieder.",
   fire5: "Bitte manipulieren Sie keine Rauchmelder.",
   emTitle: "Notfälle und nützliche Nummern", em999: "Feuerwehr, Polizei, Rettungsdienst", em111: "NHS, dringend, aber kein Notfall", emGas: "Gasnotruf, wenn Sie Gas riechen",
-  pharmacy: "Nächste Apotheke", ae: "Nächste Notaufnahme (A&E)", stopcock: "Hauptwasserhahn", fuse: "Sicherungskasten",
+  pharmacy: "Nächste Apotheke", pharmacies: "Nächste Apotheken", ae: "Nächste Notaufnahme (A&E)", stopcock: "Hauptwasserhahn", fuse: "Sicherungskasten",
   helpTitle: "Wenn etwas nicht funktioniert",
   helpIntro: "Die meisten Probleme lassen sich schnell lösen. Kontaktieren Sie uns zuerst, beschreiben Sie, was passiert, und schicken Sie wenn möglich ein Foto.",
   wifiLabel: "WLAN", wifiFix: "Schalten Sie den Router 30 Sekunden aus und dann wieder ein.",
@@ -294,9 +309,14 @@ de: {
   cat_eat: "Essen", cat_coffee: "Kaffee", cat_drinks: "Drinks", cat_essentials: "Einkaufen", cat_see: "Sehen und erleben",
   thanksTitle: "Danke, dass Sie bei uns gewohnt haben.", bookDirect: "Buchen Sie nächstes Mal direkt.",
   same: "Gleiche Wohnung, gleicher Service, gleiche Bedingungen wie bei einer Buchungsplattform. Nur der Preis ist anders.",
-  less: "10 % günstiger", lessD: "Die Preise auf unserer Website liegen bereits 10 % unter denen der Buchungsplattformen.",
-  extra: "+7 % extra", extraD: "Weil Sie schon bei uns gewohnt haben, erhalten Sie zusätzlich 7 % Rabatt.",
-  claim: "Meine 7 % extra sichern", orCode: "Oder nutzen Sie den Code {code} auf booking.hollgroup.co.uk"
+  less: "Günstigere Preise", lessD: "Die Preise auf unserer Website sind niedriger als in den Buchungs-Apps.",
+  extra: "+5 % extra", extraD: "Weil Sie schon bei uns gewohnt haben, erhalten Sie zusätzlich 5 % Rabatt.",
+  claim: "Mit meinen 5 % buchen", orCode: "Oder nutzen Sie den Code {code} auf booking.hollgroup.co.uk",
+  joinTitle: "7 % statt 5 %?", joinD: "Tragen Sie sich in unsere Liste für Stammgäste ein, und wir senden Ihnen einen 7 %-Code per E-Mail. Außerdem erfahren Sie als Erste von neuen Unterkünften in Birmingham und Nottingham. Nur gelegentliche E-Mails.",
+  fName: "Vorname", fEmail: "E-Mail", fCities: "Städte, die Sie interessieren", fPurpose: "Sie reisen meist", pWork: "Beruflich", pLeisure: "Privat", pBoth: "Beides",
+  fConsent: "Ich möchte E-Mails von Holl Group mit Angeboten und Neuigkeiten erhalten. Ich kann mich jederzeit abmelden.", fBrevo: "Wir versenden unsere E-Mails über Brevo. Ihre Daten werden nur für E-Mails von Holl Group verwendet.",
+  fSend: "7 %-Code per E-Mail erhalten", fSending: "Wird gesendet…", fOk: "Fast geschafft. Öffnen Sie die E-Mail, die wir Ihnen gerade geschickt haben, und tippen Sie auf den Bestätigungslink. Ihr 7 %-Code kommt direkt danach. Sehen Sie im Spam-Ordner nach, falls Sie sie nicht finden.",
+  fErrEmail: "Bitte geben Sie eine gültige E-Mail-Adresse ein.", fErrConsent: "Bitte setzen Sie das Häkchen, um zuzustimmen.", promo: "Schon bei uns gewohnt? 7 % Rabatt auf Ihren nächsten Aufenthalt.", promoGo: "So geht's"
 },
 
 it: {
@@ -350,7 +370,7 @@ it: {
   fire4: "Non rientrare nell'edificio.",
   fire5: "Non manomettere i rilevatori di fumo.",
   emTitle: "Emergenze e numeri utili", em999: "Vigili del fuoco, polizia, ambulanza", em111: "NHS, urgente ma non un'emergenza", emGas: "Emergenza gas, se senti odore di gas",
-  pharmacy: "Farmacia più vicina", ae: "Pronto soccorso più vicino (A&E)", stopcock: "Rubinetto generale dell'acqua", fuse: "Quadro elettrico",
+  pharmacy: "Farmacia più vicina", pharmacies: "Farmacie più vicine", ae: "Pronto soccorso più vicino (A&E)", stopcock: "Rubinetto generale dell'acqua", fuse: "Quadro elettrico",
   helpTitle: "Se qualcosa non va",
   helpIntro: "La maggior parte dei problemi si risolve in fretta. Contattaci prima, spiegaci cosa succede e mandaci una foto se puoi.",
   wifiLabel: "Wi-Fi", wifiFix: "Spegni il router per 30 secondi, poi riaccendilo.",
@@ -367,9 +387,14 @@ it: {
   cat_eat: "Mangiare", cat_coffee: "Caffè", cat_drinks: "Drink", cat_essentials: "Essenziali", cat_see: "Da vedere e fare",
   thanksTitle: "Grazie per aver soggiornato da noi.", bookDirect: "La prossima volta, prenota direttamente.",
   same: "Stesso appartamento, stesso servizio, stesse condizioni di una piattaforma. Cambia solo il prezzo.",
-  less: "10% in meno", lessD: "I prezzi sul nostro sito sono già più bassi del 10% rispetto alle piattaforme.",
-  extra: "+7% extra", extraD: "Poiché hai già soggiornato da noi, hai un ulteriore 7% di sconto.",
-  claim: "Ottieni il mio 7% extra", orCode: "Oppure usa il codice {code} su booking.hollgroup.co.uk"
+  less: "Prezzi più bassi", lessD: "I prezzi sul nostro sito sono più bassi che sulle app di prenotazione.",
+  extra: "+5% extra", extraD: "Poiché hai già soggiornato da noi, hai un ulteriore 5% di sconto.",
+  claim: "Prenota con il mio 5%", orCode: "Oppure usa il codice {code} su booking.hollgroup.co.uk",
+  joinTitle: "Vuoi il 7% invece del 5%?", joinD: "Iscriviti alla nostra lista di ospiti abituali e ti invieremo via email un codice del 7%. Sarai anche il primo a sapere dei nuovi alloggi a Birmingham e Nottingham. Solo email occasionali.",
+  fName: "Nome", fEmail: "Email", fCities: "Città che ti interessano", fPurpose: "Di solito viaggi per", pWork: "Lavoro", pLeisure: "Svago", pBoth: "Entrambi",
+  fConsent: "Accetto di ricevere email da Holl Group con offerte e novità. Posso disiscrivermi in qualsiasi momento.", fBrevo: "Inviamo le nostre email con Brevo. I tuoi dati sono usati solo per le email di Holl Group.",
+  fSend: "Inviami il codice del 7%", fSending: "Invio…", fOk: "Quasi fatto. Apri l'email che ti abbiamo appena inviato e tocca il link di conferma. Il tuo codice del 7% arriva subito dopo. Controlla lo spam se non la vedi.",
+  fErrEmail: "Inserisci un indirizzo email valido.", fErrConsent: "Spunta la casella per accettare.", promo: "Hai già soggiornato da noi? Ottieni il 7% sul prossimo soggiorno.", promoGo: "Scopri come"
 },
 
 pt: {
@@ -423,7 +448,7 @@ pt: {
   fire4: "Não volte a entrar no edifício.",
   fire5: "Não mexa nos detetores de fumo.",
   emTitle: "Emergências e números úteis", em999: "Bombeiros, polícia, ambulância", em111: "NHS, urgente mas não emergência", emGas: "Emergência de gás, se cheirar a gás",
-  pharmacy: "Farmácia mais próxima", ae: "Urgências mais próximas (A&E)", stopcock: "Torneira de segurança da água", fuse: "Quadro elétrico",
+  pharmacy: "Farmácia mais próxima", pharmacies: "Farmácias mais próximas", ae: "Urgências mais próximas (A&E)", stopcock: "Torneira de segurança da água", fuse: "Quadro elétrico",
   helpTitle: "Se algo correr mal",
   helpIntro: "A maioria dos problemas resolve-se depressa. Contacte-nos primeiro, diga-nos o que está a acontecer e envie uma foto se puder.",
   wifiLabel: "Wi-Fi", wifiFix: "Desligue o router durante 30 segundos e volte a ligá-lo.",
@@ -440,9 +465,14 @@ pt: {
   cat_eat: "Comer", cat_coffee: "Café", cat_drinks: "Bebidas", cat_essentials: "Essenciais", cat_see: "Ver e fazer",
   thanksTitle: "Obrigado por ficar connosco.", bookDirect: "Da próxima vez, reserve diretamente.",
   same: "O mesmo apartamento, o mesmo serviço e as mesmas condições que numa plataforma. A única diferença é o preço.",
-  less: "10% menos", lessD: "Os preços do nosso site já são 10% mais baixos do que nas plataformas.",
-  extra: "+7% extra", extraD: "Como já ficou connosco, tem mais 7% de desconto.",
-  claim: "Quero os meus 7% extra", orCode: "Ou use o código {code} em booking.hollgroup.co.uk"
+  less: "Preços mais baixos", lessD: "Os preços do nosso site são mais baixos do que nas apps de reservas.",
+  extra: "+5% extra", extraD: "Como já ficou connosco, tem mais 5% de desconto.",
+  claim: "Reservar com os meus 5%", orCode: "Ou use o código {code} em booking.hollgroup.co.uk",
+  joinTitle: "Quer 7% em vez de 5%?", joinD: "Junte-se à nossa lista de hóspedes habituais e enviamos-lhe por email um código de 7%. Também será o primeiro a saber de novos alojamentos em Birmingham e Nottingham. Apenas emails ocasionais.",
+  fName: "Nome", fEmail: "Email", fCities: "Cidades que lhe interessam", fPurpose: "Costuma viajar por", pWork: "Trabalho", pLeisure: "Lazer", pBoth: "Ambos",
+  fConsent: "Aceito receber emails da Holl Group com ofertas e novidades. Posso cancelar a subscrição a qualquer momento.", fBrevo: "Enviamos os nossos emails com a Brevo. Os seus dados só são usados para os emails da Holl Group.",
+  fSend: "Enviar-me o código de 7%", fSending: "A enviar…", fOk: "Quase pronto. Abra o email que acabámos de lhe enviar e toque no link de confirmação. O seu código de 7% chega logo a seguir. Verifique a pasta de spam se não o encontrar.",
+  fErrEmail: "Introduza um email válido.", fErrConsent: "Assinale a caixa para aceitar.", promo: "Já ficou connosco? Obtenha 7% na próxima estadia.", promoGo: "Ver como"
 },
 
 zh: {
@@ -496,7 +526,7 @@ zh: {
   fire4: "请勿返回楼内。",
   fire5: "请勿擅自改动烟雾报警器。",
   emTitle: "紧急情况与常用电话", em999: "消防、警察、救护车", em111: "NHS，紧急但非危急情况", emGas: "燃气紧急情况，如闻到煤气味",
-  pharmacy: "最近的药店", ae: "最近的急诊（A&E）", stopcock: "总水阀", fuse: "电闸箱",
+  pharmacy: "最近的药店", pharmacies: "附近的药店", ae: "最近的急诊（A&E）", stopcock: "总水阀", fuse: "电闸箱",
   helpTitle: "遇到问题时",
   helpIntro: "大多数问题都能很快解决。请先联系我们，告诉我们发生了什么，如可能请发送照片。",
   wifiLabel: "Wi-Fi", wifiFix: "关闭路由器 30 秒，然后重新开启。",
@@ -513,9 +543,14 @@ zh: {
   cat_eat: "美食", cat_coffee: "咖啡", cat_drinks: "酒吧", cat_essentials: "日常采购", cat_see: "游玩",
   thanksTitle: "感谢您的入住。", bookDirect: "下次请直接预订。",
   same: "同样的公寓、同样的服务、同样的条件，与平台预订完全一致。唯一的区别是价格。",
-  less: "便宜 10%", lessD: "我们官网的价格本就比预订平台低 10%。",
-  extra: "再减 7%", extraD: "由于您曾入住过，可额外再享 7% 优惠。",
-  claim: "领取额外 7% 优惠", orCode: "或在 booking.hollgroup.co.uk 使用优惠码 {code}"
+  less: "价格更低", lessD: "我们官网的价格比预订平台更低。",
+  extra: "再减 5%", extraD: "由于您曾入住过，可额外再享 5% 优惠。",
+  claim: "使用 5% 优惠预订", orCode: "或在 booking.hollgroup.co.uk 使用优惠码 {code}",
+  joinTitle: "想要 7% 而不是 5%？", joinD: "加入我们的回头客名单，我们会通过电子邮件发送 7% 优惠码。伯明翰和诺丁汉有新房源时，您也会第一时间知道。邮件不多。",
+  fName: "名字", fEmail: "电子邮箱", fCities: "感兴趣的城市", fPurpose: "您通常出行是为了", pWork: "工作", pLeisure: "休闲", pBoth: "两者都有",
+  fConsent: "我同意接收 Holl Group 的优惠和新闻邮件，可随时退订。", fBrevo: "我们通过 Brevo 发送邮件。您的信息仅用于 Holl Group 的邮件。",
+  fSend: "把 7% 优惠码发给我", fSending: "发送中…", fOk: "快完成了。请打开我们刚发送的邮件并点击确认链接，7% 优惠码随后就会送达。如果没看到，请查看垃圾邮件文件夹。",
+  fErrEmail: "请输入有效的电子邮箱。", fErrConsent: "请勾选同意。", promo: "曾入住过？下次入住可享 7% 优惠。", promoGo: "了解方法"
 },
 
 ar: {
@@ -569,7 +604,7 @@ ar: {
   fire4: "لا تعد إلى داخل المبنى.",
   fire5: "يرجى عدم العبث بأجهزة إنذار الدخان.",
   emTitle: "الطوارئ وأرقام مفيدة", em999: "الإطفاء، الشرطة، الإسعاف", em111: "NHS، حالة عاجلة لكنها ليست طارئة", emGas: "طوارئ الغاز، إذا شممت رائحة غاز",
-  pharmacy: "أقرب صيدلية", ae: "أقرب قسم طوارئ (A&E)", stopcock: "محبس المياه الرئيسي", fuse: "لوحة الكهرباء",
+  pharmacy: "أقرب صيدلية", pharmacies: "أقرب الصيدليات", ae: "أقرب قسم طوارئ (A&E)", stopcock: "محبس المياه الرئيسي", fuse: "لوحة الكهرباء",
   helpTitle: "إذا حدثت مشكلة",
   helpIntro: "يمكن حلّ معظم المشكلات بسرعة. تواصل معنا أولًا، وأخبرنا بما يحدث، وأرسل صورة إن أمكن.",
   wifiLabel: "واي فاي", wifiFix: "أطفئ جهاز الراوتر لمدة 30 ثانية ثم أعد تشغيله.",
@@ -586,9 +621,14 @@ ar: {
   cat_eat: "طعام", cat_coffee: "قهوة", cat_drinks: "مشروبات", cat_essentials: "مستلزمات", cat_see: "أماكن وأنشطة",
   thanksTitle: "شكرًا لإقامتك معنا.", bookDirect: "في المرة القادمة، احجز مباشرة.",
   same: "الشقة نفسها والخدمة نفسها والشروط نفسها كما في منصات الحجز. الفرق الوحيد هو السعر.",
-  less: "أقل بنسبة 10%", lessD: "أسعار موقعنا أقل بالفعل بنسبة 10% من منصات الحجز.",
-  extra: "خصم إضافي 7%", extraD: "لأنك أقمت معنا من قبل، تحصل على خصم إضافي بنسبة 7%.",
-  claim: "احصل على خصم 7% الإضافي", orCode: "أو استخدم الرمز {code} على booking.hollgroup.co.uk"
+  less: "أسعار أقل", lessD: "أسعار موقعنا أقل من تطبيقات الحجز.",
+  extra: "خصم إضافي 5%", extraD: "لأنك أقمت معنا من قبل، تحصل على خصم إضافي بنسبة 5%.",
+  claim: "احجز بخصم 5%", orCode: "أو استخدم الرمز {code} على booking.hollgroup.co.uk",
+  joinTitle: "هل تريد 7% بدلًا من 5%؟", joinD: "انضم إلى قائمة ضيوفنا الدائمين وسنرسل إليك رمز خصم 7% عبر البريد الإلكتروني. وستكون أول من يعرف عن مساكننا الجديدة في برمنغهام ونوتنغهام. رسائل قليلة فقط.",
+  fName: "الاسم الأول", fEmail: "البريد الإلكتروني", fCities: "المدن التي تهمك", fPurpose: "عادةً تسافر من أجل", pWork: "العمل", pLeisure: "الترفيه", pBoth: "كلاهما",
+  fConsent: "أوافق على تلقي رسائل بريد إلكتروني من Holl Group تتضمن عروضًا وأخبارًا، ويمكنني إلغاء الاشتراك في أي وقت.", fBrevo: "نرسل رسائلنا عبر Brevo، وتُستخدم بياناتك لرسائل Holl Group فقط.",
+  fSend: "أرسل لي رمز خصم 7%", fSending: "جارٍ الإرسال…", fOk: "اقتربت من الانتهاء. افتح الرسالة التي أرسلناها لك للتو واضغط على رابط التأكيد، وسيصلك رمز خصم 7% بعدها مباشرة. تحقق من مجلد الرسائل غير المرغوب فيها إن لم تجدها.",
+  fErrEmail: "يُرجى إدخال بريد إلكتروني صالح.", fErrConsent: "يُرجى تحديد المربع للموافقة.", promo: "أقمت معنا من قبل؟ احصل على خصم 7% على إقامتك القادمة.", promoGo: "اعرف كيف"
 },
 
 ja: {
@@ -642,7 +682,7 @@ ja: {
   fire4: "建物には再び入らないでください。",
   fire5: "煙探知機には触れないでください。",
   emTitle: "緊急時と便利な連絡先", em999: "消防・警察・救急", em111: "NHS（急ぎだが緊急ではない場合）", emGas: "ガス漏れ時（ガスのにおいがしたら）",
-  pharmacy: "最寄りの薬局", ae: "最寄りの救急外来（A&E）", stopcock: "水道の元栓", fuse: "ブレーカー",
+  pharmacy: "最寄りの薬局", pharmacies: "近くの薬局", ae: "最寄りの救急外来（A&E）", stopcock: "水道の元栓", fuse: "ブレーカー",
   helpTitle: "困ったときは",
   helpIntro: "ほとんどの問題はすぐに解決できます。まずはご連絡いただき、状況を教えてください。可能であれば写真もお送りください。",
   wifiLabel: "Wi-Fi", wifiFix: "ルーターの電源を 30 秒切ってから、再度入れてください。",
@@ -659,8 +699,13 @@ ja: {
   cat_eat: "食事", cat_coffee: "カフェ", cat_drinks: "バー", cat_essentials: "日用品", cat_see: "観光・体験",
   thanksTitle: "ご宿泊ありがとうございました。", bookDirect: "次回は直接予約で。",
   same: "お部屋も、サービスも、条件もプラットフォームでの予約と同じです。違うのは料金だけです。",
-  less: "10% お得", lessD: "公式サイトの料金は、予約プラットフォームよりすでに 10% 安くなっています。",
-  extra: "さらに 7% オフ", extraD: "以前ご宿泊いただいた方は、さらに 7% 割引になります。",
-  claim: "7% 追加割引を受け取る", orCode: "または booking.hollgroup.co.uk でコード {code} をご利用ください"
+  less: "より安い料金", lessD: "公式サイトの料金は予約アプリより安くなっています。",
+  extra: "さらに 5% オフ", extraD: "以前ご宿泊いただいた方は、さらに 5% 割引になります。",
+  claim: "5% 割引で予約する", orCode: "または booking.hollgroup.co.uk でコード {code} をご利用ください",
+  joinTitle: "5% ではなく 7% をご希望ですか？", joinD: "リピーター向けリストにご登録いただくと、7% 割引コードをメールでお送りします。バーミンガムとノッティンガムの新しい物件情報もいち早くお届けします。メールはたまにだけです。",
+  fName: "名", fEmail: "メールアドレス", fCities: "興味のある都市", fPurpose: "主な旅行目的", pWork: "仕事", pLeisure: "レジャー", pBoth: "両方",
+  fConsent: "Holl Group からお得な情報やお知らせのメールを受け取ることに同意します。いつでも配信停止できます。", fBrevo: "メールは Brevo を通じて送信します。お客様の情報は Holl Group のメール以外には使用しません。",
+  fSend: "7% コードをメールで受け取る", fSending: "送信中…", fOk: "あと少しです。お送りしたメールを開き、確認リンクをタップしてください。その後すぐに 7% コードが届きます。見つからない場合は迷惑メールフォルダをご確認ください。",
+  fErrEmail: "有効なメールアドレスを入力してください。", fErrConsent: "同意するにはチェックを入れてください。", promo: "ご宿泊いただいたことがありますか？次回のご滞在が 7% オフに。", promoGo: "詳しく見る"
 }
 };

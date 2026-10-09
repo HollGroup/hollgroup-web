@@ -19,6 +19,8 @@
 
 ## Cambiar algo en todas las guías
 
+- **Importante:** cada vez que cambies un archivo de `assets/`, sube el número `?v=` (por ejemplo de `20261009b` a `20261010a`) en el `index.html` de cada propiedad y de `_template`. Si no, Cloudflare y los móviles siguen mostrando la versión vieja.
+
 - **Un texto:** en `assets/guide-i18n.js`, en los 9 idiomas.
 - **Un campo nuevo en CONFIG:** añádelo primero en `_template/index.html` y después en cada propiedad.
 
@@ -27,6 +29,13 @@
 - La primera vez, el huésped elige el idioma en la pantalla de bienvenida. La guía lo recuerda en su móvil.
 - Si añades `?lang=es` al enlace, la guía se abre directamente en ese idioma.
 - Códigos: en, es, fr, de, it, pt, zh, ar, ja.
+
+## Lista de huéspedes (Brevo)
+
+- La sección "Gracias" muestra el 5% (código 5REPEATING) a todos y un formulario para unirse a la lista "Returning guests" y recibir el 7% por email.
+- Cerca del principio hay un aviso pequeño que lleva al formulario. El huésped puede cerrarlo.
+- El formulario envía a Brevo: nombre, email, ciudades, motivo del viaje, consentimiento, PROPERTY (nombre de la propiedad) y GUIDE_LANGUAGE (idioma de la guía).
+- La dirección del formulario de Brevo está en `assets/guide.js` (constante BREVO). Si alguna vez creas otro formulario en Brevo, cambia solo esa línea.
 
 ## No olvidar
 

@@ -146,3 +146,27 @@ footer img{height:64px;width:auto;display:block;margin:0 auto 8px}
 .lb[hidden]{display:none}
 .lb img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px}
 .lb-close{position:absolute;top:calc(12px + env(safe-area-inset-top));right:12px;width:48px;height:48px;border-radius:50%;border:0;background:#fff;color:#1E1E1E;font-size:30px;line-height:1;cursor:pointer}
+
+/* Returning guests: promo strip and sign up form */
+.promo{display:flex;align-items:center;gap:10px;background:var(--accent-ink);color:#fff;border-radius:14px;padding:10px 12px;margin:0 0 16px;font-size:16px;font-weight:600}
+.promo span{flex:1;display:flex;align-items:center;gap:8px}
+.promo svg{width:22px;height:22px;flex-shrink:0}
+.promo a{color:#fff;white-space:nowrap;text-underline-offset:3px}
+.promo button{background:none;border:0;color:#fff;font-size:26px;line-height:1;cursor:pointer;min-width:40px;min-height:40px}
+.join{margin-top:24px;background:#fff;border-radius:16px;padding:18px 16px;text-align:start;border:2px solid var(--accent)}
+.join h3{font-size:22px;margin-bottom:6px;color:var(--accent-ink)}
+.join > p{font-size:16px;margin-bottom:14px}
+.join form{display:grid;gap:12px}
+.join .f{display:grid;gap:4px;border:0;margin:0;padding:0;font-size:16px;font-weight:600}
+.join legend{padding:0;margin-bottom:4px}
+.join input[type=text],.join input[type=email]{font:inherit;font-weight:400;font-size:17px;min-height:48px;padding:10px 12px;border:1.5px solid var(--line);border-radius:12px;width:100%;background:#fff;color:var(--ink)}
+.join input:focus-visible{outline:3px solid var(--accent);outline-offset:1px}
+.join .chk{display:flex;align-items:flex-start;gap:10px;font-weight:400;font-size:16px;min-height:40px;padding:6px 0;cursor:pointer}
+.join .chk input{width:22px;height:22px;margin:1px 0 0;accent-color:var(--accent-ink);flex-shrink:0}
+.join .consent{font-size:15px}
+.join input.hp{min-height:0;position:absolute;width:1px;height:1px;margin:0;padding:0;border:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.join-err{color:#8A1C1C;background:#FDECEC;border-radius:10px;padding:8px 12px;font-size:15px}
+.join-ok{background:var(--tint);border-radius:12px;padding:12px 14px;font-size:16px;font-weight:600;color:var(--accent-deep)}
+.join .fine{font-size:13px;color:var(--muted)}
+.join .btn[disabled]{opacity:.7}
+.join [hidden]{display:none!important}
