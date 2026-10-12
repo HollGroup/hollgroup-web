@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="theme-color" content="#1D7563">
+<title>Holl Group</title>
+<link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/guide/assets/guide.css?v=20261012a">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+/* =====================================================================
+   THE TIMBER HOUSE (Oldbury): property settings.
+   Never put the house number, the street address, access codes,
+   the padlock code or the exact lockbox position here.
+   ===================================================================== */
+const CONFIG = {
+  "propertyName": "The Timber House",
+  "area": "Oldbury, West Midlands",
+  "propertyType": "house",
+  "garden": true,
+  "exteriorCameras": true,
+  "privateAddress": true,
+  "entry": "lockbox",
+  "keysFirst": false,
+  "keysFirstWhere": "",
+  "smartLockCodeTimeLimited": true,
+  "smartLockHowTo": "",
+  "parking": "available",
+  "parkingDetails": {
+    "en": "Off-road parking for one car behind the house, through the black gate. Drive round the block to reach the gate at the back. The padlock code is in your check-in message."
+  },
+  "parkingNearby": {
+    "en": "Parking on the street is free, with no time limit. Please use it for a second car."
+  },
+  "parkingCoords": "",
+  "parkingNearbyCoords": "",
+  "parkingOptions": [],
+  "parkingPhotos": [],
+  "directions": {
+    "en": "Your full address is in your check-in message. Save it on your phone, you will need it for taxis and deliveries."
+  },
+  "transport": [],
+  "entranceCoords": "",
+  "lockboxCoords": "",
+  "lockboxAreaPhoto": "",
+  "keysNote": "",
+  "arrivalRoute": {
+    "title": {
+      "en": "Getting in"
+    },
+    "steps": [
+      {
+        "text": {
+          "en": "Collect the keys from the lockbox next to the front door. The code and the exact spot are in your check-in message."
+        },
+        "imgs": []
+      },
+      {
+        "text": {
+          "en": "There are three keys. Round silver key: outer door. Square silver key: front door, behind the small porch. Black key: back door to the garden."
+        },
+        "imgs": []
+      },
+      {
+        "text": {
+          "en": "All three doors have lift handles. Lift the handle up before you turn the key, both to lock and to unlock."
+        },
+        "imgs": []
+      }
+    ]
+  },
+  "binsRoute": {
+    "title": "",
+    "steps": []
+  },
+  "checkIn": "15:00",
+  "checkOut": "10:00",
+  "wifiName": "HagleyHG-Guest",
+  "wifiPassword": "www.hollgroup.co.uk",
+  "sleeps": 6,
+  "bathrooms": 2,
+  "beds": [
+    {
+      "room": "bed1",
+      "beds": [
+        "single",
+        "single"
+      ],
+      "ensuite": true,
+      "note": {
+        "en": "Upstairs. The en-suite shower room can only be reached through this bedroom."
+      }
+    },
+    {
+      "room": "bed2",
+      "beds": [
+        "single",
+        "single"
+      ],
+      "note": {
+        "en": "Upstairs. Please use the bathroom downstairs."
+      }
+    },
+    {
+      "room": "living",
+      "beds": [
+        "sofa"
+      ],
+      "note": {
+        "en": "Double sofa bed in the living room. Its bedding is stored under the sofa bed."
+      }
+    }
+  ],
+  "property": [
+    {
+      "title": {
+        "en": "Your home"
+      },
+      "text": {
+        "en": "A whole house, newly renovated, on two floors. Downstairs: living room with the bay window, family room with the dining table, kitchen and a bathroom with bath and shower. Upstairs: two bedrooms, the larger one with its own shower room. There is a garden at the back."
+      }
+    },
+    {
+      "title": {
+        "en": "Heating"
+      },
+      "text": {
+        "en": "Gas central heating from a combi boiler, with a smart thermostat on the wall. [PROPERTY: how guests change the temperature]"
+      }
+    },
+    {
+      "title": {
+        "en": "Hot water"
+      },
+      "text": {
+        "en": "Hot water comes straight from the combi boiler, so it is always available. Just run the tap and give it a few seconds."
+      }
+    },
+    {
+      "title": {
+        "en": "Kitchen"
+      },
+      "text": {
+        "en": "Four burner gas hob, New World double oven, microwave, Tassimo coffee machine, toaster, kettle and a fridge freezer."
+      },
+      "appliances": [
+        {
+          "name": {
+            "en": "Gas hob"
+          },
+          "brand": "",
+          "steps": {
+            "en": [
+              "Push the knob of the burner you want down and turn it.",
+              "At the same time, press and hold the small ignition button at the bottom right until the flame lights.",
+              "Turn all knobs fully off after use.",
+              "The back left burner is being repaired. Please do not use it for now.",
+              "If you smell gas: turn everything off, open the windows, do not use switches and call 0800 111 999."
+            ]
+          }
+        },
+        {
+          "name": {
+            "en": "Double oven"
+          },
+          "brand": "New World",
+          "model": "DFEO 90",
+          "steps": {
+            "en": [
+              "Three knobs: Top Oven, Single or Double Grill, and Fan Oven. [PROPERTY: which compartment each knob controls, and what the buttons do]"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "Laundry"
+      },
+      "text": {
+        "en": "Samsung 9 kg washing machine. There is no tumble dryer: a clothes airer, an iron and an ironing board are in the wardrobe upstairs, and there are plenty of hangers. The hair dryer is on the shelf in the upstairs shower room."
+      },
+      "appliances": [
+        {
+          "name": {
+            "en": "Washing machine"
+          },
+          "brand": "Samsung",
+          "model": "WW90T554DAN",
+          "steps": {
+            "en": [
+              "Press the button marked ON.",
+              "Turn the dial to the programme you want: Eco 40-60 (2 h 44 min), 15' Quick Wash (23 min, up to 2 kg), Cotton (1 h 52 min), Towels (2 h 5 min) or Delicates (35 min).",
+              "Add detergent in the drawer at the top.",
+              "Press START.",
+              "Forgot something? Press START to pause, then use the small AddWash door."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "TV"
+      },
+      "text": {
+        "en": "Living room: TV with an Amazon Fire TV Stick. Family room: 55 inch TCL Roku smart TV. Sign in to your streaming apps with your own account, and please sign out before you leave."
+      }
+    },
+    {
+      "title": {
+        "en": "Pets"
+      },
+      "text": {
+        "en": "Pets are welcome when agreed in advance. Please keep them downstairs and off the furniture. Assistance dogs are always welcome."
+      }
+    }
+  ],
+  "bins": {
+    "en": "Bins are collected on Fridays, every other week. Please put them out on Thursday evening. [PROPERTY: which bin goes out which week, and where the bins are kept]"
+  },
+  "fireDetails": {
+    "en": "[PROPERTY: smoke alarm locations]. A carbon monoxide alarm is next to the boiler, in the cupboard of the upstairs shower room. If it sounds, open the windows, leave the house and call 0800 111 999. When you call 999, give the full address from your check-in message."
+  },
+  "routerLocation": {
+    "en": "[PROPERTY: router location]. On the EE router, a teal light means all is well and orange means it is still connecting. A white light means backup mode: please let us know."
+  },
+  "routerLocked": false,
+  "heatingCheck": {
+    "en": "The combi boiler is in the cupboard in the upstairs shower room. If the heating or hot water stops, check the boiler display for an error code and send us a photo. Please do not open the boiler casing."
+  },
+  "utilitiesLocked": false,
+  "stopcock": "[PROPERTY: water stopcock location]",
+  "fuseBox": "[PROPERTY: fuse box location]",
+  "pharmacy": [],
+  "pharmacyNote": "",
+  "hospital": [
+    {
+      "name": "Midland Metropolitan University Hospital",
+      "coords": "Midland Metropolitan University Hospital, Smethwick"
+    },
+    {
+      "name": "Birmingham Children's Hospital",
+      "coords": "52.4849039, -1.892619",
+      "tag": "kids"
+    }
+  ],
+  "securing": {
+    "en": "Close and lock all windows. Lock the garden door, the front door and the outer door, lifting each handle first. Put all three keys back in the lockbox and scramble the code."
+  },
+  "smokingRule": {
+    "en": "No smoking inside the house and no parties. Smoking is allowed in the garden only, please use the ashtray."
+  },
+  "picksImage": "",
+  "picks": [],
+  "importantExtra": [
+    {
+      "title": {
+        "en": "Lift the handle"
+      },
+      "text": {
+        "en": "All three doors lock only when the handle is lifted up first. Lift, then turn the key."
+      }
+    },
+    {
+      "title": {
+        "en": "Rear gate"
+      },
+      "text": {
+        "en": "For now the black rear gate only opens and closes from the outside. Please do not close it while your car is parked inside."
+      }
+    }
+  ],
+  "discountUrl": "https://booking.hollgroup.co.uk/?coupon=5REPEATING&utm=guide",
+  "discountCode": "5REPEATING"
+};
+/* ===================== END OF PROPERTY SETTINGS ===================== */
+</script>
+</head>
+<body>
+<div id="app"></div>
+<div class="toast" id="toast"></div>
+<script src="/guide/assets/guide-i18n.js?v=20261012a"></script>
+<script src="/guide/assets/guide.js?v=20261012a"></script>
+</body>
+</html>

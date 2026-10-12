@@ -55,3 +55,10 @@ Los textos de cada propiedad pueden ir en un solo idioma (inglés) o en los 9. L
 
 - Nunca añadir la carpeta `guide` al `sitemap.xml`.
 - Nunca poner códigos de acceso en una guía.
+
+## The Timber House (Oldbury), 12 Oct 2026
+- Folder: oldbury-8r2w5n. Link: https://hollgroup.co.uk/guide/oldbury-8r2w5n/
+- Name "The Timber House" is provisional.
+- New options in guide.js: privateAddress (no map buttons, no lockbox photo, special lockbox text) and smokingRule.
+- New i18n key: lockboxPrivate (9 languages).
+- Asset version for this page and _template: 20261012a. Older guides keep 20261009v and still work.

@@ -8,7 +8,7 @@
 <title>Holl Group</title>
 <link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009u">
+<link rel="stylesheet" href="/guide/assets/guide.css?v=20261012a">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
@@ -26,6 +26,8 @@ const CONFIG = {
   propertyType: "flat",          // "flat" or "house"
   garden: false,                 // true or false (houses only)
   exteriorCameras: false,        // true if a house has exterior cameras
+  privateAddress: false,         // true for houses: hides map buttons and the lockbox photo, address only in the check-in message
+  smokingRule: "",               // optional: replaces "Smoking and parties are not permitted", e.g. smoking allowed in the garden
 
   entry: "lockbox",              // "lockbox" or "smartlock"
   smartLockCodeTimeLimited: true,
@@ -35,7 +37,9 @@ const CONFIG = {
   parkingDetails: "[PROPERTY: where to park, space number or permit details]",
   parkingNearby: "[PROPERTY: nearest car parks, distance and approximate price]",  // also shown as "second car" advice when parking is available
   parkingCoords: "",             // optional: our car park entrance (coordinates or Google Maps link)
-  parkingNearbyCoords: "",       // optional: car park link or coordinates
+  parkingNearbyCoords: "",
+  parkingOptions: [             // optional car park cards when there is no parking: { name, mins, how: "walk", note, coords }
+  ],       // optional: car park link or coordinates
   parkingPhotos: [               // optional: photos of the car park entrance or signs
     // { img: "https://res.cloudinary.com/...", caption: "[WHAT THE PHOTO SHOWS]" }
   ],
@@ -125,7 +129,7 @@ const CONFIG = {
 <body>
 <div id="app"></div>
 <div class="toast" id="toast"></div>
-<script src="/guide/assets/guide-i18n.js?v=20261009u"></script>
-<script src="/guide/assets/guide.js?v=20261009u"></script>
+<script src="/guide/assets/guide-i18n.js?v=20261012a"></script>
+<script src="/guide/assets/guide.js?v=20261012a"></script>
 </body>
 </html>

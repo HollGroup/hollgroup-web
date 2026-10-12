@@ -107,7 +107,7 @@
       return esc(raw).replace(/\[[^\]]+\]/g, m => `<span class="ph">${m}</span>`);
     };
     const name = P(C.propertyName);
-    const mapBtn = (coords, label, cls) => clean(coords)
+    const mapBtn = (coords, label, cls) => !clean(coords) && C.privateAddress ? "" : clean(coords)
       ? `<a class="btn ${cls || "btn-primary"}" href="${maps(coords)}" target="_blank" rel="noopener">${I.pin}${esc(label)}</a>`
       : `<div class="soft"><span class="ph">[ADD COORDINATES IN CONFIG]</span></div>`;
     // Photos and step-by-step routes (property data, optional)
@@ -229,14 +229,14 @@
       ${mapBtn(C.entranceCoords, keysFirst ? T("entranceStep2") : T("entrance"), keysFirst ? "btn-light" : "btn-primary")}
       <div class="soft"><div class="sub">${T("parking")}</div>
         ${C.parking === "none"
-          ? `<p>${T("noParking")}</p><p style="margin-top:8px">${P(C.parkingNearby)}</p>${clean(C.parkingNearbyCoords) ? `<div style="margin-top:10px">${mapBtn(C.parkingNearbyCoords, T("parkingMap"), "btn-light")}</div>` : ""}`
+          ? `<p>${T("noParking")}</p>${C.parkingNearby ? `<p style="margin-top:8px">${P(C.parkingNearby)}</p>` : ""}${(C.parkingOptions || []).length ? `<div style="margin-top:10px">${cards("", C.parkingOptions, c => card(c, "car", T("cardParking")))}</div>` : ""}${clean(C.parkingNearbyCoords) ? `<div style="margin-top:10px">${mapBtn(C.parkingNearbyCoords, T("parkingMap"), "btn-light")}</div>` : ""}`
           : `<p>${P(C.parkingDetails)}</p>${clean(C.parkingCoords) ? `<div style="margin-top:10px">${mapBtn(C.parkingCoords, T("parkingEntrance"), "btn-primary")}</div>` : ""}${gallery(C.parkingPhotos)}${C.parkingNearby ? `<p style="margin-top:12px">${P(C.parkingNearby)}</p>` : ""}${clean(C.parkingNearbyCoords) ? `<div style="margin-top:10px">${mapBtn(C.parkingNearbyCoords, T("parkingMap"), "btn-light")}</div>` : ""}`}
       </div>
     </div>
     <h2 style="margin-top:26px">${T("gettingIn")}</h2>
     <div class="stack">
       ${isLockbox
-        ? `<p>${T("lockboxText")}</p>
+        ? C.privateAddress && !C.lockboxAreaPhoto ? `<p>${T("lockboxPrivate")}</p>` : `<p>${T("lockboxText")}</p>
            ${C.lockboxAreaPhoto ? photo(C.lockboxAreaPhoto, T("lockboxArea")) : clean(C.lockboxCoords) ? "" : `<img src="lockbox-area.jpg" alt="" style="width:100%;border-radius:14px;display:block" onerror="this.outerHTML='<div class=&quot;soft&quot;><span class=&quot;ph&quot;>[PHOTO: lockbox-area.jpg in this folder]</span></div>'">`}
            ${clean(C.lockboxCoords) ? mapBtn(C.lockboxCoords, T("lockboxArea"), "btn-light") : ""}`
         : `<p>${T("smartText")}${C.smartLockCodeTimeLimited ? " " + T("smartLimited") : ""}</p>
@@ -270,7 +270,7 @@
       ${isFlat
         ? `<li>${T("camFlat")}</li>`
         : `${C.exteriorCameras ? `<li>${T("camHouse")}</li>` : ""}<li>${T("neighHouse")}</li>${C.garden ? `<li>${T("garden")}</li>` : ""}`}
-      <li><b>${T("noSmoking")}</b></li>
+      <li><b>${C.smokingRule ? P(C.smokingRule) : T("noSmoking")}</b></li>
     </ul>
     <h2 style="margin-top:26px">${T("binsTitle")}</h2>
     <p>${P(C.bins)}</p>

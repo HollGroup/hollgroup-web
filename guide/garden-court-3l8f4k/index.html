@@ -8,7 +8,7 @@
 <title>Holl Group</title>
 <link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009u">
+<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009v">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
@@ -27,8 +27,8 @@ const CONFIG = {
   "keysFirstWhere": "",
   "smartLockCodeTimeLimited": true,
   "smartLockHowTo": "",
-  "parking": "[available OR none]",
-  "parkingDetails": "[PROPERTY: parking details]",
+  "parking": "none",
+  "parkingDetails": "",
   "parkingNearby": "",
   "parkingCoords": "",
   "parkingNearbyCoords": "",
@@ -66,8 +66,8 @@ const CONFIG = {
   },
   "checkIn": "15:00",
   "checkOut": "10:00",
-  "wifiName": "[WIFI NAME]",
-  "wifiPassword": "[WIFI PASSWORD]",
+  "wifiName": "CarpeDiemLivingxHollGroup",
+  "wifiPassword": "Bookdirectfordiscounts1",
   "sleeps": 2,
   "bathrooms": 1,
   "beds": [
@@ -130,7 +130,15 @@ const CONFIG = {
   ],
   "bins": "[PROPERTY: where to put bins]",
   "fireDetails": {
-    "en": "If there is a fire in the flat: tell everyone, close doors and windows if you can, do not try to put it out, leave the building by the nearest exit and do not use the lift. Call 999 and say: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. Stay on the line until they repeat the address, and do not go back in. If the fire is in a shared area and your flat is not affected by smoke or heat, it is normally safer to stay inside unless the fire service tells you to leave."
+      "en": "When you call 999, give this address: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. If the fire is in a shared area and there is no smoke or heat in your flat, it is normally safer to stay inside unless the fire service tells you to leave.",
+      "es": "Si llamas al 999, da esta dirección: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. Si el fuego está en una zona común y no hay humo ni calor en tu piso, normalmente es más seguro quedarse dentro, salvo que los bomberos te digan que salgas.",
+      "fr": "Si vous appelez le 999, donnez cette adresse : Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. Si le feu est dans une partie commune et qu'il n'y a ni fumée ni chaleur dans votre appartement, il est généralement plus sûr de rester à l'intérieur, sauf si les pompiers vous demandent de sortir.",
+      "de": "Wenn Sie 999 anrufen, nennen Sie diese Adresse: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. Brennt es in einem Gemeinschaftsbereich und gibt es in Ihrer Wohnung weder Rauch noch Hitze, ist es meist sicherer, drinnen zu bleiben, außer die Feuerwehr fordert Sie zum Verlassen auf.",
+      "it": "Se chiami il 999, comunica questo indirizzo: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. Se l'incendio è in una zona comune e nel tuo appartamento non c'è fumo né calore, di solito è più sicuro restare dentro, a meno che i vigili del fuoco non ti dicano di uscire.",
+      "pt": "Se ligar para o 999, indique esta morada: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. Se o fogo estiver numa zona comum e não houver fumo nem calor no seu apartamento, normalmente é mais seguro ficar dentro, a menos que os bombeiros lhe digam para sair.",
+      "zh": "拨打 999 时，请报此地址：Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU。如果火灾发生在公共区域，而您的公寓内没有烟雾或高温，通常留在室内更安全，除非消防员要求您撤离。",
+      "ar": "عند الاتصال بالرقم 999، اذكر هذا العنوان: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. إذا كان الحريق في منطقة مشتركة ولا يوجد دخان أو حرارة في شقتك، فالبقاء في الداخل أكثر أمانًا عادةً، إلا إذا طلب منك رجال الإطفاء المغادرة.",
+      "ja": "999 に電話する際は、この住所を伝えてください：Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU。火災が共用部分で発生し、室内に煙や熱がない場合は、消防隊から避難の指示がない限り、通常は室内にとどまる方が安全です。"
   },
   "routerLocation": "[PROPERTY: router location]",
   "routerLocked": false,
@@ -285,7 +293,24 @@ const CONFIG = {
         }
       }
     ]
-  }
+  },
+  "parkingOptions": [
+    {
+      "name": "Broadway Plaza car park",
+      "mins": 1,
+      "how": "walk",
+      "note": {
+        "en": "About £12 for 24 hours."
+      },
+      "coords": "Broadway Plaza car park, Birmingham"
+    },
+    {
+      "name": "Metro car park",
+      "mins": 2,
+      "how": "walk",
+      "coords": "Metro car park, Ladywood Middleway, Birmingham"
+    }
+  ]
 };
 /* ===================== END OF PROPERTY SETTINGS ===================== */
 </script>
@@ -293,7 +318,7 @@ const CONFIG = {
 <body>
 <div id="app"></div>
 <div class="toast" id="toast"></div>
-<script src="/guide/assets/guide-i18n.js?v=20261009u"></script>
-<script src="/guide/assets/guide.js?v=20261009u"></script>
+<script src="/guide/assets/guide-i18n.js?v=20261009v"></script>
+<script src="/guide/assets/guide.js?v=20261009v"></script>
 </body>
 </html>
