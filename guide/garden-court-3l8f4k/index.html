@@ -8,7 +8,7 @@
 <title>Holl Group</title>
 <link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/guide/assets/guide.css?v=20261009v">
+<link rel="stylesheet" href="/guide/assets/guide.css?v=20261013a">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
@@ -54,7 +54,7 @@ const CONFIG = {
       },
       {
         "text": {
-          "en": "At the building door, tap the fob on the round reader under the door entry panel. The screen shows OPEN and the door unlocks."
+          "en": "At the building door, hold the fob flat against the screen of the door entry panel, not the round reader below it. The screen turns blue, shows OPEN and the door unlocks."
         },
         "imgs": []
       }
@@ -84,30 +84,118 @@ const CONFIG = {
         "en": "Heating"
       },
       "text": {
-        "en": "Smart electric glass panel heater with its own thermostat and timer. [PROPERTY: can guests change the temperature, or is it automatic?] Please turn it down or off when you go out."
+        "en": "There are three smart electric glass panel heaters, in the living room, the hallway and the bedroom. We set the temperature remotely so the flat is warm when you arrive. If you would like it warmer or cooler, just message us and we will adjust it straight away. Please do not cover the heaters or dry clothes on them."
       }
     },
     {
       "title": {
         "en": "Hot water"
       },
-      "text": "[PROPERTY: hot water]"
+      "text": {
+        "en": "Hot water comes from a water heater kept in a locked cupboard in the hallway. It is always on, so there is nothing to switch on. If the water runs cold, message us."
+      }
     },
     {
       "title": {
         "en": "Kitchen and laundry"
       },
       "text": {
-        "en": "Microwave, two-tier air fryer, kettle, coffee maker, fridge and a washer dryer. The switch panel controls the appliances: top right is the fridge (please always leave it on), bottom left is the extractor fan and bottom right is the washer dryer."
+        "en": "Induction hob, combination microwave oven, two drawer air fryer, Tassimo coffee machine, kettle, fridge and a washer dryer. Pans are in the tall narrow cupboard on the far right, next to the microwave, and they all work on the hob. The middle top cupboard is a guest shelf: anything previous guests have left there is yours to use. The switch panel controls the appliances: top right is the fridge (please always leave it on), bottom left is the extractor fan and bottom right is the washer dryer. If the hob or the oven does not respond, check that the large switch marked HOB/COMBI OVEN, behind the kettle, is on (its red light shows when it is on)."
       },
       "appliances": [
+        {
+          "name": {
+            "en": "Hob"
+          },
+          "brand": "",
+          "model": "Induction",
+          "steps": {
+            "en": [
+              "Put the pan on a ring and press ⏻.",
+              "Press the button for that ring. The small line on each button shows which ring it controls.",
+              "Set the heat with − / +, from 1 to 9. B gives a short burst of maximum power.",
+              "Press ⏻ to switch off. An H on the display means the ring is still hot."
+            ]
+          },
+          "tip": {
+            "en": "If the buttons do not respond, the hob is locked. Touch the padlock button once to unlock it."
+          }
+        },
         {
           "name": {
             "en": "Microwave"
           },
           "brand": "Whirlpool",
           "model": "W7 MW461 UK",
-          "steps": {}
+          "steps": {
+            "en": [
+              "Take the oven tray out. It is metal and must never go in the microwave.",
+              "Put your food in and close the door.",
+              "Press ⏻. The screen shows 6th Sense, you can ignore it.",
+              "Press the microwave button, bottom right, with waves on both sides. It shows 900 W: press ✓.",
+              "Set the time with − / + and press ✓. It starts straight away.",
+              "To stop early, press the microwave button again. The screen shows Stop cycle: press ✓ to confirm. You can also open the door to pause it."
+            ]
+          },
+          "tip": {
+            "en": "If you get stuck in a menu, press ⏻ to switch off and start again."
+          }
+        },
+        {
+          "name": {
+            "en": "Oven (same unit as the microwave)"
+          },
+          "brand": "Whirlpool",
+          "model": "W7 MW461 UK",
+          "steps": {
+            "en": [
+              "Put the oven tray back in.",
+              "Press ⏻, then the fan button (top right of the six). It shows Forced Air 160°C.",
+              "Set the temperature with − / + and press ✓.",
+              "Set the cooking time with − / + and press ✓.",
+              "When it asks for an end time, just press ✓ again.",
+              "It preheats and beeps when it is hot. Put your food in.",
+              "When you have finished, press ⏻ to switch off and take the tray out again, so the microwave is ready for the next person."
+            ]
+          }
+        },
+        {
+          "name": {
+            "en": "Coffee machine"
+          },
+          "brand": "Bosch",
+          "model": "Tassimo",
+          "steps": {
+            "en": [
+              "Fill the water tank at the back up to MAX.",
+              "Lift the top, put a T DISC in with the barcode facing down and close it firmly.",
+              "Put a cup underneath and press the button. The machine makes the drink by itself.",
+              "If the water tank light comes on, refill the tank. If the descaling light comes on, please let us know."
+            ]
+          },
+          "tip": {
+            "en": "T DISCS are not provided. Please bring your own, most UK supermarkets sell them."
+          }
+        },
+        {
+          "name": {
+            "en": "Air fryer"
+          },
+          "brand": "Salter",
+          "model": "EK6534 VertiCook View",
+          "manual": "https://www.youtube.com/watch?v=21Upxj3Vglk",
+          "steps": {
+            "en": [
+              "Please cook with the silicone liners inside.",
+              "Use only wooden or silicone utensils. Metal scratches the non-stick coating.",
+              "Do not use spray oil. Brush or drizzle a little oil instead.",
+              "After cooking, let it cool. Wash the drawers by hand with warm soapy water and a soft sponge. Never put the drawers in a dishwasher, the viewing windows can be damaged. The metal racks can go in a dishwasher.",
+              "Empty any grease before putting the drawers back. Never put the main unit in water."
+            ]
+          },
+          "tip": {
+            "en": "There is also a QR code inside the air fryer that opens a how to video."
+          }
         },
         {
           "name": {
@@ -115,46 +203,115 @@ const CONFIG = {
           },
           "brand": "Hoover",
           "model": "HBD 495D14",
-          "steps": {}
+          "steps": {
+            "en": [
+              "Put your clothes in and close the door firmly.",
+              "Add detergent to the main compartment of the drawer, marked II.",
+              "Turn the dial to a programme: Mixed for everyday clothes, or Rapid Care for a quick wash.",
+              "To dry as well, press Drying three times, until the wardrobe icon lights up. Your clothes come out dry, ready to put away. Press it once more to cancel drying.",
+              "Press Start/Pause. The door locks during the cycle and unlocks a few minutes after it finishes."
+            ]
+          },
+          "tip": {
+            "en": "Fill the drum only halfway if you want to dry as well. If the buttons do not respond, hold Temp. Selection and Spin Speed together for 3 seconds to unlock them."
+          }
+        }
+      ],
+      "imgs": [
+        {
+          "img": "kitchen-map.jpg",
+          "caption": {
+            "en": "Your kitchen at a glance"
+          }
         }
       ]
+    },
+    {
+      "title": {
+        "en": "Bathroom"
+      },
+      "text": {
+        "en": "The shower is ready to use, just turn it on. There is a shaver socket (230 V and 115 V), handy if your shaver or electric toothbrush has a foreign plug. It is for shavers and toothbrushes only, not hairdryers or straighteners."
+      }
     },
     {
       "title": {
         "en": "TV"
       },
       "text": {
-        "en": "Smart TVs in the living room and in the bedroom. Sign in to your favourite streaming apps with your own account, and please remember to sign out before you leave."
+        "en": "Smart TVs in the living room and in the bedroom. The living room TV (Samsung) opens straight onto the streaming apps. The bedroom TV is an Amazon Fire TV: sign in with your own Amazon account to use the apps. Please sign in to streaming apps with your own accounts and remember to sign out before you leave."
+      },
+      "appliances": [
+        {
+          "name": {
+            "en": "Living room TV"
+          },
+          "brand": "Samsung",
+          "model": "UE55U7000FK",
+          "steps": {}
+        },
+        {
+          "name": {
+            "en": "Bedroom TV"
+          },
+          "brand": "Xiaomi Fire TV",
+          "model": "L43MB-FAEU",
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "Arcade machine"
+      },
+      "text": {
+        "en": "Switch on the plug next to the machine, then flip the OFF/ON switch on the control panel. It takes a moment to load. Choose a game with the joystick and press A, then press the player start button. You can play alone or two players, with several classic Mortal Kombat fighting games. Parental advisory: these are retro fighting games and are not suitable for children. Use the VOL switch for the volume, and please keep it low after 10pm."
+      }
+    },
+    {
+      "title": {
+        "en": "Iron and first aid"
+      },
+      "text": {
+        "en": "In the bedroom wardrobe you will find an iron, an ironing board and a clothes airer. There is a first aid kit on the top shelf."
       }
     }
   ],
-  "bins": "[PROPERTY: where to put bins]",
-  "fireDetails": {
-      "en": "When you call 999, give this address: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. If the fire is in a shared area and there is no smoke or heat in your flat, it is normally safer to stay inside unless the fire service tells you to leave.",
-      "es": "Si llamas al 999, da esta dirección: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. Si el fuego está en una zona común y no hay humo ni calor en tu piso, normalmente es más seguro quedarse dentro, salvo que los bomberos te digan que salgas.",
-      "fr": "Si vous appelez le 999, donnez cette adresse : Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. Si le feu est dans une partie commune et qu'il n'y a ni fumée ni chaleur dans votre appartement, il est généralement plus sûr de rester à l'intérieur, sauf si les pompiers vous demandent de sortir.",
-      "de": "Wenn Sie 999 anrufen, nennen Sie diese Adresse: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. Brennt es in einem Gemeinschaftsbereich und gibt es in Ihrer Wohnung weder Rauch noch Hitze, ist es meist sicherer, drinnen zu bleiben, außer die Feuerwehr fordert Sie zum Verlassen auf.",
-      "it": "Se chiami il 999, comunica questo indirizzo: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. Se l'incendio è in una zona comune e nel tuo appartamento non c'è fumo né calore, di solito è più sicuro restare dentro, a meno che i vigili del fuoco non ti dicano di uscire.",
-      "pt": "Se ligar para o 999, indique esta morada: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. Se o fogo estiver numa zona comum e não houver fumo nem calor no seu apartamento, normalmente é mais seguro ficar dentro, a menos que os bombeiros lhe digam para sair.",
-      "zh": "拨打 999 时，请报此地址：Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU。如果火灾发生在公共区域，而您的公寓内没有烟雾或高温，通常留在室内更安全，除非消防员要求您撤离。",
-      "ar": "عند الاتصال بالرقم 999، اذكر هذا العنوان: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. إذا كان الحريق في منطقة مشتركة ولا يوجد دخان أو حرارة في شقتك، فالبقاء في الداخل أكثر أمانًا عادةً، إلا إذا طلب منك رجال الإطفاء المغادرة.",
-      "ja": "999 に電話する際は、この住所を伝えてください：Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU。火災が共用部分で発生し、室内に煙や熱がない場合は、消防隊から避難の指示がない限り、通常は室内にとどまる方が安全です。"
+  "bins": {
+    "en": "Please take your rubbish out through the main entrance of the complex and turn right. The communal bins are in the bay just there, and you can use them at any time. Please put bags inside the bins, never on the ground."
   },
-  "routerLocation": "[PROPERTY: router location]",
+  "fireDetails": {
+    "en": "When you call 999, give this address: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. If the fire is in a shared area and there is no smoke or heat in your flat, it is normally safer to stay inside unless the fire service tells you to leave.",
+    "es": "Si llamas al 999, da esta dirección: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. Si el fuego está en una zona común y no hay humo ni calor en tu piso, normalmente es más seguro quedarse dentro, salvo que los bomberos te digan que salgas.",
+    "fr": "Si vous appelez le 999, donnez cette adresse : Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. Si le feu est dans une partie commune et qu'il n'y a ni fumée ni chaleur dans votre appartement, il est généralement plus sûr de rester à l'intérieur, sauf si les pompiers vous demandent de sortir.",
+    "de": "Wenn Sie 999 anrufen, nennen Sie diese Adresse: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. Brennt es in einem Gemeinschaftsbereich und gibt es in Ihrer Wohnung weder Rauch noch Hitze, ist es meist sicherer, drinnen zu bleiben, außer die Feuerwehr fordert Sie zum Verlassen auf.",
+    "it": "Se chiami il 999, comunica questo indirizzo: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. Se l'incendio è in una zona comune e nel tuo appartamento non c'è fumo né calore, di solito è più sicuro restare dentro, a meno che i vigili del fuoco non ti dicano di uscire.",
+    "pt": "Se ligar para o 999, indique esta morada: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. Se o fogo estiver numa zona comum e não houver fumo nem calor no seu apartamento, normalmente é mais seguro ficar dentro, a menos que os bombeiros lhe digam para sair.",
+    "zh": "拨打 999 时，请报此地址：Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU。如果火灾发生在公共区域，而您的公寓内没有烟雾或高温，通常留在室内更安全，除非消防员要求您撤离。",
+    "ar": "عند الاتصال بالرقم 999، اذكر هذا العنوان: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. إذا كان الحريق في منطقة مشتركة ولا يوجد دخان أو حرارة في شقتك، فالبقاء في الداخل أكثر أمانًا عادةً، إلا إذا طلب منك رجال الإطفاء المغادرة.",
+    "ja": "999 に電話する際は、この住所を伝えてください：Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU。火災が共用部分で発生し、室内に煙や熱がない場合は、消防隊から避難の指示がない限り、通常は室内にとどまる方が安全です。"
+  },
+  "routerLocation": {
+    "en": "The router is in the living room, behind the arcade machine."
+  },
   "routerLocked": false,
-  "heatingCheck": "[PROPERTY: what to check if the heater stops]",
-  "utilitiesLocked": false,
-  "stopcock": "[PROPERTY: water stopcock location]",
-  "fuseBox": "[PROPERTY: fuse box location]",
+  "heatingCheck": {
+    "en": "If a heater is not warming up, message us and we will check it remotely."
+  },
+  "utilitiesLocked": true,
+  "stopcock": "",
+  "fuseBox": "",
   "pharmacy": [
     {
-      "name": "[NEAREST PHARMACY]",
-      "coords": "",
-      "mins": 0,
+      "name": "Five Ways Pharmacy",
+      "coords": "Five Ways Pharmacy, 192a St Vincent St W, Birmingham",
+      "mins": 10,
       "how": "walk"
     }
   ],
-  "pharmacyNote": "",
+  "pharmacyNote": {
+    "en": "Opening hours vary, please check them on Maps before you go."
+  },
   "hospital": [
     {
       "name": "Birmingham Children's Hospital",
@@ -166,7 +323,9 @@ const CONFIG = {
       "coords": "52.4521833, -1.9433519"
     }
   ],
-  "securing": "[PROPERTY: how to lock up and return the keys]",
+  "securing": {
+    "en": "Before you leave, lock the flat door and put the keys and the fob back in the same lockbox you took them from. Close the lockbox and scramble the numbers. This is important, otherwise anyone can open it."
+  },
   "picksImage": "",
   "picks": [
     {
@@ -335,7 +494,7 @@ const CONFIG = {
 <body>
 <div id="app"></div>
 <div class="toast" id="toast"></div>
-<script src="/guide/assets/guide-i18n.js?v=20261009v"></script>
-<script src="/guide/assets/guide.js?v=20261009v"></script>
+<script src="/guide/assets/guide-i18n.js?v=20261013a"></script>
+<script src="/guide/assets/guide.js?v=20261013a"></script>
 </body>
 </html>
