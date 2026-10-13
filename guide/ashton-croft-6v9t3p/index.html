@@ -17,7 +17,7 @@
    Airbnb title: "Stylish Apt·Canals·2x Free Parking·Sleeps 6".
    Texts can be given per language { en, es, ... }. Edit the English and ask Claude for the other languages.
    Never put the flat number, access codes or the exact lockbox position here.
-   Anything in [SQUARE BRACKETS] is still missing and shows highlighted.
+   LIVE with guests from 13 Oct 2026: never leave [SQUARE BRACKETS] here. Remove incomplete items and list them as pending in claude/guias-huesped.md.
    ===================================================================== */
 const CONFIG = {
   propertyName: "Brindleyplace Apartment",
@@ -58,7 +58,7 @@ const CONFIG = {
   lockboxCoords: "",
   keysFirst: false,
   keysFirstWhere: "",
-  lockboxAreaPhoto: "",
+  lockboxAreaPhoto: "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1790866940/IBONFlat2D_D-17_kvolee.jpg",  // general area only (the development), never the exact spot
   keysNote: { en: "Lost keys or fobs are charged at £100 per replacement." },
 
   arrivalRoute: { title: { en: "From the lockbox to your door" }, steps: [
@@ -96,7 +96,7 @@ const CONFIG = {
         ar: "يأتي الماء الساخن من سخّان مياه كهربائي، وهو أمر معتاد في شقق المملكة المتحدة. يسخّن كمية محددة من الماء ويحافظ على حرارتها. بعد استحمام طويل أو عدة مرات متتالية، يرجى منحه وقتًا ليسخن مجددًا، عادةً ساعة أو أقل.",
         ja: "お湯は電気温水器から供給されます。これはイギリスのフラットでは一般的です。一定量のお湯を沸かして保温する仕組みのため、長時間のシャワーや続けてのシャワーの後は、再びお湯が沸くまで少し時間をおいてください（通常 1 時間以内）。"
       } },
-    { title: { en: "Kitchen and appliances" }, text: { en: "Complimentary filter coffee station, ready to use, with ground coffee, sugar and mugs: just bring your own milk. After using the coffee machine, please throw away the used coffee grounds and rinse the filter, so it is ready for the next cup. Cleaning products are provided. [PROPERTY: oven, hob, washing machine, dishwasher]" },
+    { title: { en: "Kitchen and appliances" }, text: { en: "Complimentary filter coffee station, ready to use, with ground coffee, sugar and mugs: just bring your own milk. After using the coffee machine, please throw away the used coffee grounds and rinse the filter, so it is ready for the next cup. Cleaning products are provided." },
       imgs: [
         { img: "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1790866962/IBONFlat2D_D-7_i6vtrt.jpg", caption: { en: "Your coffee station" } },
         { img: "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1790866975/IBONFlat2D_D-8_s0j2ml.jpg", caption: { en: "Ground coffee and sugar, ready to use" } }
@@ -110,13 +110,13 @@ const CONFIG = {
   ],
 
   bins: { en: "The bin area is on the right side of the building, next to the second parking space. Please take all rubbish down before you check out." },
-  fireDetails: "[PROPERTY: alarm locations, exit route, assembly point, extinguisher or fire blanket if present]",
+  fireDetails: "",
   routerLocation: { en: "The router is on the corner shelf right next to the kitchen door. It is a Three router that gets its internet from the mobile network through a SIM card. If you cannot see the network AshtonCroftHG, first check it is plugged in and switched on. After switching it back on, give it 3 to 5 minutes to reconnect before trying again. Please do not move it, cover it or take out the SIM card: its position gives it the best signal." },
   heatingCheck: { en: "Heating: check the radiator is plugged in and switched on at the wall socket, and give it some time to warm up with the windows closed. Hot water: if it runs cold after several showers, wait about an hour for the water heater to heat up again. If it is still not working, message us." },
   routerLocked: false,
   utilitiesLocked: false,
-  stopcock: "[PROPERTY: water stopcock location]",
-  fuseBox: "[PROPERTY: fuse box location]",
+  stopcock: { en: "if you have a water leak, call us straight away and we will guide you." },
+  fuseBox: { en: "if the power goes off, call us straight away and we will guide you." },
 
   pharmacy: [
     { name: "Ladywood Pharmacy", coords: "https://www.google.com/maps/place/Ladywood+Pharmacy,+16+King+Edwards+Rd,+Birmingham+B1+2PZ/data=!4m2!3m1!1s0x4870bcfac5da5c71:0x57cf9f65f3f3b79e", mins: 11, how: "walk" },
