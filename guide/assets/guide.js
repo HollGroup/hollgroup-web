@@ -532,4 +532,7 @@
 
   const start = pickLang();
   if (start) render(start); else renderLanding();
+
+  // Shared add-ons (bold text, compact shortcuts on computers, experiences, service photos). Loaded once for every guide.
+  if (!window.__hollGuideExtra) { const x = document.createElement("script"); x.src = "/guide/assets/guide-extra.js?v=20261013e"; document.body.appendChild(x); }
 })();
