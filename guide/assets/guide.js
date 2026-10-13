@@ -119,6 +119,8 @@
           ${(st.imgs || []).length ? `<div class="route-imgs${st.imgs.length > 1 ? " two" : ""}">${st.imgs.map(u => photo(u, st.text)).join("")}</div>` : ""}
           <p>${P(st.text)}</p></div></li>`).join("")}</ol></div>`;
     const gallery = list => !list || !list.length ? "" : `<div class="gallery">${list.map(g => `<figure>${photo(g.img, g.caption)}${g.caption ? `<figcaption>${P(g.caption)}</figcaption>` : ""}</figure>`).join("")}</div>`;
+    // Optional photos inside a property block: imgs: [{ img, caption }]. A single photo shows full width.
+    const propImgs = list => { const l = (list || []).filter(g => g && g.img); return !l.length ? "" : gallery(l).replace('class="gallery"', l.length === 1 ? 'class="gallery" style="grid-template-columns:1fr"' : 'class="gallery"'); };
     // Appliance guides: tap a name to open its steps
     const appliances = list => !list || !list.length ? "" : `<div class="appl-list">${list.map(a => {
       const steps = (a.steps && (a.steps[lang] || a.steps.en)) || [];
@@ -249,7 +251,7 @@
   <section class="card" id="home">
     <h2>${T("homeTitle")}</h2>
     ${C.beds ? `<div class="sub" style="margin:4px 0 10px">${T("bedsTitle")}</div>${beds(C.beds)}<div style="height:16px"></div>` : ""}
-    <div class="stack">${C.property.map(b => `<div class="soft"><div class="sub">${P(b.title)}</div><p>${P(b.text)}</p>${appliances(b.appliances)}</div>`).join("")}</div>
+    <div class="stack">${C.property.map(b => `<div class="soft"><div class="sub">${P(b.title)}</div><p>${P(b.text)}</p>${propImgs(b.imgs)}${appliances(b.appliances)}</div>`).join("")}</div>
   </section>
 
   ${C.story ? `<section class="card story" id="story">
