@@ -41,15 +41,16 @@ const CONFIG = {
   parkingCoords: "",
   parkingNearbyCoords: "",
   parkingOptions: [],
-  parkingPhotos: [],
+  parkingPhotos: [
+    { img: "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1790866940/IBONFlat2D_D-17_kvolee.jpg", caption: { en: "The residential development, with on-site parking for residents." } }
+  ],
 
   directions: {
-    en: "A quiet, residential street right by the canals. Step outside and follow the canal path: in 5 minutes you are at The Distillery, in 10 at the bars and restaurants of Brindleyplace. The Utilita Arena is under 10 minutes on foot."
+    en: "A quiet, residential street right by the canals. Step outside and follow the canal path: in 5 minutes you are at The Distillery, in about 11 at the bars and restaurants of Brindleyplace. The Utilita Arena is about 10 minutes on foot."
   },
   transport: [
-    { mode: "train", name: "Five Ways", how: "walk", mins: 13, coords: "Five Ways railway station, Birmingham" },
-    { mode: "train", name: "Birmingham New Street", how: "walk", mins: 25, coords: "Birmingham New Street station",
-      note: { en: "About 8 minutes by taxi." } },
+    { mode: "train", name: "Five Ways", how: "walk", mins: 18, coords: "https://www.google.com/maps/place/Five+Ways,+Birmingham+B15+1PQ/data=!4m2!3m1!1s0x4870bc58dff68c85:0x2bf92be787357a76" },
+    { mode: "train", name: "Birmingham New Street", how: "walk", mins: 26, coords: "https://www.google.com/maps/place/Birmingham+New+Street,+Station+St,+Birmingham+B2+4QA/data=!4m2!3m1!1s0x487096f1df0e0571:0xedfa487a0f2ea32e" },
     { mode: "plane", name: "Birmingham Airport", how: "train", mins: 10, coords: "Birmingham Airport",
       note: { en: "Direct train from New Street to Birmingham International, then the free Air-Rail Link to the terminal." } }
   ],
@@ -76,8 +77,8 @@ const CONFIG = {
   sleeps: 6,
   bathrooms: 1,
   beds: [
-    { room: "bed1", beds: ["king"], note: { en: "With a make-up station and vanity mirror." } },
-    { room: "bed2", beds: ["double"], note: { en: "With a desk for working." } },
+    { room: "bed1", beds: ["king"], note: { en: "Make-up station with vanity mirror, a desk for working, and a large wardrobe (over 2 metres tall) with built-in LED lights." } },
+    { room: "bed2", beds: ["double"], note: { en: "Built-in wardrobe." } },
     { room: "living", beds: ["sofa"], note: { en: "King-size when opened. Available on request: let us know in advance so we can leave bed linen ready." } }
   ],
 
@@ -95,7 +96,7 @@ const CONFIG = {
         ar: "يأتي الماء الساخن من سخّان مياه كهربائي، وهو أمر معتاد في شقق المملكة المتحدة. يسخّن كمية محددة من الماء ويحافظ على حرارتها. بعد استحمام طويل أو عدة مرات متتالية، يرجى منحه وقتًا ليسخن مجددًا، عادةً ساعة أو أقل.",
         ja: "お湯は電気温水器から供給されます。これはイギリスのフラットでは一般的です。一定量のお湯を沸かして保温する仕組みのため、長時間のシャワーや続けてのシャワーの後は、再びお湯が沸くまで少し時間をおいてください（通常 1 時間以内）。"
       } },
-    { title: { en: "Kitchen and appliances" }, text: { en: "Complimentary filter coffee station, ready to use: just bring your own milk. Cleaning products are provided. [PROPERTY: oven, hob, washing machine, dishwasher]" } },
+    { title: { en: "Kitchen and appliances" }, text: { en: "Complimentary filter coffee station, ready to use, with ground coffee, sugar and mugs: just bring your own milk. After using the coffee machine, please throw away the used coffee grounds and rinse the filter, so it is ready for the next cup. Cleaning products are provided. [PROPERTY: oven, hob, washing machine, dishwasher]" } },
     { title: { en: "TV" }, text: { en: "TCL 40-inch QLED smart TV with Fire TV built in. Sign in to your favourite streaming apps with your own account, and please remember to sign out before you leave." } },
     { title: { en: "Good to know" }, text: { en: "There is a first aid kit in the flat. You have full and private use of the whole apartment during your stay." } }
   ],
@@ -110,39 +111,39 @@ const CONFIG = {
   fuseBox: "[PROPERTY: fuse box location]",
 
   pharmacy: [
-    { name: "Ladywood Pharmacy", coords: "Ladywood Pharmacy, 16 King Edwards Road, Birmingham B1 2PZ", mins: 6, how: "walk" },
-    { name: "Boots, Brindleyplace", coords: "https://maps.app.goo.gl/Nk2pRWJr52oHEBM29", mins: 12, how: "walk" }
+    { name: "Ladywood Pharmacy", coords: "https://www.google.com/maps/place/Ladywood+Pharmacy,+16+King+Edwards+Rd,+Birmingham+B1+2PZ/data=!4m2!3m1!1s0x4870bcfac5da5c71:0x57cf9f65f3f3b79e", mins: 11, how: "walk" },
+    { name: "Boots, Brindleyplace", coords: "https://www.google.com/maps/place/Boots,+2+Brindley+Pl,+Birmingham+B1+2JB/data=!4m2!3m1!1s0x4870bcf6db87f84d:0x79324ebeda01382", mins: 11, how: "walk" }
   ],
   pharmacyNote: "",
   hospital: [
-    { name: "Birmingham Children's Hospital", coords: "52.4849039, -1.892619", mins: 8, tag: "kids" },
-    { name: "Midland Metropolitan University Hospital", coords: "Midland Metropolitan University Hospital, Smethwick", mins: 10 },
-    { name: "Queen Elizabeth Hospital", coords: "52.4521833, -1.9433519", mins: 12 }
+    { name: "Birmingham Children's Hospital", coords: "https://www.google.com/maps/place/Birmingham+Children%27s+Hospital,+Steelhouse+Ln,+Birmingham+B4+6NH/data=!4m2!3m1!1s0x4870bc901c57f9a9:0x2c3e43fdaf7eb4a7", mins: 8, tag: "kids" },
+    { name: "Midland Metropolitan University Hospital", coords: "https://www.google.com/maps/place/Midland+Metropolitan+University+Hospital,+Grove+Ln,+Smethwick+B66+2QT/data=!4m2!3m1!1s0x4870bd166dc017b3:0x59a52fd9bbb0bb40", mins: 8 },
+    { name: "Queen Elizabeth Hospital", coords: "https://www.google.com/maps/place/Queen+Elizabeth+Hospital+Birmingham,+Mindelsohn+Way,+Birmingham+B15+2GW/data=!4m2!3m1!1s0x4870bdb62bfb28c9:0x7247bbe14b3ac5f8", mins: 12 }
   ],
   hospitalNote: "",
   securing: { en: "Before you leave: hang used towels in the bathroom, close all windows, lock the flat door and the main front door, return the keys to the lockbox, and send us a message with a few photos once you have checked out." },
 
   picksImage: "",
   picks: [
-    { category: "essentials", name: "Tesco Express", note: { en: "Groceries and everyday essentials nearby." }, coords: "Tesco Express near B16 8EX, Birmingham" },
-    { category: "essentials", name: "Sainsbury's Local", note: { en: "Groceries and everyday essentials nearby." }, coords: "Sainsbury's Local near B16 8EX, Birmingham" },
-    { category: "essentials", name: "Costcutter", note: { en: "Convenience store nearby." }, coords: "Costcutter near B16 8EX, Birmingham" },
-    { category: "essentials", name: "The Mailbox", note: { en: "Shops, restaurants and canal-side bars." }, walkMins: 17, coords: "The Mailbox, Birmingham" },
-    { category: "drinks", name: "The Distillery", note: { en: "Canal-side bar and kitchen, 5 minutes along the canal path." }, walkMins: 5, coords: "The Distillery, Sheepcote Street, Birmingham" },
-    { category: "eat", name: "The Cube (Marco Pierre White)", note: { en: "Rooftop restaurant and steakhouse with city views." }, walkMins: 15, coords: "Marco Pierre White Steakhouse, The Cube, Birmingham" },
-    { category: "see", name: "Ladywood Leisure Centre", note: { en: "25 m competition pool, gym, sauna, steam room and fitness classes. Pay as you go." }, walkMins: 6, coords: "Ladywood Leisure Centre, Birmingham" },
-    { category: "see", name: "National SEA LIFE Centre", note: { en: "Aquarium in Brindleyplace, great for families." }, walkMins: 10, coords: "National SEA LIFE Centre Birmingham" },
-    { category: "see", name: "Centenary Square", note: { en: "Public square with outdoor events, next to the Library of Birmingham." }, walkMins: 15, coords: "Centenary Square, Birmingham" },
-    { category: "drinks", name: "The Malthouse", note: { en: "Popular canal-side pub with food, a short walk away." }, walkMins: 7, coords: "The Malt House, King Edward's Road, Birmingham" },
-    { category: "see", name: "Brindleyplace", note: { en: "Restaurants, bars and canals, about 10 minutes along the towpath." }, walkMins: 10, coords: "Brindleyplace, Birmingham" },
-    { category: "see", name: "Edgbaston Reservoir", note: { en: "Lakeside walk, great for a morning run." }, walkMins: 12, coords: "Edgbaston Reservoir, Birmingham" },
-    { category: "see", name: "Utilita Arena", note: { en: "Birmingham's biggest arena for concerts and shows." }, walkMins: 8, coords: "https://maps.app.goo.gl/PQ1qVTJF2MNx9NUF9" },
-    { category: "see", name: "ICC Birmingham", note: { en: "International Convention Centre on Broad Street. Here for a conference or event? It is about 12 minutes on foot, along the canal." }, walkMins: 12, coords: "ICC Birmingham, Broad Street, Birmingham" },
-    { category: "see", name: "Symphony Hall", note: { en: "World-class concert hall." }, walkMins: 15, coords: "https://maps.app.goo.gl/eJ4NEWnyMbbZn3ot5" },
-    { category: "see", name: "Ikon Gallery", note: { en: "Free contemporary art gallery in Brindleyplace." }, walkMins: 12, coords: "Ikon Gallery, Brindleyplace, Birmingham" },
-    { category: "see", name: "Library of Birmingham", note: { en: "Iconic modern library, free entry and a rooftop garden." }, walkMins: 15, coords: "Library of Birmingham, Centenary Square, Birmingham" },
-    { category: "drinks", name: "Broad Street", note: { en: "Birmingham's main nightlife street." }, walkMins: 10, coords: "Broad Street, Birmingham" },
-    { category: "see", name: "Black Sabbath Bench", note: { en: "Rock landmark by the canal on Broad Street." }, coords: "Black Sabbath Bench, Broad Street, Birmingham" }
+    { category: "essentials", name: "Tesco Express", note: { en: "Groceries and everyday essentials nearby." }, walkMins: 12, coords: "https://maps.app.goo.gl/p1T1knyJS9XwYZaY9" },
+    { category: "essentials", name: "Sainsbury's Local", note: { en: "Groceries and everyday essentials nearby." }, walkMins: 12, coords: "https://www.google.com/maps/place/Sainsbury%27s+Local,+10+Brindley+Pl,+Birmingham+B1+2JB/data=!4m2!3m1!1s0x4870bcf6dc71023b:0x4018917cd75d0cfc" },
+    { category: "essentials", name: "Costcutter", note: { en: "Convenience store nearby." }, walkMins: 11, coords: "https://www.google.com/maps/place/Costcutter,+2+King+Edwards+Rd,+Birmingham+B1+2PZ/data=!4m2!3m1!1s0x4870bcfad0225795:0xc5f3247ac44f7060" },
+    { category: "essentials", name: "The Mailbox", note: { en: "Shops, restaurants and canal-side bars." }, walkMins: 20, coords: "https://www.google.com/maps/place/Mailbox+Birmingham,+Royal+Mail+St,+Birmingham+B1+1RS/data=!4m2!3m1!1s0x4870bc8ada73959d:0xa7185a7bcf13de19" },
+    { category: "drinks", name: "The Distillery", note: { en: "Canal-side bar and kitchen, 5 minutes along the canal path." }, walkMins: 5, coords: "https://www.google.com/maps/place/The+Distillery,+4+Sheepcote+St,+Birmingham+B16+8AE/data=!4m2!3m1!1s0x4870bcf0acad4dcb:0xaabe768e9bb8b15b" },
+    { category: "eat", name: "The Cube (Marco Pierre White)", note: { en: "Rooftop restaurant and steakhouse with city views." }, walkMins: 19, coords: "https://www.google.com/maps/place/Marco+Pierre+White+Steakhouse+Bar+%26+Grill,+200+Wharfside+St,+Birmingham+B1+1PR/data=!4m2!3m1!1s0x4870bcf541cf8eff:0x253390467e76ac62" },
+    { category: "see", name: "Ladywood Leisure Centre", note: { en: "25 m competition pool, gym, sauna, steam room and fitness classes. Pay as you go." }, walkMins: 9, coords: "https://www.google.com/maps/place/Ladywood+Leisure+Centre,+Ladywood+Middleway,+Birmingham+B16+8TR/data=!4m2!3m1!1s0x4870bd5b84224a59:0x6ef2b05376fb2152" },
+    { category: "see", name: "National SEA LIFE Centre", note: { en: "Aquarium in Brindleyplace, great for families." }, walkMins: 10, coords: "https://www.google.com/maps/place/National+SEA+LIFE+Centre+Birmingham,+The+Water%27s+Edge,+Birmingham+B1+2HL/data=!4m2!3m1!1s0x4870bcf6b57ad8c5:0x4d5f94ec4839ee09" },
+    { category: "see", name: "Centenary Square", note: { en: "Public square with outdoor events, next to the Library of Birmingham." }, walkMins: 16, coords: "https://www.google.com/maps/place/Centenary+Sq,+Birmingham/data=!4m2!3m1!1s0x4870bcf487889e97:0xd6b691abe8c93b8f" },
+    { category: "drinks", name: "The Malthouse", note: { en: "Popular canal-side pub with food." }, walkMins: 9, coords: "https://www.google.com/maps/place/Malt+House,+75+King+Edwards+Rd,+Birmingham+B1+2NX/data=!4m2!3m1!1s0x4870bcf151278d5b:0x4b655587a12c276c" },
+    { category: "see", name: "Brindleyplace", note: { en: "Restaurants, bars and canals, about 11 minutes on foot." }, img: "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791871380/brindleyplace_boats_szqlfv.jpg", walkMins: 11, coords: "https://www.google.com/maps/place/Eleven+Brindley+Place,+Birmingham+B1+2LP/data=!4m2!3m1!1s0x4870bcf6fbb42437:0xc623b4e3789341d4" },
+    { category: "see", name: "Edgbaston Reservoir", note: { en: "A peaceful lakeside walk with benches by the water, perfect to unwind or for a morning run." }, img: "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791871369/edbagston_reservoir_r3ndan.jpg", walkMins: 24, coords: "https://www.google.com/maps/place/Edgbaston+Reservoir,+Birmingham+B16+9EE/data=!4m2!3m1!1s0x4870bd041896a60f:0x2a0d8b242b5f7cc0" },
+    { category: "see", name: "Utilita Arena", note: { en: "Birmingham's biggest arena for concerts and shows." }, walkMins: 10, coords: "https://www.google.com/maps/place/Utilita+Arena+Birmingham,+King+Edwards+Rd,+Birmingham+B1+2AA/data=!4m2!3m1!1s0x4870bcf0f286fe4f:0xa1d07b91cd66ee0" },
+    { category: "see", name: "ICC Birmingham", note: { en: "International Convention Centre on Broad Street. Here for a conference or event? It is 12 minutes on foot." }, walkMins: 12, coords: "https://www.google.com/maps/place/The+International+Convention+Centre,+8+Centenary+Sq,+Birmingham+B1+2EA/data=!4m2!3m1!1s0x4870bc8c8cd2ec93:0xea3880348237a86f" },
+    { category: "see", name: "Symphony Hall", note: { en: "World-class concert hall." }, walkMins: 14, coords: "https://www.google.com/maps/place/Symphony+Hall,+Broad+St,+Birmingham+B1+2EA/data=!4m2!3m1!1s0x4870bc8c8cd2ec93:0xa2404bdbbba09a25" },
+    { category: "see", name: "Ikon Gallery", note: { en: "Free contemporary art gallery in Brindleyplace." }, walkMins: 12, coords: "https://www.google.com/maps/place/Ikon+Gallery,+1+Brindley+Pl,+Birmingham+B1+2HS/data=!4m2!3m1!1s0x4870bcf698b9d4fb:0xc592501bb970ca75" },
+    { category: "see", name: "Library of Birmingham", note: { en: "Iconic modern library, free entry and a rooftop garden." }, walkMins: 16, coords: "https://www.google.com/maps/place/Library+of+Birmingham,+Centenary+Sq,+Birmingham+B1+2ND/data=!4m2!3m1!1s0x4870bcf37a41b8cd:0x6dbc4748b6dc2cb2" },
+    { category: "drinks", name: "Broad Street", note: { en: "Birmingham's main nightlife street." }, coords: "Broad Street, Birmingham" },
+    { category: "see", name: "Black Sabbath Bench", note: { en: "Rock landmark by the canal on Broad Street." }, walkMins: 13, coords: "https://www.google.com/maps/place/Black+Sabbath+Bench,+Broad+St,+Birmingham+B1+2HP/data=!4m2!3m1!1s0x4870bddb998b126b:0xea744080aeef225b" }
   ],
 
   importantExtra: [
