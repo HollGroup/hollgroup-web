@@ -35,17 +35,36 @@ const CONFIG = {
   "parkingDetails": {
     "en": "One free private parking space for our guests, suitable for vans and work vehicles. The house is just outside the Clean Air Zone, so there is no daily charge to drive or park here. At the end of the cul-de-sac, carry straight on: the parking bays are set back, directly in front of the house. Our space is the right-hand one. The left-hand space belongs to a neighbour, please keep it clear."
   },
-  "parkingNearby": {
-    "en": "[CONFIRM: where a second car can park, and whether it is free]"
-  },
+  "parkingNearby": "",
   "parkingCoords": "",
   "parkingNearbyCoords": "",
   "parkingOptions": [],
   "parkingPhotos": [],
   "directions": {
-    "en": "Your full address is in your check-in message. Save it on your phone, you will need it for taxis and deliveries. The city centre is a 20 minute walk, or about £6 by taxi."
+    "en": "Your full address is in your check-in message. Save it on your phone, you will need it for taxis and deliveries. Brindleyplace is about 20 minutes on foot along the canal, and New Street station about 12 minutes by taxi."
   },
-  "transport": [],
+  "transport": [
+    {
+      "mode": "train",
+      "name": "Birmingham New Street",
+      "how": "car",
+      "mins": 12,
+      "coords": "Birmingham New Street station",
+      "note": {
+        "en": "About 12 minutes by taxi, or 38 minutes on foot."
+      }
+    },
+    {
+      "mode": "plane",
+      "name": "Birmingham Airport",
+      "how": "car",
+      "mins": 40,
+      "coords": "Birmingham Airport",
+      "note": {
+        "en": "By car or taxi, depending on traffic."
+      }
+    }
+  ],
   "entranceCoords": "",
   "lockboxCoords": "",
   "lockboxAreaPhoto": "",
@@ -103,18 +122,54 @@ const CONFIG = {
     },
     {
       "title": {
-        "en": "Heating"
+        "en": "Unwind nearby"
       },
       "text": {
-        "en": "Gas central heating from a Vaillant combi boiler, controlled by Hive. We set and check the temperature for you, so there is nothing to adjust. If the house is too warm or too cold, just message us and we will change it straight away. Please do not touch the Hive or any switch: 1) the switch in the kitchen next to the door, which powers the boiler; 2) the Hive bridge on the small corner shelf near the front door, plugged into an extension lead; 3) the power buttons under the boiler, in the built-in wardrobe in the bedroom. Touching any of them can stop the heating and spoil your stay."
-      }
+        "en": "Edgbaston Reservoir is just 5 minutes on foot: a peaceful walk around the water, with benches to sit and watch the sunset."
+      },
+      "imgs": [
+        {
+          "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791871370/edbagston_reservoir_bench_r5djwb.jpg",
+          "caption": {
+            "en": "A bench by the water at Edgbaston Reservoir"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "Heating: please do not touch"
+      },
+      "text": {
+        "en": "We set the heating for you. Too warm or too cold? Message us. Please do not touch the kitchen switch by the door, the Hive bridge on the corner shelf by the front door, or the boiler buttons in the bedroom wardrobe, or the heating can stop."
+      },
+      "imgs": [
+        {
+          "img": "",
+          "caption": {
+            "en": "1. Kitchen switch, by the door"
+          }
+        },
+        {
+          "img": "",
+          "caption": {
+            "en": "2. Hive bridge, corner shelf by the front door"
+          }
+        },
+        {
+          "img": "",
+          "caption": {
+            "en": "3. Boiler buttons, bedroom wardrobe"
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Hot water"
       },
       "text": {
-        "en": "Hot water comes straight from the Vaillant combi boiler, so it is always available. Just run the tap and give it a few seconds."
+        "en": "Always available from the combi boiler. Run the tap for a few seconds."
       }
     },
     {
@@ -122,53 +177,16 @@ const CONFIG = {
         "en": "Kitchen"
       },
       "text": {
-        "en": "Fully equipped: fridge, hob, oven, microwave, kettle, toaster and everything you need to cook. [CONFIRM: hob type and oven brand]"
-      },
-      "appliances": [
-        {
-          "name": {
-            "en": "Hob"
-          },
-          "brand": "",
-          "steps": {
-            "en": [
-              "[CONFIRM: how to switch on the new hob]"
-            ]
-          }
-        },
-        {
-          "name": {
-            "en": "Oven"
-          },
-          "brand": "",
-          "steps": {
-            "en": [
-              "[CONFIRM: brand, model and how to use it]"
-            ]
-          }
-        }
-      ]
+        "en": "Fully equipped: fridge, hob, oven, microwave, kettle, toaster and everything you need to cook."
+      }
     },
     {
       "title": {
         "en": "Laundry"
       },
       "text": {
-        "en": "A 2 in 1 washer dryer. [CONFIRM: where it is, iron, ironing board and clothes airer]"
-      },
-      "appliances": [
-        {
-          "name": {
-            "en": "Washer dryer"
-          },
-          "brand": "",
-          "steps": {
-            "en": [
-              "[CONFIRM: brand, model and the main programmes]"
-            ]
-          }
-        }
-      ]
+        "en": "A 2 in 1 washer dryer."
+      }
     },
     {
       "title": {
@@ -199,38 +217,76 @@ const CONFIG = {
     "en": "Bins are collected on Monday mornings. If you are staying on Sunday night: on Sunday evening, take the outdoor bins out to the collection point at the bend where the cul-de-sac ends, just before the parking area. If you check out on Sunday morning or earlier: do not take any bins out, just leave your rubbish and recycling in the indoor bins and our housekeeping team will sort it."
   },
   "fireDetails": {
-    "en": "[CONFIRM: smoke alarm locations and carbon monoxide alarm]. The Vaillant combi boiler is upstairs, in the built-in wardrobe in the bedroom. When you call 999, give the full address from your check-in message."
+    "en": "The Vaillant combi boiler is upstairs, in the built-in wardrobe in the bedroom. When you call 999, give the full address from your check-in message."
   },
   "routerLocation": {
-    "en": "[CONFIRM: router location]. Please do not unplug the Hive bridge on the small corner shelf near the front door, it controls the heating."
+    "en": "Please do not unplug the Hive bridge on the corner shelf by the front door."
   },
   "routerLocked": false,
   "heatingCheck": {
-    "en": "Please do not try to fix the heating yourself. Message us and we will sort it remotely or come round. Do not touch 1) the switch in the kitchen next to the door, which powers the boiler; 2) the Hive bridge on the small corner shelf near the front door, plugged into an extension lead; 3) the power buttons under the boiler, in the built-in wardrobe in the bedroom. Please do not open the boiler or remove any covers."
+    "en": "Message us and we will sort it. Please do not touch any switch, the Hive or the boiler."
   },
   "utilitiesLocked": false,
-  "stopcock": "[PROPERTY: water stopcock location]",
-  "fuseBox": "[PROPERTY: fuse box location]",
-  "pharmacy": [],
+  "stopcock": {
+    "en": "If you have a water leak, call us straight away and we will guide you to it."
+  },
+  "fuseBox": {
+    "en": "If the power goes off, call us straight away and we will guide you to it."
+  },
+  "pharmacy": [
+    {
+      "name": "R & R Pharmacy",
+      "coords": "R & R Pharmacy, Cope St, Birmingham B18 7BA",
+      "mins": 12,
+      "how": "walk"
+    },
+    {
+      "name": "Ladywood Pharmacy",
+      "coords": "Ladywood Pharmacy, 16 King Edwards Rd, Birmingham B1 2PZ",
+      "mins": 15,
+      "how": "walk"
+    },
+    {
+      "name": "Tesco Pharmacy",
+      "coords": "Tesco Pharmacy, Camden St, Birmingham B18 7BH",
+      "mins": 19,
+      "how": "walk",
+      "note": {
+        "en": "Inside the Tesco Superstore."
+      }
+    },
+    {
+      "name": "Late Night Pharmacy",
+      "coords": "LATE NIGHT PHARMACY, 328-330 Dudley Rd, Birmingham B18 4HJ",
+      "mins": 20,
+      "how": "walk"
+    }
+  ],
   "pharmacyNote": "",
   "hospital": [
     {
       "name": "Midland Metropolitan University Hospital",
-      "coords": "Midland Metropolitan University Hospital, Smethwick",
-      "mins": 6,
+      "coords": "Midland Metropolitan University Hospital, Grove Ln, Smethwick B66 2QT",
+      "mins": 10,
       "how": "car"
     },
     {
       "name": "Queen Elizabeth Hospital Birmingham",
-      "coords": "Queen Elizabeth Hospital Birmingham"
+      "coords": "Queen Elizabeth Hospital Birmingham, Mindelsohn Way, Birmingham B15 2GW",
+      "mins": 16,
+      "how": "car"
     },
     {
       "name": "Birmingham Children's Hospital",
-      "coords": "52.4849039, -1.892619",
+      "coords": "Birmingham Children's Hospital, Steelhouse Ln, Birmingham B4 6NH",
+      "mins": 11,
+      "how": "car",
       "tag": "kids"
     }
   ],
-  "hospitalNote": "",
+  "hospitalNote": {
+    "en": "City Hospital on Dudley Road, 10 minutes away, no longer has an A&E. For emergencies go to Midland Metropolitan. If it is urgent but not life threatening, call 111 first. In an emergency, call 999."
+  },
   "securing": {
     "en": "Close and lock all windows, and the back door if you opened it. Close the front door firmly behind you: it locks by itself. If you had to use the backup keys, put them back where you found them and close the lockbox."
   },
@@ -240,30 +296,150 @@ const CONFIG = {
   "picksImage": "",
   "picks": [
     {
-      "category": "see",
-      "name": "Edgbaston Reservoir",
-      "note": "A lovely loop for a walk or a run, right on your doorstep.",
-      "walkMins": 5,
-      "coords": "Edgbaston Reservoir, Birmingham"
-    },
-    {
-      "category": "see",
-      "name": "Brindleyplace and the ICC",
-      "note": "Follow the canal towpath into town: restaurants, bars and the convention centre.",
-      "walkMins": 19,
-      "coords": "Brindleyplace, Birmingham"
+      "category": "essentials",
+      "name": "Lidl",
+      "note": {
+        "en": "Supermarket on Dudley Road."
+      },
+      "walkMins": 15,
+      "coords": "Lidl, 167 Dudley Rd, Birmingham B18 7QY"
     },
     {
       "category": "essentials",
       "name": "Tesco Superstore",
-      "note": "[CONFIRM: which Tesco, walking minutes and link]",
-      "coords": ""
+      "note": {
+        "en": "Large supermarket at Spring Hill, with a pharmacy inside."
+      },
+      "walkMins": 19,
+      "coords": "Tesco Superstore, Spring Hill, Birmingham B18 7BH"
     },
     {
-      "category": "essentials",
-      "name": "Lidl",
-      "note": "[CONFIRM: walking minutes and link]",
-      "coords": ""
+      "category": "coffee",
+      "name": "Reservoir Café",
+      "note": {
+        "en": "Breakfast, coffee and lunch right by the water. Closes early afternoon."
+      },
+      "walkMins": 4,
+      "coords": "Reservoir Café, 1 Leslie Rd, Birmingham B16 9DX"
+    },
+    {
+      "category": "eat",
+      "name": "Ama's Kitchen",
+      "note": {
+        "en": "West African food with a lovely atmosphere."
+      },
+      "walkMins": 7,
+      "coords": "Ama's Kitchen, 289 Icknield Port Rd, Birmingham B16 0AG"
+    },
+    {
+      "category": "eat",
+      "name": "Shamus Kebab House",
+      "note": {
+        "en": "Highly rated, generous and great value."
+      },
+      "walkMins": 9,
+      "coords": "Shamus Kebab House, 272 Icknield Port Rd, Birmingham B16 0AG"
+    },
+    {
+      "category": "eat",
+      "name": "Ristorante Caffe' Gustami",
+      "note": {
+        "en": "Rustic Italian, very popular with locals."
+      },
+      "walkMins": 15,
+      "coords": "Ristorante Caffe' Gustami, 4 King Edwards Rd, Birmingham B1 2PZ"
+    },
+    {
+      "category": "drinks",
+      "name": "The Distillery",
+      "note": {
+        "en": "Canalside bar with food, on the way into town."
+      },
+      "walkMins": 16,
+      "coords": "The Distillery, 4 Sheepcote St, Birmingham B16 8AE"
+    },
+    {
+      "category": "see",
+      "name": "Edgbaston Reservoir",
+      "note": {
+        "en": "A peaceful walk or run around the water, right on your doorstep."
+      },
+      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791871369/edbagston_reservoir_r3ndan.jpg",
+      "walkMins": 5,
+      "coords": "Edgbaston Reservoir, Birmingham B16 9EE"
+    },
+    {
+      "category": "see",
+      "name": "Dhamma Talaka Peace Pagoda",
+      "note": {
+        "en": "A golden Burmese pagoda just around the corner. It is a place of worship, so please be respectful."
+      },
+      "walkMins": 1,
+      "coords": "Birmingham Buddhist Vihara, 29 Osler St, Birmingham B16 9EU"
+    },
+    {
+      "category": "see",
+      "name": "Ladywood Leisure Centre",
+      "note": {
+        "en": "Swimming pool, gym and fitness classes. Pay as you go."
+      },
+      "walkMins": 6,
+      "coords": "Ladywood Leisure Centre, Ladywood Middleway, Birmingham B16 8TR"
+    },
+    {
+      "category": "see",
+      "name": "Summerfield Park",
+      "note": {
+        "en": "A large green park with play areas."
+      },
+      "walkMins": 17,
+      "coords": "Summerfield Park, Birmingham B16 0HG"
+    },
+    {
+      "category": "see",
+      "name": "Brindleyplace",
+      "note": {
+        "en": "Restaurants, bars and boats on the canals. Follow the canal towpath into town."
+      },
+      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791871380/brindleyplace_boats_szqlfv.jpg",
+      "walkMins": 21,
+      "coords": "Brindleyplace, Birmingham B1 2LP"
+    },
+    {
+      "category": "see",
+      "name": "Utilita Arena",
+      "note": {
+        "en": "Birmingham's big arena for concerts and shows."
+      },
+      "walkMins": 21,
+      "coords": "Utilita Arena Birmingham, King Edwards Rd, Birmingham B1 2AA"
+    },
+    {
+      "category": "see",
+      "name": "ICC Birmingham",
+      "note": {
+        "en": "International Convention Centre and Symphony Hall, on Centenary Square."
+      },
+      "walkMins": 23,
+      "coords": "The International Convention Centre, 8 Centenary Sq, Birmingham B1 2EA"
+    },
+    {
+      "category": "see",
+      "name": "Library of Birmingham",
+      "note": {
+        "en": "Iconic modern library with free entry and rooftop gardens."
+      },
+      "walkMins": 27,
+      "coords": "Library of Birmingham, Centenary Sq, Birmingham B1 2ND"
+    },
+    {
+      "category": "see",
+      "name": "Jewellery Quarter",
+      "note": {
+        "en": "Historic quarter with jewellers, independent cafés and bars."
+      },
+      "walkMins": 28,
+      "coords": "Jewellery Quarter, Birmingham"
     }
   ],
   "importantExtra": [
@@ -272,7 +448,7 @@ const CONFIG = {
         "en": "Heating: please do not touch"
       },
       "text": {
-        "en": "We control the heating for you. If it is too warm or too cold, message us. Please never touch 1) the switch in the kitchen next to the door, which powers the boiler; 2) the Hive bridge on the small corner shelf near the front door, plugged into an extension lead; 3) the power buttons under the boiler, in the built-in wardrobe in the bedroom. If any of these is switched off or unplugged, the heating can stop working."
+        "en": "We control it for you. Too warm or too cold? Message us. Please do not touch any switch, the Hive or the boiler."
       }
     },
     {
