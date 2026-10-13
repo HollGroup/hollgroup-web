@@ -5,6 +5,7 @@
       offers: { nav, title, note, items: [ { icon: "bag"|"walk"|"fish"|"ticket", img, title, text, cta, url } ] }
       Every text can be plain or { en: "...", es: "..." }. Leave offers out and nothing changes.
    4. Optional CONFIG.servicePhotos: { early, late, mid } photo links shown on top of the three Services blocks.
+   5. The returning-guest strip at the top becomes a bigger banner (same home, same host, same conditions). bigPromo: false keeps the old strip.
    Since 20261013e guide.js loads this file on every guide, and offers and servicePhotos have Birmingham defaults
    (below). A page can replace them with its own, or switch them off with offers: false / servicePhotos: false. */
 (function () {
@@ -28,6 +29,7 @@
     ".offer-body .btn{align-self:stretch}" +
     ".offers-note{font-size:14px;color:var(--muted,#4A4A4A);margin-top:12px}" +
     "#services .soft.has-photo{padding:0;overflow:hidden}#services .soft.has-photo>:not(img){margin-left:16px;margin-right:16px}#services .soft.has-photo>p{margin-bottom:14px}" +
+    ".promo.promo-big{display:block;position:relative;background:linear-gradient(135deg,#1D7563 0%,#0F4A3E 100%);color:#fff;border-radius:20px;padding:20px 18px 18px;margin:16px 0 18px;box-shadow:0 10px 28px rgba(15,74,62,.28);overflow:hidden;font-weight:400}" +".promo-big::before{content:\"\";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.07);top:-70px;inset-inline-end:-50px}" +".promo-big .pb-top{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#F6D58E;padding-inline-end:36px}" +".promo-big .pb-ico{flex:0 0 38px;width:38px;height:38px;border-radius:12px;background:#F6D58E;color:#0F4A3E;display:flex;align-items:center;justify-content:center;flex-shrink:0}.promo-big .pb-ico svg{width:22px;height:22px}" +".promo-big .pb-h{font-family:Outfit,system-ui,sans-serif;font-size:24px;font-weight:700;line-height:1.2;margin:12px 0 14px;position:relative}" +".promo-big .pb-same{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;padding:0;list-style:none}" +".promo-big .pb-same li{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.14);border-radius:999px;padding:6px 12px 6px 8px;font-size:15px;font-weight:600}" +".promo-big .pb-same svg{width:18px;height:18px;color:#F6D58E;flex-shrink:0}" +".promo-big .pb-p{font-size:16px;line-height:1.45;margin:0 0 16px;color:rgba(255,255,255,.92)}.promo-big .pb-p b{color:#F6D58E}" +".promo-big .pb-btn{display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:14px;background:#fff;color:#0F4A3E;font-weight:700;font-size:17px;text-decoration:none}" +".promo-big #promoX{position:absolute;top:8px;inset-inline-end:6px;background:none;border:0;color:rgba(255,255,255,.75);font-size:26px;min-width:40px;min-height:40px;cursor:pointer}" +
     ".svc-img{width:100%;height:140px;object-fit:cover;display:block;margin-bottom:12px}";
   var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
 
@@ -41,6 +43,21 @@
     ticket: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a2 2 0 0 0 0 4v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 1 0-4V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M13 4v14" stroke-dasharray="2 2"/></svg>'
   };
   var esc = function (v) { return String(v == null ? "" : v).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
+  var PROMO = {"en": ["A gift for your next stay", "Next time, pay less for the same stay", ["Same home", "Same host, Ibon", "Same conditions"], "Only the price changes: lower on our website, plus up to <b>7% off</b> for you.", "See my discount"], "es": ["Un regalo para tu próxima estancia", "La próxima vez, paga menos por la misma estancia", ["El mismo alojamiento", "El mismo anfitrión, Ibon", "Las mismas condiciones"], "Solo cambia el precio: más bajo en nuestra web y hasta un <b>7% de descuento</b> para ti.", "Ver mi descuento"], "fr": ["Un cadeau pour votre prochain séjour", "La prochaine fois, payez moins pour le même séjour", ["Le même logement", "Le même hôte, Ibon", "Les mêmes conditions"], "Seul le prix change : plus bas sur notre site, plus jusqu'à <b>7 % de réduction</b> pour vous.", "Voir ma réduction"], "de": ["Ein Geschenk für Ihren nächsten Aufenthalt", "Nächstes Mal weniger zahlen, für denselben Aufenthalt", ["Dieselbe Unterkunft", "Derselbe Gastgeber, Ibon", "Dieselben Bedingungen"], "Nur der Preis ändert sich: günstiger auf unserer Website, dazu bis zu <b>7 % Rabatt</b> für Sie.", "Meinen Rabatt ansehen"], "it": ["Un regalo per il tuo prossimo soggiorno", "La prossima volta, paga meno per lo stesso soggiorno", ["Lo stesso alloggio", "Lo stesso host, Ibon", "Le stesse condizioni"], "Cambia solo il prezzo: più basso sul nostro sito, più fino al <b>7% di sconto</b> per te.", "Vedi il mio sconto"], "pt": ["Uma oferta para a sua próxima estadia", "Da próxima vez, pague menos pela mesma estadia", ["O mesmo alojamento", "O mesmo anfitrião, Ibon", "As mesmas condições"], "Só muda o preço: mais baixo no nosso site, e até <b>7% de desconto</b> para si.", "Ver o meu desconto"], "zh": ["送您下次入住的礼物", "下次入住，同样的住宿，花更少的钱", ["同一套房源", "同一位房东 Ibon", "同样的条件"], "唯一不同的是价格：官网价格更低，另享最高 <b>7% 优惠</b>。", "查看我的优惠"], "ar": ["هدية لإقامتك القادمة", "في المرة القادمة، ادفع أقل مقابل الإقامة نفسها", ["المسكن نفسه", "المضيف نفسه، إيبون", "الشروط نفسها"], "السعر وحده يتغيّر: أقل على موقعنا، مع خصم يصل إلى <b>7%</b> لك.", "اعرض خصمي"], "ja": ["次回のご滞在へのプレゼント", "次回は同じ滞在を、もっとお得に", ["同じお部屋", "同じホスト、Ibon", "同じ条件"], "違うのは料金だけ：公式サイトはより安く、さらに最大 <b>7% オフ</b>。", "割引を見る"]};
+  var GIFT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>';
+  var TICK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  // Bigger "book direct" banner at the top of the guide (replaces the thin strip; closing it still hides it for good)
+  function promo() {
+    var p = document.getElementById("promo");
+    if (!p || p.classList.contains("promo-big") || (CFG && CFG.bigPromo === false)) return;
+    var lang = (document.documentElement.lang || "en").slice(0, 2), L = PROMO[lang] || PROMO.en;
+    var x = document.getElementById("promoX");
+    p.classList.add("promo-big");
+    p.innerHTML = '<div class="pb-top"><span class="pb-ico">' + GIFT + '</span>' + esc(L[0]) + '</div><div class="pb-h">' + esc(L[1]) + '</div>' +
+      '<ul class="pb-same">' + L[2].map(function (t) { return '<li>' + TICK + esc(t) + '</li>'; }).join("") + '</ul>' +
+      '<p class="pb-p">' + L[3] + '</p><a class="pb-btn" href="#thanks">' + esc(L[4]) + '</a>';
+    if (x) p.appendChild(x);
+  }
   function servicePhotos() {
     var S = (!CFG || CFG.servicePhotos === undefined) ? DEFAULT_SERVICE_PHOTOS : CFG.servicePhotos; if (!S) return;
     var blocks = app.querySelectorAll("#services .stack > .soft");
@@ -92,8 +109,8 @@
     // alt texts of photos: drop the asterisks
     app.querySelectorAll("img[alt*='**']").forEach(function (i) { i.alt = i.alt.replace(/\*\*/g, ""); });
   }
-  var mo = new MutationObserver(function () { mo.disconnect(); offers(); servicePhotos(); bold(); mo.observe(app, { childList: true, subtree: true }); });
-  offers(); servicePhotos(); bold(); mo.observe(app, { childList: true, subtree: true });
+  var mo = new MutationObserver(function () { mo.disconnect(); promo(); offers(); servicePhotos(); bold(); mo.observe(app, { childList: true, subtree: true }); });
+  promo(); offers(); servicePhotos(); bold(); mo.observe(app, { childList: true, subtree: true });
 
   document.addEventListener("wheel", function (e) {
     var nav = e.target.closest && e.target.closest("#navBar");
