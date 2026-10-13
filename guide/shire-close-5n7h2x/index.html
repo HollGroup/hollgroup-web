@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="theme-color" content="#1D7563">
+<title>Holl Group</title>
+<link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/guide/assets/guide.css?v=20261013a">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+/* =====================================================================
+   QUIET GARDEN HOUSE (Edgbaston Reservoir): property settings.
+   Never put the house number, the street address, access codes
+   or the keypad code here.
+   ===================================================================== */
+const CONFIG = {
+  "propertyName": "Quiet Garden House",
+  "area": "Edgbaston Reservoir, Birmingham",
+  "propertyType": "house",
+  "garden": true,
+  "exteriorCameras": true,
+  "privateAddress": true,
+  "entry": "smartlock",
+  "smartLockCodeTimeLimited": true,
+  "smartLockHowTo": {
+    "en": "Pull the door handle firmly towards you and keep holding it. While holding, enter your code followed by #. When you hear the lock turn, push the door inwards to open it. If the lock makes a sound like a police siren, the bolt is jammed against the frame: pull the door firmly towards you again and re-enter your code and #, keeping the pressure the whole time. The door locks by itself when you close it. If the keypad does not respond, message us: there is a backup key and we will tell you how to use it."
+  },
+  "keysFirst": false,
+  "keysFirstWhere": "",
+  "parking": "available",
+  "parkingDetails": {
+    "en": "One free private parking space for our guests, suitable for vans and work vehicles. The house is just outside the Clean Air Zone, so there is no daily charge to drive or park here. At the end of the cul-de-sac, carry straight on: the parking bays are set back, directly in front of the house. Our space is the right-hand one. The left-hand space belongs to a neighbour, please keep it clear."
+  },
+  "parkingNearby": {
+    "en": "[CONFIRM: where a second car can park, and whether it is free]"
+  },
+  "parkingCoords": "",
+  "parkingNearbyCoords": "",
+  "parkingOptions": [],
+  "parkingPhotos": [],
+  "directions": {
+    "en": "Your full address is in your check-in message. Save it on your phone, you will need it for taxis and deliveries. The city centre is a 20 minute walk, or about £6 by taxi."
+  },
+  "transport": [],
+  "entranceCoords": "",
+  "lockboxCoords": "",
+  "lockboxAreaPhoto": "",
+  "keysNote": "",
+  "arrivalRoute": {
+    "title": "",
+    "steps": []
+  },
+  "binsRoute": {
+    "title": "",
+    "steps": []
+  },
+  "checkIn": "15:00",
+  "checkOut": "10:00",
+  "wifiName": "ShireCloseHG",
+  "wifiPassword": "www.hollgroup.co.uk",
+  "sleeps": 4,
+  "bathrooms": 1,
+  "beds": [
+    {
+      "room": "bed1",
+      "beds": [
+        "king"
+      ],
+      "note": {
+        "en": "Upstairs, with blackout blinds. Ideal if you work nights."
+      }
+    },
+    {
+      "room": "living",
+      "beds": [
+        "sofa"
+      ],
+      "note": {
+        "en": "Double sofa bed in the living room for two more guests. Please let us know in advance if you need it."
+      }
+    }
+  ],
+  "property": [
+    {
+      "title": {
+        "en": "Your home"
+      },
+      "text": {
+        "en": "A whole two storey house on a quiet cul-de-sac, a 5 minute walk from Edgbaston Reservoir. Downstairs: a separate, fully equipped kitchen and the living room with the sofa bed and the TV. Upstairs: the bedroom with a king bed, a desk to work at and the bathroom. A travel cot is available on request."
+      }
+    },
+    {
+      "title": {
+        "en": "Private garden"
+      },
+      "text": {
+        "en": "The private garden is for our guests only. It is a few steps outside: from the front door, turn right and walk down the side passage between the wooden fences to the wooden gate at the end. We look after the garden regularly and keep it closed, so please message us before you want to use it and we will make sure it is ready for you."
+      }
+    },
+    {
+      "title": {
+        "en": "Heating"
+      },
+      "text": {
+        "en": "Central heating, controlled by Hive. [CONFIRM: is there a Hive thermostat on the wall the guest can use, and how]. If you are cold, message us and we can turn it up for you."
+      }
+    },
+    {
+      "title": {
+        "en": "Hot water"
+      },
+      "text": {
+        "en": "[CONFIRM: hot water from the boiler, always on or on a schedule]"
+      }
+    },
+    {
+      "title": {
+        "en": "Kitchen"
+      },
+      "text": {
+        "en": "Fully equipped: fridge, hob, oven, microwave, kettle, toaster and everything you need to cook. [CONFIRM: hob type and oven brand]"
+      },
+      "appliances": [
+        {
+          "name": {
+            "en": "Hob"
+          },
+          "brand": "",
+          "steps": {
+            "en": [
+              "[CONFIRM: how to switch on the new hob]"
+            ]
+          }
+        },
+        {
+          "name": {
+            "en": "Oven"
+          },
+          "brand": "",
+          "steps": {
+            "en": [
+              "[CONFIRM: brand, model and how to use it]"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "Laundry"
+      },
+      "text": {
+        "en": "A 2 in 1 washer dryer. [CONFIRM: where it is, iron, ironing board and clothes airer]"
+      },
+      "appliances": [
+        {
+          "name": {
+            "en": "Washer dryer"
+          },
+          "brand": "",
+          "steps": {
+            "en": [
+              "[CONFIRM: brand, model and the main programmes]"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "Bathroom"
+      },
+      "text": {
+        "en": "Bath with shower over it and a bath caddy, stocked with essentials. After every shower, please use the squeegee on the glass and walls, open the bathroom window for at least 15 minutes and dry any water on the floor. It keeps the room fresh and stops mould."
+      }
+    },
+    {
+      "title": {
+        "en": "TV"
+      },
+      "text": {
+        "en": "40 inch smart TV with Netflix, Prime Video and YouTube. Sign in with your own account, and please sign out before you leave."
+      }
+    },
+    {
+      "title": {
+        "en": "Pets"
+      },
+      "text": {
+        "en": "Pets are welcome when agreed in advance. Please keep them on the ground floor at all times: the stairs and the upper floor are carpeted, and any sign of pets upstairs means a deep clean charged to your deposit. Keep them off the sofa and the beds. Assistance dogs are always welcome."
+      }
+    }
+  ],
+  "bins": {
+    "en": "Bins are collected on Monday mornings. If you are staying on Sunday night: on Sunday evening, take the outdoor bins out to the collection point at the bend where the cul-de-sac ends, just before the parking area. If you check out on Sunday morning or earlier: do not take any bins out, just leave your rubbish and recycling in the indoor bins and our housekeeping team will sort it."
+  },
+  "fireDetails": {
+    "en": "[CONFIRM: smoke alarm locations and carbon monoxide alarm]. The boiler is upstairs, in a cupboard. When you call 999, give the full address from your check-in message."
+  },
+  "routerLocation": {
+    "en": "It is in the entrance, next to the coat rack. Please do not unplug the small Hive box next to it, it controls the heating. [CONFIRM: router location with the new Wi-Fi]"
+  },
+  "routerLocked": false,
+  "heatingCheck": {
+    "en": "The heating is controlled by Hive. Please do not unplug the Hive box by the router and keep the boiler switch in the kitchen on. If the heating stops, message us first. We may ask you to press the round button on the Hive receiver, in the upstairs cupboard next to the boiler: solid green means the heating is on. Please do not open the boiler or remove any covers."
+  },
+  "utilitiesLocked": false,
+  "stopcock": "[PROPERTY: water stopcock location]",
+  "fuseBox": "[PROPERTY: fuse box location]",
+  "pharmacy": [],
+  "pharmacyNote": "",
+  "hospital": [
+    {
+      "name": "Midland Metropolitan University Hospital",
+      "coords": "Midland Metropolitan University Hospital, Smethwick",
+      "mins": 6,
+      "how": "car"
+    },
+    {
+      "name": "Queen Elizabeth Hospital Birmingham",
+      "coords": "Queen Elizabeth Hospital Birmingham"
+    },
+    {
+      "name": "Birmingham Children's Hospital",
+      "coords": "52.4849039, -1.892619",
+      "tag": "kids"
+    }
+  ],
+  "hospitalNote": "",
+  "securing": {
+    "en": "Close and lock all windows, and the back door if you opened it. Close the front door firmly behind you: it locks by itself. If you had to use the backup keys, put them back where you found them and close the lockbox."
+  },
+  "smokingRule": {
+    "en": "No smoking inside the house and no parties. Smoking is allowed outdoors only."
+  },
+  "picksImage": "",
+  "picks": [
+    {
+      "category": "see",
+      "name": "Edgbaston Reservoir",
+      "note": "A lovely loop for a walk or a run, right on your doorstep.",
+      "walkMins": 5,
+      "coords": "Edgbaston Reservoir, Birmingham"
+    },
+    {
+      "category": "see",
+      "name": "Brindleyplace and the ICC",
+      "note": "Follow the canal towpath into town: restaurants, bars and the convention centre.",
+      "walkMins": 19,
+      "coords": "Brindleyplace, Birmingham"
+    },
+    {
+      "category": "essentials",
+      "name": "Tesco Superstore",
+      "note": "[CONFIRM: which Tesco, walking minutes and link]",
+      "coords": ""
+    },
+    {
+      "category": "essentials",
+      "name": "Lidl",
+      "note": "[CONFIRM: walking minutes and link]",
+      "coords": ""
+    }
+  ],
+  "importantExtra": [
+    {
+      "title": {
+        "en": "Opening the door"
+      },
+      "text": {
+        "en": "Pull the handle firmly towards you and keep holding it while you type your code and #. The door will not open otherwise."
+      }
+    },
+    {
+      "title": {
+        "en": "Your parking space"
+      },
+      "text": {
+        "en": "Use only the right-hand space in front of the house. The left-hand space belongs to a neighbour."
+      }
+    },
+    {
+      "title": {
+        "en": "After every shower"
+      },
+      "text": {
+        "en": "Use the squeegee, open the bathroom window for at least 15 minutes and dry the floor. This stops damp and mould."
+      }
+    }
+  ],
+  "discountUrl": "https://booking.hollgroup.co.uk/?coupon=5REPEATING&utm=guide",
+  "discountCode": "5REPEATING"
+};
+/* ===================== END OF PROPERTY SETTINGS ===================== */
+</script>
+</head>
+<body>
+<div id="app"></div>
+<div class="toast" id="toast"></div>
+<script src="/guide/assets/guide-i18n.js?v=20261013a"></script>
+<script src="/guide/assets/guide.js?v=20261013a"></script>
+</body>
+</html>
