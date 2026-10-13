@@ -36,7 +36,29 @@ const CONFIG = {
   "directions": {
     "en": "Garden Court is a Grade II listed building from 1858, set around its own lawn on Ladywood Middleway, close to Broadway Plaza and Five Ways."
   },
-  "transport": [],
+  "transport": [
+    {
+      "mode": "train",
+      "name": "Five Ways station",
+      "how": "walk",
+      "mins": 9,
+      "coords": "Five Ways station, Birmingham"
+    },
+    {
+      "mode": "tram",
+      "name": "Brindleyplace tram stop",
+      "how": "walk",
+      "mins": 11,
+      "coords": "Brindleyplace tram stop, Birmingham"
+    },
+    {
+      "mode": "train",
+      "name": "Birmingham New Street",
+      "how": "walk",
+      "mins": 24,
+      "coords": "Birmingham New Street station"
+    }
+  ],
   "entranceCoords": "Garden Court, Ladywood Middleway, Birmingham B16 8EU",
   "lockboxCoords": "",
   "lockboxAreaPhoto": "",
@@ -329,6 +351,111 @@ const CONFIG = {
   "picksImage": "",
   "picks": [
     {
+      "category": "essentials",
+      "name": "Morrisons",
+      "note": "Big supermarket at Five Ways, open until 11pm.",
+      "walkMins": 6,
+      "coords": "Morrisons, 30 Hagley Rd, Birmingham"
+    },
+    {
+      "category": "essentials",
+      "name": "Tesco Express",
+      "note": "Handy for the basics, open until 10pm.",
+      "walkMins": 10,
+      "coords": "Tesco Express, 66 Sheepcote St, Birmingham"
+    },
+    {
+      "category": "essentials",
+      "name": "Sainsbury's Local",
+      "note": "In Brindleyplace, open until 11pm.",
+      "walkMins": 10,
+      "coords": "Sainsbury's Local, 10 Brindley Pl, Birmingham"
+    },
+    {
+      "category": "essentials",
+      "name": "Nuffield Health gym",
+      "note": "Gym, pool and classes at Broadway Plaza, right next door.",
+      "walkMins": 1,
+      "coords": "Nuffield Health Birmingham Central, Broadway Plaza, Birmingham"
+    },
+    {
+      "category": "essentials",
+      "name": "The Gym Group, Broad Street",
+      "note": "Open 24 hours, day passes available online.",
+      "walkMins": 4,
+      "coords": "The Gym Group Birmingham Broad Street"
+    },
+    {
+      "category": "essentials",
+      "name": "PureGym, Broad Street",
+      "note": "Open 24 hours, day passes available online.",
+      "walkMins": 5,
+      "coords": "PureGym Birmingham City Centre, Broad St, Birmingham"
+    },
+    {
+      "category": "eat",
+      "name": "Del Villaggio",
+      "note": "Much loved Italian on Broad Street. Try the lasagne.",
+      "walkMins": 5,
+      "coords": "Del Villaggio, 175 Broad St, Birmingham"
+    },
+    {
+      "category": "eat",
+      "name": "Shrimp & Co",
+      "note": "Seafood favourite with excellent reviews. Book ahead at weekends.",
+      "walkMins": 6,
+      "coords": "Shrimp & Co Birmingham, Broad St"
+    },
+    {
+      "category": "eat",
+      "name": "Qavali",
+      "note": "Stylish Indo Persian restaurant and cocktail bar.",
+      "walkMins": 11,
+      "coords": "Qavali, 60 Broad St, Birmingham"
+    },
+    {
+      "category": "eat",
+      "name": "Turtle Bay",
+      "note": "Caribbean food and rum cocktails by the canal.",
+      "walkMins": 12,
+      "coords": "Turtle Bay Brindleyplace, Birmingham"
+    },
+    {
+      "category": "coffee",
+      "name": "Papillon Café",
+      "note": "Great coffee and pastries, just round the corner.",
+      "walkMins": 3,
+      "coords": "Papillon Café, 154 Broad St, Birmingham"
+    },
+    {
+      "category": "coffee",
+      "name": "Tricorn Café",
+      "note": "Friendly local café for breakfast and coffee.",
+      "walkMins": 4,
+      "coords": "Tricorn cafe, 51 Hagley Rd, Birmingham"
+    },
+    {
+      "category": "drinks",
+      "name": "The Vine Inn",
+      "note": "Classic local pub with real ales and sport on TV.",
+      "walkMins": 4,
+      "coords": "The Vine Inn, 92 Ruston St, Birmingham"
+    },
+    {
+      "category": "drinks",
+      "name": "Malt House",
+      "note": "Big canalside pub with a terrace, next to the arena.",
+      "walkMins": 14,
+      "coords": "Malt House, 75 King Edwards Rd, Birmingham"
+    },
+    {
+      "category": "see",
+      "name": "ODEON Luxe cinema",
+      "note": "Latest films with reclining seats at Broadway Plaza.",
+      "walkMins": 2,
+      "coords": "ODEON Luxe Birmingham Broadway Plaza"
+    },
+    {
       "category": "see",
       "name": "Brindleyplace",
       "note": "Restaurants, bars and canals.",
@@ -338,11 +465,107 @@ const CONFIG = {
     },
     {
       "category": "see",
+      "name": "National SEA LIFE Centre",
+      "note": "Aquarium by the canals, great with children. Photo: Gp258, CC BY-SA 4.0",
+      "walkMins": 11,
+      "coords": "National SEA LIFE Centre Birmingham",
+      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791875656/places_bham_sea_life.jpg"
+    },
+    {
+      "category": "see",
+      "name": "Ikon Gallery",
+      "note": "Free contemporary art in a Victorian school. Photo: Erebus555, CC BY-SA 3.0",
+      "walkMins": 12,
+      "coords": "Ikon Gallery, Birmingham",
+      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791875664/places_bham_ikon.jpg"
+    },
+    {
+      "category": "see",
+      "name": "Black Sabbath Bench",
+      "note": "Photo stop for heavy metal fans, on the canal bridge. Photo: The wub, CC BY-SA 4.0",
+      "walkMins": 13,
+      "coords": "Black Sabbath Bench, Broad St, Birmingham",
+      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791875666/places_bham_black_sabbath_bench.jpg"
+    },
+    {
+      "category": "see",
+      "name": "ICC",
+      "note": "Concerts, conferences and events between Brindleyplace and Centenary Square. Photo: delegateconnectimages, CC BY 2.0",
+      "walkMins": 14,
+      "coords": "ICC Birmingham, Broad St",
+      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791874787/places_bham_icc.jpg"
+    },
+    {
+      "category": "see",
+      "name": "Peace Pagoda",
+      "note": "Peaceful Buddhist pagoda, a hidden gem in Ladywood.",
+      "walkMins": 15,
+      "coords": "Birmingham Peace Pagoda, Osler St, Birmingham",
+      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791874783/places_bham_peace_pagoda.jpg"
+    },
+    {
+      "category": "see",
+      "name": "Symphony Hall",
+      "note": "World class concerts. Photo: Roger Kidd, CC BY-SA 2.0",
+      "walkMins": 15,
+      "coords": "Symphony Hall Birmingham",
+      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791875661/places_bham_symphony_hall.jpg"
+    },
+    {
+      "category": "see",
+      "name": "Utilita Arena",
+      "note": "Big concerts and shows by the canal. Photo: The wub, CC BY-SA 4.0",
+      "walkMins": 15,
+      "coords": "Utilita Arena Birmingham",
+      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791874791/places_bham_utilita_arena.jpg"
+    },
+    {
+      "category": "see",
+      "name": "The Cube",
+      "note": "Landmark building with a rooftop bar and views. Photo: Tony Hisgett, CC BY 2.0",
+      "walkMins": 16,
+      "coords": "The Cube, Birmingham",
+      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791875654/places_bham_cube.jpg"
+    },
+    {
+      "category": "see",
+      "name": "Library of Birmingham",
+      "note": "Free to visit, do not miss the rooftop gardens. Photo: The wub, CC BY-SA 4.0",
+      "walkMins": 17,
+      "coords": "Library of Birmingham",
+      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791874789/places_bham_library.jpg"
+    },
+    {
+      "category": "see",
+      "name": "Centenary Square",
+      "note": "The city's main square, with events and an ice rink at Christmas. Photo: The wub, CC BY-SA 4.0",
+      "walkMins": 17,
+      "coords": "Centenary Square, Birmingham",
+      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791875659/places_bham_centenary_square.jpg"
+    },
+    {
+      "category": "see",
+      "name": "The Mailbox",
+      "note": "Shops, restaurants and bars along the canal. Photo: The wub, CC BY-SA 4.0",
+      "walkMins": 19,
+      "coords": "The Mailbox, Birmingham",
+      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791875651/places_bham_mailbox.jpg"
+    },
+    {
+      "category": "see",
       "name": "Edgbaston Reservoir",
       "note": "A peaceful lakeside walk with benches by the water, perfect to unwind or for a morning run.",
       "walkMins": 25,
       "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791871369/edbagston_reservoir_r3ndan.jpg",
       "coords": "https://www.google.com/maps/place/Edgbaston+Reservoir,+Birmingham+B16+9EE/data=!4m2!3m1!1s0x4870bd041896a60f:0x2a0d8b242b5f7cc0"
+    },
+    {
+      "category": "see",
+      "name": "Jewellery Quarter",
+      "note": "Historic workshops, independent bars and the Pen Museum. Photo: A J Paxton, CC BY-SA 2.0",
+      "walkMins": 28,
+      "coords": "Jewellery Quarter, Birmingham",
+      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791874792/places_bham_jewellery_quarter.jpg"
     }
   ],
   "importantExtra": [],
