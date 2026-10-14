@@ -8,14 +8,14 @@
 <title>Holl Group</title>
 <link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/guide/assets/guide.css?v=20261012a">
+<link rel="stylesheet" href="/guide/assets/guide.css?v=20261013a">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
 /* =====================================================================
    THE TIMBER HOUSE (Oldbury): property settings.
-   Never put the house number, the street address, access codes,
-   the padlock code or the exact lockbox position here.
+   Never put the house number, the street address, the postcode,
+   access codes, the padlock code or the exact lockbox position here.
    ===================================================================== */
 const CONFIG = {
   "propertyName": "The Timber House",
@@ -31,7 +31,7 @@ const CONFIG = {
   "smartLockHowTo": "",
   "parking": "available",
   "parkingDetails": {
-    "en": "Off-road parking for one car behind the house, through the black gate. Drive round the block to reach the gate at the back. The padlock code is in your check-in message."
+    "en": "Private off-road parking for one car behind the house, through the large black gate. You cannot reach it from the front: drive round the block to the gate at the back. The padlock code is in your check-in message."
   },
   "parkingNearby": {
     "en": "Parking on the street is free, with no time limit. Please use it for a second car."
@@ -55,19 +55,19 @@ const CONFIG = {
     "steps": [
       {
         "text": {
-          "en": "Collect the keys from the lockbox next to the front door. The code and the exact spot are in your check-in message."
+          "en": "Collect the keys from the lockbox. The code and where to find it are in your check-in message."
         },
         "imgs": []
       },
       {
         "text": {
-          "en": "There are three keys. Round silver key: outer door. Square silver key: front door, behind the small porch. Black key: back door to the garden."
+          "en": "There are three keys. Round silver key: outer door. Square silver key: front door, just behind the small porch. Black key: back door to the garden."
         },
         "imgs": []
       },
       {
         "text": {
-          "en": "All three doors have lift handles. Lift the handle up before you turn the key, both to lock and to unlock."
+          "en": "All three doors have lift handles. **Lift the handle up before you turn the key**, both to lock and to unlock."
         },
         "imgs": []
       }
@@ -90,9 +90,8 @@ const CONFIG = {
         "single",
         "single"
       ],
-      "ensuite": true,
       "note": {
-        "en": "Upstairs. The en-suite shower room can only be reached through this bedroom."
+        "en": "Upstairs. The two single beds cannot be pushed together."
       }
     },
     {
@@ -102,7 +101,7 @@ const CONFIG = {
         "single"
       ],
       "note": {
-        "en": "Upstairs. Please use the bathroom downstairs."
+        "en": "Upstairs. The two single beds cannot be pushed together."
       }
     },
     {
@@ -111,7 +110,7 @@ const CONFIG = {
         "sofa"
       ],
       "note": {
-        "en": "Double sofa bed in the living room. Its bedding is stored under the sofa bed."
+        "en": "Opens into a king size bed. Its bedding is stored under the sofa bed."
       }
     }
   ],
@@ -121,7 +120,7 @@ const CONFIG = {
         "en": "Your home"
       },
       "text": {
-        "en": "A whole house, newly renovated, on two floors. Downstairs: living room with the bay window, family room with the dining table, kitchen and a bathroom with bath and shower. Upstairs: two bedrooms, the larger one with its own shower room. There is a garden at the back."
+        "en": "A whole house, newly renovated, on two floors. Downstairs: the living room with the bay window and the sofa bed, the dining room next to the kitchen, the kitchen, and a bathroom with bath, shower and the washing machine. Upstairs: two bedrooms, one on each side of the stairs, and a shower room at the end of the landing, shared by both bedrooms. At the back there is a garden with a table and chairs."
       }
     },
     {
@@ -129,7 +128,7 @@ const CONFIG = {
         "en": "Heating"
       },
       "text": {
-        "en": "Gas central heating from a combi boiler, with a smart thermostat on the wall. [PROPERTY: how guests change the temperature]"
+        "en": "Gas central heating from a combi boiler. We set the heating schedule for you. If you would like the house warmer or cooler at any time, message us and we will adjust it for you."
       }
     },
     {
@@ -145,7 +144,7 @@ const CONFIG = {
         "en": "Kitchen"
       },
       "text": {
-        "en": "Four burner gas hob, New World double oven, microwave, Tassimo coffee machine, toaster, kettle and a fridge freezer."
+        "en": "Four burner gas hob, New World double oven with grill, extractor hood, Russell Hobbs microwave, Bosch Tassimo coffee machine, toaster, kettle and a fridge freezer. There is no dishwasher."
       },
       "appliances": [
         {
@@ -156,10 +155,10 @@ const CONFIG = {
           "steps": {
             "en": [
               "Push the knob of the burner you want down and turn it.",
-              "At the same time, press and hold the small ignition button at the bottom right until the flame lights.",
+              "At the same time, press and hold the small ignition button at the bottom right of the panel until the flame lights.",
               "Turn all knobs fully off after use.",
               "The back left burner is being repaired. Please do not use it for now.",
-              "If you smell gas: turn everything off, open the windows, do not use switches and call 0800 111 999."
+              "If you smell gas: turn everything off, do not use light switches or flames, open the windows, leave the house and call 0800 111 999."
             ]
           }
         },
@@ -171,7 +170,8 @@ const CONFIG = {
           "model": "DFEO 90",
           "steps": {
             "en": [
-              "Three knobs: Top Oven, Single or Double Grill, and Fan Oven. [PROPERTY: which compartment each knob controls, and what the buttons do]"
+              "Three knobs: Top Oven, Single or Double Grill, and Fan Oven.",
+              "If anything is unclear, message us and we will guide you."
             ]
           }
         }
@@ -182,7 +182,7 @@ const CONFIG = {
         "en": "Laundry"
       },
       "text": {
-        "en": "Samsung 9 kg washing machine. There is no tumble dryer: a clothes airer, an iron and an ironing board are in the wardrobe upstairs, and there are plenty of hangers. The hair dryer is on the shelf in the upstairs shower room."
+        "en": "Samsung 9 kg washing machine, in the downstairs bathroom. There is no tumble dryer: a clothes airer, an iron and an ironing board are in the built-in cupboard upstairs, next to the shower room, and there are plenty of hangers. The hair dryer is on the shelf in the upstairs shower room."
       },
       "appliances": [
         {
@@ -193,11 +193,11 @@ const CONFIG = {
           "model": "WW90T554DAN",
           "steps": {
             "en": [
-              "Press the button marked ON.",
-              "Turn the dial to the programme you want: Eco 40-60 (2 h 44 min), 15' Quick Wash (23 min, up to 2 kg), Cotton (1 h 52 min), Towels (2 h 5 min) or Delicates (35 min).",
+              "Press the power button.",
+              "Turn the dial: the programme and its time show on the display. Good choices: Eco 40-60 (2 h 44 min), 15' Quick Wash (23 min, up to 2 kg), Cotton (1 h 52 min), Towels (2 h 5 min) or Delicates (35 min).",
               "Add detergent in the drawer at the top.",
-              "Press START.",
-              "Forgot something? Press START to pause, then use the small AddWash door."
+              "Press Start.",
+              "Forgot something? Press Start again to pause, then use the small AddWash door."
             ]
           }
         }
@@ -208,7 +208,7 @@ const CONFIG = {
         "en": "TV"
       },
       "text": {
-        "en": "Living room: TV with an Amazon Fire TV Stick. Family room: 55 inch TCL Roku smart TV. Sign in to your streaming apps with your own account, and please sign out before you leave."
+        "en": "Living room: TV with an Amazon Fire TV Stick. Dining room: 55 inch TCL Roku smart TV. Both are connected to the guest Wi-Fi. Sign in to your streaming apps with your own account, and please sign out before you leave. Please do not reset the TVs to factory settings. If a TV loses the Wi-Fi: on the Fire TV go to Settings, Network, choose HagleyHG-Guest, enter the password and select Connect. On the TCL press Home, then Settings, Network, Set up connection, Wireless, choose HagleyHG-Guest and enter the password."
       }
     },
     {
@@ -216,26 +216,30 @@ const CONFIG = {
         "en": "Pets"
       },
       "text": {
-        "en": "Pets are welcome when agreed in advance. Please keep them downstairs and off the furniture. Assistance dogs are always welcome."
+        "en": "Pets are welcome when agreed in advance, and a pet fee applies. Please keep them downstairs and off the furniture. Assistance dogs are always welcome at no charge: please tell us their size in advance."
       }
     }
   ],
   "bins": {
-    "en": "Bins are collected on Fridays, every other week. Please put them out on Thursday evening. [PROPERTY: which bin goes out which week, and where the bins are kept]"
+    "en": "The bins are kept in the garden. They are collected on Fridays, alternating each week: one week the **grey bin**, the next week the **blue lid bin and the blue bag**. If your stay includes a Thursday night, please take that week's bin from the garden to the collection point at the front of the house. Not sure which week it is? Message us. Grey bin: everything that cannot be recycled, including food waste (please bag it). Blue lid bin: glass, plastic bottles and containers, tins and cans. Blue bag: paper, cardboard and drink cartons."
   },
   "fireDetails": {
-    "en": "[PROPERTY: smoke alarm locations]. A carbon monoxide alarm is next to the boiler, in the cupboard of the upstairs shower room. If it sounds, open the windows, leave the house and call 0800 111 999. When you call 999, give the full address from your check-in message."
+    "en": "Smoke alarms are on the dining room ceiling and on the upstairs landing. A fire extinguisher and a fire blanket are in the kitchen, by the window next to the fridge. The carbon monoxide alarm is next to the boiler, in the cupboard of the upstairs shower room. If it sounds, or you smell gas: do not use light switches or flames, open the windows, leave the house and call 0800 111 999. When you call 999, give the full address from your check-in message."
   },
   "routerLocation": {
-    "en": "[PROPERTY: router location]. On the EE router, a teal light means all is well and orange means it is still connecting. A white light means backup mode: please let us know."
+    "en": "The EE router is in the living room, on top of the white cupboard between the window and the TV. Teal light: all is well. Orange: still connecting, give it a few minutes. If the light is red or white, or there is still no internet, please message us."
   },
   "routerLocked": false,
   "heatingCheck": {
     "en": "The combi boiler is in the cupboard in the upstairs shower room. If the heating or hot water stops, check the boiler display for an error code and send us a photo. Please do not open the boiler casing."
   },
   "utilitiesLocked": false,
-  "stopcock": "[PROPERTY: water stopcock location]",
-  "fuseBox": "[PROPERTY: fuse box location]",
+  "stopcock": {
+    "en": "In the kitchen, inside the corner cupboard: behind the opening in the back panel there is a brass cross shaped handle. Turn it clockwise to close, then call us."
+  },
+  "fuseBox": {
+    "en": "In the living room, inside the white cupboard between the window and the TV."
+  },
   "pharmacy": [],
   "pharmacyNote": "",
   "hospital": [
@@ -250,10 +254,10 @@ const CONFIG = {
     }
   ],
   "securing": {
-    "en": "Close and lock all windows. Lock the garden door, the front door and the outer door, lifting each handle first. Put all three keys back in the lockbox and scramble the code."
+    "en": "Close and lock all windows. Lock the garden door, then the front door and the outer door, lifting each handle first. Put all three keys back in the lockbox and scramble the code."
   },
   "smokingRule": {
-    "en": "No smoking inside the house and no parties. Smoking is allowed in the garden only, please use the ashtray."
+    "en": "No smoking inside the house and no parties. Smoking is allowed in the garden only, and please do not leave cigarette ends on the ground."
   },
   "picksImage": "",
   "picks": [],
@@ -271,7 +275,7 @@ const CONFIG = {
         "en": "Rear gate"
       },
       "text": {
-        "en": "For now the black rear gate only opens and closes from the outside. Please do not close it while your car is parked inside."
+        "en": "For now the black rear gate only opens and closes from the outside. Please never close it while your car is parked inside, or you will not be able to drive out."
       }
     }
   ],
@@ -284,7 +288,8 @@ const CONFIG = {
 <body>
 <div id="app"></div>
 <div class="toast" id="toast"></div>
-<script src="/guide/assets/guide-i18n.js?v=20261012a"></script>
-<script src="/guide/assets/guide.js?v=20261012a"></script>
+<script src="/guide/assets/guide-i18n.js?v=20261013a"></script>
+<script src="/guide/assets/guide.js?v=20261013g"></script>
+<script src="/guide/assets/guide-extra.js?v=20261013g"></script>
 </body>
 </html>
