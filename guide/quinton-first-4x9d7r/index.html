@@ -10,6 +10,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
 <link rel="stylesheet" href="/guide/assets/guide.css?v=20261013a">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+/* Page-only fix: this flat's photos are portrait, so show them whole instead of cropping them into 4:3 */
+.gallery .ph-img,.route-imgs .ph-img{aspect-ratio:auto;object-fit:contain;height:auto}
+</style>
 
 <script>
 /* =====================================================================
@@ -61,15 +65,15 @@ const CONFIG = {
   arrivalRoute: { title: { en: "From the street to your door" }, steps: [
     { text: { en: "Find the black metal and glass door between Hush Bedrooms and Domino's Pizza on Hagley Road West. Your check-in message tells you how to open it." }, imgs: [] },
     { text: { en: "Go in and follow the corridor straight ahead." },
-      imgs: ["https://res.cloudinary.com/dyojhaiig/image/upload/c_pad,ar_4:3,h_1200,b_blurred:400:15,f_auto,q_auto/v1792233183/quinton1_building_entrance_corridor_elxc53.jpg"] },
+      imgs: ["https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1792233183/quinton1_building_entrance_corridor_elxc53.jpg"] },
     { text: { en: "At the end, turn right just before the white door. That white door belongs to the shop and is not used." },
-      imgs: ["https://res.cloudinary.com/dyojhaiig/image/upload/c_pad,ar_4:3,h_1200,b_blurred:400:15,f_auto,q_auto/v1792233179/quinton1_building_shop_fire_door_b5rwxi.jpg"] },
+      imgs: ["https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1792233179/quinton1_building_shop_fire_door_b5rwxi.jpg"] },
     { text: { en: "Climb the stairs to the first floor." },
-      imgs: ["https://res.cloudinary.com/dyojhaiig/image/upload/c_pad,ar_4:3,h_1200,b_blurred:400:15,f_auto,q_auto/v1792233184/quinton1_building_staircase_t3ox4o.jpg"] },
+      imgs: ["https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1792233184/quinton1_building_staircase_t3ox4o.jpg"] },
     { text: { en: "At the top, turn right. Your flat is the third door on the landing. The other two doors are not part of your stay. Your check-in message gives the exact details to open your door." },
       imgs: [] },
     { text: { en: "Inside, the hallway leads to the kitchen and living area." },
-      imgs: ["https://res.cloudinary.com/dyojhaiig/image/upload/c_pad,ar_4:3,h_1200,b_blurred:400:15,f_auto,q_auto/v1792233179/quinton1_flat_entry_hallway_zf0p9l.jpg"] }
+      imgs: ["https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1792233179/quinton1_flat_entry_hallway_zf0p9l.jpg"] }
   ] },
   binsRoute: { title: "", steps: [] },
 
@@ -93,12 +97,12 @@ const CONFIG = {
     { title: { en: "Hot water and shower" },
       text: { en: "The shower is electric and heats the water as it runs. First check that the red switch on the bathroom wall is on (down is on). Use the top dial to choose stop, cold, econ or high: econ is the gentler setting and high the strongest. Use the bottom dial for the temperature: turn it towards the red numbers for hotter and towards the blue for cooler. The kitchen tap is on a separate water heater, so there is nothing for you to switch on." },
       imgs: [
-        { img: "https://res.cloudinary.com/dyojhaiig/image/upload/c_pad,ar_4:3,h_1200,b_blurred:400:15,f_auto,q_auto/v1792233180/quinton1_shower_unit_vc3skw.jpg", caption: { en: "The shower controls" } },
-        { img: "https://res.cloudinary.com/dyojhaiig/image/upload/c_pad,ar_4:3,h_1200,b_blurred:400:15,f_auto,q_auto/v1792233177/quinton1_shower_isolator_switch_drllyt.jpg", caption: { en: "The red switch must be on" } }
+        { img: "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1792233180/quinton1_shower_unit_vc3skw.jpg", caption: { en: "The shower controls" } },
+        { img: "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1792233177/quinton1_shower_isolator_switch_drllyt.jpg", caption: { en: "The red switch must be on" } }
       ] },
     { title: { en: "Kitchen and appliances" },
       text: { en: "The kitchen has an electric hob, a microwave, a small fridge freezer, a kettle and a toaster. There is no oven. The washer dryer is under the worktop. Tap a name below for the steps. Cleaning products are provided." },
-      imgs: [ { img: "https://res.cloudinary.com/dyojhaiig/image/upload/c_pad,ar_4:3,h_1200,b_blurred:400:15,f_auto,q_auto/v1792233183/quinton1_kitchen_wide_dbrujl.jpg", caption: { en: "Your kitchen" } } ],
+      imgs: [ { img: "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1792233183/quinton1_kitchen_wide_dbrujl.jpg", caption: { en: "Your kitchen" } } ],
       appliances: [
         { name: "Hob", brand: "Electric, 4 rings", model: "",
           steps: { en: [
@@ -124,13 +128,13 @@ const CONFIG = {
       ] },
     { title: { en: "TV" },
       text: { en: "JVC TV with a Fire Stick. The apps are ready to open, so you can start watching straight away. Please do not sign in with your own account. The two remotes are on the glass table in the living room: one for the JVC TV and one for the Fire Stick." },
-      imgs: [ { img: "https://res.cloudinary.com/dyojhaiig/image/upload/c_pad,ar_4:3,h_1200,b_blurred:400:15,f_auto,q_auto/v1792233187/quinton1_tv_remotes_v6frj5.jpg", caption: { en: "The two remotes" } } ] },
+      imgs: [ { img: "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1792233187/quinton1_tv_remotes_v6frj5.jpg", caption: { en: "The two remotes" } } ] },
     { title: { en: "Bedrooms" },
       text: { en: "There are three bedrooms: two with a double bed, and one with a king-size bed and a single bed." },
-      imgs: [ { img: "https://res.cloudinary.com/dyojhaiig/image/upload/c_pad,ar_4:3,h_1200,b_blurred:400:15,f_auto,q_auto/v1792233182/quinton1_bedroom_king_single_d6tgkl.jpg", caption: { en: "The bedroom with the king-size and single beds" } } ] },
+      imgs: [ { img: "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1792233182/quinton1_bedroom_king_single_d6tgkl.jpg", caption: { en: "The bedroom with the king-size and single beds" } } ] },
     { title: { en: "Good to know" },
       text: { en: "A first aid kit is in the bathroom cabinet, on the bottom shelf. An airer, an iron and an ironing board are in the storage cupboard between the entrance and the bathroom. You have full and private use of the whole flat during your stay." },
-      imgs: [ { img: "https://res.cloudinary.com/dyojhaiig/image/upload/c_pad,ar_4:3,h_1200,b_blurred:400:15,f_auto,q_auto/v1792233187/quinton1_storage_airer_iron_kgxg3w.jpg", caption: { en: "The airer, iron and ironing board" } } ] }
+      imgs: [ { img: "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1792233187/quinton1_storage_airer_iron_kgxg3w.jpg", caption: { en: "The airer, iron and ironing board" } } ] }
   ],
 
   bins: { en: "Bin collection is on Wednesdays. The bins are shared with the flat upstairs. Leave the main building, turn left and walk up the slope: about halfway up you will find the bin area. Please use the bins marked Panda, and take all rubbish out before you check out." },
