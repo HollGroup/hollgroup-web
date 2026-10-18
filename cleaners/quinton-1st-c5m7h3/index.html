@@ -71,6 +71,13 @@ footer{margin-top:26px;color:var(--mute);font-size:14px;text-align:center}
 
 <main class="wrap">
 
+<div class="card" style="margin-top:16px">
+  <h3>Just arrived?</h3>
+  <p>Press both buttons when you arrive. WhatsApp opens with the message already written. Just press send.</p>
+  <a class="btn" id="arr1" href="https://wa.me/447799777284" target="_blank" rel="noopener">Tell Holl Group I have arrived</a>
+  <a class="btn" id="arr2" href="https://wa.me/447368246160" target="_blank" rel="noopener">Tell Bethian I have arrived</a>
+</div>
+
 <div class="never">
   <h2>NEVER leave the street door open</h2>
   <p><b>NEVER, NEVER, NEVER leave the black street door downstairs unclosed.</b> Push it firmly shut from outside and check it twice. Watch the video to see how it must close.</p>
@@ -224,6 +231,13 @@ footer{margin-top:26px;color:var(--mute);font-size:14px;text-align:center}
   <video controls playsinline preload="metadata" src="https://res.cloudinary.com/dyojhaiig/video/upload/v1792233330/quinton1_CLEANERS_unblock_sink_trap_sz53sz.mp4#t=0.1"></video>
 </div>
 
+<h2>Finished?</h2>
+<div class="card">
+  <p>When you have done everything, press both buttons below. WhatsApp opens with the message already written, including how many tasks you ticked. Just press send.</p>
+  <a class="btn" id="fin1" href="https://wa.me/447799777284" target="_blank" rel="noopener">Tell Holl Group we have finished</a>
+  <a class="btn" id="fin2" href="https://wa.me/447368246160" target="_blank" rel="noopener">Tell Bethian we have finished</a>
+</div>
+
 <a class="btn" href="https://wa.me/447799777284" target="_blank" rel="noopener">Message us on WhatsApp</a>
 
 <footer>Holl Group · private page for our cleaners. Please do not share this link.</footer>
@@ -241,10 +255,47 @@ footer{margin-top:26px;color:var(--mute);font-size:14px;text-align:center}
     document.getElementById("count").textContent=done+" of "+boxes.length+" done";
     var s={};boxes.forEach(function(b){if(b.checked)s[b.dataset.k]=1});
     try{localStorage.setItem(KEY,JSON.stringify(s))}catch(e){}
+    var text="Quinton Retreat (1st Floor): clean finished.\nTasks done: "+done+" of "+boxes.length+".\n"+new Date().toLocaleString("en-GB");
+    var st=null;try{st=localStorage.getItem(KEY+"-start")}catch(e){}
+    if(st)text+="\nArrived: "+st;
+    var missing=boxes.filter(function(b){return !b.checked});
+    if(missing.length){
+      text+="\nNot ticked ("+missing.length+"):";
+      missing.slice(0,8).forEach(function(b){
+        var t=b.parentNode.textContent.replace(/\s+/g," ").trim();
+        text+="\n• "+(t.length>70?t.slice(0,70)+"...":t);
+      });
+      if(missing.length>8)text+="\n• and "+(missing.length-8)+" more";
+    }
+    ["fin1:447799777284","fin2:447368246160"].forEach(function(p){
+      var a=document.getElementById(p.split(":")[0]);
+      if(a)a.href="https://wa.me/"+p.split(":")[1]+"?text="+encodeURIComponent(text);
+    });
   }
+  ["fin1","fin2"].forEach(function(id){
+    var a=document.getElementById(id);
+    if(a)a.addEventListener("click",function(e){
+      update();
+      var left=boxes.filter(function(b){return !b.checked}).length;
+      if(left&&!confirm(left+" tasks are not ticked. Send anyway?"))e.preventDefault();
+    });
+  });
+  [["arr1","447799777284"],["arr2","447368246160"]].forEach(function(p){
+    var a=document.getElementById(p[0]);
+    if(!a)return;
+    a.addEventListener("click",function(){
+      var now=new Date().toLocaleString("en-GB",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"});
+      try{if(!localStorage.getItem(KEY+"-start"))localStorage.setItem(KEY+"-start",now)}catch(e){}
+      var shown=now;
+      try{shown=localStorage.getItem(KEY+"-start")||now}catch(e){}
+      a.href="https://wa.me/"+p[1]+"?text="+encodeURIComponent("Quinton Retreat (1st Floor): I have arrived and started the clean.\n"+shown);
+    });
+  });
   boxes.forEach(function(b){b.addEventListener("change",update)});
   document.getElementById("reset").addEventListener("click",function(){
-    boxes.forEach(function(b){b.checked=false});update();
+    boxes.forEach(function(b){b.checked=false});
+    try{localStorage.removeItem(KEY+"-start")}catch(e){}
+    update();
     window.scrollTo({top:0,behavior:"smooth"});
   });
   update();
