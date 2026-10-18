@@ -4,7 +4,7 @@
    In CONFIG texts, **words** are shown highlighted in yellow. */
 (function () {
   "use strict";
-  var KIT = "20261018d";
+  var KIT = "20261018e";
   /* Holl Group WhatsApp, used only for the emergency button. Change it here if the number changes, or override per property with CONFIG.emergencyWhatsapp (false hides the button). */
   var HOLL_WA = "https://wa.me/447799777284";
   var CLOUD = "https://res.cloudinary.com/dyojhaiig/image/upload/";
@@ -30,6 +30,11 @@
   var RT = C.reportTo || {};
   var who = RT.name || "Holl Group";
   var hi = who === "Holl Group" ? "Hi," : "Hi " + who + ",";
+  /* Where the arrival and finished messages go. With the contact's number the chat opens straight away.
+     Without it (not given yet), WhatsApp asks who to send it to, so the buttons and the ready-made text are always there. */
+  var toWa = RT.whatsapp || (who === "Holl Group" ? HOLL_WA : "https://wa.me/");
+  var asks = !RT.whatsapp && who !== "Holl Group";
+  function askNote() { return asks ? '<p class="cap">WhatsApp will ask who to send it to. Choose ' + esc(who) + ".</p>" : ""; }
   /* Radiators: two Yes/No answers that go into the finished message, saved on this phone only */
   var temp = C.heatTemp || 18;
   var QKEY = "hg-cleaners-" + (C.slug || location.pathname) + "-q";
@@ -83,8 +88,8 @@
   if (C.arrivalWindows) arrive.push(C.arrivalWindows);
   arrive.push("Look around the whole flat for anything the guests left behind.");
   arrive.push("Check for damage and for anything missing. Report it with photos.");
-  if (RT.whatsapp) arrive.unshift("Send the arrival message to " + who + ". Use the button below.");
-  h.push(sec("When you arrive") + list(arrive) + (RT.whatsapp ? waBtn("arrive", RT.whatsapp, "I have arrived: message " + who) : ""));
+  arrive.unshift("Send the arrival message to " + who + ". Use the button below.");
+  h.push(sec("When you arrive") + list(arrive) + waBtn("arrive", toWa, "I have arrived: message " + who) + askNote());
 
   /* 2. Kitchen */
   var skip = C.kitchenSkip || [];
@@ -161,9 +166,8 @@
   if (C.outsideCode !== false) leave.push("**Change the code of the outside lockbox** (the building entrance) and update it in the system. Do not change the code inside until Holl Group tells you.");
   leave.push("Upload the photos of the finished flat in Rental Ninja, as usual.");
   leave.push("Tell " + who + " about anything broken, missing, or left behind by the guests.");
-  if (RT.whatsapp) leave.push("**Send the finished message to " + who + "**" + (C.outsideCode !== false ? ", with the new outside code" : "") + ". Use the button below.");
-  else leave.push("**When you have finished, tell " + who + "**" + (C.outsideCode !== false ? " and send the new outside code." : "."));
-  h.push(sec("Before you leave") + list(leave) + (C.radiators !== false ? radCard() : "") + (RT.whatsapp ? waBtn("finish", RT.whatsapp, "I have finished: message " + who) : ""));
+  leave.push("**Send the finished message to " + who + "**" + (C.outsideCode !== false ? ", with the new outside code" : "") + ". Use the button below.");
+  h.push(sec("Before you leave") + list(leave) + (C.radiators !== false ? radCard() : "") + waBtn("finish", toWa, "I have finished: message " + who) + askNote());
 
   /* Deep clean */
   h.push("<h2>When the flat is quiet</h2>");

@@ -28,9 +28,9 @@ const CONFIG = {
   //     reportTo: { name: "[Bethian]", note: "You only need to message [Bethian]. She passes everything on to Holl Group.", whatsapp: "[https://wa.me/44XXXXXXXXXX]" },
   //  b) Direct, the cleaner reports straight to Holl Group:
   //     reportTo: { name: "Holl Group", whatsapp: "https://wa.me/447799777284" },
-  // With a whatsapp link, the page shows two buttons ("I have arrived" and "I have finished") that open WhatsApp
-  // with the message already written, with the date and time of the tap and, at the end, the line to type the new outside code.
-  // Without it, the buttons do not show.
+  // The page always shows two buttons ("I have arrived" and "I have finished") that open WhatsApp with the message
+  // already written, with the date and time of the tap and, at the end, the line to type the new outside code.
+  // With a whatsapp link, the chat opens straight to that contact. Without it, WhatsApp asks who to send it to.
   reportTo: { name: "[Bethian or Holl Group]", note: "[Optional line, or remove]", whatsapp: "" },
   // The red emergency button to Holl Group shows by default. emergencyWhatsapp: false hides it.
   // emergencyNote: "In an emergency, contact Holl Group.",   // optional, this is the default
@@ -76,6 +76,6 @@ const CONFIG = {
 </head>
 <body>
 <div id="app"></div>
-<script src="/cleaners/assets/cleaners.js?v=20261018d"></script>
+<script src="/cleaners/assets/cleaners.js?v=20261018e"></script>
 </body>
 </html>
