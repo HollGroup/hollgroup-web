@@ -23,9 +23,9 @@ const CONFIG = {
   bathrooms: 1,
   binDay: "Wednesdays",
   reportTo: { name: "Bethian", note: "You only need to message Bethian. She passes everything on to Holl Group.",
-    whatsapp: "" },   // Bethian's WhatsApp link, digits only: https://wa.me/44XXXXXXXXXX . While it is empty, WhatsApp asks the cleaner to choose Bethian.
+    whatsapp: "https://wa.me/447368246160" },   // Bethian's WhatsApp (digits only, no + and no spaces).
 
-  arrivalWindows: "Open the windows in the kitchen and in the bedroom with the king-size and single beds, to air the flat.",
+  arrivalWindows: "Open all the windows in the flat, to air it.",
   backWindows: "the king-size bedroom and the kitchen",
   radiators: true,
   heatTemp: 18,
@@ -37,6 +37,8 @@ const CONFIG = {
   showerNote: "The red switch on the bathroom wall must be on for the shower to work.",
   smoke: "there are three (kitchen, the hallway before the kitchen, and the entrance hallway)",
   co: "on the wall of the living and kitchen area",
+  coPhoto: { id: "v1792233179/quinton1_living_co_alarm_wall_n2tioh", alt: "The carbon monoxide alarm on the wall", cap: "The carbon monoxide alarm, on the wall." },
+  microwaveCover: true,
   fireBlanket: "in the kitchen, next to the fridge freezer",
   emergencyPhoto: { id: "v1792233179/quinton1_flat_entry_hallway_zf0p9l", alt: "The hallway with an emergency light and a smoke detector", cap: "The hallway: the emergency light shows a green light, and a smoke detector is on the ceiling." },
 
@@ -55,7 +57,11 @@ const CONFIG = {
         "The Fire Stick is in place behind the TV."
       ],
       note: "Do not move anything else, and do not change the cushions.",
-      photo: { id: "v1792233187/quinton1_tv_remotes_v6frj5", alt: "The two remotes", cap: "The two remotes, on the glass table." } },
+      photos: [
+        { id: "v1792233184/quinton1_living_sofa_table_lg11mq", alt: "The glass table next to the sofa with the two remotes", cap: "The glass table next to the sofa, with the two remotes on it." },
+        { id: "v1792233187/quinton1_tv_remotes_v6frj5", alt: "The two remotes", cap: "The two remotes, on the glass table." },
+        { id: "v1792233181/quinton1_living_tv_wall_h50yun", alt: "The TV with the Fire Stick behind it", cap: "The TV, with the Fire Stick behind it." }
+      ] },
     { title: "Kitchen counter",
       items: ["From left to right: the utensils, the kettle, the toaster."],
       photo: { id: "v1792233185/quinton1_kitchen_sink_washer_mlgnwa", alt: "The kitchen counter", cap: "The counter and the sink area." } },
@@ -67,7 +73,7 @@ const CONFIG = {
       photo: { id: "v1792233187/quinton1_storage_airer_iron_kgxg3w", alt: "The storage cupboard", cap: "The storage cupboard." } }
   ],
   otherThings: [
-    { label: "Basic tools", text: "in the cupboard behind the first door on the landing, in the top drawer." },
+    { label: "Basic tools", text: "if you need them, there is a set of basic tools in the cupboard behind the first door on the landing, in the top drawer." },
     { label: "Linen and towels", text: "in the locked supplies room." },
     { label: "Fire extinguisher", text: "in the shared corridor on the first floor. Leave it where it is." },
     { label: "Hair dryer", text: "there is none at the moment. Do not look for one." }
@@ -84,6 +90,6 @@ const CONFIG = {
 </head>
 <body>
 <div id="app"></div>
-<script src="/cleaners/assets/cleaners.js?v=20261018e"></script>
+<script src="/cleaners/assets/cleaners.js?v=20261018f"></script>
 </body>
 </html>

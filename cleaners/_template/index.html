@@ -35,7 +35,7 @@ const CONFIG = {
   // The red emergency button to Holl Group shows by default. emergencyWhatsapp: false hides it.
   // emergencyNote: "In an emergency, contact Holl Group.",   // optional, this is the default
 
-  arrivalWindows: "[Open the windows in ..., to air the property.]",   // or remove the line
+  arrivalWindows: "[Open all the windows in the property, to air it.]",   // or remove the line
   backWindows: "[the windows to close and lock when leaving]",         // or remove the line
   radiators: true,             // false if the property has no radiators to switch off
   heatTemp: 18,                // temperature to leave the radiators at when it is cold and guests arrive the same day
@@ -47,6 +47,9 @@ const CONFIG = {
   showerNote: "[Anything special to check about the shower, or remove the line]",
   smoke: "[there are N (where each one is)]",
   co: "[where the carbon monoxide alarm is, or remove the line if there is none]",
+  coPhoto: { id: "[v.../public_id]", alt: "[...]", cap: "[...]" },   // photo of where the alarm is, or remove the line
+  microwaveCover: false,       // true if the microwave has a plastic cover that must be cleaned
+  extractor: true,             // false if there is no bathroom extractor fan to check
   fireBlanket: "[where it is, or remove the line]",
   emergencyPhoto: { id: "[v.../public_id]", alt: "[...]", cap: "[...]" },   // or emergency: false
 
@@ -56,6 +59,7 @@ const CONFIG = {
     photo: { id: "[v.../public_id]", alt: "[...]", cap: "[...]" }
   },
 
+  // In places, use photo: {...} for one photo or photos: [{...}, {...}] for several.
   places: [
     { title: "[Living room]",
       items: ["[Where the table, remotes and lamp go.]"],
@@ -76,6 +80,6 @@ const CONFIG = {
 </head>
 <body>
 <div id="app"></div>
-<script src="/cleaners/assets/cleaners.js?v=20261018e"></script>
+<script src="/cleaners/assets/cleaners.js?v=20261018f"></script>
 </body>
 </html>

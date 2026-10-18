@@ -4,7 +4,7 @@
    In CONFIG texts, **words** are shown highlighted in yellow. */
 (function () {
   "use strict";
-  var KIT = "20261018e";
+  var KIT = "20261018f";
   /* Holl Group WhatsApp, used only for the emergency button. Change it here if the number changes, or override per property with CONFIG.emergencyWhatsapp (false hides the button). */
   var HOLL_WA = "https://wa.me/447799777284";
   var CLOUD = "https://res.cloudinary.com/dyojhaiig/image/upload/";
@@ -73,9 +73,10 @@
 
   /* Every single time (highlighted) */
   var must = [
-    "**Not one hair on any bed.** Check every bed carefully, sheets and pillows.",
+    "**Not one hair on any bed.** Check it last of all, after making the beds.",
     "**Leave the flat exactly as in the photos.** Do not change the cushions or move anything.",
     "**Report any damage or anything missing** the same day, with photos.",
+    "**Clean everything properly.** Do not leave any job half done.",
     "**Take all the rubbish out.** Bin collection is on " + binDay + "."
   ];
   if (C.backWindows) must.push("**Close the back windows** when you leave: " + C.backWindows + ".");
@@ -86,8 +87,8 @@
   /* 1. When you arrive */
   var arrive = [];
   if (C.arrivalWindows) arrive.push(C.arrivalWindows);
-  arrive.push("Look around the whole flat for anything the guests left behind.");
-  arrive.push("Check for damage and for anything missing. Report it with photos.");
+  arrive.push("Look around the whole flat for anything the guests left behind. **Never keep it: it belongs to the guest. Tell " + who + " as soon as you see something.**");
+  arrive.push("Check carefully for damage and for anything missing. Report it with photos.");
   arrive.unshift("Send the arrival message to " + who + ". Use the button below.");
   h.push(sec("When you arrive") + list(arrive) + waBtn("arrive", toWa, "I have arrived: message " + who) + askNote());
 
@@ -95,9 +96,9 @@
   var skip = C.kitchenSkip || [];
   var kitchen = [
     ["wash", "Wash all the used utensils, cutlery, dishes and glasses."],
-    ["kitchen", "Clean the kitchen: worktops, sink and cupboard fronts."],
-    ["hob", C.hobText || "Clean the hob. The rings stain quickly, and stains that do not come off are normal."],
-    ["microwave", "Clean the microwave inside, including the side walls."],
+    ["kitchen", "Clean the kitchen properly: worktops, sink and cupboard fronts. No half jobs."],
+    ["hob", C.hobText || "Clean the hob properly: every ring and the whole surface. Do not leave it half done."],
+    ["microwave", "Clean the microwave inside, including the side walls" + (C.microwaveCover ? ", and make sure the plastic cover is clean" : "") + "."],
     ["fridge", "Empty the fridge, then clean it inside."],
     ["freezer", "Clean the freezer."]
   ].filter(function (x) { return skip.indexOf(x[0]) < 0; }).map(function (x) { return x[1]; }).concat(C.kitchenExtra || []);
@@ -107,21 +108,22 @@
   var b = C.bathrooms || 1;
   var checks = [
     "Windows are clean, with no marks or fingerprints.",
-    "Every light bulb works. Switch each light on, and replace any bulb that does not work.",
+    "Every light bulb works. Switch each light on. If a bulb does not work, replace it with one of our spares. If there is no spare, tell " + who + " which one it is and send a photo, so we know the size and type of bulb.",
     "Water runs well in the kitchen sink.",
     b > 1 ? "Water runs well in every bathroom basin." : "Water runs well in the bathroom basin.",
     (b > 1 ? "Water runs well in every shower." : "Water runs well in the shower.") + (C.showerNote ? " " + C.showerNote : ""),
     "Look under every bed. There must be nothing there.",
-    "**Every bed: not one hair.** Look closely.",
-    "Look for damage in every room. Report anything excessive with photos.",
+    "Check carefully for damage in every room. Report anything excessive with photos.",
     "Check that nothing is missing. Tell " + who + " what is."
   ];
+  if (C.extractor !== false) checks.push((b > 1 ? "The bathroom extractor fans work" : "The bathroom extractor fan works") + ": switch " + (b > 1 ? "each one" : "it") + " on and check that it runs. **This is important.**");
   if (C.smoke) checks.push("Smoke detectors: " + C.smoke + ". Check they are in place. They are high on the ceiling, so do not climb on furniture. Tell " + who + " if one is missing or beeping.");
   if (C.co) checks.push("Carbon monoxide alarm, " + C.co + ": press the test button at least once a week. It must sound.");
   if (C.emergency !== false) checks.push("Emergency lights: each one must show a green light" + (C.emergencyPhoto ? ", as in the photo below." : "."));
   if (C.fireBlanket) checks.push("The fire blanket is " + C.fireBlanket + ".");
   checks.push("Dishwashing liquid, soap, shampoo, conditioner and hand wash: there must always be enough. If they are running low, bring more for the next stay and sort the receipt with our cleaning contact. We can never run out.");
-  h.push(sec("Checks") + list(checks, C.emergency !== false ? photo(C.emergencyPhoto) : ""));
+  checks.push("**Last of all, after making the beds: not one hair on any bed.** Look closely.");
+  h.push(sec("Checks") + list(checks, photo(C.coPhoto) + (C.emergency !== false ? photo(C.emergencyPhoto) : "")));
 
   /* 4. Communal areas */
   if (C.communal) {
@@ -137,14 +139,15 @@
   /* 5. Towels */
   var cap = C.capacity || 2;
   h.push(sec("Towels") + list([
-    "If you know who arrives next: one bath towel for each guest, plus one hand towel in the bathroom.",
-    "If you do not know who arrives next (for example, guests leave on a Sunday and the next ones arrive on Monday): leave " + cap + " bath towels, one for each guest at full capacity, plus the hand towel."
+    "Do you know who arrives later the same day? **Only the same day counts.** Then leave one bath towel for each of those guests.",
+    "If you do not know who arrives the same day (or the next guests arrive on another day): leave one bath towel for each guest at full capacity, " + cap + ", on the beds.",
+    "**Always leave a hand towel in the bathroom.**"
   ]));
 
   /* 6. Where things go */
   h.push(sec("Where things go") + '<p class="cap" style="margin-top:-4px">Always put things back in exactly the same place, so we can tell anyone where they are.</p>');
   (C.places || []).forEach(function (p) {
-    h.push('<div class="card"><h3>' + esc(p.title) + "</h3>" + (p.items || []).map(tick).join("") + (p.note ? "<p><b>" + esc(p.note) + "</b></p>" : "") + photo(p.photo) + "</div>");
+    h.push('<div class="card"><h3>' + esc(p.title) + "</h3>" + (p.items || []).map(tick).join("") + (p.note ? "<p><b>" + esc(p.note) + "</b></p>" : "") + (p.photos || [p.photo]).map(photo).join("") + "</div>");
   });
   if ((C.otherThings || []).length) {
     h.push('<div class="card"><h3>Other things</h3>' + C.otherThings.map(function (o) { return "<p><b>" + esc(o.label) + ":</b> " + esc(o.text) + "</p>"; }).join("") + "</div>");
@@ -158,7 +161,7 @@
   /* 8. Before you leave */
   var leave = [];
   if (C.radiators !== false) leave.push("**Close the windows first. If guests arrive the same day and it is cold, leave the radiators on, set to " + temp + " in every room. Otherwise, switch them off.**");
-  if (C.backWindows) leave.push("**Close and lock the back windows**: " + C.backWindows + ". This is for security.");
+  if (C.backWindows) leave.push("**Close and lock the back windows**: " + C.backWindows + ". They must always be closed when you leave, even if you leave other windows or doors open to air the flat. This is for security.");
   leave.push("Switch off all the lights.");
   leave.push("**Take all the rubbish out.** " + (C.rubbishRoute ? C.rubbishRoute + " " : "") + "Collection is on " + binDay + ".");
   leave.push("Make sure the flat door is closed and locked.");
