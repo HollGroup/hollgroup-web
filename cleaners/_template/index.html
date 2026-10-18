@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="theme-color" content="#1D7563">
+<title>Holl Group</title>
+<link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/cleaners/assets/cleaners.css?v=20261018a">
+<script>
+/* =====================================================================
+   CLEANERS PAGE TEMPLATE. Copy this folder to cleaners/<property>-<random 6 chars>/ and fill CONFIG.
+   Everything shared by all properties lives in /cleaners/assets/ (never copy or edit it here).
+   Rules: no [SQUARE BRACKETS] left in a live page, no codes, no flat numbers. Remove what does not apply.
+   In texts, **words** are shown highlighted in yellow.
+   Photos: { id: "v<version>/<public_id>", alt: "...", cap: "..." } from Cloudinary, without .jpg
+   ===================================================================== */
+const CONFIG = {
+  slug: "[property-short-name]",
+  propertyName: "[Public name of the property]",
+  capacity: 0,                 // number of guests at full capacity (towels rule)
+  bathrooms: 1,
+  binDay: "[Wednesdays]",
+  // Who the cleaners report to. Two cases:
+  //  a) With an intermediary (for example Bethian), who passes everything on to Holl Group. No phone number on the page:
+  //     reportTo: { name: "[Bethian]", note: "You only need to message [Bethian]. She passes everything on to Holl Group." },
+  //  b) Direct, the cleaner reports straight to Holl Group. Add the WhatsApp link so the button appears:
+  //     reportTo: { name: "Holl Group", whatsapp: "[https://wa.me/...]" },
+  reportTo: { name: "[Bethian or Holl Group]", note: "[Optional line, or remove]" },
+  // emergencyNote: "In an emergency, contact Holl Group.",   // optional, this is the default
+
+  arrivalWindows: "[Open the windows in ..., to air the property.]",   // or remove the line
+  backWindows: "[the windows to close and lock when leaving]",         // or remove the line
+  radiators: true,             // false if the property has no radiators to switch off
+  outsideCode: true,           // false if there is no outside lockbox code to change
+  streetDoor: "[Sentence about the street door, or remove the line]",
+  rubbishRoute: "[Where the bins are and how to get there.]",
+
+  showerNote: "[Anything special to check about the shower, or remove the line]",
+  smoke: "[there are N (where each one is)]",
+  co: "[where the carbon monoxide alarm is, or remove the line if there is none]",
+  fireBlanket: "[where it is, or remove the line]",
+  emergencyPhoto: { id: "[v.../public_id]", alt: "[...]", cap: "[...]" },   // or emergency: false
+
+  communal: {                  // remove the whole block if the property has no communal areas
+    areas: "[The entrance hallway, the stairs and the landing.]",
+    extra: [],
+    photo: { id: "[v.../public_id]", alt: "[...]", cap: "[...]" }
+  },
+
+  places: [
+    { title: "[Living room]",
+      items: ["[Where the table, remotes and lamp go.]"],
+      note: "[Short extra rule, or remove the line]",
+      photo: { id: "[v.../public_id]", alt: "[...]", cap: "[...]" } }
+  ],
+  otherThings: [
+    { label: "[Basic tools]", text: "[where they are.]" }
+  ],
+  doNotTouch: [
+    { title: "[What not to touch]", text: "[Why.]" }
+  ],
+
+  sinkVideo: "",               // full Cloudinary video URL, or leave empty
+  sinkVideoNote: ""
+};
+</script>
+</head>
+<body>
+<div id="app"></div>
+<script src="/cleaners/assets/cleaners.js?v=20261018b"></script>
+</body>
+</html>
