@@ -8,7 +8,7 @@
 <title>Holl Group</title>
 <link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/cleaners/assets/cleaners.css?v=20261018a">
+<link rel="stylesheet" href="/cleaners/assets/cleaners.css?v=20261018c">
 <script>
 /* =====================================================================
    CLEANERS PAGE TEMPLATE. Copy this folder to cleaners/<property>-<random 6 chars>/ and fill CONFIG.
@@ -24,16 +24,22 @@ const CONFIG = {
   bathrooms: 1,
   binDay: "[Wednesdays]",
   // Who the cleaners report to. Two cases:
-  //  a) With an intermediary (for example Bethian), who passes everything on to Holl Group. No phone number on the page:
-  //     reportTo: { name: "[Bethian]", note: "You only need to message [Bethian]. She passes everything on to Holl Group." },
-  //  b) Direct, the cleaner reports straight to Holl Group. Add the WhatsApp link so the button appears:
-  //     reportTo: { name: "Holl Group", whatsapp: "[https://wa.me/...]" },
-  reportTo: { name: "[Bethian or Holl Group]", note: "[Optional line, or remove]" },
+  //  a) With an intermediary (for example Bethian), who passes everything on to Holl Group:
+  //     reportTo: { name: "[Bethian]", note: "You only need to message [Bethian]. She passes everything on to Holl Group.", whatsapp: "[https://wa.me/44XXXXXXXXXX]" },
+  //  b) Direct, the cleaner reports straight to Holl Group:
+  //     reportTo: { name: "Holl Group", whatsapp: "https://wa.me/447799777284" },
+  // With a whatsapp link, the page shows two buttons ("I have arrived" and "I have finished") that open WhatsApp
+  // with the message already written, with the date and time of the tap and, at the end, the line to type the new outside code.
+  // Without it, the buttons do not show.
+  reportTo: { name: "[Bethian or Holl Group]", note: "[Optional line, or remove]", whatsapp: "" },
+  // The red emergency button to Holl Group shows by default. emergencyWhatsapp: false hides it.
   // emergencyNote: "In an emergency, contact Holl Group.",   // optional, this is the default
 
   arrivalWindows: "[Open the windows in ..., to air the property.]",   // or remove the line
   backWindows: "[the windows to close and lock when leaving]",         // or remove the line
   radiators: true,             // false if the property has no radiators to switch off
+  heatTemp: 18,                // temperature to leave the radiators at when it is cold and guests arrive the same day
+  heatHow: "[How to set the temperature on this property's radiators, or remove the line]",
   outsideCode: true,           // false if there is no outside lockbox code to change
   streetDoor: "[Sentence about the street door, or remove the line]",
   rubbishRoute: "[Where the bins are and how to get there.]",
@@ -70,6 +76,6 @@ const CONFIG = {
 </head>
 <body>
 <div id="app"></div>
-<script src="/cleaners/assets/cleaners.js?v=20261018b"></script>
+<script src="/cleaners/assets/cleaners.js?v=20261018d"></script>
 </body>
 </html>

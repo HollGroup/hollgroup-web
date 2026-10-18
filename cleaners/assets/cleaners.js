@@ -4,12 +4,19 @@
    In CONFIG texts, **words** are shown highlighted in yellow. */
 (function () {
   "use strict";
-  var KIT = "20261018b";
+  var KIT = "20261018d";
+  /* Holl Group WhatsApp, used only for the emergency button. Change it here if the number changes, or override per property with CONFIG.emergencyWhatsapp (false hides the button). */
+  var HOLL_WA = "https://wa.me/447799777284";
   var CLOUD = "https://res.cloudinary.com/dyojhaiig/image/upload/";
   var C = (typeof CONFIG !== "undefined" ? CONFIG : {});
 
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function rich(s) { return esc(s).replace(/\*\*(.+?)\*\*/g, "<mark>$1</mark>"); }
+  function stamp() {
+    var d = new Date(), z = "Europe/London";
+    return d.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", timeZone: z }) + ", " + d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: z });
+  }
+  function waLink(base, text) { return String(base).split("?")[0] + "?text=" + encodeURIComponent(text); }
   var n = 0;
   function tick(text) { n++; return '<label class="tick"><input type="checkbox" data-k="k' + n + '"><span>' + rich(text) + "</span></label>"; }
   function list(items, extra) { return '<div class="card list">' + items.map(tick).join("") + (extra || "") + "</div>"; }
@@ -22,6 +29,36 @@
   var binDay = C.binDay || "Wednesdays";
   var RT = C.reportTo || {};
   var who = RT.name || "Holl Group";
+  var hi = who === "Holl Group" ? "Hi," : "Hi " + who + ",";
+  /* Radiators: two Yes/No answers that go into the finished message, saved on this phone only */
+  var temp = C.heatTemp || 18;
+  var QKEY = "hg-cleaners-" + (C.slug || location.pathname) + "-q";
+  var Q = { cold: null, on: null };
+  try { var qs = JSON.parse(localStorage.getItem(QKEY) || "{}"); if (qs.cold === 0 || qs.cold === 1) Q.cold = qs.cold; if (qs.on === 0 || qs.on === 1) Q.on = qs.on; } catch (e) {}
+  function yn(k) { return '<button type="button" class="yn" data-q="' + k + '" data-v="1">Yes</button><button type="button" class="yn" data-q="' + k + '" data-v="0">No</button>'; }
+  function radCard() {
+    return '<div class="card q"><h3>Radiators</h3><p class="cap">Answer both questions. They go in your finished message.</p>' +
+      '<p class="qt">Is it cold?</p>' + yn("cold") +
+      '<p class="qt">Are you leaving the radiators on?</p>' + yn("on") +
+      '<div class="hint" id="hint" hidden></div></div>';
+  }
+  /* Ready-made WhatsApp messages. The time is taken when the button is tapped. */
+  function msg(kind) {
+    if (kind === "arrive") return hi + "\n*ARRIVED* at " + C.propertyName + ".\n" + stamp();
+    if (kind === "finish") {
+      var rad = "";
+      if (C.radiators !== false) {
+        var cold = Q.cold === 1 ? "YES" : Q.cold === 0 ? "NO" : "NOT ANSWERED";
+        var rd = Q.on === 1 ? "LEFT ON, set to " + temp + "°C" : Q.on === 0 ? "SWITCHED OFF" : "NOT ANSWERED";
+        rad = "\n\nCold today: *" + cold + "*\nRadiators: *" + rd + "*";
+      }
+      return hi + "\n*FINISHED* at " + C.propertyName + ".\n" + stamp() + rad + (C.outsideCode !== false ? "\n\n*THE NEW OUTSIDE CODE IS:* " : "");
+    }
+    return "EMERGENCY at " + C.propertyName + ": ";
+  }
+  function waBtn(kind, base, label, cls) {
+    return '<a class="btn' + (cls ? " " + cls : "") + '" data-wa="' + kind + '" data-base="' + esc(base) + '" href="' + esc(waLink(base, msg(kind))) + '" target="_blank" rel="noopener">' + esc(label) + "</a>";
+  }
   var h = [];
 
   /* Header and progress bar */
@@ -37,6 +74,7 @@
     "**Take all the rubbish out.** Bin collection is on " + binDay + "."
   ];
   if (C.backWindows) must.push("**Close the back windows** when you leave: " + C.backWindows + ".");
+  if (C.radiators !== false) must.push("**Guests arriving the same day and it is cold? Leave the radiators on, set to " + temp + ".**");
   if (C.outsideCode !== false) must.push("**Change the outside code** and update it in the system.");
   h.push('<div class="must"><h2>Every single time</h2><ul>' + must.map(function (x) { return "<li>" + rich(x) + "</li>"; }).join("") + "</ul></div>");
 
@@ -45,7 +83,8 @@
   if (C.arrivalWindows) arrive.push(C.arrivalWindows);
   arrive.push("Look around the whole flat for anything the guests left behind.");
   arrive.push("Check for damage and for anything missing. Report it with photos.");
-  h.push(sec("When you arrive") + list(arrive));
+  if (RT.whatsapp) arrive.unshift("Send the arrival message to " + who + ". Use the button below.");
+  h.push(sec("When you arrive") + list(arrive) + (RT.whatsapp ? waBtn("arrive", RT.whatsapp, "I have arrived: message " + who) : ""));
 
   /* 2. Kitchen */
   var skip = C.kitchenSkip || [];
@@ -113,7 +152,7 @@
 
   /* 8. Before you leave */
   var leave = [];
-  if (C.radiators !== false) leave.push("Switch off the radiators. If a guest is arriving the same day, leave them on.");
+  if (C.radiators !== false) leave.push("**Close the windows first. If guests arrive the same day and it is cold, leave the radiators on, set to " + temp + " in every room. Otherwise, switch them off.**");
   if (C.backWindows) leave.push("**Close and lock the back windows**: " + C.backWindows + ". This is for security.");
   leave.push("Switch off all the lights.");
   leave.push("**Take all the rubbish out.** " + (C.rubbishRoute ? C.rubbishRoute + " " : "") + "Collection is on " + binDay + ".");
@@ -122,8 +161,9 @@
   if (C.outsideCode !== false) leave.push("**Change the code of the outside lockbox** (the building entrance) and update it in the system. Do not change the code inside until Holl Group tells you.");
   leave.push("Upload the photos of the finished flat in Rental Ninja, as usual.");
   leave.push("Tell " + who + " about anything broken, missing, or left behind by the guests.");
-  leave.push("**When you have finished, tell " + who + "**" + (C.outsideCode !== false ? " and send the new outside code." : "."));
-  h.push(sec("Before you leave") + list(leave));
+  if (RT.whatsapp) leave.push("**Send the finished message to " + who + "**" + (C.outsideCode !== false ? ", with the new outside code" : "") + ". Use the button below.");
+  else leave.push("**When you have finished, tell " + who + "**" + (C.outsideCode !== false ? " and send the new outside code." : "."));
+  h.push(sec("Before you leave") + list(leave) + (C.radiators !== false ? radCard() : "") + (RT.whatsapp ? waBtn("finish", RT.whatsapp, "I have finished: message " + who) : ""));
 
   /* Deep clean */
   h.push("<h2>When the flat is quiet</h2>");
@@ -136,7 +176,8 @@
   }
 
   h.push('<div class="card"><p><b>Emergency?</b> ' + esc(C.emergencyNote || "In an emergency, contact Holl Group.") + "</p>" + (RT.note ? '<p class="cap">' + esc(RT.note) + "</p>" : "") + "</div>");
-  if (RT.whatsapp) h.push('<a class="btn" href="' + esc(RT.whatsapp) + '" target="_blank" rel="noopener">Message ' + esc(who) + " on WhatsApp</a>");
+  var ew = C.emergencyWhatsapp === false ? "" : (C.emergencyWhatsapp || HOLL_WA);
+  if (ew) h.push(waBtn("emergency", ew, "Emergency: message Holl Group on WhatsApp", "emerg"));
   h.push("<footer>Holl Group · private page for our cleaners. Please do not share this link.</footer>");
   h.push("</main>");
 
@@ -144,6 +185,28 @@
   app.innerHTML = h.join("");
   document.title = "Holl Group";
   document.documentElement.setAttribute("data-kit", KIT);
+
+  function paintQ() {
+    [].forEach.call(app.querySelectorAll("button.yn"), function (b) { b.classList.toggle("on", Q[b.getAttribute("data-q")] === +b.getAttribute("data-v")); });
+    var hint = document.getElementById("hint");
+    if (!hint) return;
+    var t = "";
+    if (Q.on === 1) t = "Set every radiator to " + temp + ". " + (C.heatHow || "");
+    else if (Q.cold === 1 && Q.on === 0) t = "It is cold. If guests arrive today, leave the radiators on, set to " + temp + ".";
+    hint.textContent = t; hint.hidden = !t;
+  }
+  function saveQ() { try { localStorage.setItem(QKEY, JSON.stringify(Q)); } catch (e) {} }
+  [].forEach.call(app.querySelectorAll("button.yn"), function (b) {
+    b.addEventListener("click", function () { Q[b.getAttribute("data-q")] = +b.getAttribute("data-v"); saveQ(); paintQ(); });
+  });
+  paintQ();
+
+  /* The time in the WhatsApp message is the time of the tap */
+  [].forEach.call(app.querySelectorAll("a[data-wa]"), function (a) {
+    function refresh() { a.href = waLink(a.getAttribute("data-base"), msg(a.getAttribute("data-wa"))); }
+    a.addEventListener("click", refresh);
+    a.addEventListener("touchstart", refresh, { passive: true });
+  });
 
   /* Progress, saved on this phone only */
   var KEY = "hg-cleaners-" + (C.slug || location.pathname);
@@ -160,6 +223,7 @@
   boxes.forEach(function (bx) { bx.addEventListener("change", update); });
   document.getElementById("reset").addEventListener("click", function () {
     boxes.forEach(function (bx) { bx.checked = false; });
+    Q.cold = null; Q.on = null; saveQ(); paintQ();
     update();
     window.scrollTo({ top: 0, behavior: "smooth" });
   });

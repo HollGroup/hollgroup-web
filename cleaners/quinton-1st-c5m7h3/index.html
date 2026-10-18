@@ -8,7 +8,7 @@
 <title>Holl Group</title>
 <link rel="icon" href="https://res.cloudinary.com/dyojhaiig/image/upload/f_auto,q_auto,w_160/v1781020925/logo_cropped_pezlyx.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/cleaners/assets/cleaners.css?v=20261018a">
+<link rel="stylesheet" href="/cleaners/assets/cleaners.css?v=20261018c">
 <script>
 /* =====================================================================
    QUINTON RETREAT (1st Floor): cleaners page settings.
@@ -22,11 +22,14 @@ const CONFIG = {
   capacity: 7,
   bathrooms: 1,
   binDay: "Wednesdays",
-  reportTo: { name: "Bethian", note: "You only need to message Bethian. She passes everything on to Holl Group." },
+  reportTo: { name: "Bethian", note: "You only need to message Bethian. She passes everything on to Holl Group.",
+    whatsapp: "" },   // Bethian's WhatsApp link, digits only: https://wa.me/44XXXXXXXXXX . While it is empty, the arrival and finished buttons do not show.
 
   arrivalWindows: "Open the windows in the kitchen and in the bedroom with the king-size and single beds, to air the flat.",
   backWindows: "the king-size bedroom and the kitchen",
   radiators: true,
+  heatTemp: 18,
+  heatHow: "On each radiator: press the power button, press M until you see the sun symbol, then use the arrows until the screen shows 18.",
   outsideCode: true,
   streetDoor: "On your way out, push the black street door firmly shut and check that it has closed.",
   rubbishRoute: "Leave the main building, turn left and walk up the slope. About halfway up is the bin area, shared with the flat upstairs. Use the bins marked Panda.",
@@ -81,6 +84,6 @@ const CONFIG = {
 </head>
 <body>
 <div id="app"></div>
-<script src="/cleaners/assets/cleaners.js?v=20261018b"></script>
+<script src="/cleaners/assets/cleaners.js?v=20261018d"></script>
 </body>
 </html>

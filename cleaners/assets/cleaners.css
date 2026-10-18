@@ -29,6 +29,12 @@ h2{font-family:Outfit,sans-serif;font-size:21px;margin:26px 0 10px;color:var(--g
 .warn b{display:block;margin-bottom:2px}
 video{display:block;width:100%;border-radius:12px;background:#000}
 .btn{display:block;text-align:center;background:var(--g);color:#fff;text-decoration:none;font-weight:700;border-radius:12px;padding:14px;margin-top:10px}
+.btn.emerg{background:#B3261E}
+.q .qt{font-weight:700;margin:12px 0 6px}
+.yn{font:inherit;font-weight:700;border:2px solid var(--line);background:#fff;color:var(--ink);border-radius:12px;padding:10px 24px;margin-right:8px}
+.yn.on{background:var(--g);border-color:var(--g);color:#fff}
+.hint{background:#FFF7C2;border:2px solid #E2B400;border-radius:12px;padding:10px 12px;margin-top:12px;font-weight:700}
+.hint[hidden]{display:none}
 footer{margin-top:26px;color:var(--mute);font-size:14px;text-align:center}
 .must{background:#FFF7C2;border:2px solid #E2B400;border-radius:16px;padding:14px 16px;margin:18px 0 0}
 .must h2{margin:0 0 6px;color:#6B4E00;font-size:20px}
