@@ -8,6 +8,7 @@
    5. The returning-guest strip at the top becomes a bigger banner (same home, same host, same conditions). bigPromo: false keeps the old strip.
    6. Travel cot as a 4th Services block (cot: false hides it), the review request in Check-out stands out, supermarket logos
       on Essentials picks without a photo (storeLogos: false hides them), optional fireAssembly { text, img, coords } in Fire safety.
+   7. Optional video on arrivalRoute / binsRoute steps: { text, imgs, video: "https://res.cloudinary.com/.../video/upload/c_limit,w_720,q_auto,vc_h264/....mp4" }.
    Since 20261013e guide.js loads this file on every guide, and offers and servicePhotos have Birmingham defaults
    (below). A page can replace them with its own, or switch them off with offers: false / servicePhotos: false. */
 (function () {
@@ -33,6 +34,7 @@
     "#services .soft.has-photo{padding:0;overflow:hidden}#services .soft.has-photo>:not(img){margin-left:16px;margin-right:16px}#services .soft.has-photo>p{margin-bottom:14px}" +
     ".promo.promo-big{display:block;position:relative;background:linear-gradient(135deg,#1D7563 0%,#0F4A3E 100%);color:#fff;border-radius:20px;padding:20px 18px 18px;margin:16px 0 18px;box-shadow:0 10px 28px rgba(15,74,62,.28);overflow:hidden;font-weight:400}" +".promo-big::before{content:\"\";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.07);top:-70px;inset-inline-end:-50px}" +".promo-big .pb-top{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#F6D58E;padding-inline-end:36px}" +".promo-big .pb-ico{flex:0 0 38px;width:38px;height:38px;border-radius:12px;background:#F6D58E;color:#0F4A3E;display:flex;align-items:center;justify-content:center;flex-shrink:0}.promo-big .pb-ico svg{width:22px;height:22px}" +".promo-big .pb-h{font-family:Outfit,system-ui,sans-serif;font-size:24px;font-weight:700;line-height:1.2;margin:12px 0 14px;position:relative}" +".promo-big .pb-same{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;padding:0;list-style:none}" +".promo-big .pb-same li{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.14);border-radius:999px;padding:6px 12px 6px 8px;font-size:15px;font-weight:600}" +".promo-big .pb-same svg{width:18px;height:18px;color:#F6D58E;flex-shrink:0}" +".promo-big .pb-p{font-size:16px;line-height:1.45;margin:0 0 16px;color:rgba(255,255,255,.92)}.promo-big .pb-p b{color:#F6D58E}" +".promo-big .pb-btn{display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:14px;background:#fff;color:#0F4A3E;font-weight:700;font-size:17px;text-decoration:none}" +".promo-big #promoX{position:absolute;top:8px;inset-inline-end:6px;background:none;border:0;color:rgba(255,255,255,.75);font-size:26px;min-width:40px;min-height:40px;cursor:pointer}" +
     ".cd-img.cd-logo{object-fit:contain;background:#fff;padding:20px 32px;height:120px;border-bottom:1px solid var(--line,#DCEAE5)}" +".fire-asm{margin-top:16px;background:#F3FAF8;border-radius:14px;padding:14px 16px;display:grid;gap:10px}.fire-asm img{width:100%;max-height:420px;object-fit:cover;border-radius:12px;display:block}" +"#checkout .soft.rv-hl{background:#FFF8E6;border:2px solid #E8B54A;padding:16px}.rv-stars{display:flex;gap:4px;color:#E8A317;margin-bottom:6px}.rv-stars svg{width:24px;height:24px}" +".rv-h{font-family:Outfit,system-ui,sans-serif;font-weight:700;font-size:20px;line-height:1.25;margin:4px 0 8px}" +
+    ".route-vid{width:100%;max-height:480px;object-fit:contain;background:#000;border-radius:12px;display:block}" +
     ".svc-img{width:100%;height:140px;object-fit:cover;display:block;margin-bottom:12px}";
   var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
 
@@ -76,7 +78,7 @@
       if (c.dataset.logo) return; c.dataset.logo = "1";
       var img = new Image(); img.className = "cd-img cd-logo"; img.alt = "";
       img.onload = function () { if (!c.querySelector(".cd-logo")) { c.classList.add("has-img"); c.insertBefore(img, c.firstChild); } };
-      img.src = CL + "f_png,w_480,h_200,c_pad,b_white/logo_" + m[1];
+      img.src = CL + "c_limit,w_900,f_auto,q_auto/logo_" + m[1];
     });
   }
   // Optional CONFIG.fireAssembly { text, img, coords }: assembly point with photo and map button in Fire safety
@@ -108,6 +110,25 @@
     var stars = document.createElement("div"); stars.className = "rv-stars"; stars.innerHTML = STAR + STAR + STAR + STAR + STAR;
     var h = document.createElement("p"); h.className = "rv-h"; h.textContent = tx("rvH");
     b.insertBefore(stars, b.firstChild); if (sub) sub.after(h); else stars.after(h);
+  }
+  // Optional video on a route step: arrivalRoute / binsRoute steps can have video: "https://res.cloudinary.com/.../video/upload/...mp4".
+  // Plays silently in a loop inside the page (no sound, no full screen), above the step photos.
+  function routeVideos() {
+    [["arrivalRoute", "arrive"], ["binsRoute", "rules"]].forEach(function (r) {
+      var R = CFG && CFG[r[0]], sec = document.getElementById(r[1]);
+      if (!R || !R.steps || !sec) return;
+      var items = sec.querySelectorAll(".route-list > li");
+      R.steps.forEach(function (stp, i) {
+        var li = items[i], url = stp && stp.video;
+        if (!li || !/^https:\/\//.test(url || "") || li.querySelector(".route-vid")) return;
+        var body = li.querySelector(".route-body"); if (!body) return;
+        var v = document.createElement("video");
+        v.className = "route-vid"; v.src = url; v.muted = true; v.defaultMuted = true; v.loop = true; v.autoplay = true;
+        v.setAttribute("muted", ""); v.setAttribute("playsinline", ""); v.setAttribute("preload", "metadata"); v.setAttribute("aria-hidden", "true");
+        body.insertBefore(v, body.firstChild);
+        var pr = v.play && v.play(); if (pr && pr.catch) pr.catch(function () {});
+      });
+    });
   }
   function servicePhotos() {
     var S = (!CFG || CFG.servicePhotos === undefined) ? DEFAULT_SERVICE_PHOTOS : CFG.servicePhotos; if (!S) return;
@@ -160,8 +181,8 @@
     // alt texts of photos: drop the asterisks
     app.querySelectorAll("img[alt*='**']").forEach(function (i) { i.alt = i.alt.replace(/\*\*/g, ""); });
   }
-  var mo = new MutationObserver(function () { mo.disconnect(); promo(); offers(); servicePhotos(); cot(); reviews(); fireAssembly(); logos(); bold(); mo.observe(app, { childList: true, subtree: true }); });
-  promo(); offers(); servicePhotos(); cot(); reviews(); fireAssembly(); logos(); bold(); mo.observe(app, { childList: true, subtree: true });
+  var mo = new MutationObserver(function () { mo.disconnect(); promo(); offers(); servicePhotos(); cot(); reviews(); fireAssembly(); routeVideos(); logos(); bold(); mo.observe(app, { childList: true, subtree: true }); });
+  promo(); offers(); servicePhotos(); cot(); reviews(); fireAssembly(); routeVideos(); logos(); bold(); mo.observe(app, { childList: true, subtree: true });
 
   document.addEventListener("wheel", function (e) {
     var nav = e.target.closest && e.target.closest("#navBar");
