@@ -491,7 +491,8 @@
           .then(r => r.text().then(t => {
             let j = null; try { j = JSON.parse(t); } catch (e) {}
             console.log("Brevo sign up:", r.status, t);
-            if (!r.ok || (j && j.success === false)) fail(j && (j.message || (j.errors && JSON.stringify(j.errors)))); else ok();
+            // a real sign up always comes back with a "message"; a 200 without one means Brevo dropped it silently
+            if (!r.ok || !j || j.success === false || !j.message) fail(j && (j.message || (j.errors && JSON.stringify(j.errors)))); else ok();
           }))
           .catch(err => { console.log("Brevo sign up blocked:", err); fail(null); });
       });
