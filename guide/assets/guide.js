@@ -475,6 +475,7 @@
         err.hidden = true;
         btn.disabled = true; btn.textContent = T("fSending");
         const body = new URLSearchParams(new FormData(jf));
+        body.set("email_address_check", ""); // browsers may autofill the hidden anti-bot field; Brevo then drops the sign-up silently
         const ok = () => {
           store.set("hollJoined", "1");
           jf.hidden = true;
