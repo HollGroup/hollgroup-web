@@ -13,105 +13,63 @@
 
 <script>
 /* =====================================================================
-   GARDEN COURT (Ladywood): property settings.
-   Never put the flat number, access codes or the exact lockbox position here.
+   THE TIMBER HOUSE (Oldbury): property settings.
+   Never put the house number, the street address, the postcode,
+   access codes, the padlock code or the exact lockbox position here.
    ===================================================================== */
 const CONFIG = {
-  "propertyName": "Garden Court",
-  "area": "Ladywood Middleway, Birmingham",
-  "propertyType": "flat",
+  "propertyName": "The Timber House",
+  "area": "Oldbury, West Midlands",
+  "propertyType": "house",
   "garden": true,
-  "exteriorCameras": false,
+  "exteriorCameras": true,
+  "privateAddress": true,
   "entry": "lockbox",
   "keysFirst": false,
   "keysFirstWhere": "",
   "smartLockCodeTimeLimited": true,
   "smartLockHowTo": "",
-  "parking": "none",
-  "parkingDetails": "",
-  "parkingNearby": "",
+  "parking": "available",
+  "parkingDetails": {
+    "en": "Private off-road parking for one car behind the house, through the large black gate. You cannot reach it from the front: drive round the block to the gate at the back. The padlock code is in your check-in message."
+  },
+  "parkingNearby": {
+    "en": "Parking on the street is free, with no time limit. Please use it for a second car."
+  },
   "parkingCoords": "",
   "parkingNearbyCoords": "",
+  "parkingOptions": [],
   "parkingPhotos": [],
   "directions": {
-    "en": "Garden Court is a **Grade II listed building from 1858**, set around its own lawn on Ladywood Middleway, close to Broadway Plaza and Five Ways.",
-    "es": "Garden Court es un **edificio protegido (Grade II) de 1858**, construido alrededor de su propio jardín en Ladywood Middleway, cerca de Broadway Plaza y Five Ways.",
-    "fr": "Garden Court est un **bâtiment classé (Grade II) de 1858**, organisé autour de sa propre pelouse sur Ladywood Middleway, près de Broadway Plaza et Five Ways.",
-    "de": "Garden Court ist ein **denkmalgeschütztes Gebäude (Grade II) von 1858** rund um einen eigenen Rasen an der Ladywood Middleway, nahe Broadway Plaza und Five Ways.",
-    "it": "Garden Court è un **edificio storico tutelato (Grade II) del 1858**, disposto attorno al proprio prato su Ladywood Middleway, vicino a Broadway Plaza e Five Ways.",
-    "pt": "Garden Court é um **edifício classificado (Grade II) de 1858**, disposto à volta do seu próprio relvado em Ladywood Middleway, perto de Broadway Plaza e Five Ways.",
-    "zh": "Garden Court 是一座**建于 1858 年的二级保护建筑**，围绕自家草坪而建，位于 Ladywood Middleway，靠近 Broadway Plaza 和 Five Ways。",
-    "ar": "Garden Court **مبنى تاريخي محمي (الدرجة الثانية) يعود إلى عام 1858**، يحيط بحديقته العشبية الخاصة على طريق Ladywood Middleway، بالقرب من Broadway Plaza وFive Ways.",
-    "ja": "Garden Court は**1858 年築の歴史的保護建築（Grade II）**で、専用の芝生を囲むように建ち、Ladywood Middleway 沿い、Broadway Plaza と Five Ways のすぐ近くです。"
+    "en": "Your full address is in your check-in message. Save it on your phone, you will need it for taxis and deliveries."
   },
-  "transport": [
-    {
-      "mode": "train",
-      "name": "Five Ways station",
-      "how": "walk",
-      "mins": 9,
-      "coords": "Five Ways station, Birmingham"
-    },
-    {
-      "mode": "tram",
-      "name": "Brindleyplace tram stop",
-      "how": "walk",
-      "mins": 11,
-      "coords": "Brindleyplace tram stop, Birmingham"
-    },
-    {
-      "mode": "train",
-      "name": "Birmingham New Street",
-      "how": "walk",
-      "mins": 24,
-      "coords": "Birmingham New Street station"
-    }
-  ],
-  "entranceCoords": "Garden Court, Ladywood Middleway, Birmingham B16 8EU",
+  "transport": [],
+  "entranceCoords": "",
   "lockboxCoords": "",
-  "lockboxAreaPhoto": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791908641/IMG20260923123110_vfydif.jpg",
+  "lockboxAreaPhoto": "",
   "keysNote": "",
   "arrivalRoute": {
     "title": {
-      "en": "Getting in",
-      "es": "Cómo entrar",
-      "fr": "Pour entrer",
-      "de": "So kommen Sie hinein",
-      "it": "Come entrare",
-      "pt": "Como entrar",
-      "zh": "如何进入",
-      "ar": "طريقة الدخول",
-      "ja": "入室方法"
+      "en": "Getting in"
     },
     "steps": [
       {
         "text": {
-          "en": "Collect the **keys and the fob** from your lockbox in the **passage next to the building**. The code, which lockbox is yours and your flat number are in your check-in message.",
-          "es": "Recoge las **llaves y el mando (fob)** de tu caja de llaves, en el **pasaje junto al edificio**. El código, cuál es tu caja y el número del piso están en tu mensaje de check-in.",
-          "fr": "Récupérez les **clés et le badge** dans votre boîte à clés, dans le **passage à côté du bâtiment**. Le code, votre boîte et le numéro de l'appartement figurent dans votre message d'arrivée.",
-          "de": "Holen Sie **Schlüssel und Chip** aus Ihrem Schlüsselkasten im **Durchgang neben dem Gebäude**. Code, Kasten und Wohnungsnummer stehen in Ihrer Check-in-Nachricht.",
-          "it": "Ritira **chiavi e badge** dalla tua cassetta delle chiavi, nel **passaggio accanto all'edificio**. Il codice, la tua cassetta e il numero dell'appartamento sono nel messaggio di check-in.",
-          "pt": "Recolha as **chaves e o comando (fob)** da sua caixa de chaves, na **passagem ao lado do edifício**. O código, a sua caixa e o número do apartamento estão na mensagem de check-in.",
-          "zh": "在**大楼旁边的通道**里，从您的钥匙盒中取出**钥匙和门禁扣**。密码、哪个钥匙盒以及公寓号码都在您的入住消息中。",
-          "ar": "استلم **المفاتيح وبطاقة الدخول** من صندوق المفاتيح الخاص بك في **الممر المجاور للمبنى**. الرمز ورقم صندوقك ورقم الشقة موجودة في رسالة تسجيل الوصول.",
-          "ja": "**建物横の通路**にあるキーボックスから**鍵とキーフォブ**を取り出してください。暗証番号、どのキーボックスか、部屋番号はチェックインメッセージに記載しています。"
+          "en": "Collect the keys from the lockbox. The code and where to find it are in your check-in message."
         },
         "imgs": []
       },
       {
         "text": {
-          "en": "At the building door, hold the fob **flat against the screen** of the door entry panel, **not the round reader below it**. The screen turns blue, shows OPEN and the door unlocks.",
-          "es": "En la puerta del edificio, apoya el fob **sobre la pantalla** del portero automático, **no en el lector redondo de abajo**. La pantalla se pone azul, muestra OPEN y la puerta se abre.",
-          "fr": "À la porte du bâtiment, posez le badge **à plat sur l'écran** de l'interphone, **pas sur le lecteur rond en dessous**. L'écran devient bleu, affiche OPEN et la porte se déverrouille.",
-          "de": "Halten Sie den Chip an der Haustür **flach an den Bildschirm** der Sprechanlage, **nicht an das runde Lesegerät darunter**. Der Bildschirm wird blau, zeigt OPEN und die Tür öffnet sich.",
-          "it": "Alla porta dell'edificio, appoggia il badge **sullo schermo** del citofono, **non sul lettore rotondo sotto**. Lo schermo diventa blu, mostra OPEN e la porta si apre.",
-          "pt": "Na porta do edifício, encoste o fob **ao ecrã** do intercomunicador, **não ao leitor redondo por baixo**. O ecrã fica azul, mostra OPEN e a porta abre.",
-          "zh": "在大楼门口，将门禁扣**平贴在门禁面板的屏幕上**，**不是下方的圆形读卡器**。屏幕变蓝并显示 OPEN，门即解锁。",
-          "ar": "عند باب المبنى، ضع بطاقة الدخول **على شاشة لوحة الاتصال مباشرة**، **وليس على القارئ الدائري أسفلها**. تتحول الشاشة إلى اللون الأزرق وتظهر كلمة OPEN ويُفتح الباب.",
-          "ja": "建物の入口で、キーフォブを**インターホンの画面に平らに当ててください**。**下の丸い読み取り部ではありません**。画面が青くなり OPEN と表示されると、ドアが開きます。"
+          "en": "There are three keys. Round silver key: outer door. Square silver key: front door, just behind the small porch. Black key: back door to the garden."
         },
-        "imgs": [],
-        "video": "https://res.cloudinary.com/dyojhaiig/video/upload/c_limit,w_720/ac_none/vc_h264:baseline:3.1/q_auto/v1792483287/video_entry_c8rsb4.mp4"
+        "imgs": []
+      },
+      {
+        "text": {
+          "en": "All three doors have lift handles. **Lift the handle up before you turn the key**, both to lock and to unlock."
+        },
+        "imgs": []
       }
     ]
   },
@@ -121,1902 +79,208 @@ const CONFIG = {
   },
   "checkIn": "15:00",
   "checkOut": "10:00",
-  "wifiName": "CarpeDiemLivingxHollGroup",
-  "wifiPassword": "Bookdirectfordiscounts1",
-  "sleeps": 2,
-  "bathrooms": 1,
+  "wifiName": "HagleyHG-Guest",
+  "wifiPassword": "www.hollgroup.co.uk",
+  "sleeps": 6,
+  "bathrooms": 2,
   "beds": [
     {
       "room": "bed1",
       "beds": [
-        "double"
-      ]
+        "single",
+        "single"
+      ],
+      "note": {
+        "en": "Upstairs. The two single beds cannot be pushed together."
+      }
+    },
+    {
+      "room": "bed2",
+      "beds": [
+        "single",
+        "single"
+      ],
+      "note": {
+        "en": "Upstairs. The two single beds cannot be pushed together."
+      }
+    },
+    {
+      "room": "living",
+      "beds": [
+        "sofa"
+      ],
+      "note": {
+        "en": "Opens into a king size bed. Its bedding is stored under the sofa bed."
+      }
     }
   ],
   "property": [
     {
       "title": {
-        "en": "Heating",
-        "es": "Calefacción",
-        "fr": "Chauffage",
-        "de": "Heizung",
-        "it": "Riscaldamento",
-        "pt": "Aquecimento",
-        "zh": "暖气",
-        "ar": "التدفئة",
-        "ja": "暖房"
+        "en": "Your home"
       },
       "text": {
-        "en": "Three smart electric heaters keep the living room, hallway and bedroom warm. **We set the temperature remotely**, so the flat is warm when you arrive. Want it warmer or cooler? **Just message us** and we will adjust it straight away. Please **do not cover the heaters** or dry clothes on them.",
-        "es": "Tres radiadores eléctricos inteligentes calientan el salón, el pasillo y el dormitorio. **Ajustamos la temperatura a distancia**, así el piso está caliente cuando llegas. ¿Lo quieres más caliente o más fresco? **Escríbenos** y lo cambiamos al momento. Por favor, **no cubras los radiadores** ni seques ropa encima.",
-        "fr": "Trois radiateurs électriques connectés chauffent le salon, le couloir et la chambre. **Nous réglons la température à distance**, pour que l'appartement soit chaud à votre arrivée. Plus chaud ou plus frais ? **Envoyez-nous un message** et nous l'ajustons aussitôt. Merci de **ne pas couvrir les radiateurs** ni d'y faire sécher du linge.",
-        "de": "Drei smarte Elektroheizungen wärmen Wohnzimmer, Flur und Schlafzimmer. **Wir stellen die Temperatur aus der Ferne ein**, damit die Wohnung bei Ihrer Ankunft warm ist. Wärmer oder kühler gewünscht? **Schreiben Sie uns einfach**, wir passen es sofort an. Bitte **die Heizungen nicht abdecken** und keine Wäsche darauf trocknen.",
-        "it": "Tre termosifoni elettrici smart riscaldano soggiorno, corridoio e camera. **Regoliamo la temperatura a distanza**, così l'appartamento è caldo al tuo arrivo. Più caldo o più fresco? **Scrivici** e lo regoliamo subito. Per favore **non coprire i termosifoni** e non asciugarci sopra i vestiti.",
-        "pt": "Três aquecedores elétricos inteligentes aquecem a sala, o corredor e o quarto. **Ajustamos a temperatura à distância**, para o apartamento estar quente quando chegar. Quer mais quente ou mais fresco? **Envie-nos uma mensagem** e ajustamos logo. Por favor, **não tape os aquecedores** nem seque roupa neles.",
-        "zh": "客厅、走廊和卧室各有一台智能电暖器。**我们会远程设定温度**，让您抵达时房间已经温暖。想要更暖或更凉？**给我们发消息**，我们会立即调整。请**不要遮盖暖器**，也不要在上面晾衣服。",
-        "ar": "ثلاث مدافئ كهربائية ذكية تدفئ غرفة المعيشة والممر وغرفة النوم. **نضبط درجة الحرارة عن بُعد** لتجد الشقة دافئة عند وصولك. تريدها أدفأ أو أبرد؟ **راسلنا فقط** وسنعدّلها فورًا. يرجى **عدم تغطية المدافئ** أو تجفيف الملابس عليها.",
-        "ja": "リビング、廊下、寝室にスマート電気ヒーターが 1 台ずつあります。**温度は私たちが遠隔で設定**しているので、到着時には暖かくなっています。もっと暖かく、または涼しくしたい場合は**メッセージをください**。すぐに調整します。**ヒーターを覆ったり**、衣類を干したりしないでください。"
+        "en": "A whole house, newly renovated, on two floors. Downstairs: the living room with the bay window and the sofa bed, the dining room next to the kitchen, the kitchen, and a bathroom with bath, shower and the washing machine. Upstairs: two bedrooms, one on each side of the stairs, and a shower room at the end of the landing, shared by both bedrooms. At the back there is a garden with a table and chairs."
       }
     },
     {
       "title": {
-        "en": "Hot water",
-        "es": "Agua caliente",
-        "fr": "Eau chaude",
-        "de": "Warmwasser",
-        "it": "Acqua calda",
-        "pt": "Água quente",
-        "zh": "热水",
-        "ar": "الماء الساخن",
-        "ja": "お湯"
+        "en": "Heating"
       },
       "text": {
-        "en": "Hot water comes from a water heater (a hot water tank) in a locked cupboard in the hallway. **It is always on**, so there is nothing to switch on. It works like a tank: it heats a set amount of water, so after long showers or several in a row the hot water can run out. **Give it time to heat up again, usually about an hour.** If it is still cold after that, message us.",
-        "es": "El agua caliente sale de un termo (un depósito de agua caliente) en un armario cerrado del pasillo. **Siempre está encendido**, así que no hay que activar nada. Funciona como un depósito: calienta una cantidad fija de agua, así que tras duchas largas o varias seguidas el agua caliente se puede acabar. **Dale tiempo a que vuelva a calentar, normalmente alrededor de una hora.** Si después sigue fría, escríbenos.",
-        "fr": "L'eau chaude provient d'un chauffe-eau (un ballon d'eau chaude) dans un placard fermé à clé du couloir. **Il est toujours allumé**, il n'y a donc rien à mettre en marche. Il fonctionne comme un réservoir : il chauffe une quantité d'eau fixe, donc après de longues douches ou plusieurs à la suite, l'eau chaude peut manquer. **Laissez-lui le temps de chauffer à nouveau, généralement environ une heure.** Si elle est toujours froide ensuite, écrivez-nous.",
-        "de": "Das Warmwasser kommt aus einem Warmwasserspeicher in einem abgeschlossenen Schrank im Flur. **Er ist immer eingeschaltet**, Sie müssen also nichts einschalten. Er funktioniert wie ein Tank: Er erhitzt eine feste Wassermenge, daher kann das Warmwasser nach langen Duschen oder mehreren hintereinander ausgehen. **Geben Sie ihm Zeit zum Nachheizen, meist etwa eine Stunde.** Ist es danach immer noch kalt, schreiben Sie uns.",
-        "it": "L'acqua calda arriva da uno scaldabagno (un serbatoio di acqua calda) in un armadio chiuso a chiave nel corridoio. **È sempre acceso**, quindi non c'è nulla da accendere. Funziona come un serbatoio: scalda una quantità fissa d'acqua, quindi dopo docce lunghe o più docce di seguito l'acqua calda può finire. **Lascia il tempo di riscaldarsi di nuovo, di solito circa un'ora.** Se dopo è ancora fredda, scrivici.",
-        "pt": "A água quente vem de um termoacumulador (um depósito de água quente) num armário fechado à chave no corredor. **Está sempre ligado**, por isso não há nada para ligar. Funciona como um depósito: aquece uma quantidade fixa de água, por isso depois de duches longos ou de vários seguidos a água quente pode acabar. **Dê-lhe tempo para voltar a aquecer, normalmente cerca de uma hora.** Se depois disso continuar fria, envie-nos uma mensagem.",
-        "zh": "热水来自走廊上锁柜子里的热水器（储水式热水箱）。**它一直开着**，无需任何操作。它像水箱一样，每次只加热固定量的水，所以长时间淋浴或连续多人淋浴后热水可能会用完。**请给它时间重新加热，通常约一小时。**如果之后仍然没有热水，请给我们发消息。",
-        "ar": "يأتي الماء الساخن من سخّان مياه (خزان ماء ساخن) في خزانة مقفلة في الممر. **إنه يعمل دائمًا**، فلا حاجة لتشغيل أي شيء. يعمل مثل الخزان: يسخّن كمية محددة من الماء، لذا قد ينفد الماء الساخن بعد استحمام طويل أو عدة مرات متتالية. **امنحه وقتًا ليسخن من جديد، عادةً نحو ساعة.** إذا بقي باردًا بعد ذلك، راسلنا.",
-        "ja": "お湯は、廊下の施錠された収納にある電気温水器（貯湯タンク）から供給されます。**常に電源が入っている**ので、操作は不要です。タンク式のため一定量のお湯しか沸かせず、長いシャワーや続けてのシャワーの後はお湯がなくなることがあります。**再び沸くまでお待ちください。通常 1 時間ほどです。**それでも冷たい場合はメッセージをください。"
+        "en": "Gas central heating from a combi boiler. We set the heating schedule for you. If you would like the house warmer or cooler at any time, message us and we will adjust it for you."
       }
     },
     {
       "title": {
-        "en": "Kitchen and laundry",
-        "es": "Cocina y lavandería",
-        "fr": "Cuisine et linge",
-        "de": "Küche und Wäsche",
-        "it": "Cucina e lavanderia",
-        "pt": "Cozinha e lavandaria",
-        "zh": "厨房与洗衣",
-        "ar": "المطبخ والغسيل",
-        "ja": "キッチンと洗濯"
+        "en": "Hot water"
       },
       "text": {
-        "en": "Induction hob, microwave oven, air fryer, Tassimo coffee machine, kettle, fridge and washer dryer. **Pans** are in the tall narrow cupboard on the far right, next to the microwave. The **middle top cupboard** is a guest shelf: anything previous guests left there is yours to use. On the switch panel, top right is the fridge (**always leave it on**), bottom left the extractor fan and bottom right the washer dryer. Hob or oven not working? Check the switch marked **HOB/COMBI OVEN**, behind the kettle, is on (red light).",
-        "es": "Placa de inducción, horno microondas, freidora de aire, cafetera Tassimo, hervidor, nevera y lavadora secadora. Las **ollas** están en el armario estrecho y alto de la derecha del todo, junto al microondas. El **armario superior del centro** es una balda de huéspedes: lo que hayan dejado otros huéspedes es para ti. En el panel de interruptores, arriba a la derecha está la nevera (**déjala siempre encendida**), abajo a la izquierda el extractor y abajo a la derecha la lavadora. ¿No funciona la placa o el horno? Comprueba que el interruptor **HOB/COMBI OVEN**, detrás del hervidor, está encendido (luz roja).",
-        "fr": "Plaque à induction, four micro-ondes, friteuse à air, machine à café Tassimo, bouilloire, réfrigérateur et lave-linge séchant. Les **casseroles** sont dans le placard haut et étroit tout à droite, à côté du micro-ondes. Le **placard du haut au milieu** est une étagère pour les voyageurs : ce que d'autres ont laissé est à vous. Sur le panneau d'interrupteurs : en haut à droite le réfrigérateur (**laissez-le toujours allumé**), en bas à gauche la hotte, en bas à droite le lave-linge. La plaque ou le four ne marche pas ? Vérifiez que l'interrupteur **HOB/COMBI OVEN**, derrière la bouilloire, est allumé (voyant rouge).",
-        "de": "Induktionskochfeld, Mikrowelle mit Backofen, Heißluftfritteuse, Tassimo-Kaffeemaschine, Wasserkocher, Kühlschrank und Waschtrockner. **Töpfe** finden Sie im hohen schmalen Schrank ganz rechts neben der Mikrowelle. Der **mittlere Oberschrank** ist ein Gästeregal: Was frühere Gäste dort gelassen haben, dürfen Sie nutzen. Am Schalterfeld: oben rechts der Kühlschrank (**immer eingeschaltet lassen**), unten links die Dunstabzugshaube, unten rechts der Waschtrockner. Kochfeld oder Ofen funktionieren nicht? Prüfen Sie, ob der Schalter **HOB/COMBI OVEN** hinter dem Wasserkocher an ist (rotes Licht).",
-        "it": "Piano a induzione, forno a microonde, friggitrice ad aria, macchina da caffè Tassimo, bollitore, frigorifero e lavasciuga. Le **pentole** sono nell'armadio alto e stretto in fondo a destra, accanto al microonde. L'**armadio in alto al centro** è uno scaffale per gli ospiti: ciò che hanno lasciato gli altri è tuo. Sul pannello degli interruttori: in alto a destra il frigorifero (**lascialo sempre acceso**), in basso a sinistra la cappa, in basso a destra la lavasciuga. Piano cottura o forno non funzionano? Controlla che l'interruttore **HOB/COMBI OVEN**, dietro il bollitore, sia acceso (luce rossa).",
-        "pt": "Placa de indução, forno micro-ondas, fritadeira de ar, máquina de café Tassimo, chaleira, frigorífico e máquina de lavar e secar. Os **tachos** estão no armário alto e estreito do lado direito, ao lado do micro-ondas. O **armário de cima ao centro** é uma prateleira para hóspedes: o que outros deixaram é seu. No painel de interruptores: em cima à direita o frigorífico (**deixe-o sempre ligado**), em baixo à esquerda o exaustor, em baixo à direita a máquina de lavar. A placa ou o forno não funcionam? Confirme que o interruptor **HOB/COMBI OVEN**, atrás da chaleira, está ligado (luz vermelha).",
-        "zh": "电磁炉、微波烤箱、空气炸锅、Tassimo 咖啡机、电水壶、冰箱和洗烘一体机。**锅具**在最右边微波炉旁的高窄柜里。**中间的上柜**是住客共享架：之前住客留下的东西您都可以使用。开关面板上：右上是冰箱（**请始终开着**），左下是抽油烟机，右下是洗衣机。电磁炉或烤箱不工作？请检查水壶后面标有 **HOB/COMBI OVEN** 的开关是否打开（红灯亮）。",
-        "ar": "موقد حثي، فرن ميكروويف، قلاية هوائية، آلة قهوة Tassimo، غلاية، ثلاجة وغسالة مجففة. **القدور** في الخزانة الطويلة الضيقة أقصى اليمين بجانب الميكروويف. **الخزانة العلوية الوسطى** رف للضيوف: ما تركه الضيوف السابقون يمكنك استخدامه. في لوحة المفاتيح: أعلى اليمين الثلاجة (**اتركها تعمل دائمًا**)، أسفل اليسار مروحة الشفط، أسفل اليمين الغسالة. الموقد أو الفرن لا يعمل؟ تأكد أن المفتاح المكتوب عليه **HOB/COMBI OVEN** خلف الغلاية في وضع التشغيل (الضوء الأحمر).",
-        "ja": "IH コンロ、オーブンレンジ、エアフライヤー、Tassimo コーヒーマシン、電気ケトル、冷蔵庫、洗濯乾燥機があります。**鍋**は右端の電子レンジ横、細長い収納にあります。**上段中央の戸棚**はゲスト用の棚です。前のゲストが残したものは自由に使えます。スイッチパネルは、右上が冷蔵庫（**常にオンのままに**）、左下が換気扇、右下が洗濯機です。コンロやオーブンが動かない場合は、ケトルの後ろにある **HOB/COMBI OVEN** のスイッチがオン（赤いランプ）か確認してください。"
+        "en": "Hot water comes straight from the combi boiler, so it is always available. Just run the tap and give it a few seconds."
+      }
+    },
+    {
+      "title": {
+        "en": "Kitchen"
+      },
+      "text": {
+        "en": "Four burner gas hob, New World double oven with grill, extractor hood, Russell Hobbs microwave, Bosch Tassimo coffee machine, toaster, kettle and a fridge freezer. There is no dishwasher."
       },
       "appliances": [
         {
           "name": {
-            "en": "Hob",
-            "es": "Placa",
-            "fr": "Plaque de cuisson",
-            "de": "Kochfeld",
-            "it": "Piano cottura",
-            "pt": "Placa",
-            "zh": "电磁炉",
-            "ar": "الموقد",
-            "ja": "IH コンロ"
+            "en": "Gas hob"
           },
           "brand": "",
-          "model": "Induction",
           "steps": {
             "en": [
-              "Put the pan on a ring and press ⏻.",
-              "Press the button for that ring. The small line on each button shows which ring it controls.",
-              "Set the heat with − / +, from 1 to 9. **B** gives a short burst of maximum power.",
-              "Press ⏻ to switch off. An **H** means the ring is **still hot**."
-            ],
-            "es": [
-              "Pon la olla sobre un fuego y pulsa ⏻.",
-              "Pulsa el botón de ese fuego. La rayita de cada botón indica qué fuego controla.",
-              "Ajusta el calor con − / +, del 1 al 9. **B** da potencia máxima durante un rato.",
-              "Pulsa ⏻ para apagar. Una **H** significa que el fuego **sigue caliente**."
-            ],
-            "fr": [
-              "Posez la casserole sur un foyer et appuyez sur ⏻.",
-              "Appuyez sur la touche de ce foyer. Le petit trait sur chaque touche indique le foyer qu'elle commande.",
-              "Réglez la puissance avec − / +, de 1 à 9. **B** donne un coup de puissance maximale.",
-              "Appuyez sur ⏻ pour éteindre. Un **H** signifie que le foyer est **encore chaud**."
-            ],
-            "de": [
-              "Topf auf eine Kochzone stellen und ⏻ drücken.",
-              "Die Taste dieser Zone drücken. Der kleine Strich auf jeder Taste zeigt, welche Zone sie steuert.",
-              "Hitze mit − / + von 1 bis 9 einstellen. **B** gibt kurz maximale Leistung.",
-              "Mit ⏻ ausschalten. Ein **H** bedeutet, dass die Zone **noch heiß** ist."
-            ],
-            "it": [
-              "Metti la pentola su una zona e premi ⏻.",
-              "Premi il tasto di quella zona. La lineetta su ogni tasto indica quale zona controlla.",
-              "Regola il calore con − / +, da 1 a 9. **B** dà per poco la potenza massima.",
-              "Premi ⏻ per spegnere. Una **H** indica che la zona è **ancora calda**."
-            ],
-            "pt": [
-              "Coloque o tacho numa zona e prima ⏻.",
-              "Prima o botão dessa zona. O pequeno traço em cada botão mostra a zona que controla.",
-              "Ajuste o calor com − / +, de 1 a 9. **B** dá potência máxima durante pouco tempo.",
-              "Prima ⏻ para desligar. Um **H** significa que a zona **ainda está quente**."
-            ],
-            "zh": [
-              "把锅放在炉圈上，按 ⏻。",
-              "按该炉圈对应的按钮。每个按钮上的小横线表示它控制哪个炉圈。",
-              "用 − / + 调节火力，1 到 9。**B** 可短时间最大功率加热。",
-              "按 ⏻ 关闭。显示 **H** 表示炉圈**仍然很烫**。"
-            ],
-            "ar": [
-              "ضع القدر على إحدى الدوائر واضغط ⏻.",
-              "اضغط زر تلك الدائرة. الخط الصغير على كل زر يوضح الدائرة التي يتحكم بها.",
-              "اضبط الحرارة بـ − / + من 1 إلى 9. يعطي **B** أقصى قوة لفترة قصيرة.",
-              "اضغط ⏻ للإيقاف. حرف **H** يعني أن الدائرة **ما زالت ساخنة**."
-            ],
-            "ja": [
-              "鍋を加熱エリアに置き、⏻ を押します。",
-              "そのエリアのボタンを押します。各ボタンの小さな線が、どのエリアかを示しています。",
-              "− / + で火力を 1〜9 に設定します。**B** は短時間の最大火力です。",
-              "⏻ で電源を切ります。**H** の表示は、エリアが**まだ熱い**という意味です。"
-            ]
-          },
-          "tip": {
-            "en": "If the buttons do not respond, the hob is **locked**. Touch the **padlock** button once to unlock it.",
-            "es": "Si los botones no responden, la placa está **bloqueada**. Toca una vez el botón del **candado** para desbloquearla.",
-            "fr": "Si les touches ne répondent pas, la plaque est **verrouillée**. Touchez une fois la touche **cadenas** pour la déverrouiller.",
-            "de": "Reagieren die Tasten nicht, ist das Kochfeld **gesperrt**. Einmal die **Schloss**-Taste berühren, um es zu entsperren.",
-            "it": "Se i tasti non rispondono, il piano è **bloccato**. Tocca una volta il tasto del **lucchetto** per sbloccarlo.",
-            "pt": "Se os botões não responderem, a placa está **bloqueada**. Toque uma vez no botão do **cadeado** para desbloquear.",
-            "zh": "如果按键没有反应，说明电磁炉**已锁定**。轻触一次**锁形**按钮即可解锁。",
-            "ar": "إذا لم تستجب الأزرار فالموقد **مقفل**. المس زر **القفل** مرة واحدة لفتحه.",
-            "ja": "ボタンが反応しない場合は**ロック**されています。**鍵マーク**のボタンを 1 回タッチすると解除されます。"
-          }
-        },
-        {
-          "name": {
-            "en": "Microwave",
-            "es": "Microondas",
-            "fr": "Micro-ondes",
-            "de": "Mikrowelle",
-            "it": "Microonde",
-            "pt": "Micro-ondas",
-            "zh": "微波炉",
-            "ar": "الميكروويف",
-            "ja": "電子レンジ"
-          },
-          "brand": "Whirlpool",
-          "model": "W7 MW461 UK",
-          "steps": {
-            "en": [
-              "**Take the oven tray out.** It is metal and must **never go in the microwave**.",
-              "Put your food in and close the door.",
-              "Press ⏻. The screen shows 6th Sense, you can ignore it.",
-              "Press the **microwave button**, bottom right, with waves on both sides. It shows 900 W: press ✓.",
-              "Set the time with − / + and press ✓. **It starts straight away.**",
-              "**To stop early**, press the microwave button again. The screen shows Stop cycle: press ✓. You can also open the door to pause it."
-            ],
-            "es": [
-              "**Saca la bandeja del horno.** Es de metal y **nunca debe ir en el microondas**.",
-              "Mete la comida y cierra la puerta.",
-              "Pulsa ⏻. La pantalla muestra 6th Sense; puedes ignorarlo.",
-              "Pulsa el **botón del microondas**, abajo a la derecha, con ondas a los lados. Muestra 900 W: pulsa ✓.",
-              "Ajusta el tiempo con − / + y pulsa ✓. **Empieza al momento.**",
-              "**Para pararlo antes**, pulsa otra vez el botón del microondas. Sale Stop cycle: pulsa ✓. También puedes abrir la puerta para pausarlo."
-            ],
-            "fr": [
-              "**Retirez la plaque du four.** Elle est en métal et ne doit **jamais aller au micro-ondes**.",
-              "Mettez les aliments et fermez la porte.",
-              "Appuyez sur ⏻. L'écran affiche 6th Sense, ignorez-le.",
-              "Appuyez sur la **touche micro-ondes**, en bas à droite, avec des ondes des deux côtés. Elle affiche 900 W : appuyez sur ✓.",
-              "Réglez le temps avec − / + et appuyez sur ✓. **Ça démarre aussitôt.**",
-              "**Pour arrêter avant la fin**, appuyez de nouveau sur la touche micro-ondes. L'écran affiche Stop cycle : appuyez sur ✓. Vous pouvez aussi ouvrir la porte pour mettre en pause."
-            ],
-            "de": [
-              "**Backblech herausnehmen.** Es ist aus Metall und darf **nie in die Mikrowelle**.",
-              "Essen hineinstellen und Tür schließen.",
-              "⏻ drücken. Auf dem Bildschirm steht 6th Sense, das können Sie ignorieren.",
-              "Die **Mikrowellen-Taste** unten rechts drücken (Wellen auf beiden Seiten). Sie zeigt 900 W: ✓ drücken.",
-              "Zeit mit − / + einstellen und ✓ drücken. **Sie startet sofort.**",
-              "**Vorzeitig stoppen:** die Mikrowellen-Taste erneut drücken. Es erscheint Stop cycle: ✓ drücken. Sie können auch die Tür öffnen, um zu pausieren."
-            ],
-            "it": [
-              "**Togli la teglia del forno.** È di metallo e **non deve mai andare nel microonde**.",
-              "Metti il cibo e chiudi lo sportello.",
-              "Premi ⏻. Lo schermo mostra 6th Sense, puoi ignorarlo.",
-              "Premi il **tasto microonde**, in basso a destra, con le onde ai lati. Mostra 900 W: premi ✓.",
-              "Imposta il tempo con − / + e premi ✓. **Parte subito.**",
-              "**Per fermarlo prima**, premi di nuovo il tasto microonde. Compare Stop cycle: premi ✓. Puoi anche aprire lo sportello per metterlo in pausa."
-            ],
-            "pt": [
-              "**Retire o tabuleiro do forno.** É de metal e **nunca pode ir ao micro-ondas**.",
-              "Coloque a comida e feche a porta.",
-              "Prima ⏻. O ecrã mostra 6th Sense; pode ignorar.",
-              "Prima o **botão do micro-ondas**, em baixo à direita, com ondas dos dois lados. Mostra 900 W: prima ✓.",
-              "Ajuste o tempo com − / + e prima ✓. **Começa logo.**",
-              "**Para parar antes**, prima de novo o botão do micro-ondas. Aparece Stop cycle: prima ✓. Também pode abrir a porta para pausar."
-            ],
-            "zh": [
-              "**先取出烤盘。**烤盘是金属的，**绝不能放进微波炉**。",
-              "放入食物，关上门。",
-              "按 ⏻。屏幕显示 6th Sense，可以忽略。",
-              "按右下角两侧带波纹的**微波按钮**。显示 900 W：按 ✓。",
-              "用 − / + 设置时间，按 ✓。**会立即开始。**",
-              "**要提前停止**，再按一次微波按钮。屏幕显示 Stop cycle：按 ✓。也可以打开门暂停。"
-            ],
-            "ar": [
-              "**أخرج صينية الفرن.** إنها معدنية و**لا يجوز وضعها في الميكروويف أبدًا**.",
-              "ضع الطعام وأغلق الباب.",
-              "اضغط ⏻. تظهر على الشاشة 6th Sense، يمكنك تجاهلها.",
-              "اضغط **زر الميكروويف** أسفل اليمين، وعليه موجات من الجانبين. يظهر 900 W: اضغط ✓.",
-              "اضبط الوقت بـ − / + واضغط ✓. **يبدأ فورًا.**",
-              "**للإيقاف المبكر** اضغط زر الميكروويف مرة أخرى. تظهر Stop cycle: اضغط ✓. ويمكنك أيضًا فتح الباب للإيقاف المؤقت."
-            ],
-            "ja": [
-              "**オーブン用の天板を取り出してください。**金属製なので、**電子レンジには絶対に入れないでください**。",
-              "食べ物を入れてドアを閉めます。",
-              "⏻ を押します。画面に 6th Sense と出ますが、気にしなくて大丈夫です。",
-              "右下の両側に波のマークがある**電子レンジボタン**を押します。900 W と表示されたら ✓ を押します。",
-              "− / + で時間を設定し ✓ を押すと、**すぐに始まります。**",
-              "**途中で止めるには**、もう一度電子レンジボタンを押します。Stop cycle と出たら ✓ を押します。ドアを開けると一時停止もできます。"
-            ]
-          },
-          "tip": {
-            "en": "If you get stuck in a menu, press ⏻ to switch off and start again.",
-            "es": "Si te quedas atascado en un menú, pulsa ⏻ para apagar y empieza de nuevo.",
-            "fr": "Si vous êtes bloqué dans un menu, appuyez sur ⏻ pour éteindre et recommencez.",
-            "de": "Wenn Sie in einem Menü feststecken, mit ⏻ ausschalten und neu beginnen.",
-            "it": "Se resti bloccato in un menu, premi ⏻ per spegnere e ricomincia.",
-            "pt": "Se ficar preso num menu, prima ⏻ para desligar e comece de novo.",
-            "zh": "如果卡在某个菜单里，按 ⏻ 关闭后重新开始。",
-            "ar": "إذا علقت في قائمة، اضغط ⏻ للإيقاف وابدأ من جديد.",
-            "ja": "メニューで迷ったら、⏻ で電源を切って最初からやり直してください。"
-          }
-        },
-        {
-          "name": {
-            "en": "Oven (same unit as the microwave)",
-            "es": "Horno (el mismo aparato que el microondas)",
-            "fr": "Four (même appareil que le micro-ondes)",
-            "de": "Backofen (dasselbe Gerät wie die Mikrowelle)",
-            "it": "Forno (stesso apparecchio del microonde)",
-            "pt": "Forno (o mesmo aparelho do micro-ondas)",
-            "zh": "烤箱（与微波炉是同一台）",
-            "ar": "الفرن (نفس جهاز الميكروويف)",
-            "ja": "オーブン（電子レンジと同じ本体）"
-          },
-          "brand": "Whirlpool",
-          "model": "W7 MW461 UK",
-          "steps": {
-            "en": [
-              "Put the oven tray back in.",
-              "Press ⏻, then the **fan button** (top right of the six). It shows Forced Air 160°C.",
-              "Set the temperature with − / + and press ✓.",
-              "Set the cooking time with − / + and press ✓.",
-              "When it asks for an end time, just press ✓ again.",
-              "It preheats and **beeps when it is hot**. Put your food in.",
-              "When you finish, press ⏻ and **take the tray out again**, so the microwave is ready for the next person."
-            ],
-            "es": [
-              "Vuelve a meter la bandeja del horno.",
-              "Pulsa ⏻ y luego el **botón del ventilador** (arriba a la derecha de los seis). Muestra Forced Air 160°C.",
-              "Ajusta la temperatura con − / + y pulsa ✓.",
-              "Ajusta el tiempo de cocción con − / + y pulsa ✓.",
-              "Cuando pida una hora de fin, pulsa ✓ otra vez.",
-              "Se precalienta y **pita cuando está caliente**. Mete la comida.",
-              "Al terminar, pulsa ⏻ y **vuelve a sacar la bandeja**, para que el microondas quede listo para el siguiente."
-            ],
-            "fr": [
-              "Remettez la plaque dans le four.",
-              "Appuyez sur ⏻, puis sur la **touche ventilateur** (en haut à droite des six). Elle affiche Forced Air 160°C.",
-              "Réglez la température avec − / + et appuyez sur ✓.",
-              "Réglez la durée de cuisson avec − / + et appuyez sur ✓.",
-              "Quand il demande une heure de fin, appuyez simplement sur ✓.",
-              "Il préchauffe et **bipe quand il est chaud**. Enfournez.",
-              "À la fin, appuyez sur ⏻ et **retirez de nouveau la plaque**, pour que le micro-ondes soit prêt pour les suivants."
-            ],
-            "de": [
-              "Backblech wieder einschieben.",
-              "⏻ drücken, dann die **Ventilator-Taste** (oben rechts von den sechs). Es erscheint Forced Air 160°C.",
-              "Temperatur mit − / + einstellen und ✓ drücken.",
-              "Garzeit mit − / + einstellen und ✓ drücken.",
-              "Wenn nach einer Endzeit gefragt wird, einfach erneut ✓ drücken.",
-              "Er heizt vor und **piept, wenn er heiß ist**. Essen hineinstellen.",
-              "Danach ⏻ drücken und **das Blech wieder herausnehmen**, damit die Mikrowelle für die Nächsten bereit ist."
-            ],
-            "it": [
-              "Rimetti la teglia nel forno.",
-              "Premi ⏻, poi il **tasto ventola** (in alto a destra dei sei). Mostra Forced Air 160°C.",
-              "Imposta la temperatura con − / + e premi ✓.",
-              "Imposta il tempo di cottura con − / + e premi ✓.",
-              "Quando chiede un orario di fine, premi di nuovo ✓.",
-              "Si preriscalda e **suona quando è caldo**. Inforna.",
-              "Alla fine premi ⏻ e **togli di nuovo la teglia**, così il microonde è pronto per i prossimi."
-            ],
-            "pt": [
-              "Volte a colocar o tabuleiro no forno.",
-              "Prima ⏻ e depois o **botão da ventoinha** (em cima à direita dos seis). Mostra Forced Air 160°C.",
-              "Ajuste a temperatura com − / + e prima ✓.",
-              "Ajuste o tempo de cozedura com − / + e prima ✓.",
-              "Quando pedir uma hora de fim, prima ✓ outra vez.",
-              "Pré-aquece e **apita quando está quente**. Coloque a comida.",
-              "No fim, prima ⏻ e **retire outra vez o tabuleiro**, para o micro-ondas ficar pronto para o próximo."
-            ],
-            "zh": [
-              "把烤盘放回烤箱。",
-              "按 ⏻，然后按**风扇按钮**（六个按钮的右上角）。显示 Forced Air 160°C。",
-              "用 − / + 设置温度，按 ✓。",
-              "用 − / + 设置烹饪时间，按 ✓。",
-              "询问结束时间时，直接再按 ✓。",
-              "开始预热，**热了会响提示音**。放入食物。",
-              "用完后按 ⏻，并**再次取出烤盘**，方便下一位住客使用微波炉。"
-            ],
-            "ar": [
-              "أعد صينية الفرن إلى مكانها.",
-              "اضغط ⏻ ثم **زر المروحة** (أعلى اليمين من الأزرار الستة). يظهر Forced Air 160°C.",
-              "اضبط الحرارة بـ − / + واضغط ✓.",
-              "اضبط مدة الطهي بـ − / + واضغط ✓.",
-              "عندما يطلب وقت الانتهاء، اضغط ✓ مرة أخرى فقط.",
-              "يبدأ التسخين المسبق و**يصدر صوتًا عندما يسخن**. ضع الطعام.",
-              "عند الانتهاء اضغط ⏻ و**أخرج الصينية مرة أخرى** ليكون الميكروويف جاهزًا للضيف التالي."
-            ],
-            "ja": [
-              "オーブン用の天板を戻します。",
-              "⏻ を押し、次に**ファンのボタン**（6 個のうち右上）を押します。Forced Air 160°C と表示されます。",
-              "− / + で温度を設定し ✓ を押します。",
-              "− / + で調理時間を設定し ✓ を押します。",
-              "終了時刻を聞かれたら、そのまま ✓ を押します。",
-              "予熱が始まり、**温まると音が鳴ります**。食べ物を入れてください。",
-              "使い終わったら ⏻ を押し、**天板を再び取り出してください**。次の方がすぐ電子レンジを使えます。"
+              "Push the knob of the burner you want down and turn it.",
+              "At the same time, press and hold the small ignition button at the bottom right of the panel until the flame lights.",
+              "Turn all knobs fully off after use.",
+              "The back left burner is being repaired. Please do not use it for now.",
+              "If you smell gas: turn everything off, do not use light switches or flames, open the windows, leave the house and call 0800 111 999."
             ]
           }
         },
         {
           "name": {
-            "en": "Coffee machine",
-            "es": "Cafetera",
-            "fr": "Machine à café",
-            "de": "Kaffeemaschine",
-            "it": "Macchina da caffè",
-            "pt": "Máquina de café",
-            "zh": "咖啡机",
-            "ar": "آلة القهوة",
-            "ja": "コーヒーマシン"
+            "en": "Double oven"
           },
-          "brand": "Bosch",
-          "model": "Tassimo",
+          "brand": "New World",
+          "model": "DFEO 90",
           "steps": {
             "en": [
-              "Fill the water tank at the back up to **MAX**.",
-              "Lift the top, put a T DISC in with the **barcode facing down** and close it firmly.",
-              "Put a cup underneath and press the button. The machine makes the drink by itself.",
-              "If the **water tank light** comes on, refill the tank. If the **descaling light** comes on, please let us know."
-            ],
-            "es": [
-              "Llena el depósito de agua de atrás hasta **MAX**.",
-              "Levanta la tapa, pon una cápsula T DISC con el **código de barras hacia abajo** y ciérrala bien.",
-              "Pon una taza debajo y pulsa el botón. La máquina prepara la bebida sola.",
-              "Si se enciende la **luz del depósito**, rellénalo. Si se enciende la **luz de descalcificación**, avísanos."
-            ],
-            "fr": [
-              "Remplissez le réservoir d'eau à l'arrière jusqu'à **MAX**.",
-              "Soulevez le haut, insérez un T DISC **code-barres vers le bas** et refermez bien.",
-              "Placez une tasse dessous et appuyez sur le bouton. La machine prépare la boisson toute seule.",
-              "Si le **voyant du réservoir** s'allume, remplissez-le. Si le **voyant de détartrage** s'allume, prévenez-nous."
-            ],
-            "de": [
-              "Wassertank hinten bis **MAX** füllen.",
-              "Oberteil anheben, eine T DISC mit dem **Barcode nach unten** einlegen und fest schließen.",
-              "Tasse darunterstellen und die Taste drücken. Die Maschine bereitet das Getränk selbst zu.",
-              "Leuchtet die **Wassertank-Anzeige**, Tank nachfüllen. Leuchtet die **Entkalkungs-Anzeige**, sagen Sie uns bitte Bescheid."
-            ],
-            "it": [
-              "Riempi il serbatoio dell'acqua dietro fino a **MAX**.",
-              "Solleva la parte superiore, inserisci una T DISC con il **codice a barre verso il basso** e chiudi bene.",
-              "Metti una tazza sotto e premi il pulsante. La macchina prepara la bevanda da sola.",
-              "Se si accende la **spia del serbatoio**, riempilo. Se si accende la **spia della decalcificazione**, avvisaci."
-            ],
-            "pt": [
-              "Encha o depósito de água atrás até **MAX**.",
-              "Levante a tampa, coloque uma T DISC com o **código de barras para baixo** e feche bem.",
-              "Coloque uma chávena por baixo e prima o botão. A máquina faz a bebida sozinha.",
-              "Se acender a **luz do depósito**, encha-o. Se acender a **luz de descalcificação**, avise-nos."
-            ],
-            "zh": [
-              "把后面的水箱加水到 **MAX**。",
-              "掀开上盖，放入 T DISC 胶囊，**条形码朝下**，然后用力盖好。",
-              "在下面放一个杯子，按下按钮。机器会自动冲泡。",
-              "如果**水箱指示灯**亮起，请加水。如果**除垢指示灯**亮起，请告诉我们。"
-            ],
-            "ar": [
-              "املأ خزان الماء في الخلف حتى **MAX**.",
-              "ارفع الغطاء، ضع كبسولة T DISC بحيث يكون **الباركود للأسفل** وأغلقه جيدًا.",
-              "ضع كوبًا تحتها واضغط الزر. تحضّر الآلة المشروب وحدها.",
-              "إذا أضاء **مؤشر خزان الماء** فأعد ملأه. وإذا أضاء **مؤشر إزالة الترسبات** فأخبرنا من فضلك."
-            ],
-            "ja": [
-              "背面の水タンクに **MAX** まで水を入れます。",
-              "上部を開け、T DISC を**バーコードを下向き**にして入れ、しっかり閉じます。",
-              "カップを下に置いてボタンを押すと、自動で抽出されます。",
-              "**水タンクのランプ**が点いたら水を補充してください。**除石灰のランプ**が点いたら、私たちに知らせてください。"
+              "Three knobs: Top Oven, Single or Double Grill, and Fan Oven.",
+              "If anything is unclear, message us and we will guide you."
             ]
-          },
-          "tip": {
-            "en": "**T DISCS are not provided.** Please bring your own, most UK supermarkets sell them.",
-            "es": "**No incluimos cápsulas T DISC.** Trae las tuyas; se venden en la mayoría de supermercados del Reino Unido.",
-            "fr": "**Les T DISC ne sont pas fournis.** Apportez les vôtres, la plupart des supermarchés britanniques en vendent.",
-            "de": "**T DISCs werden nicht gestellt.** Bitte bringen Sie eigene mit, die meisten britischen Supermärkte führen sie.",
-            "it": "**Le T DISC non sono incluse.** Porta le tue, si trovano nella maggior parte dei supermercati britannici.",
-            "pt": "**As T DISC não estão incluídas.** Traga as suas; vendem-se na maioria dos supermercados do Reino Unido.",
-            "zh": "**不提供 T DISC 胶囊。**请自备，英国大多数超市都有售。",
-            "ar": "**كبسولات T DISC غير متوفرة.** يرجى إحضار كبسولاتك، فهي تُباع في معظم متاجر المملكة المتحدة.",
-            "ja": "**T DISC は用意していません。**ご持参ください。英国のほとんどのスーパーで買えます。"
-          }
-        },
-        {
-          "name": {
-            "en": "Air fryer",
-            "es": "Freidora de aire",
-            "fr": "Friteuse à air",
-            "de": "Heißluftfritteuse",
-            "it": "Friggitrice ad aria",
-            "pt": "Fritadeira de ar",
-            "zh": "空气炸锅",
-            "ar": "القلاية الهوائية",
-            "ja": "エアフライヤー"
-          },
-          "brand": "Salter",
-          "model": "EK6534 VertiCook View",
-          "manual": "https://www.youtube.com/watch?v=21Upxj3Vglk",
-          "steps": {
-            "en": [
-              "Please cook with the **silicone liners** inside.",
-              "Use only **wooden or silicone utensils**. Metal scratches the non-stick coating.",
-              "**Do not use spray oil.** Brush or drizzle a little oil instead.",
-              "After cooking, let it cool and wash the drawers **by hand** with warm soapy water and a soft sponge. **Never put the drawers in a dishwasher**: the viewing windows can be damaged. The metal racks can go in a dishwasher.",
-              "Empty any grease before putting the drawers back. **Never put the main unit in water.**"
-            ],
-            "es": [
-              "Cocina siempre con los **moldes de silicona** dentro.",
-              "Usa solo **utensilios de madera o silicona**. El metal raya el antiadherente.",
-              "**No uses aceite en spray.** Mejor unta o echa un chorrito de aceite.",
-              "Al terminar, déjala enfriar y lava los cajones **a mano** con agua tibia, jabón y una esponja suave. **Nunca metas los cajones en el lavavajillas**: se pueden dañar las ventanas. Las rejillas de metal sí pueden ir al lavavajillas.",
-              "Vacía la grasa antes de volver a poner los cajones. **Nunca metas la base en agua.**"
-            ],
-            "fr": [
-              "Cuisinez avec les **moules en silicone** à l'intérieur.",
-              "Utilisez uniquement des **ustensiles en bois ou en silicone**. Le métal raye le revêtement antiadhésif.",
-              "**N'utilisez pas d'huile en spray.** Badigeonnez ou versez un filet d'huile.",
-              "Après la cuisson, laissez refroidir et lavez les tiroirs **à la main** à l'eau chaude savonneuse avec une éponge douce. **Ne mettez jamais les tiroirs au lave-vaisselle** : les hublots peuvent s'abîmer. Les grilles en métal peuvent aller au lave-vaisselle.",
-              "Videz la graisse avant de remettre les tiroirs. **Ne plongez jamais le bloc principal dans l'eau.**"
-            ],
-            "de": [
-              "Bitte mit den **Silikoneinsätzen** garen.",
-              "Nur **Holz- oder Silikonbesteck** verwenden. Metall zerkratzt die Antihaftbeschichtung.",
-              "**Kein Sprühöl verwenden.** Etwas Öl aufpinseln oder darüberträufeln.",
-              "Nach dem Garen abkühlen lassen und die Schubladen **von Hand** mit warmem Spülwasser und weichem Schwamm reinigen. **Die Schubladen nie in die Spülmaschine**: Die Sichtfenster können beschädigt werden. Die Metallroste dürfen in die Spülmaschine.",
-              "Fett ausleeren, bevor Sie die Schubladen wieder einsetzen. **Das Hauptgerät nie in Wasser tauchen.**"
-            ],
-            "it": [
-              "Cucina con le **vaschette in silicone** all'interno.",
-              "Usa solo **utensili in legno o silicone**. Il metallo graffia l'antiaderente.",
-              "**Non usare olio spray.** Spennella o versa un filo d'olio.",
-              "Dopo la cottura lasciala raffreddare e lava i cassetti **a mano** con acqua calda e sapone e una spugna morbida. **Mai i cassetti in lavastoviglie**: gli oblò possono rovinarsi. Le griglie in metallo possono andare in lavastoviglie.",
-              "Svuota il grasso prima di rimettere i cassetti. **Mai immergere l'apparecchio in acqua.**"
-            ],
-            "pt": [
-              "Cozinhe com as **formas de silicone** lá dentro.",
-              "Use só **utensílios de madeira ou silicone**. O metal risca o antiaderente.",
-              "**Não use óleo em spray.** Pincele ou deite um fio de óleo.",
-              "Depois de cozinhar, deixe arrefecer e lave as gavetas **à mão** com água morna, detergente e uma esponja macia. **Nunca ponha as gavetas na máquina de lavar loiça**: as janelas podem estragar-se. As grelhas de metal podem ir à máquina.",
-              "Despeje a gordura antes de voltar a pôr as gavetas. **Nunca mergulhe a unidade principal em água.**"
-            ],
-            "zh": [
-              "烹饪时请使用里面的**硅胶垫**。",
-              "只用**木制或硅胶餐具**。金属会刮伤不粘涂层。",
-              "**不要使用喷雾油。**请刷油或淋少许油。",
-              "烹饪后先晾凉，用温肥皂水和软海绵**手洗**抽屉。**抽屉绝不能放进洗碗机**，否则观察窗会损坏。金属烤架可以放洗碗机。",
-              "放回抽屉前倒掉油脂。**主机绝不能浸水。**"
-            ],
-            "ar": [
-              "اطبخ مع **قوالب السيليكون** في الداخل.",
-              "استخدم فقط **أدوات خشبية أو سيليكون**. المعدن يخدش الطبقة غير اللاصقة.",
-              "**لا تستخدم زيت الرذاذ.** ادهن أو رش قليلًا من الزيت بدلًا منه.",
-              "بعد الطهي اتركها تبرد واغسل الأدراج **يدويًا** بماء دافئ وصابون وإسفنجة ناعمة. **لا تضع الأدراج في غسالة الصحون أبدًا**، فقد تتلف نوافذ الرؤية. يمكن وضع الرفوف المعدنية في غسالة الصحون.",
-              "أفرغ الدهون قبل إعادة الأدراج. **لا تغمر الجهاز الرئيسي في الماء أبدًا.**"
-            ],
-            "ja": [
-              "調理時は中の**シリコンライナー**を使ってください。",
-              "**木製またはシリコン製の調理器具**だけを使ってください。金属はコーティングを傷つけます。",
-              "**スプレーオイルは使わないでください。**油は刷毛で塗るか、少量たらしてください。",
-              "調理後は冷ましてから、引き出しをぬるま湯と洗剤、柔らかいスポンジで**手洗い**してください。窓が傷むので、**引き出しは食洗機に入れないでください**。金属ラックは食洗機で洗えます。",
-              "引き出しを戻す前に油を捨ててください。**本体は絶対に水につけないでください。**"
-            ]
-          },
-          "tip": {
-            "en": "There is also a QR code inside the air fryer that opens a how to video.",
-            "es": "Dentro de la freidora hay también un código QR con un vídeo explicativo.",
-            "fr": "Un QR code à l'intérieur de la friteuse ouvre aussi une vidéo explicative.",
-            "de": "In der Fritteuse befindet sich außerdem ein QR-Code mit einem Anleitungsvideo.",
-            "it": "Dentro la friggitrice c'è anche un QR code con un video tutorial.",
-            "pt": "Dentro da fritadeira há também um código QR com um vídeo explicativo.",
-            "zh": "空气炸锅里面还有一个二维码，可打开使用教程视频。",
-            "ar": "يوجد أيضًا رمز QR داخل القلاية يفتح فيديو للشرح.",
-            "ja": "エアフライヤーの中に、使い方動画を開ける QR コードもあります。"
-          }
-        },
-        {
-          "name": {
-            "en": "Washer dryer",
-            "es": "Lavadora secadora",
-            "fr": "Lave-linge séchant",
-            "de": "Waschtrockner",
-            "it": "Lavasciuga",
-            "pt": "Máquina de lavar e secar",
-            "zh": "洗烘一体机",
-            "ar": "غسالة مجففة",
-            "ja": "洗濯乾燥機"
-          },
-          "brand": "Hoover",
-          "model": "HBD 495D14",
-          "steps": {
-            "en": [
-              "Put your clothes in and close the door firmly.",
-              "Add detergent to the main compartment of the drawer, marked **II**.",
-              "Turn the dial to a programme: **Mixed** for everyday clothes, or **Rapid Care** for a quick wash.",
-              "**To dry as well**, press Drying **three times**, until the wardrobe icon lights up. Clothes come out dry, ready to put away. Press it once more to cancel drying.",
-              "Press **Start/Pause**. The door locks during the cycle and unlocks a few minutes after it finishes."
-            ],
-            "es": [
-              "Mete la ropa y cierra bien la puerta.",
-              "Pon el detergente en el compartimento principal del cajón, marcado **II**.",
-              "Gira el selector a un programa: **Mixed** para ropa del día a día o **Rapid Care** para un lavado rápido.",
-              "**Para secar también**, pulsa Drying **tres veces**, hasta que se encienda el icono del armario. La ropa sale seca, lista para guardar. Púlsalo una vez más para quitar el secado.",
-              "Pulsa **Start/Pause**. La puerta se bloquea durante el ciclo y se desbloquea unos minutos después de terminar."
-            ],
-            "fr": [
-              "Mettez le linge et fermez bien la porte.",
-              "Mettez la lessive dans le compartiment principal du bac, marqué **II**.",
-              "Tournez le sélecteur sur un programme : **Mixed** pour le linge courant ou **Rapid Care** pour un lavage rapide.",
-              "**Pour sécher aussi**, appuyez **trois fois** sur Drying, jusqu'à ce que l'icône armoire s'allume. Le linge sort sec, prêt à ranger. Appuyez une fois de plus pour annuler le séchage.",
-              "Appuyez sur **Start/Pause**. La porte se verrouille pendant le cycle et se déverrouille quelques minutes après la fin."
-            ],
-            "de": [
-              "Wäsche einfüllen und Tür fest schließen.",
-              "Waschmittel in das Hauptfach der Schublade geben, markiert mit **II**.",
-              "Drehknopf auf ein Programm stellen: **Mixed** für Alltagswäsche oder **Rapid Care** für eine schnelle Wäsche.",
-              "**Auch trocknen?** Drying **dreimal** drücken, bis das Schranksymbol leuchtet. Die Wäsche kommt schranktrocken heraus. Einmal mehr drücken, um das Trocknen abzuwählen.",
-              "**Start/Pause** drücken. Die Tür ist während des Programms verriegelt und öffnet sich einige Minuten nach dem Ende."
-            ],
-            "it": [
-              "Metti i vestiti e chiudi bene l'oblò.",
-              "Metti il detersivo nello scomparto principale del cassetto, segnato **II**.",
-              "Gira la manopola su un programma: **Mixed** per i capi di tutti i giorni o **Rapid Care** per un lavaggio rapido.",
-              "**Per asciugare anche**, premi Drying **tre volte**, finché si accende l'icona dell'armadio. I capi escono asciutti, pronti da riporre. Premilo ancora una volta per togliere l'asciugatura.",
-              "Premi **Start/Pause**. L'oblò si blocca durante il ciclo e si sblocca qualche minuto dopo la fine."
-            ],
-            "pt": [
-              "Coloque a roupa e feche bem a porta.",
-              "Ponha o detergente no compartimento principal da gaveta, marcado **II**.",
-              "Rode o seletor para um programa: **Mixed** para roupa do dia a dia ou **Rapid Care** para uma lavagem rápida.",
-              "**Para secar também**, prima Drying **três vezes**, até acender o ícone do roupeiro. A roupa sai seca, pronta a arrumar. Prima mais uma vez para cancelar a secagem.",
-              "Prima **Start/Pause**. A porta bloqueia durante o ciclo e desbloqueia alguns minutos depois de terminar."
-            ],
-            "zh": [
-              "放入衣物，关紧机门。",
-              "把洗衣液放进洗涤剂盒标有 **II** 的主格。",
-              "把旋钮转到一个程序：日常衣物选 **Mixed**，快洗选 **Rapid Care**。",
-              "**如需同时烘干**，按 Drying **三次**，直到衣柜图标亮起。衣物洗完即干，可直接收进衣柜。再按一次可取消烘干。",
-              "按 **Start/Pause**。运行时机门会锁住，结束几分钟后自动解锁。"
-            ],
-            "ar": [
-              "ضع الملابس وأغلق الباب جيدًا.",
-              "ضع المنظف في الحجرة الرئيسية من الدرج والمكتوب عليها **II**.",
-              "أدر القرص إلى برنامج: **Mixed** للملابس اليومية أو **Rapid Care** لغسل سريع.",
-              "**للتجفيف أيضًا** اضغط Drying **ثلاث مرات** حتى يضيء رمز الخزانة. تخرج الملابس جافة وجاهزة للحفظ. اضغطه مرة أخرى لإلغاء التجفيف.",
-              "اضغط **Start/Pause**. يُقفل الباب أثناء الدورة ويُفتح بعد انتهائها ببضع دقائق."
-            ],
-            "ja": [
-              "衣類を入れてドアをしっかり閉めます。",
-              "洗剤を引き出しの **II** と書かれたメイン投入口に入れます。",
-              "ダイヤルでコースを選びます。普段の衣類は **Mixed**、短時間なら **Rapid Care** です。",
-              "**乾燥もする場合**は、Drying を**3 回**押して、たんすのアイコンを点灯させます。そのまましまえる状態まで乾きます。もう 1 回押すと乾燥を取り消せます。",
-              "**Start/Pause** を押します。運転中はドアがロックされ、終了の数分後に解除されます。"
-            ]
-          },
-          "tip": {
-            "en": "Fill the drum only **halfway** if you want to dry as well. If the buttons do not respond, hold **Temp. Selection and Spin Speed** together for 3 seconds to unlock them.",
-            "es": "Si también vas a secar, llena el tambor solo **hasta la mitad**. Si los botones no responden, mantén pulsados **Temp. Selection y Spin Speed** a la vez 3 segundos para desbloquearlos.",
-            "fr": "Pour sécher aussi, ne remplissez le tambour qu'**à moitié**. Si les touches ne répondent pas, maintenez **Temp. Selection et Spin Speed** ensemble 3 secondes pour les déverrouiller.",
-            "de": "Wenn Sie auch trocknen, die Trommel nur **zur Hälfte** füllen. Reagieren die Tasten nicht, **Temp. Selection und Spin Speed** 3 Sekunden gleichzeitig gedrückt halten, um sie zu entsperren.",
-            "it": "Se vuoi anche asciugare, riempi il cestello solo **a metà**. Se i tasti non rispondono, tieni premuti insieme **Temp. Selection e Spin Speed** per 3 secondi per sbloccarli.",
-            "pt": "Se também quiser secar, encha o tambor só **até meio**. Se os botões não responderem, mantenha **Temp. Selection e Spin Speed** premidos juntos 3 segundos para desbloquear.",
-            "zh": "如需烘干，衣物只放**半桶**。如果按键没有反应，同时按住 **Temp. Selection 和 Spin Speed** 3 秒即可解锁。",
-            "ar": "إذا أردت التجفيف أيضًا فاملأ الحوض **حتى النصف فقط**. إذا لم تستجب الأزرار، اضغط **Temp. Selection وSpin Speed** معًا 3 ثوانٍ لفتح القفل.",
-            "ja": "乾燥もする場合は、ドラムに**半分まで**しか入れないでください。ボタンが反応しないときは、**Temp. Selection と Spin Speed** を同時に 3 秒押すとロックが解除されます。"
-          }
-        }
-      ],
-      "imgs": [
-        {
-          "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791904546/garden_court_kitchen_map_j73zcw.jpg",
-          "caption": {
-            "en": "Your kitchen at a glance",
-            "es": "Tu cocina de un vistazo",
-            "fr": "Votre cuisine en un coup d'œil",
-            "de": "Ihre Küche auf einen Blick",
-            "it": "La tua cucina in breve",
-            "pt": "A sua cozinha num relance",
-            "zh": "厨房一览",
-            "ar": "مطبخك في لمحة",
-            "ja": "キッチンの配置"
           }
         }
       ]
     },
     {
       "title": {
-        "en": "Bathroom",
-        "es": "Baño",
-        "fr": "Salle de bain",
-        "de": "Badezimmer",
-        "it": "Bagno",
-        "pt": "Casa de banho",
-        "zh": "浴室",
-        "ar": "الحمّام",
-        "ja": "バスルーム"
+        "en": "Laundry"
       },
       "text": {
-        "en": "The shower is ready to use, just turn it on. There is a **shaver socket (230 V and 115 V)**, handy if your shaver or electric toothbrush has a foreign plug. It is **for shavers and toothbrushes only**, not hairdryers or straighteners.",
-        "es": "La ducha está lista para usar, solo ábrela. Hay un **enchufe para maquinillas (230 V y 115 V)**, útil si tu maquinilla o cepillo eléctrico tiene enchufe extranjero. Es **solo para maquinillas y cepillos de dientes**, no para secadores ni planchas de pelo.",
-        "fr": "La douche est prête à l'emploi, il suffit de l'ouvrir. Il y a une **prise rasoir (230 V et 115 V)**, pratique si votre rasoir ou brosse à dents électrique a une prise étrangère. Elle est **réservée aux rasoirs et brosses à dents**, pas aux sèche-cheveux ni aux lisseurs.",
-        "de": "Die Dusche ist sofort nutzbar, einfach aufdrehen. Es gibt eine **Rasiersteckdose (230 V und 115 V)**, praktisch bei Rasierern oder elektrischen Zahnbürsten mit ausländischem Stecker. Sie ist **nur für Rasierer und Zahnbürsten**, nicht für Föhn oder Glätteisen.",
-        "it": "La doccia è pronta all'uso, basta aprirla. C'è una **presa per rasoi (230 V e 115 V)**, utile se il tuo rasoio o spazzolino elettrico ha una spina estera. È **solo per rasoi e spazzolini**, non per asciugacapelli o piastre.",
-        "pt": "O duche está pronto a usar, basta abrir. Há uma **tomada para máquinas de barbear (230 V e 115 V)**, útil se a sua máquina ou escova elétrica tiver ficha estrangeira. É **só para máquinas de barbear e escovas de dentes**, não para secadores nem alisadores.",
-        "zh": "淋浴可直接使用，打开即可。浴室有一个**剃须刀专用插座（230 V 和 115 V）**，适合外国插头的剃须刀或电动牙刷。它**只能用于剃须刀和牙刷**，不能用吹风机或直发器。",
-        "ar": "الدش جاهز للاستخدام، افتحه فقط. يوجد **مقبس لماكينات الحلاقة (230 فولت و115 فولت)** مفيد إذا كان قابس ماكينتك أو فرشاة أسنانك الكهربائية أجنبيًا. وهو **لماكينات الحلاقة وفرش الأسنان فقط**، وليس لمجففات الشعر أو مكواة الشعر.",
-        "ja": "シャワーはそのまま使えます。蛇口を開けるだけです。**シェーバー用コンセント（230 V と 115 V）**があり、海外プラグのシェーバーや電動歯ブラシに便利です。**シェーバーと歯ブラシ専用**で、ドライヤーやヘアアイロンには使えません。"
-      }
-    },
-    {
-      "title": {
-        "en": "TV",
-        "es": "Televisión",
-        "fr": "Télévision",
-        "de": "Fernseher",
-        "it": "TV",
-        "pt": "Televisão",
-        "zh": "电视",
-        "ar": "التلفاز",
-        "ja": "テレビ"
-      },
-      "text": {
-        "en": "Smart TVs in the living room and the bedroom. The **living room TV** (Samsung) opens straight onto the streaming apps. The **bedroom TV** is an Amazon Fire TV: **sign in with your own Amazon account** to use the apps. Use your own accounts and please **sign out before you leave**.",
-        "es": "Smart TV en el salón y en el dormitorio. La **tele del salón** (Samsung) abre directamente las apps de streaming. La **tele del dormitorio** es una Amazon Fire TV: **entra con tu propia cuenta de Amazon** para usar las apps. Usa tus propias cuentas y, por favor, **cierra sesión antes de irte**.",
-        "fr": "Smart TV dans le salon et la chambre. La **TV du salon** (Samsung) ouvre directement les applis de streaming. La **TV de la chambre** est une Amazon Fire TV : **connectez-vous avec votre propre compte Amazon** pour utiliser les applis. Utilisez vos propres comptes et **déconnectez-vous avant de partir**.",
-        "de": "Smart-TVs im Wohnzimmer und im Schlafzimmer. Der **Wohnzimmer-TV** (Samsung) öffnet direkt die Streaming-Apps. Der **Schlafzimmer-TV** ist ein Amazon Fire TV: **Melden Sie sich mit Ihrem eigenen Amazon-Konto an**, um die Apps zu nutzen. Nutzen Sie Ihre eigenen Konten und **melden Sie sich vor der Abreise ab**.",
-        "it": "Smart TV in soggiorno e in camera. La **TV del soggiorno** (Samsung) apre direttamente le app di streaming. La **TV della camera** è una Amazon Fire TV: **accedi con il tuo account Amazon** per usare le app. Usa i tuoi account e **esci prima di partire**.",
-        "pt": "Smart TV na sala e no quarto. A **TV da sala** (Samsung) abre logo as apps de streaming. A **TV do quarto** é uma Amazon Fire TV: **inicie sessão com a sua própria conta Amazon** para usar as apps. Use as suas contas e **termine sessão antes de sair**.",
-        "zh": "客厅和卧室都有智能电视。**客厅电视**（Samsung）开机直接进入流媒体应用。**卧室电视**是 Amazon Fire TV：**请登录您自己的 Amazon 账户**来使用应用。请使用您自己的账户，并在**离开前退出登录**。",
-        "ar": "يوجد تلفاز ذكي في غرفة المعيشة وغرفة النوم. **تلفاز غرفة المعيشة** (Samsung) يفتح تطبيقات البث مباشرة. **تلفاز غرفة النوم** هو Amazon Fire TV: **سجّل الدخول بحساب Amazon الخاص بك** لاستخدام التطبيقات. استخدم حساباتك الخاصة، ومن فضلك **سجّل الخروج قبل المغادرة**.",
-        "ja": "リビングと寝室にスマートテレビがあります。**リビングのテレビ**（Samsung）は、電源を入れるとすぐ配信アプリが表示されます。**寝室のテレビ**は Amazon Fire TV です。アプリを使うには**ご自身の Amazon アカウントでログイン**してください。ご自身のアカウントを使い、**チェックアウト前に必ずログアウト**してください。"
+        "en": "Samsung 9 kg washing machine, in the downstairs bathroom. There is no tumble dryer: a clothes airer, an iron and an ironing board are in the built-in cupboard upstairs, next to the shower room, and there are plenty of hangers. The hair dryer is on the shelf in the upstairs shower room."
       },
       "appliances": [
         {
           "name": {
-            "en": "Living room TV",
-            "es": "Tele del salón",
-            "fr": "TV du salon",
-            "de": "Wohnzimmer-TV",
-            "it": "TV del soggiorno",
-            "pt": "TV da sala",
-            "zh": "客厅电视",
-            "ar": "تلفاز غرفة المعيشة",
-            "ja": "リビングのテレビ"
+            "en": "Washing machine"
           },
           "brand": "Samsung",
-          "model": "UE55U7000FK",
-          "steps": {}
-        },
-        {
-          "name": {
-            "en": "Bedroom TV",
-            "es": "Tele del dormitorio",
-            "fr": "TV de la chambre",
-            "de": "Schlafzimmer-TV",
-            "it": "TV della camera",
-            "pt": "TV do quarto",
-            "zh": "卧室电视",
-            "ar": "تلفاز غرفة النوم",
-            "ja": "寝室のテレビ"
-          },
-          "brand": "Xiaomi Fire TV",
-          "model": "L43MB-FAEU",
-          "steps": {}
+          "model": "WW90T554DAN",
+          "steps": {
+            "en": [
+              "Press the power button.",
+              "Turn the dial: the programme and its time show on the display. Good choices: Eco 40-60 (2 h 44 min), 15' Quick Wash (23 min, up to 2 kg), Cotton (1 h 52 min), Towels (2 h 5 min) or Delicates (35 min).",
+              "Add detergent in the drawer at the top.",
+              "Press Start.",
+              "Forgot something? Press Start again to pause, then use the small AddWash door."
+            ]
+          }
         }
       ]
     },
     {
       "title": {
-        "en": "Arcade machine",
-        "es": "Máquina arcade",
-        "fr": "Borne d'arcade",
-        "de": "Arcade-Automat",
-        "it": "Cabinato arcade",
-        "pt": "Máquina de arcada",
-        "zh": "街机",
-        "ar": "آلة الألعاب",
-        "ja": "アーケードゲーム機"
+        "en": "TV"
       },
       "text": {
-        "en": "Switch on the **plug next to the machine**, then flip the **OFF/ON** switch on the control panel. It takes a moment to load. Choose a game with the joystick and press **A**, then the player **start** button. One or two players, with several classic Mortal Kombat fighting games. **Parental advisory: not suitable for children.** Use the **VOL** switch and please **keep it low after 10pm**.",
-        "es": "Enciende el **enchufe junto a la máquina** y luego el interruptor **OFF/ON** del panel de mandos. Tarda un momento en cargar. Elige un juego con el joystick y pulsa **A**, luego el botón **start** del jugador. Para uno o dos jugadores, con varios Mortal Kombat clásicos de lucha. **Contenido no apto para niños.** Usa el interruptor **VOL** y, por favor, **baja el volumen a partir de las 22:00**.",
-        "fr": "Allumez la **prise à côté de la borne**, puis l'interrupteur **OFF/ON** du panneau de commande. Le chargement prend un instant. Choisissez un jeu avec le joystick et appuyez sur **A**, puis sur le bouton **start** du joueur. Un ou deux joueurs, avec plusieurs Mortal Kombat classiques de combat. **Avertissement : déconseillé aux enfants.** Utilisez l'interrupteur **VOL** et **baissez le son après 22 h**.",
-        "de": "Schalten Sie die **Steckdose neben dem Automaten** ein, dann den **OFF/ON**-Schalter am Bedienfeld. Das Laden dauert einen Moment. Spiel mit dem Joystick wählen, **A** drücken, dann die **Start**-Taste des Spielers. Für ein oder zwei Spieler, mit mehreren klassischen Mortal-Kombat-Kampfspielen. **Hinweis: nicht für Kinder geeignet.** Lautstärke mit dem **VOL**-Schalter regeln und **ab 22 Uhr bitte leise**.",
-        "it": "Accendi la **presa accanto al cabinato**, poi l'interruttore **OFF/ON** sul pannello comandi. Il caricamento richiede un attimo. Scegli un gioco con il joystick e premi **A**, poi il tasto **start** del giocatore. Per uno o due giocatori, con diversi Mortal Kombat classici di combattimento. **Avviso: non adatto ai bambini.** Usa l'interruttore **VOL** e **tieni il volume basso dopo le 22**.",
-        "pt": "Ligue a **tomada ao lado da máquina** e depois o interruptor **OFF/ON** no painel de comandos. Demora um pouco a carregar. Escolha um jogo com o joystick e prima **A**, depois o botão **start** do jogador. Para um ou dois jogadores, com vários Mortal Kombat clássicos de luta. **Aviso: não adequado a crianças.** Use o interruptor **VOL** e **mantenha o volume baixo depois das 22h**.",
-        "zh": "打开**机器旁边的插座**，再打开控制面板上的 **OFF/ON** 开关。加载需要一点时间。用摇杆选择游戏并按 **A**，再按玩家 **start** 键。可单人或双人游戏，内含多款经典《真人快打》格斗游戏。**家长提示：不适合儿童。**用 **VOL** 开关调节音量，**晚上 10 点后请保持小声**。",
-        "ar": "شغّل **المقبس بجانب الآلة** ثم مفتاح **OFF/ON** في لوحة التحكم. يحتاج التحميل لحظات. اختر لعبة بعصا التحكم واضغط **A** ثم زر **start** الخاص باللاعب. للاعب واحد أو اثنين، مع عدة ألعاب قتال كلاسيكية من Mortal Kombat. **تنبيه للأهل: غير مناسبة للأطفال.** استخدم مفتاح **VOL** ومن فضلك **اخفض الصوت بعد الساعة 10 مساءً**.",
-        "ja": "**本体横のコンセント**をオンにし、操作パネルの **OFF/ON** スイッチを入れます。起動まで少し時間がかかります。ジョイスティックでゲームを選んで **A** を押し、プレイヤーの **start** ボタンを押します。1 人でも 2 人でも遊べ、クラシックなモータルコンバットの格闘ゲームが複数入っています。**保護者の方へ：お子様には適していません。** 音量は **VOL** スイッチで調整し、**午後 10 時以降は小さくしてください**。"
+        "en": "Living room: TV with an Amazon Fire TV Stick. Dining room: 55 inch TCL Roku smart TV. Both are connected to the guest Wi-Fi. Sign in to your streaming apps with your own account, and please sign out before you leave. Please do not reset the TVs to factory settings. If a TV loses the Wi-Fi: on the Fire TV go to Settings, Network, choose HagleyHG-Guest, enter the password and select Connect. On the TCL press Home, then Settings, Network, Set up connection, Wireless, choose HagleyHG-Guest and enter the password."
       }
     },
     {
       "title": {
-        "en": "Iron and first aid",
-        "es": "Plancha y botiquín",
-        "fr": "Fer à repasser et premiers secours",
-        "de": "Bügeleisen und Erste Hilfe",
-        "it": "Ferro da stiro e pronto soccorso",
-        "pt": "Ferro de engomar e primeiros socorros",
-        "zh": "熨斗和急救箱",
-        "ar": "المكواة والإسعافات الأولية",
-        "ja": "アイロンと救急箱"
+        "en": "Pets"
       },
       "text": {
-        "en": "In the **bedroom wardrobe** you will find an iron, an ironing board and a clothes airer. There is a **first aid kit on the top shelf**.",
-        "es": "En el **armario del dormitorio** tienes plancha, tabla de planchar y tendedero. Hay un **botiquín en la balda de arriba**.",
-        "fr": "Dans l'**armoire de la chambre**, vous trouverez un fer, une planche à repasser et un étendoir. Une **trousse de premiers secours est sur l'étagère du haut**.",
-        "de": "Im **Schlafzimmerschrank** finden Sie Bügeleisen, Bügelbrett und Wäscheständer. Ein **Erste-Hilfe-Kasten steht im obersten Fach**.",
-        "it": "Nell'**armadio della camera** trovi ferro da stiro, asse da stiro e stendibiancheria. C'è un **kit di pronto soccorso sul ripiano in alto**.",
-        "pt": "No **roupeiro do quarto** encontra ferro, tábua de engomar e estendal. Há um **kit de primeiros socorros na prateleira de cima**.",
-        "zh": "**卧室衣柜**里有熨斗、熨衣板和晾衣架。**急救箱在最上层的架子上**。",
-        "ar": "في **خزانة غرفة النوم** تجد مكواة ولوح كيّ ومنشر ملابس. توجد **حقيبة إسعافات أولية على الرف العلوي**.",
-        "ja": "**寝室のクローゼット**に、アイロン、アイロン台、物干しラックがあります。**救急箱は一番上の棚**にあります。"
+        "en": "Pets are welcome when agreed in advance, and a pet fee applies. Please keep them downstairs and off the furniture. Assistance dogs are always welcome at no charge: please tell us their size in advance."
       }
     }
   ],
   "bins": {
-    "en": "Take your rubbish out through the **main entrance of the complex and turn right**. The communal bins are in the bay just there, and you can use them at any time. Please put bags **inside the bins, never on the ground**.",
-    "es": "Saca la basura por la **entrada principal del complejo y gira a la derecha**. Los contenedores comunitarios están en el hueco de ahí mismo y puedes usarlos a cualquier hora. Por favor, deja las bolsas **dentro de los contenedores, nunca en el suelo**.",
-    "fr": "Sortez vos déchets par l'**entrée principale de la résidence et tournez à droite**. Les poubelles communes sont dans l'emplacement juste là, utilisables à tout moment. Merci de mettre les sacs **dans les poubelles, jamais par terre**.",
-    "de": "Bringen Sie Ihren Müll durch den **Haupteingang der Anlage und biegen Sie rechts ab**. Die Gemeinschaftstonnen stehen gleich dort und können jederzeit genutzt werden. Bitte die Säcke **in die Tonnen, nie auf den Boden** stellen.",
-    "it": "Porta fuori i rifiuti dall'**ingresso principale del complesso e gira a destra**. I bidoni condominiali sono nello spazio lì accanto e puoi usarli in qualsiasi momento. Metti i sacchi **dentro i bidoni, mai a terra**.",
-    "pt": "Leve o lixo pela **entrada principal do complexo e vire à direita**. Os contentores comuns estão logo ali e pode usá-los a qualquer hora. Por favor, ponha os sacos **dentro dos contentores, nunca no chão**.",
-    "zh": "请从**小区正门出去后右转**倒垃圾。公共垃圾箱就在那里，随时可以使用。请把垃圾袋**放进垃圾箱里，切勿放在地上**。",
-    "ar": "أخرج القمامة من **المدخل الرئيسي للمجمّع ثم انعطف يمينًا**. الحاويات المشتركة موجودة هناك مباشرة ويمكنك استخدامها في أي وقت. يرجى وضع الأكياس **داخل الحاويات وليس على الأرض أبدًا**.",
-    "ja": "ゴミは**敷地の正面入口から出て右**へお持ちください。共用のゴミ箱がすぐそこにあり、いつでも使えます。袋は**必ずゴミ箱の中に入れ、地面に置かないでください**。"
+    "en": "The bins are kept in the garden. They are collected on Fridays, alternating each week: one week the **grey bin**, the next week the **blue lid bin and the blue bag**. If your stay includes a Thursday night, please take that week's bin from the garden to the collection point at the front of the house. Not sure which week it is? Message us. Grey bin: everything that cannot be recycled, including food waste (please bag it). Blue lid bin: glass, plastic bottles and containers, tins and cans. Blue bag: paper, cardboard and drink cartons."
   },
   "fireDetails": {
-    "en": "When you call 999, give this address: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. **Fire in your flat:** tell everyone and leave by the front door, which opens from inside without a key (turn the knob), and close it behind you. **Fire elsewhere in the building:** it is normally safer to stay in the flat with doors and windows closed, unless smoke or heat reaches it or the fire service tells you to leave. The smoke alarms are linked, so one sets them all off. There is a **fire blanket and an extinguisher in the kitchen**.",
-    "es": "Si llamas al 999, da esta dirección: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. **Fuego en tu piso:** avisa a todos y sal por la puerta principal, que se abre desde dentro sin llave (girando el pomo), y ciérrala al salir. **Fuego en otra parte del edificio:** normalmente es más seguro quedarse en el piso con puertas y ventanas cerradas, salvo que llegue humo o calor o los bomberos te digan que salgas. Los detectores de humo están conectados entre sí, así que si salta uno saltan todos. Hay una **manta ignífuga y un extintor en la cocina**.",
-    "fr": "Si vous appelez le 999, donnez cette adresse : Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. **Feu dans votre appartement :** prévenez tout le monde et sortez par la porte d'entrée, qui s'ouvre de l'intérieur sans clé (tournez le bouton), puis refermez-la derrière vous. **Feu ailleurs dans le bâtiment :** il est généralement plus sûr de rester dans l'appartement, portes et fenêtres fermées, sauf si la fumée ou la chaleur l'atteint ou si les pompiers vous demandent de sortir. Les détecteurs de fumée sont reliés : si l'un sonne, tous sonnent. Il y a une **couverture anti-feu et un extincteur dans la cuisine**.",
-    "de": "Wenn Sie 999 anrufen, nennen Sie diese Adresse: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. **Feuer in Ihrer Wohnung:** Warnen Sie alle und verlassen Sie die Wohnung durch die Wohnungstür, die sich von innen ohne Schlüssel öffnen lässt (Drehknauf), und schließen Sie sie hinter sich. **Feuer anderswo im Gebäude:** Meist ist es sicherer, mit geschlossenen Türen und Fenstern in der Wohnung zu bleiben, außer Rauch oder Hitze erreichen sie oder die Feuerwehr fordert Sie zum Verlassen auf. Die Rauchmelder sind vernetzt: Löst einer aus, lösen alle aus. In der Küche gibt es eine **Löschdecke und einen Feuerlöscher**.",
-    "it": "Se chiami il 999, comunica questo indirizzo: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. **Incendio nel tuo appartamento:** avvisa tutti ed esci dalla porta d'ingresso, che si apre dall'interno senza chiave (girando il pomello), e chiudila dietro di te. **Incendio altrove nell'edificio:** di solito è più sicuro restare nell'appartamento con porte e finestre chiuse, a meno che arrivino fumo o calore o i vigili del fuoco ti dicano di uscire. I rilevatori di fumo sono collegati: se ne suona uno, suonano tutti. In cucina ci sono una **coperta antifiamma e un estintore**.",
-    "pt": "Se ligar para o 999, indique esta morada: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. **Fogo no seu apartamento:** avise todos e saia pela porta de entrada, que abre por dentro sem chave (rodando o manípulo), e feche-a atrás de si. **Fogo noutra parte do edifício:** normalmente é mais seguro ficar no apartamento com portas e janelas fechadas, a menos que chegue fumo ou calor ou os bombeiros lhe digam para sair. Os detetores de fumo estão interligados: se um dispara, disparam todos. Há uma **manta corta-fogo e um extintor na cozinha**.",
-    "zh": "拨打 999 时，请报此地址：Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU。**公寓内起火：**通知所有人，从大门离开（从里面转动旋钮即可开门，无需钥匙），并随手关门。**楼内其他地方起火：**通常关好门窗留在公寓内更安全，除非烟雾或高温进入公寓，或消防员要求您撤离。烟雾报警器相互联动，一个响起，全部都会响。**厨房里有灭火毯和灭火器。**",
-    "ar": "عند الاتصال بالرقم 999، اذكر هذا العنوان: Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU. **حريق في شقتك:** نبّه الجميع واخرج من الباب الرئيسي، الذي يُفتح من الداخل دون مفتاح (بتدوير المقبض)، وأغلقه خلفك. **حريق في مكان آخر من المبنى:** البقاء في الشقة مع إغلاق الأبواب والنوافذ أكثر أمانًا عادةً، إلا إذا وصل الدخان أو الحرارة إليها أو طلب منك رجال الإطفاء المغادرة. أجهزة إنذار الدخان مترابطة، فإذا انطلق أحدها انطلقت كلها. توجد **بطانية إطفاء وطفاية حريق في المطبخ**.",
-    "ja": "999 に電話する際は、この住所を伝えてください：Garden Court, 231 Ladywood Middleway, Birmingham B16 8EU。**お部屋で火災が起きた場合：**全員に知らせ、玄関ドアから避難してください。ドアは内側からつまみを回せば鍵なしで開きます。出たらドアを閉めてください。**建物の別の場所で火災が起きた場合：**煙や熱がお部屋に入ってこない限り、または消防隊から避難の指示がない限り、ドアと窓を閉めてお部屋にとどまる方が通常は安全です。煙探知機は連動しており、1 つが鳴るとすべて鳴ります。**キッチンに消火ブランケットと消火器があります。**"
+    "en": "Smoke alarms are on the dining room ceiling and on the upstairs landing. A fire extinguisher and a fire blanket are in the kitchen, by the window next to the fridge. The carbon monoxide alarm is next to the boiler, in the cupboard of the upstairs shower room. If it sounds, or you smell gas: do not use light switches or flames, open the windows, leave the house and call 0800 111 999. When you call 999, give the full address from your check-in message."
   },
   "routerLocation": {
-    "en": "The router is in the **living room, behind the arcade machine**.",
-    "es": "El router está en el **salón, detrás de la máquina arcade**.",
-    "fr": "La box est dans le **salon, derrière la borne d'arcade**.",
-    "de": "Der Router steht im **Wohnzimmer hinter dem Arcade-Automaten**.",
-    "it": "Il router è in **soggiorno, dietro il cabinato arcade**.",
-    "pt": "O router está na **sala, atrás da máquina de arcada**.",
-    "zh": "路由器在**客厅，街机后面**。",
-    "ar": "الراوتر في **غرفة المعيشة خلف آلة الألعاب**.",
-    "ja": "ルーターは**リビングのアーケードゲーム機の裏**にあります。"
+    "en": "The EE router is in the living room, on top of the white cupboard between the window and the TV. Teal light: all is well. Orange: still connecting, give it a few minutes. If the light is red or white, or there is still no internet, please message us."
   },
   "routerLocked": false,
   "heatingCheck": {
-    "en": "If a heater is not warming up, **message us** and we will check it remotely. If the hot water runs out, wait about an hour for the tank to heat up again.",
-    "es": "Si un radiador no calienta, **escríbenos** y lo revisamos a distancia. Si se acaba el agua caliente, espera alrededor de una hora a que el termo vuelva a calentar.",
-    "fr": "Si un radiateur ne chauffe pas, **écrivez-nous** et nous le vérifierons à distance. S'il n'y a plus d'eau chaude, attendez environ une heure que le ballon chauffe à nouveau.",
-    "de": "Wenn eine Heizung nicht warm wird, **schreiben Sie uns**, wir prüfen sie aus der Ferne. Wenn das Warmwasser aufgebraucht ist, warten Sie etwa eine Stunde, bis der Speicher nachgeheizt hat.",
-    "it": "Se un termosifone non scalda, **scrivici** e lo controlliamo a distanza. Se finisce l'acqua calda, aspetta circa un'ora che lo scaldabagno si riscaldi.",
-    "pt": "Se um aquecedor não aquecer, **envie-nos mensagem** e verificamos à distância. Se a água quente acabar, espere cerca de uma hora para o termoacumulador voltar a aquecer.",
-    "zh": "如果某个暖器不热，**请给我们发消息**，我们会远程检查。如果热水用完了，请等待约一小时让热水器重新加热。",
-    "ar": "إذا لم تسخن إحدى المدافئ، **راسلنا** وسنفحصها عن بُعد. إذا نفد الماء الساخن، انتظر نحو ساعة حتى يسخن الخزان من جديد.",
-    "ja": "ヒーターが暖まらない場合は**メッセージをください**。遠隔で確認します。お湯がなくなった場合は、タンクが再び沸くまで 1 時間ほどお待ちください。"
+    "en": "The combi boiler is in the cupboard in the upstairs shower room. If the radiators stay cold, the hot water stops, or the boiler display shows low pressure or an error, send us a photo of the display and we will guide you. Please do not open the boiler casing or top up the pressure unless we ask you to."
   },
-  "utilitiesLocked": true,
-  "stopcock": "",
-  "fuseBox": "",
-  "pharmacy": [
-    {
-      "name": "Five Ways Pharmacy",
-      "coords": "Five Ways Pharmacy, 192a St Vincent St W, Birmingham",
-      "mins": 10,
-      "how": "walk"
-    }
-  ],
-  "pharmacyNote": {
-    "en": "Opening hours vary, please **check them on Maps** before you go.",
-    "es": "Los horarios cambian; **compruébalos en Maps** antes de ir.",
-    "fr": "Les horaires varient, **vérifiez-les sur Maps** avant d'y aller.",
-    "de": "Die Öffnungszeiten variieren, bitte **vorher in Maps prüfen**.",
-    "it": "Gli orari variano, **controllali su Maps** prima di andare.",
-    "pt": "O horário varia; **confirme no Maps** antes de ir.",
-    "zh": "营业时间不固定，出发前**请在地图上查看**。",
-    "ar": "تختلف ساعات العمل، يرجى **التحقق منها على الخرائط** قبل الذهاب.",
-    "ja": "営業時間は変わるので、行く前に**マップで確認**してください。"
+  "utilitiesLocked": false,
+  "stopcock": {
+    "en": "In the kitchen, inside the corner cupboard: behind the opening in the back panel there is a brass cross shaped handle. Turn it clockwise to close, then call us."
   },
+  "fuseBox": {
+    "en": "In the living room, inside the white cupboard between the window and the TV."
+  },
+  "pharmacy": [],
+  "pharmacyNote": "",
   "hospital": [
+    {
+      "name": "Midland Metropolitan University Hospital",
+      "coords": "Midland Metropolitan University Hospital, Smethwick"
+    },
     {
       "name": "Birmingham Children's Hospital",
       "coords": "52.4849039, -1.892619",
       "tag": "kids"
-    },
-    {
-      "name": "Queen Elizabeth Hospital",
-      "coords": "52.4521833, -1.9433519"
     }
   ],
   "securing": {
-    "en": "Before you leave, **lock the flat door** and put the **keys and the fob back in the same lockbox** you took them from. Close the lockbox and **scramble the numbers**. This is important, otherwise anyone can open it.",
-    "es": "Antes de irte, **cierra con llave la puerta del piso** y deja las **llaves y el fob en la misma caja** de la que los cogiste. Cierra la caja y **mueve los números**. Es importante: si no, cualquiera puede abrirla.",
-    "fr": "Avant de partir, **fermez la porte de l'appartement à clé** et remettez les **clés et le badge dans la même boîte** où vous les avez pris. Fermez la boîte et **brouillez les chiffres**. C'est important, sinon n'importe qui peut l'ouvrir.",
-    "de": "Bevor Sie gehen, **schließen Sie die Wohnungstür ab** und legen **Schlüssel und Chip in denselben Schlüsselkasten** zurück. Kasten schließen und **die Zahlen verdrehen**. Das ist wichtig, sonst kann jeder ihn öffnen.",
-    "it": "Prima di partire, **chiudi a chiave la porta dell'appartamento** e rimetti **chiavi e badge nella stessa cassetta** da cui li hai presi. Chiudi la cassetta e **mescola i numeri**. È importante, altrimenti chiunque può aprirla.",
-    "pt": "Antes de sair, **tranque a porta do apartamento** e devolva as **chaves e o fob à mesma caixa** de onde os tirou. Feche a caixa e **baralhe os números**. É importante, senão qualquer pessoa a pode abrir.",
-    "zh": "离开前，请**锁好公寓门**，把**钥匙和门禁扣放回原来的钥匙盒**。关好钥匙盒并**打乱密码数字**。这很重要，否则任何人都能打开它。",
-    "ar": "قبل المغادرة **أقفل باب الشقة** وأعد **المفاتيح وبطاقة الدخول إلى نفس الصندوق** الذي أخذتها منه. أغلق الصندوق و**غيّر ترتيب الأرقام**. هذا مهم، وإلا يمكن لأي شخص فتحه.",
-    "ja": "出発前に**部屋のドアに鍵をかけ**、**鍵とキーフォブを取り出したのと同じキーボックス**に戻してください。ボックスを閉めて**数字をばらばらに回してください**。そうしないと誰でも開けられてしまうので、とても大切です。"
+    "en": "Close and lock all windows. Lock the garden door, then the front door and the outer door, lifting each handle first. Put all three keys back in the lockbox and scramble the code."
+  },
+  "smokingRule": {
+    "en": "No smoking inside the house and no parties. Smoking is allowed in the garden only, and please do not leave cigarette ends on the ground."
   },
   "picksImage": "",
-  "picks": [
+  "picks": [],
+  "importantExtra": [
     {
-      "category": "essentials",
-      "name": "Morrisons",
-      "note": {
-        "en": "Big supermarket at Five Ways, open until 11pm.",
-        "es": "Supermercado grande en Five Ways, abre hasta las 23:00.",
-        "fr": "Grand supermarché à Five Ways, ouvert jusqu'à 23 h.",
-        "de": "Großer Supermarkt an der Five Ways, bis 23 Uhr geöffnet.",
-        "it": "Grande supermercato a Five Ways, aperto fino alle 23.",
-        "pt": "Supermercado grande em Five Ways, aberto até às 23h.",
-        "zh": "Five Ways 的大型超市，营业到晚上 11 点。",
-        "ar": "سوبرماركت كبير في Five Ways، يفتح حتى 11 مساءً.",
-        "ja": "Five Ways にある大型スーパー。午後 11 時まで営業。"
+      "title": {
+        "en": "Lift the handle"
       },
-      "walkMins": 6,
-      "coords": "Morrisons, 30 Hagley Rd, Birmingham"
+      "text": {
+        "en": "All three doors lock only when the handle is lifted up first. Lift, then turn the key."
+      }
     },
     {
-      "category": "essentials",
-      "name": "Tesco Express",
-      "note": {
-        "en": "Handy for the basics, open until 10pm.",
-        "es": "Práctico para lo básico, abre hasta las 22:00.",
-        "fr": "Pratique pour l'essentiel, ouvert jusqu'à 22 h.",
-        "de": "Praktisch für das Nötigste, bis 22 Uhr geöffnet.",
-        "it": "Comodo per le cose essenziali, aperto fino alle 22.",
-        "pt": "Prático para o essencial, aberto até às 22h.",
-        "zh": "买日常用品很方便，营业到晚上 10 点。",
-        "ar": "مناسب للأساسيات، يفتح حتى 10 مساءً.",
-        "ja": "日用品に便利。午後 10 時まで営業。"
+      "title": {
+        "en": "Rear gate"
       },
-      "walkMins": 10,
-      "coords": "Tesco Express, 66 Sheepcote St, Birmingham"
-    },
-    {
-      "category": "essentials",
-      "name": "Sainsbury's Local",
-      "note": {
-        "en": "In Brindleyplace, open until 11pm.",
-        "es": "En Brindleyplace, abre hasta las 23:00.",
-        "fr": "À Brindleyplace, ouvert jusqu'à 23 h.",
-        "de": "In Brindleyplace, bis 23 Uhr geöffnet.",
-        "it": "A Brindleyplace, aperto fino alle 23.",
-        "pt": "Em Brindleyplace, aberto até às 23h.",
-        "zh": "位于 Brindleyplace，营业到晚上 11 点。",
-        "ar": "في Brindleyplace، يفتح حتى 11 مساءً.",
-        "ja": "Brindleyplace にあり、午後 11 時まで営業。"
-      },
-      "walkMins": 10,
-      "coords": "Sainsbury's Local, 10 Brindley Pl, Birmingham"
-    },
-    {
-      "category": "essentials",
-      "name": "Nuffield Health gym",
-      "note": {
-        "en": "Gym, pool and classes at Broadway Plaza, right next door.",
-        "es": "Gimnasio, piscina y clases en Broadway Plaza, justo al lado.",
-        "fr": "Salle de sport, piscine et cours à Broadway Plaza, juste à côté.",
-        "de": "Fitnessstudio, Pool und Kurse in der Broadway Plaza, direkt nebenan.",
-        "it": "Palestra, piscina e corsi a Broadway Plaza, proprio accanto.",
-        "pt": "Ginásio, piscina e aulas no Broadway Plaza, mesmo ao lado.",
-        "zh": "Broadway Plaza 内的健身房、泳池和课程，就在隔壁。",
-        "ar": "نادٍ رياضي ومسبح ودروس في Broadway Plaza، بجوارك مباشرة.",
-        "ja": "隣の Broadway Plaza にあるジム。プールやクラスもあります。"
-      },
-      "walkMins": 1,
-      "coords": "Nuffield Health Birmingham Central, Broadway Plaza, Birmingham"
-    },
-    {
-      "category": "essentials",
-      "name": "The Gym Group, Broad Street",
-      "note": {
-        "en": "Open 24 hours, day passes available online.",
-        "es": "Abierto 24 horas, pases de día por internet.",
-        "fr": "Ouvert 24 h/24, pass journée en ligne.",
-        "de": "24 Stunden geöffnet, Tagespässe online.",
-        "it": "Aperto 24 ore, pass giornalieri online.",
-        "pt": "Aberto 24 horas, passes diários online.",
-        "zh": "24 小时营业，可在线购买日票。",
-        "ar": "مفتوح 24 ساعة، تذاكر يومية عبر الإنترنت.",
-        "ja": "24 時間営業。1 日パスはオンラインで購入できます。"
-      },
-      "walkMins": 4,
-      "coords": "The Gym Group Birmingham Broad Street"
-    },
-    {
-      "category": "essentials",
-      "name": "PureGym, Broad Street",
-      "note": {
-        "en": "Open 24 hours, day passes available online.",
-        "es": "Abierto 24 horas, pases de día por internet.",
-        "fr": "Ouvert 24 h/24, pass journée en ligne.",
-        "de": "24 Stunden geöffnet, Tagespässe online.",
-        "it": "Aperto 24 ore, pass giornalieri online.",
-        "pt": "Aberto 24 horas, passes diários online.",
-        "zh": "24 小时营业，可在线购买日票。",
-        "ar": "مفتوح 24 ساعة، تذاكر يومية عبر الإنترنت.",
-        "ja": "24 時間営業。1 日パスはオンラインで購入できます。"
-      },
-      "walkMins": 5,
-      "coords": "PureGym Birmingham City Centre, Broad St, Birmingham"
-    },
-    {
-      "category": "eat",
-      "name": "Del Villaggio",
-      "note": {
-        "en": "Much loved Italian on Broad Street. Try the lasagne.",
-        "es": "Italiano muy querido en Broad Street. Prueba la lasaña.",
-        "fr": "Italien très apprécié sur Broad Street. Goûtez les lasagnes.",
-        "de": "Beliebter Italiener an der Broad Street. Probieren Sie die Lasagne.",
-        "it": "Italiano molto amato su Broad Street. Prova le lasagne.",
-        "pt": "Italiano muito apreciado na Broad Street. Prove a lasanha.",
-        "zh": "Broad Street 上备受喜爱的意大利餐厅，推荐千层面。",
-        "ar": "مطعم إيطالي محبوب في Broad Street. جرّب اللازانيا.",
-        "ja": "Broad Street の人気イタリアン。ラザニアがおすすめ。"
-      },
-      "walkMins": 5,
-      "coords": "Del Villaggio, 175 Broad St, Birmingham"
-    },
-    {
-      "category": "eat",
-      "name": "Shrimp & Co",
-      "note": {
-        "en": "Seafood favourite with excellent reviews. Book ahead at weekends.",
-        "es": "Marisquería favorita con reseñas excelentes. Reserva el fin de semana.",
-        "fr": "Fruits de mer très bien notés. Réservez le week-end.",
-        "de": "Beliebtes Seafood-Restaurant mit Top-Bewertungen. Am Wochenende reservieren.",
-        "it": "Ristorante di pesce con ottime recensioni. Prenota nel weekend.",
-        "pt": "Marisqueira com ótimas críticas. Reserve ao fim de semana.",
-        "zh": "评价极好的海鲜餐厅，周末请提前订位。",
-        "ar": "مطعم مأكولات بحرية بتقييمات ممتازة. احجز مسبقًا في عطلة نهاية الأسبوع.",
-        "ja": "評判の良いシーフード店。週末は予約がおすすめ。"
-      },
-      "walkMins": 6,
-      "coords": "Shrimp & Co Birmingham, Broad St"
-    },
-    {
-      "category": "eat",
-      "name": "Qavali",
-      "note": {
-        "en": "Stylish Indo Persian restaurant and cocktail bar.",
-        "es": "Restaurante indo-persa con estilo y bar de cócteles.",
-        "fr": "Restaurant indo-persan chic et bar à cocktails.",
-        "de": "Stilvolles indisch-persisches Restaurant mit Cocktailbar.",
-        "it": "Elegante ristorante indo-persiano e cocktail bar.",
-        "pt": "Restaurante indo-persa elegante e bar de cocktails.",
-        "zh": "时尚的印度波斯融合餐厅和鸡尾酒吧。",
-        "ar": "مطعم هندي فارسي أنيق وبار كوكتيلات.",
-        "ja": "おしゃれなインド・ペルシャ料理とカクテルバー。"
-      },
-      "walkMins": 11,
-      "coords": "Qavali, 60 Broad St, Birmingham"
-    },
-    {
-      "category": "eat",
-      "name": "Turtle Bay",
-      "note": {
-        "en": "Caribbean food and rum cocktails by the canal.",
-        "es": "Comida caribeña y cócteles de ron junto al canal.",
-        "fr": "Cuisine caribéenne et cocktails au rhum au bord du canal.",
-        "de": "Karibisches Essen und Rum-Cocktails am Kanal.",
-        "it": "Cucina caraibica e cocktail al rum sul canale.",
-        "pt": "Comida caribenha e cocktails de rum junto ao canal.",
-        "zh": "运河边的加勒比美食和朗姆鸡尾酒。",
-        "ar": "أطعمة كاريبية وكوكتيلات الروم بجوار القناة.",
-        "ja": "運河沿いのカリブ料理とラムカクテル。"
-      },
-      "walkMins": 12,
-      "coords": "Turtle Bay Brindleyplace, Birmingham"
-    },
-    {
-      "category": "coffee",
-      "name": "Papillon Café",
-      "note": {
-        "en": "Great coffee and pastries, just round the corner.",
-        "es": "Muy buen café y bollería, a la vuelta de la esquina.",
-        "fr": "Excellent café et viennoiseries, juste au coin de la rue.",
-        "de": "Toller Kaffee und Gebäck, gleich um die Ecke.",
-        "it": "Ottimo caffè e dolci, proprio dietro l'angolo.",
-        "pt": "Ótimo café e pastelaria, mesmo ao virar da esquina.",
-        "zh": "咖啡和糕点都很棒，就在拐角处。",
-        "ar": "قهوة ومعجنات رائعة، قريب جدًا.",
-        "ja": "すぐ近くの、コーヒーと焼き菓子がおいしいカフェ。"
-      },
-      "walkMins": 3,
-      "coords": "Papillon Café, 154 Broad St, Birmingham"
-    },
-    {
-      "category": "coffee",
-      "name": "Tricorn Café",
-      "note": {
-        "en": "Friendly local café for breakfast and coffee.",
-        "es": "Café de barrio agradable para desayunar o tomar algo.",
-        "fr": "Café de quartier sympathique pour le petit-déjeuner et le café.",
-        "de": "Freundliches Café für Frühstück und Kaffee.",
-        "it": "Caffè di quartiere accogliente per colazione e caffè.",
-        "pt": "Café de bairro simpático para pequeno-almoço e café.",
-        "zh": "友好的街坊咖啡馆，适合早餐和喝咖啡。",
-        "ar": "مقهى محلي ودود للإفطار والقهوة.",
-        "ja": "朝食やコーヒーにぴったりの、地元の気さくなカフェ。"
-      },
-      "walkMins": 4,
-      "coords": "Tricorn cafe, 51 Hagley Rd, Birmingham"
-    },
-    {
-      "category": "drinks",
-      "name": "The Vine Inn",
-      "note": {
-        "en": "Classic local pub with real ales and sport on TV.",
-        "es": "Pub de barrio clásico con cervezas artesanas y deporte en la tele.",
-        "fr": "Pub de quartier classique, bières artisanales et sport à la télé.",
-        "de": "Klassischer Pub mit Real Ales und Sport im TV.",
-        "it": "Pub di quartiere classico con birre artigianali e sport in TV.",
-        "pt": "Pub clássico de bairro com cervejas artesanais e desporto na TV.",
-        "zh": "经典社区酒吧，有传统艾尔啤酒和体育直播。",
-        "ar": "حانة محلية تقليدية مع بيرة تقليدية ومباريات على التلفاز.",
-        "ja": "昔ながらの地元のパブ。リアルエールとスポーツ中継。"
-      },
-      "walkMins": 4,
-      "coords": "The Vine Inn, 92 Ruston St, Birmingham"
-    },
-    {
-      "category": "drinks",
-      "name": "Malt House",
-      "note": {
-        "en": "Big canalside pub with a terrace, next to the arena.",
-        "es": "Pub grande junto al canal, con terraza, al lado del pabellón.",
-        "fr": "Grand pub au bord du canal avec terrasse, près de l'aréna.",
-        "de": "Großer Pub am Kanal mit Terrasse, neben der Arena.",
-        "it": "Grande pub sul canale con terrazza, vicino all'arena.",
-        "pt": "Pub grande junto ao canal com esplanada, ao lado da arena.",
-        "zh": "运河边带露台的大酒吧，紧邻体育馆。",
-        "ar": "حانة كبيرة على القناة مع تراس، بجانب الساحة.",
-        "ja": "アリーナ隣、運河沿いのテラス付き大型パブ。"
-      },
-      "walkMins": 14,
-      "coords": "Malt House, 75 King Edwards Rd, Birmingham"
-    },
-    {
-      "category": "see",
-      "name": "ODEON Luxe cinema",
-      "note": {
-        "en": "Latest films with reclining seats at Broadway Plaza.",
-        "es": "Estrenos con butacas reclinables en Broadway Plaza.",
-        "fr": "Derniers films avec sièges inclinables à Broadway Plaza.",
-        "de": "Neueste Filme mit Liegesesseln in der Broadway Plaza.",
-        "it": "Ultimi film con poltrone reclinabili a Broadway Plaza.",
-        "pt": "Últimos filmes com cadeiras reclináveis no Broadway Plaza.",
-        "zh": "Broadway Plaza 的影院，可躺座椅看最新电影。",
-        "ar": "أحدث الأفلام بمقاعد قابلة للإمالة في Broadway Plaza.",
-        "ja": "Broadway Plaza の映画館。リクライニングシートで最新作を。"
-      },
-      "walkMins": 2,
-      "coords": "ODEON Luxe Birmingham Broadway Plaza"
-    },
-    {
-      "category": "see",
-      "name": "Brindleyplace",
-      "note": {
-        "en": "Restaurants, bars and canals.",
-        "es": "Restaurantes, bares y canales.",
-        "fr": "Restaurants, bars et canaux.",
-        "de": "Restaurants, Bars und Kanäle.",
-        "it": "Ristoranti, bar e canali.",
-        "pt": "Restaurantes, bares e canais.",
-        "zh": "餐厅、酒吧和运河。",
-        "ar": "مطاعم وحانات وقنوات.",
-        "ja": "レストラン、バー、運河。"
-      },
-      "walkMins": 10,
-      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791871380/brindleyplace_boats_szqlfv.jpg",
-      "coords": "https://www.google.com/maps/place/Eleven+Brindley+Place,+Birmingham+B1+2LP/data=!4m2!3m1!1s0x4870bcf6fbb42437:0xc623b4e3789341d4"
-    },
-    {
-      "category": "see",
-      "name": "National SEA LIFE Centre",
-      "note": {
-        "en": "Aquarium by the canals, great with children. Photo: Gp258, CC BY-SA 4.0",
-        "es": "Acuario junto a los canales, ideal con niños. Foto: Gp258, CC BY-SA 4.0",
-        "fr": "Aquarium au bord des canaux, idéal avec des enfants. Photo: Gp258, CC BY-SA 4.0",
-        "de": "Aquarium an den Kanälen, toll mit Kindern. Foto: Gp258, CC BY-SA 4.0",
-        "it": "Acquario sui canali, ideale con i bambini. Foto: Gp258, CC BY-SA 4.0",
-        "pt": "Aquário junto aos canais, ótimo com crianças. Foto: Gp258, CC BY-SA 4.0",
-        "zh": "运河边的水族馆，很适合带孩子。 图片: Gp258, CC BY-SA 4.0",
-        "ar": "حوض أسماك بجوار القنوات، رائع مع الأطفال. الصورة: Gp258, CC BY-SA 4.0",
-        "ja": "運河沿いの水族館。子ども連れに最適。 写真: Gp258, CC BY-SA 4.0"
-      },
-      "walkMins": 11,
-      "coords": "National SEA LIFE Centre Birmingham",
-      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791875656/places_bham_sea_life.jpg"
-    },
-    {
-      "category": "see",
-      "name": "Ikon Gallery",
-      "note": {
-        "en": "Free contemporary art in a Victorian school. Photo: Erebus555, CC BY-SA 3.0",
-        "es": "Arte contemporáneo gratis en una escuela victoriana. Foto: Erebus555, CC BY-SA 3.0",
-        "fr": "Art contemporain gratuit dans une école victorienne. Photo: Erebus555, CC BY-SA 3.0",
-        "de": "Kostenlose zeitgenössische Kunst in einer viktorianischen Schule. Foto: Erebus555, CC BY-SA 3.0",
-        "it": "Arte contemporanea gratuita in una scuola vittoriana. Foto: Erebus555, CC BY-SA 3.0",
-        "pt": "Arte contemporânea gratuita numa escola vitoriana. Foto: Erebus555, CC BY-SA 3.0",
-        "zh": "维多利亚式校舍里的免费当代艺术馆。 图片: Erebus555, CC BY-SA 3.0",
-        "ar": "فن معاصر مجاني في مدرسة من العصر الفيكتوري. الصورة: Erebus555, CC BY-SA 3.0",
-        "ja": "ヴィクトリア朝の校舎にある無料の現代美術館。 写真: Erebus555, CC BY-SA 3.0"
-      },
-      "walkMins": 12,
-      "coords": "Ikon Gallery, Birmingham",
-      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791875664/places_bham_ikon.jpg"
-    },
-    {
-      "category": "see",
-      "name": "Black Sabbath Bench",
-      "note": {
-        "en": "Photo stop for heavy metal fans, on the canal bridge. Photo: The wub, CC BY-SA 4.0",
-        "es": "Parada obligada para fans del heavy metal, en el puente del canal. Foto: The wub, CC BY-SA 4.0",
-        "fr": "Arrêt photo pour les fans de heavy metal, sur le pont du canal. Photo: The wub, CC BY-SA 4.0",
-        "de": "Fotostopp für Heavy-Metal-Fans auf der Kanalbrücke. Foto: The wub, CC BY-SA 4.0",
-        "it": "Tappa fotografica per i fan dell'heavy metal, sul ponte del canale. Foto: The wub, CC BY-SA 4.0",
-        "pt": "Paragem para fotos para fãs de heavy metal, na ponte do canal. Foto: The wub, CC BY-SA 4.0",
-        "zh": "重金属乐迷的拍照点，在运河桥上。 图片: The wub, CC BY-SA 4.0",
-        "ar": "محطة تصوير لعشاق الهيفي ميتال على جسر القناة. الصورة: The wub, CC BY-SA 4.0",
-        "ja": "運河の橋の上にある、ヘヴィメタルファンの記念撮影スポット。 写真: The wub, CC BY-SA 4.0"
-      },
-      "walkMins": 13,
-      "coords": "Black Sabbath Bench, Broad St, Birmingham",
-      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791875666/places_bham_black_sabbath_bench.jpg"
-    },
-    {
-      "category": "see",
-      "name": "ICC",
-      "note": {
-        "en": "Concerts, conferences and events between Brindleyplace and Centenary Square. Photo: delegateconnectimages, CC BY 2.0",
-        "es": "Conciertos, congresos y eventos entre Brindleyplace y Centenary Square. Foto: delegateconnectimages, CC BY 2.0",
-        "fr": "Concerts, congrès et événements entre Brindleyplace et Centenary Square. Photo: delegateconnectimages, CC BY 2.0",
-        "de": "Konzerte, Konferenzen und Events zwischen Brindleyplace und Centenary Square. Foto: delegateconnectimages, CC BY 2.0",
-        "it": "Concerti, congressi ed eventi tra Brindleyplace e Centenary Square. Foto: delegateconnectimages, CC BY 2.0",
-        "pt": "Concertos, conferências e eventos entre Brindleyplace e Centenary Square. Foto: delegateconnectimages, CC BY 2.0",
-        "zh": "位于 Brindleyplace 和 Centenary Square 之间，举办音乐会、会议和活动。 图片: delegateconnectimages, CC BY 2.0",
-        "ar": "حفلات ومؤتمرات وفعاليات بين Brindleyplace وCentenary Square. الصورة: delegateconnectimages, CC BY 2.0",
-        "ja": "Brindleyplace と Centenary Square の間にある、コンサートや会議の会場。 写真: delegateconnectimages, CC BY 2.0"
-      },
-      "walkMins": 14,
-      "coords": "ICC Birmingham, Broad St",
-      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791874787/places_bham_icc.jpg"
-    },
-    {
-      "category": "see",
-      "name": "Peace Pagoda",
-      "note": {
-        "en": "Peaceful Buddhist pagoda, a hidden gem in Ladywood.",
-        "es": "Pagoda budista tranquila, una joya escondida en Ladywood.",
-        "fr": "Pagode bouddhiste paisible, un trésor caché à Ladywood.",
-        "de": "Friedliche buddhistische Pagode, ein Geheimtipp in Ladywood.",
-        "it": "Pagoda buddhista tranquilla, una perla nascosta a Ladywood.",
-        "pt": "Pagode budista tranquilo, uma joia escondida em Ladywood.",
-        "zh": "宁静的佛塔，Ladywood 的隐藏宝地。",
-        "ar": "معبد بوذي هادئ، جوهرة مخفية في Ladywood.",
-        "ja": "Ladywood の隠れた名所、静かな仏塔。"
-      },
-      "walkMins": 15,
-      "coords": "Birmingham Peace Pagoda, Osler St, Birmingham",
-      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791874783/places_bham_peace_pagoda.jpg"
-    },
-    {
-      "category": "see",
-      "name": "Symphony Hall",
-      "note": {
-        "en": "World class concerts. Photo: Roger Kidd, CC BY-SA 2.0",
-        "es": "Conciertos de primer nivel. Foto: Roger Kidd, CC BY-SA 2.0",
-        "fr": "Concerts de classe mondiale. Photo: Roger Kidd, CC BY-SA 2.0",
-        "de": "Konzerte auf Weltklasseniveau. Foto: Roger Kidd, CC BY-SA 2.0",
-        "it": "Concerti di livello mondiale. Foto: Roger Kidd, CC BY-SA 2.0",
-        "pt": "Concertos de nível mundial. Foto: Roger Kidd, CC BY-SA 2.0",
-        "zh": "世界级音乐会。 图片: Roger Kidd, CC BY-SA 2.0",
-        "ar": "حفلات موسيقية عالمية المستوى. الصورة: Roger Kidd, CC BY-SA 2.0",
-        "ja": "世界レベルのコンサートホール。 写真: Roger Kidd, CC BY-SA 2.0"
-      },
-      "walkMins": 15,
-      "coords": "Symphony Hall Birmingham",
-      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791875661/places_bham_symphony_hall.jpg"
-    },
-    {
-      "category": "see",
-      "name": "Utilita Arena",
-      "note": {
-        "en": "Big concerts and shows by the canal. Photo: The wub, CC BY-SA 4.0",
-        "es": "Grandes conciertos y espectáculos junto al canal. Foto: The wub, CC BY-SA 4.0",
-        "fr": "Grands concerts et spectacles au bord du canal. Photo: The wub, CC BY-SA 4.0",
-        "de": "Große Konzerte und Shows am Kanal. Foto: The wub, CC BY-SA 4.0",
-        "it": "Grandi concerti e spettacoli sul canale. Foto: The wub, CC BY-SA 4.0",
-        "pt": "Grandes concertos e espetáculos junto ao canal. Foto: The wub, CC BY-SA 4.0",
-        "zh": "运河边的大型演唱会和演出场馆。 图片: The wub, CC BY-SA 4.0",
-        "ar": "حفلات وعروض كبيرة بجوار القناة. الصورة: The wub, CC BY-SA 4.0",
-        "ja": "運河沿いの大型コンサート・ショー会場。 写真: The wub, CC BY-SA 4.0"
-      },
-      "walkMins": 15,
-      "coords": "Utilita Arena Birmingham",
-      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791874791/places_bham_utilita_arena.jpg"
-    },
-    {
-      "category": "see",
-      "name": "The Cube",
-      "note": {
-        "en": "Landmark building with a rooftop bar and views. Photo: Tony Hisgett, CC BY 2.0",
-        "es": "Edificio emblemático con bar en la azotea y vistas. Foto: Tony Hisgett, CC BY 2.0",
-        "fr": "Bâtiment emblématique avec bar sur le toit et vue. Photo: Tony Hisgett, CC BY 2.0",
-        "de": "Wahrzeichen mit Rooftop-Bar und Aussicht. Foto: Tony Hisgett, CC BY 2.0",
-        "it": "Edificio simbolo con bar sul tetto e vista. Foto: Tony Hisgett, CC BY 2.0",
-        "pt": "Edifício emblemático com bar no terraço e vista. Foto: Tony Hisgett, CC BY 2.0",
-        "zh": "地标建筑，设有屋顶酒吧，可赏城市景色。 图片: Tony Hisgett, CC BY 2.0",
-        "ar": "مبنى مميز به بار على السطح وإطلالات. الصورة: Tony Hisgett, CC BY 2.0",
-        "ja": "屋上バーと眺望が楽しめるランドマーク。 写真: Tony Hisgett, CC BY 2.0"
-      },
-      "walkMins": 16,
-      "coords": "The Cube, Birmingham",
-      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791875654/places_bham_cube.jpg"
-    },
-    {
-      "category": "see",
-      "name": "Library of Birmingham",
-      "note": {
-        "en": "Free to visit, do not miss the rooftop gardens. Photo: The wub, CC BY-SA 4.0",
-        "es": "Entrada gratis; no te pierdas los jardines de la azotea. Foto: The wub, CC BY-SA 4.0",
-        "fr": "Entrée libre, ne manquez pas les jardins sur le toit. Photo: The wub, CC BY-SA 4.0",
-        "de": "Eintritt frei, verpassen Sie nicht die Dachgärten. Foto: The wub, CC BY-SA 4.0",
-        "it": "Ingresso gratuito, non perderti i giardini sul tetto. Foto: The wub, CC BY-SA 4.0",
-        "pt": "Entrada gratuita; não perca os jardins no terraço. Foto: The wub, CC BY-SA 4.0",
-        "zh": "免费参观，别错过屋顶花园。 图片: The wub, CC BY-SA 4.0",
-        "ar": "الدخول مجاني، لا تفوّت حدائق السطح. الصورة: The wub, CC BY-SA 4.0",
-        "ja": "入場無料。屋上庭園はぜひ見てください。 写真: The wub, CC BY-SA 4.0"
-      },
-      "walkMins": 17,
-      "coords": "Library of Birmingham",
-      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791874789/places_bham_library.jpg"
-    },
-    {
-      "category": "see",
-      "name": "Centenary Square",
-      "note": {
-        "en": "The city's main square, with events and an ice rink at Christmas. Photo: The wub, CC BY-SA 4.0",
-        "es": "La plaza principal de la ciudad, con eventos y pista de hielo en Navidad. Foto: The wub, CC BY-SA 4.0",
-        "fr": "La place principale de la ville, avec événements et patinoire à Noël. Photo: The wub, CC BY-SA 4.0",
-        "de": "Der Hauptplatz der Stadt, mit Events und Eisbahn zu Weihnachten. Foto: The wub, CC BY-SA 4.0",
-        "it": "La piazza principale della città, con eventi e pista di pattinaggio a Natale. Foto: The wub, CC BY-SA 4.0",
-        "pt": "A praça principal da cidade, com eventos e pista de gelo no Natal. Foto: The wub, CC BY-SA 4.0",
-        "zh": "城市主广场，常有活动，圣诞节有溜冰场。 图片: The wub, CC BY-SA 4.0",
-        "ar": "الساحة الرئيسية في المدينة، مع فعاليات وحلبة تزلج في عيد الميلاد. الصورة: The wub, CC BY-SA 4.0",
-        "ja": "街の中心広場。イベントがあり、クリスマスにはスケートリンクも。 写真: The wub, CC BY-SA 4.0"
-      },
-      "walkMins": 17,
-      "coords": "Centenary Square, Birmingham",
-      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791875659/places_bham_centenary_square.jpg"
-    },
-    {
-      "category": "see",
-      "name": "The Mailbox",
-      "note": {
-        "en": "Shops, restaurants and bars along the canal. Photo: The wub, CC BY-SA 4.0",
-        "es": "Tiendas, restaurantes y bares junto al canal. Foto: The wub, CC BY-SA 4.0",
-        "fr": "Boutiques, restaurants et bars le long du canal. Photo: The wub, CC BY-SA 4.0",
-        "de": "Geschäfte, Restaurants und Bars am Kanal. Foto: The wub, CC BY-SA 4.0",
-        "it": "Negozi, ristoranti e bar lungo il canale. Foto: The wub, CC BY-SA 4.0",
-        "pt": "Lojas, restaurantes e bares junto ao canal. Foto: The wub, CC BY-SA 4.0",
-        "zh": "运河边的商店、餐厅和酒吧。 图片: The wub, CC BY-SA 4.0",
-        "ar": "متاجر ومطاعم وحانات على طول القناة. الصورة: The wub, CC BY-SA 4.0",
-        "ja": "運河沿いのショップ、レストラン、バー。 写真: The wub, CC BY-SA 4.0"
-      },
-      "walkMins": 19,
-      "coords": "The Mailbox, Birmingham",
-      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791875651/places_bham_mailbox.jpg"
-    },
-    {
-      "category": "see",
-      "name": "Edgbaston Reservoir",
-      "note": {
-        "en": "A peaceful lakeside walk with benches by the water, perfect to unwind or for a morning run.",
-        "es": "Paseo tranquilo junto al lago con bancos frente al agua, perfecto para desconectar o salir a correr por la mañana.",
-        "fr": "Une promenade paisible au bord du lac avec des bancs face à l'eau, parfaite pour se détendre ou courir le matin.",
-        "de": "Ein ruhiger Spaziergang am See mit Bänken am Wasser, ideal zum Entspannen oder für einen Morgenlauf.",
-        "it": "Una passeggiata tranquilla sul lago con panchine sull'acqua, perfetta per rilassarsi o per una corsa mattutina.",
-        "pt": "Um passeio tranquilo junto ao lago com bancos à beira da água, perfeito para relaxar ou correr de manhã.",
-        "zh": "宁静的湖边步道，水边有长椅，适合放松或晨跑。",
-        "ar": "ممشى هادئ على ضفاف البحيرة مع مقاعد بجانب الماء، مثالي للاسترخاء أو للجري صباحًا.",
-        "ja": "水辺にベンチがある静かな湖畔の散歩道。リラックスや朝のランニングに最適。"
-      },
-      "walkMins": 25,
-      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791871369/edbagston_reservoir_r3ndan.jpg",
-      "coords": "https://www.google.com/maps/place/Edgbaston+Reservoir,+Birmingham+B16+9EE/data=!4m2!3m1!1s0x4870bd041896a60f:0x2a0d8b242b5f7cc0"
-    },
-    {
-      "category": "see",
-      "name": "Jewellery Quarter",
-      "note": {
-        "en": "Historic workshops, independent bars and the Pen Museum. Photo: A J Paxton, CC BY-SA 2.0",
-        "es": "Talleres históricos, bares independientes y el Museo de la Pluma. Foto: A J Paxton, CC BY-SA 2.0",
-        "fr": "Ateliers historiques, bars indépendants et le Pen Museum. Photo: A J Paxton, CC BY-SA 2.0",
-        "de": "Historische Werkstätten, unabhängige Bars und das Pen Museum. Foto: A J Paxton, CC BY-SA 2.0",
-        "it": "Laboratori storici, bar indipendenti e il Pen Museum. Foto: A J Paxton, CC BY-SA 2.0",
-        "pt": "Oficinas históricas, bares independentes e o Pen Museum. Foto: A J Paxton, CC BY-SA 2.0",
-        "zh": "历史工坊、独立酒吧和钢笔博物馆。 图片: A J Paxton, CC BY-SA 2.0",
-        "ar": "ورش تاريخية وحانات مستقلة ومتحف الأقلام. الصورة: A J Paxton, CC BY-SA 2.0",
-        "ja": "歴史ある工房、個性的なバー、ペン博物館。 写真: A J Paxton, CC BY-SA 2.0"
-      },
-      "walkMins": 28,
-      "coords": "Jewellery Quarter, Birmingham",
-      "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791874792/places_bham_jewellery_quarter.jpg"
+      "text": {
+        "en": "For now the black rear gate only opens and closes from the outside. Please never close it while your car is parked inside, or you will not be able to drive out."
+      }
     }
   ],
-  "importantExtra": [],
   "discountUrl": "https://booking.hollgroup.co.uk/?coupon=5REPEATING&utm=guide",
-  "discountCode": "5REPEATING",
-  "story": {
-    "title": {
-      "en": "You are staying somewhere special",
-      "es": "Te alojas en un lugar especial",
-      "fr": "Vous séjournez dans un lieu à part",
-      "de": "Sie wohnen an einem besonderen Ort",
-      "it": "Soggiorni in un luogo speciale",
-      "pt": "Está hospedado num lugar especial",
-      "zh": "您入住的是一个特别的地方",
-      "ar": "أنت تقيم في مكان مميز",
-      "ja": "特別な場所に滞在しています"
-    },
-    "lead": {
-      "en": "Garden Court was built in **1858** as homes for older people in need. Today the front door is yours.",
-      "es": "Garden Court se construyó en **1858** como hogar para personas mayores necesitadas. Hoy la puerta es tuya.",
-      "fr": "Garden Court a été construit en **1858** pour loger des personnes âgées dans le besoin. Aujourd'hui, la porte est à vous.",
-      "de": "Garden Court wurde **1858** als Heim für bedürftige ältere Menschen gebaut. Heute ist die Haustür Ihre.",
-      "it": "Garden Court fu costruito nel **1858** come casa per anziani bisognosi. Oggi la porta è tua.",
-      "pt": "Garden Court foi construído em **1858** como lar para idosos carenciados. Hoje, a porta é sua.",
-      "zh": "Garden Court 建于 **1858 年**，原为贫困老人的住所。如今，这扇门为您敞开。",
-      "ar": "بُني Garden Court عام **1858** كمساكن لكبار السن المحتاجين. واليوم، الباب لك.",
-      "ja": "Garden Court は **1858 年**、困窮する高齢者のための住まいとして建てられました。今はあなたのための扉です。"
-    },
-    "timeline": [
-      {
-        "year": "1526",
-        "text": {
-          "en": "William Lench founds the Trust to look after older people in need in Birmingham.",
-          "es": "William Lench funda el Trust para cuidar de personas mayores necesitadas en Birmingham.",
-          "fr": "William Lench fonde le Trust pour aider les personnes âgées dans le besoin à Birmingham.",
-          "de": "William Lench gründet den Trust, um bedürftige ältere Menschen in Birmingham zu versorgen.",
-          "it": "William Lench fonda il Trust per assistere gli anziani bisognosi di Birmingham.",
-          "pt": "William Lench funda o Trust para cuidar de idosos carenciados em Birmingham.",
-          "zh": "William Lench 创立信托，照顾伯明翰的贫困老人。",
-          "ar": "يؤسس William Lench الصندوق لرعاية كبار السن المحتاجين في برمنغهام.",
-          "ja": "William Lench が、バーミンガムの困窮する高齢者を支える財団を設立。"
-        }
-      },
-      {
-        "year": "1858",
-        "text": {
-          "en": "Garden Court is built, designed by J. H. Hornblower and Haylock.",
-          "es": "Se construye Garden Court, diseñado por J. H. Hornblower y Haylock.",
-          "fr": "Construction de Garden Court, conçu par J. H. Hornblower et Haylock.",
-          "de": "Garden Court wird gebaut, entworfen von J. H. Hornblower und Haylock.",
-          "it": "Viene costruito Garden Court, progettato da J. H. Hornblower e Haylock.",
-          "pt": "Construção de Garden Court, projetado por J. H. Hornblower e Haylock.",
-          "zh": "Garden Court 建成，由 J. H. Hornblower 和 Haylock 设计。",
-          "ar": "بناء Garden Court بتصميم J. H. Hornblower وHaylock.",
-          "ja": "J. H. Hornblower と Haylock の設計で Garden Court が完成。"
-        }
-      },
-      {
-        "year": "1998",
-        "text": {
-          "en": "The Children's Hospital next door closes.",
-          "es": "Cierra el Hospital Infantil de al lado.",
-          "fr": "L'hôpital pour enfants voisin ferme.",
-          "de": "Das benachbarte Kinderkrankenhaus schließt.",
-          "it": "Chiude l'ospedale pediatrico accanto.",
-          "pt": "Fecha o Hospital Pediátrico ao lado.",
-          "zh": "隔壁的儿童医院关闭。",
-          "ar": "يُغلق مستشفى الأطفال المجاور.",
-          "ja": "隣の小児病院が閉院。"
-        }
-      },
-      {
-        "year": "2026",
-        "text": {
-          "en": "The Trust marks its 500th anniversary.",
-          "es": "El Trust cumple 500 años.",
-          "fr": "Le Trust fête ses 500 ans.",
-          "de": "Der Trust feiert sein 500-jähriges Bestehen.",
-          "it": "Il Trust celebra i suoi 500 anni.",
-          "pt": "O Trust celebra 500 anos.",
-          "zh": "信托迎来 500 周年。",
-          "ar": "يحتفل الصندوق بذكراه الـ500.",
-          "ja": "財団が創立 500 周年を迎える。"
-        }
-      }
-    ],
-    "gallery": [
-      {
-        "img": "",
-        "caption": {
-          "en": "From the street, 1960s",
-          "es": "Desde la calle, años 60",
-          "fr": "Depuis la rue, années 1960",
-          "de": "Von der Straße aus, 1960er",
-          "it": "Dalla strada, anni '60",
-          "pt": "Vista da rua, anos 60",
-          "zh": "街景，1960 年代",
-          "ar": "من الشارع، ستينيات القرن الماضي",
-          "ja": "通りから、1960 年代"
-        }
-      },
-      {
-        "img": "",
-        "caption": {
-          "en": "From the garden, today",
-          "es": "Desde el jardín, hoy",
-          "fr": "Depuis le jardin, aujourd'hui",
-          "de": "Vom Garten aus, heute",
-          "it": "Dal giardino, oggi",
-          "pt": "Vista do jardim, hoje",
-          "zh": "花园视角，今天",
-          "ar": "من الحديقة، اليوم",
-          "ja": "庭から、現在"
-        }
-      },
-      {
-        "img": "",
-        "caption": {
-          "en": "Historic England Archive, BB92/00176",
-          "es": "Archivo de Historic England, BB92/00176",
-          "fr": "Archives Historic England, BB92/00176",
-          "de": "Historic England Archive, BB92/00176",
-          "it": "Archivio Historic England, BB92/00176",
-          "pt": "Arquivo Historic England, BB92/00176",
-          "zh": "Historic England 档案，BB92/00176",
-          "ar": "أرشيف Historic England، BB92/00176",
-          "ja": "Historic England アーカイブ、BB92/00176"
-        }
-      }
-    ],
-    "blocks": [
-      {
-        "title": {
-          "en": "Your building",
-          "es": "Tu edificio",
-          "fr": "Votre bâtiment",
-          "de": "Ihr Gebäude",
-          "it": "Il tuo edificio",
-          "pt": "O seu edifício",
-          "zh": "您的建筑",
-          "ar": "مبناك",
-          "ja": "あなたの建物"
-        },
-        "text": {
-          "en": "Red brick, stone surrounds and shaped gables in a Jacobean style. **Twelve small homes** face the lawn, six on each side, with a lodge for the matron at the centre. It is **Grade II listed**, protected for its architectural and historic interest.",
-          "es": "Ladrillo rojo, marcos de piedra y hastiales decorados de estilo jacobino. **Doce casitas** miran al jardín, seis a cada lado, con una casa para la gobernanta en el centro. Está **protegido (Grade II)** por su interés arquitectónico e histórico.",
-          "fr": "Brique rouge, encadrements en pierre et pignons ouvragés de style jacobéen. **Douze petites maisons** donnent sur la pelouse, six de chaque côté, avec au centre le logement de l'intendante. Le bâtiment est **classé (Grade II)** pour son intérêt architectural et historique.",
-          "de": "Roter Backstein, Steinrahmen und geschwungene Giebel im jakobinischen Stil. **Zwölf kleine Häuser** blicken auf den Rasen, sechs auf jeder Seite, in der Mitte das Haus der Hausmutter. Es ist **denkmalgeschützt (Grade II)** wegen seines architektonischen und historischen Werts.",
-          "it": "Mattoni rossi, cornici in pietra e timpani sagomati in stile giacobino. **Dodici piccole case** si affacciano sul prato, sei per lato, con al centro l'alloggio della direttrice. È **tutelato (Grade II)** per il suo valore architettonico e storico.",
-          "pt": "Tijolo vermelho, molduras de pedra e empenas trabalhadas em estilo jacobino. **Doze pequenas casas** dão para o relvado, seis de cada lado, com a casa da governanta ao centro. É **classificado (Grade II)** pelo seu interesse arquitetónico e histórico.",
-          "zh": "红砖、石框和詹姆斯一世风格的造型山墙。**十二间小屋**面朝草坪，两侧各六间，中间是女舍监的住处。它是**二级保护建筑**，因其建筑和历史价值而受到保护。",
-          "ar": "طوب أحمر وإطارات حجرية وجملونات مزخرفة على الطراز اليعقوبي. **اثنا عشر منزلًا صغيرًا** تطل على العشب، ستة على كل جانب، وفي الوسط مسكن المشرفة. المبنى **محمي (الدرجة الثانية)** لقيمته المعمارية والتاريخية.",
-          "ja": "赤レンガ、石の窓枠、ジャコビアン様式の装飾破風。芝生を囲んで片側 6 軒ずつ**12 軒の小さな家**が並び、中央には寮母の家があります。建築的・歴史的価値から**Grade II の保護建築**に指定されています。"
-        }
-      },
-      {
-        "title": {
-          "en": "The lawn is the heart of the place",
-          "es": "El jardín es el corazón del lugar",
-          "fr": "La pelouse est le cœur du lieu",
-          "de": "Der Rasen ist das Herz des Ortes",
-          "it": "Il prato è il cuore del luogo",
-          "pt": "O relvado é o coração do lugar",
-          "zh": "草坪是这里的核心",
-          "ar": "العشب هو قلب المكان",
-          "ja": "芝生はこの場所の中心"
-        },
-        "text": {
-          "en": "The homes were arranged around this lawn, so everyone who lived here looked out on the same green space. Bring a coffee out and look up: modern towers stand over a building older than almost anything near it. Please **be kind to your neighbours**, especially in the evening.",
-          "es": "Las casas se construyeron alrededor de este jardín, así que todos los que vivían aquí miraban al mismo espacio verde. Sal con un café y mira hacia arriba: torres modernas se alzan sobre un edificio más antiguo que casi todo lo que lo rodea. Por favor, **sé amable con los vecinos**, sobre todo por la noche.",
-          "fr": "Les maisons ont été disposées autour de cette pelouse, si bien que tous les habitants voyaient le même espace vert. Sortez avec un café et levez les yeux : des tours modernes dominent un bâtiment plus ancien que presque tout ce qui l'entoure. Merci de **respecter vos voisins**, surtout le soir.",
-          "de": "Die Häuser wurden um diesen Rasen angelegt, sodass alle Bewohner auf dasselbe Grün blickten. Gehen Sie mit einem Kaffee hinaus und schauen Sie nach oben: Moderne Türme überragen ein Gebäude, das älter ist als fast alles in der Nähe. Bitte **nehmen Sie Rücksicht auf die Nachbarn**, besonders abends.",
-          "it": "Le case furono disposte attorno a questo prato, così tutti gli abitanti guardavano lo stesso spazio verde. Esci con un caffè e alza lo sguardo: torri moderne sovrastano un edificio più antico di quasi tutto ciò che lo circonda. Per favore **rispetta i vicini**, soprattutto la sera.",
-          "pt": "As casas foram dispostas à volta deste relvado, por isso todos os moradores olhavam para o mesmo espaço verde. Leve um café lá para fora e olhe para cima: torres modernas erguem-se sobre um edifício mais antigo do que quase tudo à volta. Por favor, **respeite os vizinhos**, sobretudo à noite.",
-          "zh": "房屋围绕这片草坪而建，住在这里的每个人都望着同一片绿地。端杯咖啡出来抬头看看：现代高楼耸立在一座比周围几乎所有建筑都古老的房子之上。请**照顾邻居的感受**，尤其是晚上。",
-          "ar": "رُتبت المنازل حول هذا العشب، فكان كل من يسكن هنا يطل على المساحة الخضراء نفسها. اخرج مع فنجان قهوة وانظر للأعلى: أبراج حديثة ترتفع فوق مبنى أقدم من كل ما حوله تقريبًا. يرجى **مراعاة الجيران**، خاصة في المساء.",
-          "ja": "家々はこの芝生を囲むように建てられ、住む人は皆同じ緑を眺めていました。コーヒーを持って外に出て見上げてみてください。近代的なタワーが、周りのほとんどの建物より古いこの建物を見下ろしています。特に夜は**ご近所への配慮**をお願いします。"
-        }
-      },
-      {
-        "title": {
-          "en": "People who called it home",
-          "es": "Quienes vivieron aquí",
-          "fr": "Ceux qui y ont vécu",
-          "de": "Menschen, die hier lebten",
-          "it": "Chi lo chiamava casa",
-          "pt": "Quem aqui viveu",
-          "zh": "曾以此为家的人们",
-          "ar": "من سكنوا هنا",
-          "ja": "ここで暮らした人々"
-        },
-        "text": {
-          "en": "Researchers at the University of Birmingham have traced the lives of Lench's residents. Ellen Rebecca Vale answered the 1911 census **in rhyme**. Ann Starling served as matron for **more than fifty years**. Jane Upton reached **100** in 1914.",
-          "es": "Investigadores de la Universidad de Birmingham han reconstruido la vida de los residentes de Lench. Ellen Rebecca Vale respondió al censo de 1911 **en verso**. Ann Starling fue la gobernanta durante **más de cincuenta años**. Jane Upton cumplió **100 años** en 1914.",
-          "fr": "Des chercheurs de l'Université de Birmingham ont retracé la vie des résidents de Lench. Ellen Rebecca Vale a répondu au recensement de 1911 **en vers**. Ann Starling a été intendante pendant **plus de cinquante ans**. Jane Upton a fêté ses **100 ans** en 1914.",
-          "de": "Forschende der University of Birmingham haben das Leben der Bewohner von Lench nachgezeichnet. Ellen Rebecca Vale beantwortete die Volkszählung 1911 **in Reimen**. Ann Starling war **über fünfzig Jahre** Hausmutter. Jane Upton wurde 1914 **100 Jahre** alt.",
-          "it": "I ricercatori dell'Università di Birmingham hanno ricostruito la vita dei residenti di Lench. Ellen Rebecca Vale rispose al censimento del 1911 **in rima**. Ann Starling fu direttrice per **più di cinquant'anni**. Jane Upton compì **100 anni** nel 1914.",
-          "pt": "Investigadores da Universidade de Birmingham reconstituíram a vida dos residentes de Lench. Ellen Rebecca Vale respondeu ao censo de 1911 **em verso**. Ann Starling foi governanta durante **mais de cinquenta anos**. Jane Upton fez **100 anos** em 1914.",
-          "zh": "伯明翰大学的研究人员追溯了 Lench 居民的生平。Ellen Rebecca Vale **用押韵诗**回答了 1911 年的人口普查。Ann Starling 担任女舍监**五十多年**。Jane Upton 在 1914 年迎来 **100 岁**生日。",
-          "ar": "تتبّع باحثون في جامعة برمنغهام حياة سكان Lench. أجابت Ellen Rebecca Vale على تعداد 1911 **شعرًا**. وعملت Ann Starling مشرفة **أكثر من خمسين عامًا**. وبلغت Jane Upton **مئة عام** في 1914.",
-          "ja": "バーミンガム大学の研究者が Lench の住人たちの人生をたどりました。Ellen Rebecca Vale は 1911 年の国勢調査に**韻文で**回答しました。Ann Starling は**50 年以上**寮母を務めました。Jane Upton は 1914 年に **100 歳**を迎えました。"
-        }
-      },
-      {
-        "title": {
-          "en": "Through bombs and bulldozers",
-          "es": "Entre bombas y excavadoras",
-          "fr": "Entre bombes et bulldozers",
-          "de": "Bomben und Bulldozern zum Trotz",
-          "it": "Tra bombe e ruspe",
-          "pt": "Entre bombas e escavadoras",
-          "zh": "历经炸弹与推土机",
-          "ar": "رغم القنابل والجرافات",
-          "ja": "爆撃と再開発を越えて"
-        },
-        "text": {
-          "en": "Three Lench's almshouses were hit by bombs in the Second World War, and whole districts of Birmingham were cleared and rebuilt. Through all of it, **Garden Court stayed standing**.",
-          "es": "Tres casas de caridad de Lench fueron alcanzadas por bombas en la Segunda Guerra Mundial, y barrios enteros de Birmingham se derribaron y reconstruyeron. A pesar de todo, **Garden Court siguió en pie**.",
-          "fr": "Trois hospices de Lench ont été touchés par des bombes pendant la Seconde Guerre mondiale, et des quartiers entiers de Birmingham ont été rasés puis reconstruits. Malgré tout, **Garden Court est resté debout**.",
-          "de": "Drei Armenhäuser von Lench wurden im Zweiten Weltkrieg von Bomben getroffen, und ganze Viertel Birminghams wurden abgerissen und neu gebaut. Trotz allem **blieb Garden Court stehen**.",
-          "it": "Tre ospizi di Lench furono colpiti dalle bombe nella Seconda guerra mondiale e interi quartieri di Birmingham furono demoliti e ricostruiti. Nonostante tutto, **Garden Court è rimasto in piedi**.",
-          "pt": "Três casas de caridade de Lench foram atingidas por bombas na Segunda Guerra Mundial, e bairros inteiros de Birmingham foram demolidos e reconstruídos. Apesar de tudo, **Garden Court manteve-se de pé**.",
-          "zh": "二战期间，Lench 的三处济贫院被炸弹击中，伯明翰整片街区被拆除重建。历经这一切，**Garden Court 依然屹立**。",
-          "ar": "أصابت القنابل ثلاثة من دور Lench الخيرية في الحرب العالمية الثانية، وهُدمت أحياء كاملة في برمنغهام وأعيد بناؤها. ورغم كل ذلك، **بقي Garden Court صامدًا**.",
-          "ja": "第二次世界大戦では Lench の救貧院 3 棟が爆撃を受け、バーミンガムでは地区ごと取り壊されて再建されました。それでも **Garden Court は残り続けました**。"
-        }
-      }
-    ],
-    "challenge": [
-      {
-        "title": {
-          "en": "Shaped gables",
-          "es": "Hastiales decorados",
-          "fr": "Pignons ouvragés",
-          "de": "Geschwungene Giebel",
-          "it": "Timpani sagomati",
-          "pt": "Empenas trabalhadas",
-          "zh": "造型山墙",
-          "ar": "الجملونات المزخرفة",
-          "ja": "装飾破風"
-        },
-        "text": {
-          "en": "The stepped, curved edges along the rooflines.",
-          "es": "Los bordes escalonados y curvos de los tejados.",
-          "fr": "Les bords en gradins et courbes le long des toits.",
-          "de": "Die gestuften, geschwungenen Kanten an den Dachlinien.",
-          "it": "I bordi a gradini e curvi lungo i tetti.",
-          "pt": "As bordas em degraus e curvas ao longo dos telhados.",
-          "zh": "屋顶线上阶梯状、弧形的边缘。",
-          "ar": "الحواف المدرجة والمنحنية على امتداد الأسطح.",
-          "ja": "屋根の線に沿った段々で曲線的な縁。"
-        }
-      },
-      {
-        "title": {
-          "en": "Decorated chimney tops",
-          "es": "Chimeneas decoradas",
-          "fr": "Cheminées décorées",
-          "de": "Verzierte Schornsteine",
-          "it": "Comignoli decorati",
-          "pt": "Chaminés decoradas",
-          "zh": "装饰烟囱顶",
-          "ar": "مداخن مزخرفة",
-          "ja": "装飾された煙突"
-        },
-        "text": {
-          "en": "Tall brick stacks with ornate tops against the sky.",
-          "es": "Altas chimeneas de ladrillo con remates adornados contra el cielo.",
-          "fr": "Hautes cheminées en brique aux sommets ornés, découpées sur le ciel.",
-          "de": "Hohe Backsteinschornsteine mit verzierten Spitzen vor dem Himmel.",
-          "it": "Alti camini in mattoni con cime decorate contro il cielo.",
-          "pt": "Altas chaminés de tijolo com remates ornamentados contra o céu.",
-          "zh": "高高的砖砌烟囱，顶部装饰华丽，映衬着天空。",
-          "ar": "مداخن طوبية عالية بقمم مزخرفة في مواجهة السماء.",
-          "ja": "空に映える、装飾付きの高いレンガの煙突。"
-        }
-      },
-      {
-        "title": {
-          "en": "Stone arched doorways",
-          "es": "Puertas con arco de piedra",
-          "fr": "Portes en arc de pierre",
-          "de": "Steinerne Torbögen",
-          "it": "Porte ad arco in pietra",
-          "pt": "Portas com arco de pedra",
-          "zh": "石拱门",
-          "ar": "مداخل مقوسة حجرية",
-          "ja": "石のアーチ型の戸口"
-        },
-        "text": {
-          "en": "The pale stone arches that frame the front doors.",
-          "es": "Los arcos de piedra clara que enmarcan las puertas.",
-          "fr": "Les arcs en pierre claire qui encadrent les portes d'entrée.",
-          "de": "Die hellen Steinbögen um die Haustüren.",
-          "it": "Gli archi in pietra chiara che incorniciano le porte d'ingresso.",
-          "pt": "Os arcos de pedra clara que emolduram as portas.",
-          "zh": "框住前门的浅色石拱。",
-          "ar": "الأقواس الحجرية الفاتحة التي تؤطر الأبواب الأمامية.",
-          "ja": "玄関を縁取る淡い色の石のアーチ。"
-        }
-      },
-      {
-        "title": {
-          "en": "Old meets new",
-          "es": "Lo antiguo y lo nuevo",
-          "fr": "L'ancien rencontre le moderne",
-          "de": "Alt trifft Neu",
-          "it": "Antico e moderno",
-          "pt": "O antigo e o novo",
-          "zh": "新旧交融",
-          "ar": "القديم يلتقي الحديث",
-          "ja": "新旧の出会い"
-        },
-        "text": {
-          "en": "The modern towers rising behind the Victorian brick.",
-          "es": "Las torres modernas que se alzan detrás del ladrillo victoriano.",
-          "fr": "Les tours modernes qui s'élèvent derrière la brique victorienne.",
-          "de": "Die modernen Türme hinter dem viktorianischen Backstein.",
-          "it": "Le torri moderne che si alzano dietro i mattoni vittoriani.",
-          "pt": "As torres modernas que se erguem atrás do tijolo vitoriano.",
-          "zh": "维多利亚式红砖后耸立的现代高楼。",
-          "ar": "الأبراج الحديثة التي ترتفع خلف الطوب الفيكتوري.",
-          "ja": "ヴィクトリア朝のレンガの向こうにそびえる近代的なタワー。"
-        }
-      }
-    ]
-  },
-  "parkingOptions": [
-    {
-      "name": "Broadway Plaza car park",
-      "mins": 1,
-      "how": "walk",
-      "note": {
-        "en": "About £12 for 24 hours.",
-        "es": "Unas 12 £ por 24 horas.",
-        "fr": "Environ 12 £ pour 24 heures.",
-        "de": "Etwa 12 £ für 24 Stunden.",
-        "it": "Circa 12 £ per 24 ore.",
-        "pt": "Cerca de 12 £ por 24 horas.",
-        "zh": "24 小时约 12 英镑。",
-        "ar": "حوالي 12 جنيهًا إسترلينيًا لمدة 24 ساعة.",
-        "ja": "24 時間で約 12 ポンド。"
-      },
-      "coords": "Broadway Plaza car park, Birmingham"
-    },
-    {
-      "name": "Metro car park",
-      "mins": 2,
-      "how": "walk",
-      "coords": "Metro car park, Ladywood Middleway, Birmingham"
-    }
-  ],
-  "offers": {
-    "nav": {
-      "en": "Experiences",
-      "es": "Experiencias",
-      "fr": "Expériences",
-      "de": "Erlebnisse",
-      "it": "Esperienze",
-      "pt": "Experiências",
-      "zh": "体验活动",
-      "ar": "تجارب",
-      "ja": "体験"
-    },
-    "title": {
-      "en": "Make the most of Birmingham",
-      "es": "Aprovecha Birmingham al máximo",
-      "fr": "Profitez pleinement de Birmingham",
-      "de": "Holen Sie das Beste aus Birmingham heraus",
-      "it": "Goditi Birmingham al massimo",
-      "pt": "Aproveite Birmingham ao máximo",
-      "zh": "畅玩伯明翰",
-      "ar": "استمتع ببرمنغهام إلى أقصى حد",
-      "ja": "バーミンガムを満喫しよう"
-    },
-    "note": {
-      "en": "We may earn a small commission when you book through these links, at no extra cost to you.",
-      "es": "Podemos recibir una pequeña comisión si reservas desde estos enlaces, sin coste extra para ti.",
-      "fr": "Nous pouvons percevoir une petite commission si vous réservez via ces liens, sans frais supplémentaires pour vous.",
-      "de": "Wenn Sie über diese Links buchen, erhalten wir eventuell eine kleine Provision, ohne Mehrkosten für Sie.",
-      "it": "Potremmo ricevere una piccola commissione se prenoti tramite questi link, senza costi aggiuntivi per te.",
-      "pt": "Podemos receber uma pequena comissão se reservar através destes links, sem custo extra para si.",
-      "zh": "通过这些链接预订，我们可能会获得少量佣金，您无需支付任何额外费用。",
-      "ar": "قد نحصل على عمولة صغيرة عند الحجز عبر هذه الروابط، دون أي تكلفة إضافية عليك.",
-      "ja": "これらのリンクから予約されると、私たちに少額の手数料が入る場合があります。お客様の追加負担はありません。"
-    },
-    "items": [
-      {
-        "url": "https://gyg.me/b6jEuHiZ",
-        "title": {
-          "en": "Luggage storage in the city centre",
-          "es": "Consigna de equipaje en el centro",
-          "fr": "Consigne à bagages en centre-ville",
-          "de": "Gepäckaufbewahrung in der Innenstadt",
-          "it": "Deposito bagagli in centro",
-          "pt": "Guarda-bagagem no centro",
-          "zh": "市中心行李寄存",
-          "ar": "تخزين الأمتعة في وسط المدينة",
-          "ja": "市内中心部の荷物預かり"
-        },
-        "text": {
-          "en": "Arriving early or leaving late? Leave your bags at one of the many drop-off points across the city centre and enjoy Birmingham hands-free. From around £7, **free cancellation up to 24 hours before**, reserve now and pay later.",
-          "es": "¿Llegas pronto o te vas tarde? Deja tus maletas en uno de los muchos puntos repartidos por el centro y disfruta de Birmingham sin cargar con ellas. Desde unas 7 £, **cancelación gratis hasta 24 horas antes**, reserva ahora y paga después.",
-          "fr": "Vous arrivez tôt ou partez tard ? Déposez vos bagages dans l'un des nombreux points du centre-ville et profitez de Birmingham les mains libres. À partir d'environ 7 £, **annulation gratuite jusqu'à 24 heures avant**, réservez maintenant et payez plus tard.",
-          "de": "Früh angekommen oder spät abreisen? Lassen Sie Ihr Gepäck an einer der vielen Abgabestellen in der Innenstadt und genießen Sie Birmingham ohne Koffer. Ab etwa 7 £, **kostenlose Stornierung bis 24 Stunden vorher**, jetzt reservieren und später bezahlen.",
-          "it": "Arrivi presto o parti tardi? Lascia i bagagli in uno dei tanti punti del centro e goditi Birmingham a mani libere. Da circa 7 £, **cancellazione gratuita fino a 24 ore prima**, prenota ora e paga dopo.",
-          "pt": "Chega cedo ou parte tarde? Deixe as malas num dos muitos pontos do centro e aproveite Birmingham sem carregar nada. A partir de cerca de 7 £, **cancelamento grátis até 24 horas antes**, reserve agora e pague depois.",
-          "zh": "早到或晚走？把行李寄存在市中心众多寄存点之一，轻松畅游伯明翰。约 7 英镑起，**提前 24 小时可免费取消**，现在预订，稍后付款。",
-          "ar": "تصل مبكرًا أو تغادر متأخرًا؟ اترك حقائبك في إحدى نقاط التسليم الكثيرة في وسط المدينة واستمتع ببرمنغهام دون حملها. ابتداءً من حوالي 7 جنيهات، **إلغاء مجاني حتى 24 ساعة قبل الموعد**، احجز الآن وادفع لاحقًا.",
-          "ja": "早く着いた日や遅く出発する日に。市内中心部に多数ある預け場所に荷物を預けて、身軽にバーミンガムを楽しめます。約 7 ポンドから、**24 時間前まで無料キャンセル**、今予約して後払いできます。"
-        },
-        "cta": {
-          "en": "Book luggage storage",
-          "es": "Reservar consigna",
-          "fr": "Réserver une consigne",
-          "de": "Gepäckaufbewahrung buchen",
-          "it": "Prenota il deposito",
-          "pt": "Reservar guarda-bagagem",
-          "zh": "预订行李寄存",
-          "ar": "احجز تخزين الأمتعة",
-          "ja": "荷物預かりを予約"
-        },
-        "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_fill,w_900,h_500,g_auto,f_auto,q_auto/v1791906085/Luggage_Drop_Off_1_wlzrbx.jpg"
-      },
-      {
-        "icon": "walk",
-        "url": "https://gyg.me/IA9EIfgK",
-        "title": {
-          "en": "Peaky Blinders pub walk at dusk",
-          "es": "Ruta de los Peaky Blinders por pubs al anochecer",
-          "fr": "Balade des Peaky Blinders dans les pubs au crépuscule",
-          "de": "Peaky-Blinders-Pubtour in der Abenddämmerung",
-          "it": "Tour dei Peaky Blinders tra i pub al tramonto",
-          "pt": "Passeio dos Peaky Blinders pelos pubs ao anoitecer",
-          "zh": "黄昏《浴血黑帮》酒吧徒步游",
-          "ar": "جولة Peaky Blinders في الحانات عند الغروب",
-          "ja": "夕暮れのピーキー・ブラインダーズ パブ散策"
-        },
-        "text": {
-          "en": "A 2 hour walking tour about Birmingham's real slogging gangs, the Peaky Blinders among them, with a guide in costume and stops at 4 pubs and bars. **Adults only (18+).** Free cancellation up to 24 hours before.",
-          "es": "Un tour a pie de 2 horas sobre las auténticas bandas callejeras de Birmingham, entre ellas los Peaky Blinders, con guía disfrazado y paradas en 4 pubs y bares. **Solo adultos (18+).** Cancelación gratis hasta 24 horas antes.",
-          "fr": "Une visite à pied de 2 heures sur les vrais gangs de rue de Birmingham, dont les Peaky Blinders, avec un guide costumé et des arrêts dans 4 pubs et bars. **Réservé aux adultes (18+).** Annulation gratuite jusqu'à 24 heures avant.",
-          "de": "Ein 2-stündiger Rundgang über Birminghams echte Straßenbanden, darunter die Peaky Blinders, mit kostümiertem Guide und Stopps in 4 Pubs und Bars. **Nur für Erwachsene (18+).** Kostenlose Stornierung bis 24 Stunden vorher.",
-          "it": "Un tour a piedi di 2 ore sulle vere gang di Birmingham, tra cui i Peaky Blinders, con guida in costume e soste in 4 pub e bar. **Solo adulti (18+).** Cancellazione gratuita fino a 24 ore prima.",
-          "pt": "Um passeio a pé de 2 horas sobre os verdadeiros gangues de Birmingham, incluindo os Peaky Blinders, com guia mascarado e paragens em 4 pubs e bares. **Só para adultos (18+).** Cancelamento grátis até 24 horas antes.",
-          "zh": "2 小时徒步游，讲述伯明翰真实的街头帮派（包括 Peaky Blinders），导游身着戏服，途经 4 家酒吧。**仅限成人（18 岁以上）。**提前 24 小时可免费取消。",
-          "ar": "جولة سيرًا على الأقدام لمدة ساعتين عن عصابات برمنغهام الحقيقية، ومنها Peaky Blinders، مع مرشد بزي تنكري وتوقف في 4 حانات وبارات. **للبالغين فقط (18+).** إلغاء مجاني حتى 24 ساعة قبل الموعد.",
-          "ja": "ピーキー・ブラインダーズを含む、バーミンガムに実在したギャングの歴史をたどる 2 時間のウォーキングツアー。衣装姿のガイドと 4 軒のパブやバーを巡ります。**18 歳以上限定。**24 時間前まで無料キャンセル。"
-        },
-        "cta": {
-          "en": "See dates and book",
-          "es": "Ver fechas y reservar",
-          "fr": "Voir les dates et réserver",
-          "de": "Termine ansehen und buchen",
-          "it": "Vedi date e prenota",
-          "pt": "Ver datas e reservar",
-          "zh": "查看日期并预订",
-          "ar": "عرض المواعيد والحجز",
-          "ja": "日程を見て予約"
-        }
-      },
-      {
-        "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791875656/places_bham_sea_life.jpg",
-        "url": "https://gyg.me/rkiyYtLh",
-        "title": {
-          "en": "National SEA LIFE Centre tickets",
-          "es": "Entradas para el National SEA LIFE Centre",
-          "fr": "Billets pour le National SEA LIFE Centre",
-          "de": "Tickets für das National SEA LIFE Centre",
-          "it": "Biglietti per il National SEA LIFE Centre",
-          "pt": "Bilhetes para o National SEA LIFE Centre",
-          "zh": "National SEA LIFE Centre 门票",
-          "ar": "تذاكر National SEA LIFE Centre",
-          "ja": "ナショナル・シーライフセンターのチケット"
-        },
-        "text": {
-          "en": "Aquarium by the canals, 11 minutes' walk from the flat and great with children. Book your tickets in advance.",
-          "es": "Acuario junto a los canales, a 11 minutos a pie del piso e ideal con niños. Reserva tus entradas con antelación.",
-          "fr": "Aquarium au bord des canaux, à 11 minutes à pied de l'appartement, idéal avec des enfants. Réservez vos billets à l'avance.",
-          "de": "Aquarium an den Kanälen, 11 Minuten zu Fuß von der Wohnung, toll mit Kindern. Buchen Sie Ihre Tickets im Voraus.",
-          "it": "Acquario sui canali, a 11 minuti a piedi dall'appartamento, ideale con i bambini. Prenota i biglietti in anticipo.",
-          "pt": "Aquário junto aos canais, a 11 minutos a pé do apartamento, ótimo com crianças. Reserve os bilhetes com antecedência.",
-          "zh": "运河边的水族馆，距公寓步行 11 分钟，很适合带孩子。请提前预订门票。",
-          "ar": "حوض أسماك بجوار القنوات، على بعد 11 دقيقة سيرًا من الشقة، رائع مع الأطفال. احجز تذاكرك مسبقًا.",
-          "ja": "運河沿いの水族館。部屋から徒歩 11 分で、子ども連れに最適です。チケットは事前に予約しましょう。"
-        },
-        "cta": {
-          "en": "Book tickets",
-          "es": "Reservar entradas",
-          "fr": "Réserver des billets",
-          "de": "Tickets buchen",
-          "it": "Prenota i biglietti",
-          "pt": "Reservar bilhetes",
-          "zh": "预订门票",
-          "ar": "احجز التذاكر",
-          "ja": "チケットを予約"
-        }
-      }
-    ]
-  },
-  "servicePhotos": {
-    "early": "https://res.cloudinary.com/dyojhaiig/image/upload/c_fill,w_900,h_500,g_auto,f_auto,q_auto/v1791906084/early_check_in_1pm_pa0wzq.jpg",
-    "late": "https://res.cloudinary.com/dyojhaiig/image/upload/c_fill,w_900,h_500,g_auto,f_auto,q_auto/v1791906084/late_check_out_rpwloa.jpg",
-    "mid": "https://res.cloudinary.com/dyojhaiig/image/upload/c_fill,w_900,h_500,g_auto,f_auto,q_auto/v1791906085/mid-stay_clean_qp29zn.jpg"
-  },
-  "fireAssembly": {
-    "text": {
-      "en": "If you need to leave the complex, go out through the white doors and then the gate in the brick wall with black railings. Turn left: the **fire assembly point** is at the corner of the complex, marked with a **green sign**.",
-      "es": "Si tienes que salir del complejo, sal por las puertas blancas y después por la puerta del muro de ladrillo con valla negra. Gira a la izquierda: el **punto de reunión** está en la esquina del complejo, señalado con un **cartel verde**.",
-      "fr": "Si vous devez quitter la résidence, sortez par les portes blanches puis par le portail du mur en briques à grille noire. Tournez à gauche : le **point de rassemblement** se trouve à l'angle de la résidence, signalé par un **panneau vert**.",
-      "de": "Wenn Sie die Anlage verlassen müssen, gehen Sie durch die weißen Türen und dann durch das Tor in der Backsteinmauer mit schwarzem Zaun. Biegen Sie links ab: Der **Sammelplatz** liegt an der Ecke der Anlage und ist mit einem **grünen Schild** gekennzeichnet.",
-      "it": "Se devi uscire dal complesso, passa dalle porte bianche e poi dal cancello nel muro di mattoni con la ringhiera nera. Gira a sinistra: il **punto di raccolta** è all'angolo del complesso, indicato da un **cartello verde**.",
-      "pt": "Se tiver de sair do complexo, saia pelas portas brancas e depois pelo portão do muro de tijolo com grade preta. Vire à esquerda: o **ponto de encontro** fica na esquina do complexo, assinalado com uma **placa verde**.",
-      "zh": "如需离开小区，请穿过白色的门，再穿过砖墙上带黑色栏杆的大门。然后左转：**火灾集合点**在小区的拐角处，有**绿色标志**。",
-      "ar": "إذا احتجت إلى مغادرة المجمّع، اخرج من الأبواب البيضاء ثم من البوابة في الجدار الطوبي ذي السياج الأسود. انعطف يسارًا: **نقطة التجمع** عند زاوية المجمّع، وعليها **لافتة خضراء**.",
-      "ja": "敷地の外へ避難する場合は、白いドアを出て、黒い柵のあるレンガ塀の門を通ってください。左に曲がると、敷地の角に**緑の標識**のある**火災時の集合場所**があります。"
-    },
-    "img": "https://res.cloudinary.com/dyojhaiig/image/upload/c_limit,w_900,f_auto,q_auto/v1791908639/fire_assembly_point_mua5ve.jpg",
-    "coords": "https://maps.app.goo.gl/jXDdQanUwD2qDiGW6"
-  }
+  "discountCode": "5REPEATING"
 };
 /* ===================== END OF PROPERTY SETTINGS ===================== */
 </script>
@@ -2025,7 +289,7 @@ const CONFIG = {
 <div id="app"></div>
 <div class="toast" id="toast"></div>
 <script src="/guide/assets/guide-i18n.js?v=20261021a"></script>
-<script src="/guide/assets/guide.js?v=20261021a"></script>
-<script src="/guide/assets/guide-extra.js?v=20261020a"></script>
+<script src="/guide/assets/guide.js?v=20261021b"></script>
+<script src="/guide/assets/guide-extra.js?v=20261013g"></script>
 </body>
 </html>
