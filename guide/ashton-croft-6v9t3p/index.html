@@ -16,7 +16,7 @@
    ASHTON CROFT (public name: Brindleyplace Apartment): property settings.
    Airbnb title: "Stylish Apt·Canals·2x Free Parking·Sleeps 6".
    Texts can be given per language { en, es, ... }. Edit the English and ask Claude for the other languages.
-   Never put the flat number, access codes or the exact lockbox position here.
+   Never put the flat number, the floor, access codes or the exact lockbox position here.
    LIVE with guests from 13 Oct 2026: never leave [SQUARE BRACKETS] here. Remove incomplete items and list them as pending in claude/guias-huesped.md.
    ===================================================================== */
 const CONFIG = {
@@ -64,7 +64,7 @@ const CONFIG = {
   arrivalRoute: { title: { en: "From the lockbox to your door" }, steps: [
     { text: { en: "Collect the keys from the lockbox by the building entrance. The code and its exact position are in your check-in message." }, imgs: [] },
     { text: { en: "Open the main front door with the larger key." }, imgs: [] },
-    { text: { en: "Your flat is on the first floor. Your check-in message tells you which door is yours." }, imgs: [] }
+    { text: { en: "Your check-in message tells you exactly where your flat is in the building." }, imgs: [] }
   ] },
   binsRoute: { title: "", steps: [] },
 
