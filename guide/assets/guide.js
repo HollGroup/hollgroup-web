@@ -233,7 +233,7 @@
       <div class="soft"><div class="sub">${T("parking")}</div>
         ${C.parking === "none"
           ? `<p>${T("noParking")}</p>${C.parkingNearby ? `<p style="margin-top:8px">${P(C.parkingNearby)}</p>` : ""}${(C.parkingOptions || []).length ? `<div style="margin-top:10px">${cards("", C.parkingOptions, c => card(c, "car", T("cardParking")))}</div>` : ""}${clean(C.parkingNearbyCoords) ? `<div style="margin-top:10px">${mapBtn(C.parkingNearbyCoords, T("parkingMap"), "btn-light")}</div>` : ""}`
-          : `<p>${P(C.parkingDetails)}</p>${clean(C.parkingCoords) ? `<div style="margin-top:10px">${mapBtn(C.parkingCoords, T("parkingEntrance"), "btn-primary")}</div>` : ""}${gallery(C.parkingPhotos)}${C.parkingNearby ? `<p style="margin-top:12px">${P(C.parkingNearby)}</p>` : ""}${clean(C.parkingNearbyCoords) ? `<div style="margin-top:10px">${mapBtn(C.parkingNearbyCoords, T("parkingMap"), "btn-light")}</div>` : ""}`}
+          : `${C.parkingSpace ? `<div class="space"><span class="l">${T("parkingSpaceLabel")}</span><span class="n">${esc(C.parkingSpace)}</span></div>` : ""}<p>${P(C.parkingDetails)}</p>${clean(C.parkingCoords) ? `<div style="margin-top:10px">${mapBtn(C.parkingCoords, T("parkingEntrance"), "btn-primary")}</div>` : ""}${gallery(C.parkingPhotos)}${C.parkingNearby ? `<p style="margin-top:12px">${P(C.parkingNearby)}</p>` : ""}${clean(C.parkingNearbyCoords) ? `<div style="margin-top:10px">${mapBtn(C.parkingNearbyCoords, T("parkingMap"), "btn-light")}</div>` : ""}`}
       </div>
     </div>
     <h2 style="margin-top:26px">${T("gettingIn")}</h2>
