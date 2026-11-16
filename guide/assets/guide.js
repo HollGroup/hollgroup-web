@@ -130,8 +130,9 @@
         ${a.manual ? `<a class="appl-man" href="${esc(a.manual)}" target="_blank" rel="noopener">${T("applManual")}${a.model ? ` <span dir="ltr">(${esc(a.model)})</span>` : ""}</a>` : ""}
       </details>`; }).join("")}</div>`;
     // Lockbox away from the building: guests must collect the keys before going to the entrance
+    const KT = (k, v) => T(C.keysAtShop ? k + "Shop" : k, v); // keysAtShop: keys are collected at a shop, not a lockbox
     const keysFirst = isLockbox && C.keysFirst;
-    const keysFirstBox = () => !keysFirst ? "" : `<div class="keys-first"><div class="sub">${I.key}${T("keysFirstH")}</div><p>${T("keysFirstD", { where: P(C.keysFirstWhere) })}</p>${clean(C.lockboxCoords) ? mapBtn(C.lockboxCoords, T("keysFirstBtn"), "btn-primary") : ""}</div>`;
+    const keysFirstBox = () => !keysFirst ? "" : `<div class="keys-first"><div class="sub">${I.key}${T("keysFirstH")}</div><p>${KT("keysFirstD", { where: P(C.keysFirstWhere) })}</p>${clean(C.lockboxCoords) ? mapBtn(C.lockboxCoords, KT("keysFirstBtn"), "btn-primary") : ""}</div>`;
     // Visual cards (transport, pharmacies, A&E, local picks): big icon, optional photo, name, minutes, short note. Tap opens Maps.
     const card = (c, ico, label, wide) => {
       const img = c.img ? `<img class="cd-img" src="${esc(c.img)}" alt="" loading="lazy">` : "";
@@ -197,13 +198,13 @@
         <div id="wifiQr" aria-label="Wi-Fi QR"></div>
       </div>
     </div>
-    <div class="stack" style="margin-top:12px">${keysFirst && clean(C.lockboxCoords) ? mapBtn(C.lockboxCoords, T("keysFirstBtn"), "btn-white") : ""}${mapBtn(C.entranceCoords, keysFirst ? T("entranceStep2") : T("entrance"), "btn-white")}</div>
+    <div class="stack" style="margin-top:12px">${keysFirst && clean(C.lockboxCoords) ? mapBtn(C.lockboxCoords, KT("keysFirstBtn"), "btn-white") : ""}${mapBtn(C.entranceCoords, keysFirst ? T("entranceStep2") : T("entrance"), "btn-white")}</div>
   </section>
 
   <section class="card imp" id="important">
     <h2>${T("impTitle")}</h2>
     <ul class="imp-list">
-      ${keysFirst ? `<li class="hot"><span class="h">${T("keysFirstH")}</span>${T("keysFirstD", { where: P(C.keysFirstWhere) })}</li>` : ""}
+      ${keysFirst ? `<li class="hot"><span class="h">${T("keysFirstH")}</span>${KT("keysFirstD", { where: P(C.keysFirstWhere) })}</li>` : ""}
       ${isFlat ? `<li class="hot"><span class="h">${T("impCorrH")}</span>${T("impCorr")}</li>` : ""}
       ${(C.importantExtra || []).map(x => `<li class="hot"><span class="h">${P(x.title)}</span>${P(x.text)}</li>`).join("")}
       <li><span class="h">${T("impGuestsH")}</span>${T("impGuests")}</li>
@@ -238,9 +239,9 @@
     <h2 style="margin-top:26px">${T("gettingIn")}</h2>
     <div class="stack">
       ${isLockbox
-        ? C.privateAddress && !C.lockboxAreaPhoto ? `<p>${T("lockboxPrivate")}</p>` : `<p>${T("lockboxText")}</p>
-           ${C.lockboxAreaPhoto ? photo(C.lockboxAreaPhoto, T("lockboxArea")) : clean(C.lockboxCoords) ? "" : `<img src="lockbox-area.jpg" alt="" style="width:100%;border-radius:14px;display:block" onerror="this.outerHTML='<div class=&quot;soft&quot;><span class=&quot;ph&quot;>[PHOTO: lockbox-area.jpg in this folder]</span></div>'">`}
-           ${clean(C.lockboxCoords) ? mapBtn(C.lockboxCoords, T("lockboxArea"), "btn-light") : ""}`
+        ? C.privateAddress && !C.lockboxAreaPhoto ? `<p>${T("lockboxPrivate")}</p>` : `<p>${KT("lockboxText")}</p>
+           ${C.lockboxAreaPhoto ? photo(C.lockboxAreaPhoto, KT("lockboxArea")) : clean(C.lockboxCoords) ? "" : `<img src="lockbox-area.jpg" alt="" style="width:100%;border-radius:14px;display:block" onerror="this.outerHTML='<div class=&quot;soft&quot;><span class=&quot;ph&quot;>[PHOTO: lockbox-area.jpg in this folder]</span></div>'">`}
+           ${clean(C.lockboxCoords) ? mapBtn(C.lockboxCoords, KT("lockboxArea"), "btn-light") : ""}`
         : `<p>${T("smartText")}${C.smartLockCodeTimeLimited ? " " + T("smartLimited") : ""}</p>
            <p>${P(C.smartLockHowTo)}</p>
            <p>${T("smartFail")}</p>`}
@@ -266,11 +267,11 @@
 
   <section class="card" id="rules">
     <h2>${T("rulesTitle")}</h2>
-    <p style="font-family:'Outfit',system-ui,sans-serif;font-size:24px;font-weight:600;margin-bottom:12px">${T("quiet")}</p>
+    <p style="font-family:'Outfit',system-ui,sans-serif;font-size:24px;font-weight:600;margin-bottom:12px">${C.quietHours ? T("quietCustom", { from: time(C.quietHours.from), to: time(C.quietHours.to) }) : T("quiet")}</p>
     <ul class="rules">
-      <li>${T("noise")}</li>
+      ${C.noiseMonitor === false ? "" : `<li>${T("noise")}</li>`}
       ${isFlat
-        ? `<li>${T("camFlat")}</li>`
+        ? `<li>${C.cameraText ? P(C.cameraText) : T("camFlat")}</li>`
         : `${C.exteriorCameras ? `<li>${T("camHouse")}</li>` : ""}<li>${T("neighHouse")}</li>${C.garden ? `<li>${T("garden")}</li>` : ""}`}
       <li><b>${C.smokingRule ? P(C.smokingRule) : T("noSmoking")}</b></li>
     </ul>
